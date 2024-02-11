@@ -1,0 +1,37 @@
+.burger-btn {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+  span {
+    content: "";
+    position: absolute;
+    top: 11px;
+    width: 30px;
+    background-color: #fff;
+    height: 2px;
+  }
+}
+
+.burger-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 30px;
+  background-color: #fff;
+  height: 2px;
+}
+
+.burger-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  background-color: #fff;
+  height: 2px;
+}
+
+.col-6 {
+  width: 50%;
+}
