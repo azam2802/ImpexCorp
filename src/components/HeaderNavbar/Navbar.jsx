@@ -18,7 +18,6 @@ const Navbar = () => {
         <div>
           <Link to='/'>Наша компания</Link>
         </div>
-
       </div>
     </nav>
   )

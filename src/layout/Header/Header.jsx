@@ -19,8 +19,7 @@ export const Header = () => {
               <Link to='/'>
                 <img src={Logo} alt="Impex Logotype" />
               </Link>
-              <img src={Mark} alt="2gis" />
-              <Link to="/">2гис</Link>
+   
             </div>
 
             <div className={s["col-4"]}>
