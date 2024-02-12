@@ -1,0 +1,17 @@
+@import url(../globalStyles.scss);
+
+
+.HeaderNav{
+    padding: 50px 3vw 0 3vw;
+}
+
+.row{
+    justify-content: space-between;
+    a{
+        transition: all 0.3s;
+    }
+    a:hover{
+        color: #FE9F31;
+        transition: all 0.3s;
+    }
+}
