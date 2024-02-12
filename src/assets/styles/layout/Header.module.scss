@@ -1,6 +1,6 @@
 header {
   background-color: #000;
-  padding: 4vh;
+  padding:3vh 3vw ;
   color: #fff;
   font-size: 20px;
   font-family: Montserrat;
@@ -22,15 +22,14 @@ header {
     align-items: center;
     justify-content: space-between;
     input {
-      width: 35vw;
-      text-align: center;
+      width: 30vw;
       padding: 10px 10px;
       background-color: transparent;
       border: 1px solid #969696;
       border-radius: 5px;
       color: #fff;
       font-family: Montserrat;
-
+      font-size: 16px;
       @media screen and (max-width: 1024px) {
         width: 20vw;
       }
