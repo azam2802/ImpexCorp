@@ -10,17 +10,15 @@ const Navbar = () => {
           <Link to='/'>Каталог</Link>
         </div>
         <div>
-          <Link to='/'>Электромобили</Link>
+          <Link to='/'>Услуги</Link>
         </div>
         <div>
-          <Link to='/'>Авто с Китая</Link>
+          <Link to='/'>Онлайн калькулятор</Link>
         </div>
         <div>
-          <Link to='/'>Авто с Кореи</Link>
+          <Link to='/'>Наша компания</Link>
         </div>
-        <div>
-          <Link to='/'>О нас</Link>
-        </div>
+
       </div>
     </nav>
   )
