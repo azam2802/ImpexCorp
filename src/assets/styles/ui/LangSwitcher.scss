@@ -1,3 +1,6 @@
+@import url(../globalStyles.scss);
+
+
 .dropDown {
   position: relative;
   background-color: "black";
@@ -38,13 +41,20 @@
   .dropdown-content {
     background-color: black;
     border-radius: 10px;
-    padding: 10px;
     display: none;
+    padding: 10px 0 5px 0;
+    flex-direction: column;
+    // gap: 5px;
     position: absolute;
+    button{
+      width: 100%;
+      border-top: 1px solid gray;
+      padding: 5px 10px 5px;
+    }
   }
 
   img[alt="arrowDown"] {
     transform: rotate(180deg);
-    transition: all 0.5s;
+    transition: all 0.3s;
   }
 }

@@ -17,7 +17,7 @@ const LangSwitcher = () => {
     const dropdown = document.querySelector(".dropdown-content")
     const arrow = document.querySelector(".langArrow")
     if (!showDrop) {
-      dropdown.style.display = "block"
+      dropdown.style.display = "flex"
       arrow.style.transform = "unset"
       setShowDrop((prev) => !prev)
     } else {

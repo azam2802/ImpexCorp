@@ -5,6 +5,8 @@ import Mark from "@images/mark.svg"
 import LangSwitcher from "@ui/LangSwitcher/LangSwitcher"
 import PhoneIcon from "@images/phoneIcon.svg"
 import BurgerMenuBtn from "@ui/BurgerMenuBtn/BurgerMenuBtn"
+import Navbar from "@components/HeaderNavbar/Navbar"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
   console.log(window.innerWidth)
@@ -14,9 +16,10 @@ export const Header = () => {
         <nav>
           <div className={s.row}>
             <div className={s["col-4"]}>
-              <img src={Logo} alt="Impex Logotype" />
-              <img src={Mark} alt="2gis" />
-              <a href="#">2гис</a>
+              <Link to='/'>
+                <img src={Logo} alt="Impex Logotype" />
+              </Link>
+   
             </div>
 
             <div className={s["col-4"]}>
@@ -26,9 +29,10 @@ export const Header = () => {
             <div className={s["col-4"]}>
               <LangSwitcher />
               <img src={PhoneIcon} alt="Phone" />
-              <p>+996 0708 04 02 90</p>
+              <p>+996 (708) 04-02-90</p>
             </div>
           </div>
+          <Navbar />
         </nav>
       ) : (
         <BurgerMenuBtn />
