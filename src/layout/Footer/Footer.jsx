@@ -19,55 +19,49 @@ const Footer = () => {
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>
             <ul>
+              <li>О нас</li>
               <li>
-                <Link to={""}>О нас</Link>
+                <Link to="/">Контакты</Link>
               </li>
               <li>
-                <Link to={""}>Контакты</Link>
+                <Link to="/">Локации</Link>
               </li>
               <li>
-                <Link to={""}>Локации</Link>
+                <Link to="/">Обзор</Link>
               </li>
               <li>
-                <Link to={""}>Обзор</Link>
-              </li>
-              <li>
-                <Link to={""}>Акции</Link>
+                <Link to="/">Акции</Link>
               </li>
             </ul>
           </div>
           <div className={s["row-2"]}>
             <ul>
+              <li>Поддержка</li>
               <li>
-                <Link to={""}>Поддержка</Link>
+                <Link to="/">Обратная связь</Link>
               </li>
               <li>
-                <Link to={""}>Обратная связь</Link>
+                <Link to="/">Условия доставки</Link>
               </li>
               <li>
-                <Link to={""}>Условия доставки</Link>
+                <Link to="/">Возврат</Link>
               </li>
               <li>
-                <Link to={""}>Возврат</Link>
-              </li>
-              <li>
-                <Link to={""}>Как оформить заказ</Link>
+                <Link to="/">Как оформить заказ</Link>
               </li>
             </ul>
           </div>
           <div className={s["row-3"]}>
             <ul>
+              <li>Выбор и покупка</li>
               <li>
-                <Link to={""}>Выбор и покупка</Link>
+                <Link to="/">Модельный ряд</Link>
               </li>
               <li>
-                <Link to={""}>Модельный ряд</Link>
+                <Link to="/">Финансовые сервисы</Link>
               </li>
               <li>
-                <Link to={""}>Финансовые сервисы</Link>
-              </li>
-              <li>
-                <Link to={""}>Тест-драйв</Link>
+                <Link to="/">Тест-драйв</Link>
               </li>
             </ul>
           </div>
@@ -75,16 +69,24 @@ const Footer = () => {
         <div className={s["social-media"]}>
           <ul>
             <li>
-              <img src={TelegramIcon} alt="Telegram Icon" />
+              <a href="#">
+                <img src={TelegramIcon} alt="Telegram Icon" />
+              </a>
             </li>
             <li>
-              <img src={InstagramIcon} alt="Instagram Icon" />
+              <a href="#">
+                <img src={InstagramIcon} alt="Instagram Icon" />
+              </a>
             </li>
             <li>
-              <img src={TwitterIcon} alt="Twitter Icon" />
+              <a href="#">
+                <img src={TwitterIcon} alt="Twitter Icon" />
+              </a>
             </li>
             <li>
-              <img src={WhatsUpIcon} alt="WhatsUp Icon" />
+              <a href="#">
+                <img src={WhatsUpIcon} alt="WhatsUp Icon" />
+              </a>
             </li>
           </ul>
         </div>
