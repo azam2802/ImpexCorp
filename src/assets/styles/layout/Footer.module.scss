@@ -27,16 +27,15 @@ footer {
         font-weight: 600;
       }
 
-      ul li a {
+      ul li a:hover {
+        color: #fe9f31;
+      }
+
+      ul li {
         color: #fff;
         font-size: 24px;
         line-height: 70px;
         list-style-type: none;
-        text-decoration: none;
-      }
-
-      .li:hover{
-        color: #FE9F31;
       }
     }
   }
