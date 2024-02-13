@@ -6,7 +6,7 @@ import InstagramIcon from "@images/image 5.png"
 import TwitterIcon from "@images/image 6.png"
 import WhatsUpIcon from "@images/image 7.png"
 import { Link } from "react-router-dom"
- 
+
 const Footer = () => {
   return (
     <div>
@@ -19,55 +19,49 @@ const Footer = () => {
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>
             <ul>
+              <li>О нас</li>
               <li>
-                <a href="">О нас</a>
+                <Link to="/">Контакты</Link>
               </li>
               <li>
-                <a href="">Контакты</a>
+                <Link to="/">Локации</Link>
               </li>
               <li>
-                <a href="">Локации</a>
+                <Link to="/">Обзор</Link>
               </li>
               <li>
-                <a href="">Обзор</a>
-              </li>
-              <li>
-                <a href="">Акции</a>
+                <Link to="/">Акции</Link>
               </li>
             </ul>
           </div>
           <div className={s["row-2"]}>
             <ul>
+              <li>Поддержка</li>
               <li>
-                <a href="">Поддержка</a>
+                <Link to="/">Обратная связь</Link>
               </li>
               <li>
-                <a href="">Обратная связь</a>
+                <Link to="/">Условия доставки</Link>
               </li>
               <li>
-                <a href="">Условия доставки</a>
+                <Link to="/">Возврат</Link>
               </li>
               <li>
-                <a href="">Возврат</a>
-              </li>
-              <li>
-                <a href="">Как оформить заказ</a>
+                <Link to="/">Как оформить заказ</Link>
               </li>
             </ul>
           </div>
           <div className={s["row-3"]}>
             <ul>
+              <li>Выбор и покупка</li>
               <li>
-                <a href="">Выбор и покупка</a>
+                <Link to="/">Модельный ряд</Link>
               </li>
               <li>
-                <a href="">Модельный ряд</a>
+                <Link to="/">Финансовые сервисы</Link>
               </li>
               <li>
-                <a href="">Финансовые сервисы</a>
-              </li>
-              <li>
-                <a href="">Тест-драйв</a>
+                <Link to="/">Тест-драйв</Link>
               </li>
             </ul>
           </div>
@@ -75,16 +69,24 @@ const Footer = () => {
         <div className={s["social-media"]}>
           <ul>
             <li>
-              <img src={TelegramIcon} alt="Telegram Icon" />
+              <a href="#">
+                <img src={TelegramIcon} alt="Telegram Icon" />
+              </a>
             </li>
             <li>
-              <img src={InstagramIcon} alt="Instagram Icon" />
+              <a href="#">
+                <img src={InstagramIcon} alt="Instagram Icon" />
+              </a>
             </li>
             <li>
-              <img src={TwitterIcon} alt="Twitter Icon" />
+              <a href="#">
+                <img src={TwitterIcon} alt="Twitter Icon" />
+              </a>
             </li>
             <li>
-              <img src={WhatsUpIcon} alt="WhatsUp Icon" />
+              <a href="#">
+                <img src={WhatsUpIcon} alt="WhatsUp Icon" />
+              </a>
             </li>
           </ul>
         </div>
