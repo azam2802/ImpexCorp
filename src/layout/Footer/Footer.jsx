@@ -5,13 +5,16 @@ import TelegramIcon from "@images/image 4.png"
 import InstagramIcon from "@images/image 5.png"
 import TwitterIcon from "@images/image 6.png"
 import WhatsUpIcon from "@images/image 7.png"
-
+import { Link } from "react-router-dom"
+ 
 const Footer = () => {
   return (
     <div>
       <footer>
         <div className={s["logo"]}>
-          <img src={Logo} alt="Impex Logotype" />
+          <Link to="/">
+            <img src={Logo} alt="Impex Logotype" />
+          </Link>
         </div>
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>
@@ -62,9 +65,6 @@ const Footer = () => {
               </li>
               <li>
                 <a href="">Финансовые сервисы</a>
-              </li>
-              <li>
-                <a href="">Тест-драйв</a>
               </li>
               <li>
                 <a href="">Тест-драйв</a>
