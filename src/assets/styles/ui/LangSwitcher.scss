@@ -44,7 +44,7 @@
     display: none;
     padding: 10px 0 5px 0;
     flex-direction: column;
-    // gap: 5px;
+    z-index: 1;
     position: absolute;
     button{
       width: 100%;

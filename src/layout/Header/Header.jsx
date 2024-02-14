@@ -1,7 +1,6 @@
 import React from "react"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@images/Logo.svg"
-import Mark from "@images/mark.svg"
 import LangSwitcher from "@ui/LangSwitcher/LangSwitcher"
 import PhoneIcon from "@images/phoneIcon.svg"
 import BurgerMenuBtn from "@ui/BurgerMenuBtn/BurgerMenuBtn"
