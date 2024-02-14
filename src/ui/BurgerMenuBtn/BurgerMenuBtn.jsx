@@ -5,7 +5,7 @@ import s from '@styles/ui/BurgerMenu.module.scss'
 const BurgerMenuBtn = () => {
   return (
     <div>
-      <nav>
+      <nav className={s["mob-nav"]}>
         <div className="row">
           <div className={s["col-6"]}>
             <img src={Logo} alt="Impex Logotype" width={"70%"} />

@@ -12,8 +12,7 @@ export const Header = () => {
   console.log(window.innerWidth)
   return (
     <header>
-      {window.innerWidth > "768" ? (
-        <nav>
+        <nav className={s["pc-nav"]}>
           <div className={s.row}>
             <div className={s["col-4"]}>
               <Link to='/'>
@@ -34,9 +33,8 @@ export const Header = () => {
           </div>
           <Navbar />
         </nav>
-      ) : (
+
         <BurgerMenuBtn />
-      )}
     </header>
   )
 }
