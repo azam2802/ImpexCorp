@@ -10,7 +10,7 @@ import { Link } from "react-router-dom"
 export const Header = () => {
   console.log(window.innerWidth)
   return (
-    <header>
+    <header id="header">
         <nav className={s["pc-nav"]}>
           <div className={s.row}>
             <div className={s["col-4"]}>
