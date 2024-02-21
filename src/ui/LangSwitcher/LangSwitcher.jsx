@@ -28,9 +28,9 @@ const LangSwitcher = () => {
   }
 
   const changeLanguage = (language) => {
-    changeLang(language);
-    i18n.changeLanguage(language.toLowerCase());
-    showDropDown();
+    i18n.changeLanguage(language.toLowerCase())
+    showDropDown()
+    changeLang(language.toLowerCase())
   }
 
   return (
@@ -64,7 +64,7 @@ const LangSwitcher = () => {
           <div>
             <img src={ChinaFlag} alt="Chinese" />
           </div>
-          文本  
+          文本
           <img src={chevronDown} className="langArrow" alt="arrowDown" />
         </button>
       )}
@@ -72,7 +72,7 @@ const LangSwitcher = () => {
         <button onClick={() => changeLanguage("Ru")}>Рус</button>
         <button onClick={() => changeLanguage("En")}>Eng</button>
         <button onClick={() => changeLanguage("Ky")}>Кыр</button>
-        <button onClick={() => changeLanguage("zh")}>中国人</button>
+        <button onClick={() => changeLanguage("Zh")}>中国人</button>
       </div>
     </div>
   )

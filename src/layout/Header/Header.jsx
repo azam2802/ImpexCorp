@@ -6,9 +6,12 @@ import PhoneIcon from "@images/phoneIcon.svg"
 import BurgerMenuBtn from "@ui/BurgerMenuBtn/BurgerMenuBtn"
 import Navbar from "@components/HeaderNavbar/Navbar"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 export const Header = () => {
-  console.log(window.innerWidth)
+
+  const {t} = useTranslation()
+
   return (
     <header id="header">
         <nav className={s["pc-nav"]}>
@@ -21,7 +24,7 @@ export const Header = () => {
             </div>
 
             <div className={s["col-4"]}>
-              <input type="search" placeholder="Поиск" />
+              <input type="search" placeholder={t("header.search")} />
             </div>
 
             <div className={s["col-4"]}>

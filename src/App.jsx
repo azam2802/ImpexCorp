@@ -7,6 +7,7 @@ import Footer from "@layout/Footer/Footer"
 import BackToTop from "@ui/BackToTop/BackToTop"
 
 function App() {
+  
   const { t } = useTranslation()
 
   return (

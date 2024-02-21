@@ -1,3 +1,38 @@
 {
-    "text": "文本"
+    "text": "文本",
+
+    "header":{
+        "search": "搜索",
+        "catalogue": "目录",
+        "services": "服务",
+        "calculator": "在线计算器",
+        "ourcompany": "我们公司"
+    },
+
+    "main": {
+        
+    },
+    "footer": {
+        "aboutus": {
+            "name": "关于我们",
+            "contacts": "联系方式",
+            "locations": "地点",
+            "review": "审查",
+            "promotion": "晋升"
+        },
+        "support": {
+            "name": "支持",
+            "feedback": "反馈",
+            "delivery": "交货条件",
+            "refund": "退款",
+            "howtoorder": "如何下订单?"
+        },
+        "selection":{
+            "name": "选购",
+            "lineup": "车型阵容",
+            "services": "金融服务",
+            "testdrive": "试驾"
+        } 
+    }
+
 }

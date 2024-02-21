@@ -1,3 +1,33 @@
 {
-    "text" : "SomeText"
+    "text": "Text",
+    "header": {
+        "search": "Search",
+        "catalogue": "Catalogue",
+        "services": "Services",
+        "calculator": "Online calculator",
+        "ourcompany": "Our Company"
+    },
+    "main": {},
+    "footer": {
+        "aboutus": {
+            "name": "About Us",
+            "contacts": "Contacts",
+            "locations": "Locations",
+            "review": "Review",
+            "promotion": "Promotion"
+        },
+        "support": {
+            "name": "Support",
+            "feedback": "Feedback",
+            "delivery": "Delivery terms",
+            "refund": "Refund",
+            "howtoorder": "How to place an order?"
+        },
+        "selection":{
+            "name": "Selection and purchase",
+            "lineup": "The lineup",
+            "services": "Financial services",
+            "testdrive": "Test Drive"
+        } 
+    }
 }

@@ -1,6 +1,6 @@
-import { create } from "zustand";
+import { create } from "zustand"
 
 export const useLang = create((set) => ({
-    lang: 'ru',
-    changeLang: (lang) => set(() => ({lang: lang}))
+  lang: "",
+  changeLang: (language) => set({ lang: language }),
 }))

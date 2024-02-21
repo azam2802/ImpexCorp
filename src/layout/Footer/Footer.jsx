@@ -6,8 +6,12 @@ import InstagramIcon from "@images/image 5.png"
 import TwitterIcon from "@images/image 6.png"
 import WhatsUpIcon from "@images/image 7.png"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 const Footer = () => {
+
+  const {t} = useTranslation()
+
   return (
     <div>
       <footer>
@@ -19,49 +23,49 @@ const Footer = () => {
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>
             <ul>
-              <li>О нас</li>
+              <li>{t("footer.aboutus.name")}</li>
               <li>
-                <Link to="/">Контакты</Link>
+                <Link to="/">{t("footer.aboutus.contacts")}</Link>
               </li>
               <li>
-                <Link to="/">Локации</Link>
+                <Link to="/">{t("footer.aboutus.locations")}</Link>
               </li>
               <li>
-                <Link to="/">Обзор</Link>
+                <Link to="/">{t("footer.aboutus.review")}</Link>
               </li>
               <li>
-                <Link to="/">Акции</Link>
+                <Link to="/">{t("footer.aboutus.promotion")}</Link>
               </li>
             </ul>
           </div>
           <div className={s["row-2"]}>
             <ul>
-              <li>Поддержка</li>
+              <li>{t("footer.support.name")}</li>
               <li>
-                <Link to="/">Обратная связь</Link>
+                <Link to="/">{t("footer.support.feedback")}</Link>
               </li>
               <li>
-                <Link to="/">Условия доставки</Link>
+                <Link to="/">{t("footer.support.delivery")}</Link>
               </li>
               <li>
-                <Link to="/">Возврат</Link>
+                <Link to="/">{t("footer.support.refund")}</Link>
               </li>
               <li>
-                <Link to="/">Как оформить заказ</Link>
+                <Link to="/">{t("footer.support.howtoorder")}</Link>
               </li>
             </ul>
           </div>
           <div className={s["row-3"]}>
             <ul>
-              <li>Выбор и покупка</li>
+              <li>{t("footer.selection.name")}</li>
               <li>
-                <Link to="/">Модельный ряд</Link>
+                <Link to="/">{t("footer.selection.lineup")}</Link>
               </li>
               <li>
-                <Link to="/">Финансовые сервисы</Link>
+                <Link to="/">{t("footer.selection.services")}</Link>
               </li>
               <li>
-                <Link to="/">Тест-драйв</Link>
+                <Link to="/">{t("footer.selection.testdrive")}</Link>
               </li>
             </ul>
           </div>
@@ -85,7 +89,7 @@ const Footer = () => {
             </li>
             <li>
               <a href="#">
-                <img src={WhatsUpIcon} alt="WhatsUp Icon" />
+                <img src={WhatsUpIcon} alt="WhatsApp Icon" />
               </a>
             </li>
           </ul>
