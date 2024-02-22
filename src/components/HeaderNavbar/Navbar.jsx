@@ -10,13 +10,16 @@ const Navbar = ({ onOpenCatalog }) => {
   return (
     <nav className={s["HeaderNav"]}>
       <div className={s["row"]}>
+        <div onClick={() => onOpenCatalog(false)}>
+          <Link to="/">{t("header.ourcompany")}</Link>
+        </div>
         <div onClick={onOpenCatalog}>
           <Link to="/">{t("header.catalogue")}</Link>
         </div>
-        <div>
+        <div onClick={() => onOpenCatalog(false)}>
           <Link to="/">{t("header.services")}</Link>
         </div>
-        <div>
+        <div onClick={() => onOpenCatalog(false)}>
           <Link to="/">{t("header.calculator")}</Link>
         </div>
       </div>

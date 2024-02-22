@@ -15,8 +15,12 @@ export const Header = () => {
 
   const [showCatalog, setShowCatalog] = useState(false)
 
-  const onOpenCatalog = () => {
-    setShowCatalog((prev) => !prev)
+  const onOpenCatalog = (state) => {
+    if (!state) {
+      setShowCatalog(false)
+    } else {
+      setShowCatalog((prev) => !prev)
+    }
   }
 
   return (
