@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  margin-top: 2rem;
+  height: 495px;
+  padding: 82px 0 0 0;
+}
+
+.row_1 {
+  display: flex;
+  width: 25vw;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-top: 16px;
+  color: #fff;
+  line-height: 50px;
+}
+
+.title {
+  color: #fff;
+  font-weight: 700;
+}
+
+ul li a:hover {
+  color: #fe9f31;
+  transition: all 0.3s;
+}
+
+.row_2-childe {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.row_2-characteristic {
+  display: flex;
+  width: 19.65vw;
+  gap: 20px;
+  align-items: center;
+}
+.row_2-characteristic p {
+  color: #6c6c6c;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.title_car {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+}
+.price {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+}
+.row_2 {
+  display: flex;
+  padding: 56px 32px;
+  width: 52.43vw;
+  height: 40vh;
+  border-radius: 8px;
+  border: 1px solid #5f5f5f;
+  justify-content: space-between;
+}
+
+.row_2 img {
+  width: 25vw;
+}
+@media screen and (max-width: 1100px) {
+  .row_2 {
+    display: flex;
+    padding: 56px 32px;
+    width: 555px;
+    height: 40vh;
+    border-radius: 8px;
+    border: 1px solid #5f5f5f;
+    justify-content: space-between;
+  }
+  .row_2 img {
+    width: 22vw;
+  }
+
+  .row_1 {
+    display: flex;
+    width: 30vw;
+    justify-content: space-between;
+  }
+  .row_2-characteristic {
+    gap: 10px;
+  }
+  .row_2-characteristic img {
+    width: 35px;
+  }
+}
