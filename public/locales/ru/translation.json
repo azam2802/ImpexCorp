@@ -1,33 +1,43 @@
 {
-    "text": "Текст",
-    "header": {
-        "search": "Поиск",
-        "catalogue": "Каталог",
-        "services": "Услуги",
-        "calculator": "Калькулятор",
-        "ourcompany": "Наша компания"
-    },
-    "main": {},
-    "footer": {
-        "aboutus": {
-            "name": "О нас",
-            "contacts": "Контакты",
-            "locations": "Локации",
-            "review": "Обзор",
-            "promotion": "Акции"
-        },
-        "support": {
-            "name": "Поддержка",
-            "feedback": "Обратная связь",
-            "delivery": "Условия доставки",
-            "refund": "Возврат",
-            "howtoorder": "Как оформить заказ?"
-        },
-        "selection": {
-            "name": "Выбор и покупка",
-            "lineup": "Модельный ряд",
-            "services": "Финансовые сервисы",
-            "testdrive": "Тест-драйв"
-        }
+  "text": "Текст",
+  "header": {
+    "search": "Поиск",
+    "catalogue": "Каталог",
+    "services": "Услуги",
+    "calculator": "Калькулятор",
+    "ourcompany": "Наша компания"
+  },
+  "main": {
+    "model": "Популярные модели",
+    "countries": {
+      "title": "Страна",
+      "items": {
+        "korea": "Корея",
+        "china": "Китай",
+        "japan": "Япония"
+      }
     }
+  },
+  "footer": {
+    "aboutus": {
+      "name": "О нас",
+      "contacts": "Контакты",
+      "locations": "Локации",
+      "review": "Обзор",
+      "promotion": "Акции"
+    },
+    "support": {
+      "name": "Поддержка",
+      "feedback": "Обратная связь",
+      "delivery": "Условия доставки",
+      "refund": "Возврат",
+      "howtoorder": "Как оформить заказ?"
+    },
+    "selection": {
+      "name": "Выбор и покупка",
+      "lineup": "Модельный ряд",
+      "services": "Финансовые сервисы",
+      "testdrive": "Тест-драйв"
+    }
+  }
 }

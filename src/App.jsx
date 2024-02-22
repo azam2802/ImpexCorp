@@ -7,15 +7,15 @@ import Footer from "@layout/Footer/Footer"
 import BackToTop from "@ui/BackToTop/BackToTop"
 
 function App() {
-  
   const { t } = useTranslation()
 
   return (
     <Suspense fallback="Loading...">
       <div className="App">
         <Header />
-        <h1 style={{marginBottom:'1000px'}}>{t("text")}</h1>
-        <BackToTop/>
+
+        <h1 style={{ marginBottom: "1000px" }}>{t("text")}</h1>
+        <BackToTop />
         <Footer />
       </div>
     </Suspense>
