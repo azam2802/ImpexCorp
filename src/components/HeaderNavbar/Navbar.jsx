@@ -19,9 +19,6 @@ const Navbar = ({ onOpenCatalog }) => {
         <div>
           <Link to="/">{t("header.calculator")}</Link>
         </div>
-        <div>
-          <Link to="/">{t("header.ourcompany")}</Link>
-        </div>
       </div>
     </nav>
   )

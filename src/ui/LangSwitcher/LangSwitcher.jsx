@@ -18,11 +18,11 @@ const LangSwitcher = () => {
     const arrow = document.querySelector(".langArrow")
     if (!showDrop) {
       dropdown.style.display = "flex"
-      arrow.style.transform = "unset"
+      arrow.style.transform = "rotate(180deg)"
       setShowDrop((prev) => !prev)
     } else {
       dropdown.style.display = "none"
-      arrow.style.transform = "rotate(180deg)"
+      arrow.style.transform = "unset"
       setShowDrop((prev) => !prev)
     }
   }
