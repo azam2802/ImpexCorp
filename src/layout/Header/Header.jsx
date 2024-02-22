@@ -30,19 +30,20 @@ export const Header = () => {
               </Link>
             </div>
 
-          <div className={s["col-4"]}>
-            <input type="search" placeholder={t("header.search")} />
-            <div className={s["Search_icon-div"]}>
-              <img src={Search} alt="search_icon" />
+            <div className={s["col-4"]}>
+              <input type="search" placeholder={t("header.search")} />
+              <div className={s["Search_icon-div"]}>
+                <img src={Search} alt="search_icon" />
+              </div>
             </div>
-          </div>
 
-          <div className={s["col-4"]}>
-            <p>
-              <img src={PhoneIcon} alt="Phone" />
-              <p>+996 (708) 04-02-90</p>
-            </p>
-            <LangSwitcher />
+            <div className={s["col-4"]}>
+              <p>
+                <img src={PhoneIcon} alt="Phone" />
+                <p>+996 (708) 04-02-90</p>
+              </p>
+              <LangSwitcher />
+            </div>
           </div>
           <Navbar onOpenCatalog={onOpenCatalog} />
         </nav>

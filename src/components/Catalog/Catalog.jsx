@@ -12,20 +12,26 @@ const Catalog = ({ setShowCatalog }) => {
   const { t } = useTranslation()
 
   return (
-    <section className={s["container"]} onClick={() => setShowCatalog(false)}>
+    <section className={s["container"]}>
       <div className={s["container_childe"]}>
         <div className={s["row_1"]}>
           <div>
             <p className={s["title"]}>{t("main.countries.title")}</p>
             <ul>
               <li>
-                <Link to="/">{t("main.countries.items.korea")}</Link>
+                <Link to="/" onClick={() => setShowCatalog(false)}>
+                  {t("main.countries.items.korea")}
+                </Link>
               </li>
               <li>
-                <Link to="/">{t("main.countries.items.china")}</Link>
+                <Link to="/" onClick={() => setShowCatalog(false)}>
+                  {t("main.countries.items.china")}
+                </Link>
               </li>
               <li>
-                <Link to="/">{t("main.countries.items.japan")}</Link>
+                <Link to="/" onClick={() => setShowCatalog(false)}>
+                  {t("main.countries.items.japan")}
+                </Link>
               </li>
             </ul>
           </div>
@@ -33,19 +39,29 @@ const Catalog = ({ setShowCatalog }) => {
             <p className={s["title"]}>{t("main.model")}</p>
             <ul>
               <li>
-                <Link to="/">Hundai</Link>
+                <Link to="/" onClick={() => setShowCatalog(false)}>
+                  Hundai
+                </Link>
               </li>
               <li>
-                <Link to="/">Changan</Link>
+                <Link to="/" onClick={() => setShowCatalog(false)}>
+                  Changan
+                </Link>
               </li>
               <li>
-                <Link to="/">Geely</Link>
+                <Link to="/" onClick={() => setShowCatalog(false)}>
+                  Geely
+                </Link>
               </li>
               <li>
-                <Link to="/">Haval</Link>
+                <Link to="/" onClick={() => setShowCatalog(false)}>
+                  Haval
+                </Link>
               </li>
               <li>
-                <Link to="/">FAW Bestune</Link>
+                <Link to="/" onClick={() => setShowCatalog(false)}>
+                  FAW Bestune
+                </Link>
               </li>
             </ul>
           </div>
