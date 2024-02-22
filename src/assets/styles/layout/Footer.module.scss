@@ -1,19 +1,18 @@
 footer {
+  padding-bottom: 2vh;
   background-color: #000;
-  position: relative;
-
+  font-family: "Montserrat";
   .logo {
-    position: absolute;
-    top: 53px;
-    left: 45px;
+    padding-left: 3vw;
+    padding-top: 3vw;
   }
 
   .footer-content {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 613px;
-
+    flex-wrap: wrap;
+    padding-top: 5vh;
+    padding-bottom: 7vh;
     .row-2,
     .row-3 {
       margin-left: 180px;
@@ -46,9 +45,8 @@ footer {
   }
 
   .social-media {
-    position: absolute;
-    right: 103px;
-    bottom: 65px;
+    display: flex;
+    justify-content: center;
     ul {
       list-style-type: none;
       display: flex;
