@@ -10,6 +10,9 @@ const Navbar = () => {
     <nav className={s["HeaderNav"]}>
       <div className={s["row"]}>
         <div>
+          <Link to="/">{t("header.ourcompany")}</Link>
+        </div>
+        <div>
           <Link to="/">{t("header.catalogue")}</Link>
         </div>
         <div>
@@ -17,9 +20,6 @@ const Navbar = () => {
         </div>
         <div>
           <Link to="/">{t("header.calculator")}</Link>
-        </div>
-        <div>
-          <Link to="/">{t("header.ourcompany")}</Link>
         </div>
       </div>
     </nav>
