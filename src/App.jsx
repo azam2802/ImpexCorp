@@ -13,6 +13,7 @@ function App() {
     <Suspense fallback="Loading...">
       <div className="App">
         <Header />
+
         <h1 style={{ marginBottom: "1000px" }}>{t("text")}</h1>
         <BackToTop />
         <Footer />
