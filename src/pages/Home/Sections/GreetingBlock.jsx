@@ -1,6 +1,6 @@
 import React from "react"
 import "@styles/pages/Home/GreetingBlock.module.scss"
-import carImg from "./images/car.png"
+import carImg from "@images/car.png"
 
 const GreetingBlock = () => {
   return (
