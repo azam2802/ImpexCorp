@@ -4,6 +4,11 @@
   }  
 }
 
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+
 .burger-btn {
   width: 30px;
   height: 25px;
@@ -38,6 +43,4 @@
   height: 2px;
 }
 
-.col-6 {
-  width: 50%;
-}
+

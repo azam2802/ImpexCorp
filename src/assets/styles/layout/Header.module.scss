@@ -33,6 +33,14 @@ header {
         width: 20vw;
       }
     }
+    input[type="search"]::-webkit-search-cancel-button {
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: url(../../img/cross_114275.svg) center no-repeat ;
+      background-size: cover;
+    }
+
     img[alt="Impex Logotype"] {
       width: 15vw;
       margin-right: 3vw;
@@ -44,13 +52,13 @@ header {
       margin-right: 10px;
       vertical-align: middle;
     }
-    img[alt="Phone"]+p{
+    #phone_num{
       color: orange;
       display: inline;
     }
     img[alt="search_icon"] {
       position: absolute;
-      right: 0;
+      right: 15px;
       bottom: 25%;
     }
   }
