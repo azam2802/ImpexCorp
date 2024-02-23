@@ -36,14 +36,9 @@
       border-radius: 10px;
       border: none;
       outline: none;
-
-      color: #b4b4b4;
+      padding: 10px;
       margin-bottom: 32px;
-
-      &:hover {
-        border: 3px solid #000;
-      }
-
+      font-size: 20px;
       &::placeholder {
         color: #b4b4b4;
         font-family: Inter;
@@ -51,7 +46,6 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        padding: 10px;
       }
     }
   }
@@ -69,5 +63,10 @@
     font-family: Inter;
     font-size: 24px;
     font-weight: 600;
+    transition: all 0.3s ease-in-out;
+  }
+  button:hover{
+    background: #f78400;
   }
 }
+
