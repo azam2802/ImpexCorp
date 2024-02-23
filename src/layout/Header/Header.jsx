@@ -35,8 +35,8 @@ export const Header = () => {
             </div>
 
             <div className={s["col-4"]}>
-              <input type="search" placeholder={t("header.search")} />
-              <div className={s["Search_icon-div"]}>
+              <div className={s["Search-div"]}>
+                <input type="search" placeholder={t("header.search")} />
                 <img src={Search} alt="search_icon" />
               </div>
             </div>
