@@ -1,5 +1,5 @@
 import React from "react"
-import ApplicationForm from "./sections/ApplicationForm"
+import ApplicationForm from "./Sections/ApplicationForm"
 
 export const Home = () => {
   return (

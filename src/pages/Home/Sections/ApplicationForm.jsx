@@ -1,6 +1,6 @@
 import React from "react"
 import BackgroungImage from "@images/Group 42.png"
-import s from "@styles/pages/home/ApplicationForm.module.scss"
+import s from "@styles/pages/Home/ApplicationForm.module.scss"
 
 const ApplicationForm = () => {
   return (
