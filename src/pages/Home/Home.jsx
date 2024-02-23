@@ -8,9 +8,9 @@ export const Home = () => {
 
   return (
     <main>
+      <GreetingBlock />
       <h1 style={{ marginBottom: "1000px" }}>{t("text")}</h1>
       <ApplicationForm />
-      <GreetingBlock />
     </main>
   )
 }
