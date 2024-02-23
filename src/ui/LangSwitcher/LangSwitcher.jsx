@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react"
 import RussianFlag from "@images/russia.png"
 import ChinaFlag from "@images/china.png"
@@ -5,10 +6,11 @@ import KyrgyzFlag from "@images/kyrgyzstan.png"
 import UKFlag from "@images/united-kingdom.png"
 import { useLang } from "@store/store"
 import { useTranslation } from "react-i18next"
+import PropTypes from "prop-types"
 import "@styles/ui/LangSwitcher.scss"
 import chevronDown from "@images/chevron-down.svg"
 
-const LangSwitcher = () => {
+const LangSwitcher = ({ onCloseCatalog }) => {
   const { changeLang } = useLang()
   const [showDrop, setShowDrop] = useState(false)
   const { i18n } = useTranslation()
@@ -34,9 +36,13 @@ const LangSwitcher = () => {
   }
 
   return (
-    <div className="dropDown">
+    <div className="dropDown" onClick={onCloseCatalog}>
       {i18n.language == "ru" ? (
-        <button onClick={() => showDropDown()}>
+        <button
+          onClick={() => {
+            showDropDown()
+            onCloseCatalog()
+          }}>
           <div>
             <img src={RussianFlag} alt="Russia" />
           </div>
@@ -44,7 +50,11 @@ const LangSwitcher = () => {
           <img src={chevronDown} className="langArrow" alt="arrowDown" />
         </button>
       ) : i18n.language == "ky" ? (
-        <button onClick={() => showDropDown()}>
+        <button
+          onClick={() => {
+            showDropDown()
+            onCloseCatalog()
+          }}>
           <div>
             <img src={KyrgyzFlag} alt="Kyrgyz" />
           </div>
@@ -52,7 +62,11 @@ const LangSwitcher = () => {
           <img src={chevronDown} className="langArrow" alt="arrowDown" />
         </button>
       ) : i18n.language == "en" ? (
-        <button onClick={() => showDropDown()}>
+        <button
+          onClick={() => {
+            showDropDown()
+            onCloseCatalog()
+          }}>
           <div>
             <img src={UKFlag} alt="English" />
           </div>
@@ -60,7 +74,11 @@ const LangSwitcher = () => {
           <img src={chevronDown} className="langArrow" alt="arrowDown" />
         </button>
       ) : (
-        <button onClick={() => showDropDown()}>
+        <button
+          onClick={() => {
+            showDropDown()
+            onCloseCatalog()
+          }}>
           <div>
             <img src={ChinaFlag} alt="Chinese" />
           </div>
@@ -76,6 +94,10 @@ const LangSwitcher = () => {
       </div>
     </div>
   )
+}
+
+LangSwitcher.prototype = {
+  onCloseCatalog: PropTypes.func.isRequired,
 }
 
 export default LangSwitcher

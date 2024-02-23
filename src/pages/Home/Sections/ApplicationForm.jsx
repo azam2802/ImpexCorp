@@ -1,16 +1,10 @@
 import React from "react"
-import BackgroungImage from "@images/Group 42.png"
 import s from "@styles/pages/Home/ApplicationForm.module.scss"
 
 const ApplicationForm = () => {
   return (
     <div>
       <div className={s["container"]}>
-        <img
-          className={s["background-img"]}
-          src={BackgroungImage}
-          alt="Background Image"
-        />
         <div className={s["application-form"]}>
           <h2>Оставить заявку</h2>
           <form action="submit" method="">
