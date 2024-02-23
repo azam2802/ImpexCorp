@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+.mainBlock {
+  margin-bottom: 10vw;;
+  display: inline-block;
+}
+
+.title {
+  width: 48.54vw;
+  height: 4.5vh;
+  font-size: 2rem;
+  margin-left: 62.29vw;
+  margin-bottom: 1.46vh;
+  margin-top: 20.83vh;
+}
+
+.text {
+  width: 27.64vw;
+  font-size: 1.5em; 
+  margin-left: 62.29vw;
+}
+
+.carImg {
+  width: 51.68vw;
+  margin-left: 4.94vw;
+  margin-top: -40.40vh;
+}
+
+.button {
+  display: flex;
+  width: 13.9vw;
+  padding: 0.43rem;
+  justify-content: center;
+  background-color: #FE9F31;
+  margin-left: 62.29vw;
+  margin-top: -13.3vh;
+  border-radius: 0.5vw;
+  font-size: 1.5rem;
+
+  &:hover {
+    border: 2px solid #ca7615;
+  }
+}
