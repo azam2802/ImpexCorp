@@ -23,6 +23,7 @@
     color: #e8e8e8;
     font-family: Inter;
     font-size: 48px;
+    margin-bottom: 12vh;
   }
 
   form {
@@ -30,42 +31,43 @@
     flex-direction: column;
 
     input {
-      width: 600px;
-      height: 70px;
+      width: 36.5vw;
+      height: 9.5vh;
       border-radius: 10px;
       border: none;
+      outline: none;
+
+      color: #b4b4b4;
+      margin-bottom: 32px;
 
       &:hover {
         border: 3px solid #000;
       }
 
       &::placeholder {
-        color: #000;
+        color: #b4b4b4;
         font-family: Inter;
-        font-size: 23px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        padding: 10px;
       }
     }
   }
 
   button {
-    width: 291px;
+    width: 36.5vw;
+    height: 9.5vh;
     padding: 10px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    background: #fe9f31;
-    color: #000;
-    font-family: Inter;
-    font-size: 24px;
     border-radius: 10px;
     border: none;
-  }
-
-  h2,
-  input {
-    margin-bottom: 31px;
+    background: #fe9f31;
+    color: #fff;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
   }
 }

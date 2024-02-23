@@ -1,14 +1,14 @@
 @import '../globalStyles.scss';
 
-
 .HeaderNav{
-    padding: 25px 3vw 0 3vw;
+    padding: 25px 11vw 0 11vw;
 }
 
 .row{
     justify-content: space-between;
     a{
         transition: all 0.3s;
+        font-family: "Open Sans";
     }
     a:hover{
         color: #FE9F31;
