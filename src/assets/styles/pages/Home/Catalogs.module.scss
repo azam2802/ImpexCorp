@@ -1,0 +1,52 @@
+.catalogs {
+  margin: 100px;
+
+  .catalogs-item {
+    margin-top: 100px;
+
+    .next-button {
+      width: 288px;
+      height: 677px;
+      flex-shrink: 0;
+      border-radius: 15px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.catalogs-title {
+  color: #000;
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.catalog-type-title {
+  color: #000;
+  font-family: Inter;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 100px;
+}
+
+.car-card-list {
+  box-sizing: border-box;
+  display: flex;
+  overflow: scroll;
+}
+
+.car-card-list::-webkit-scrollbar {
+  display: none;
+}
