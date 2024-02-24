@@ -27,13 +27,13 @@ const Footer = () => {
                 <Link to="/">{t("footer.aboutus.contacts")}</Link>
               </li>
               <li>
+                <Link to="/">{t("footer.aboutus.company")}</Link>
+              </li>
+              <li>
                 <Link to="/">{t("footer.aboutus.locations")}</Link>
               </li>
               <li>
-                <Link to="/">{t("footer.aboutus.review")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.aboutus.promotion")}</Link>
+                <Link to="/">{t("footer.aboutus.contacts")}</Link>
               </li>
             </ul>
           </div>
@@ -44,27 +44,41 @@ const Footer = () => {
                 <Link to="/">{t("footer.support.feedback")}</Link>
               </li>
               <li>
-                <Link to="/">{t("footer.support.delivery")}</Link>
+                <Link to="/">{t("footer.support.counseling")}</Link>
               </li>
               <li>
                 <Link to="/">{t("footer.support.refund")}</Link>
               </li>
               <li>
-                <Link to="/">{t("footer.support.howtoorder")}</Link>
+                <Link to="/">{t("footer.support.insurance")}</Link>
               </li>
             </ul>
           </div>
           <div className={s["row-3"]}>
             <ul>
-              <li>{t("footer.selection.name")}</li>
+              <li>{t("footer.branches.name")}</li>
               <li>
-                <Link to="/">{t("footer.selection.lineup")}</Link>
+                <Link to="/">{t("footer.branches.address1")}</Link>
               </li>
               <li>
-                <Link to="/">{t("footer.selection.services")}</Link>
+                <Link to="/">{t("footer.branches.address2")}</Link>
               </li>
               <li>
-                <Link to="/">{t("footer.selection.testdrive")}</Link>
+                <Link to="/">{t("footer.branches.address3")}</Link>
+              </li>
+            </ul>
+          </div>
+          <div className={s["row-4"]}>
+            <ul>
+              <li>{t("footer.contacts.name")}</li>
+              <li>
+                <Link to="/">{t("footer.contacts.number1")}</Link>
+              </li>
+              <li>
+                <Link to="/">{t("footer.contacts.number1")}</Link>
+              </li>
+              <li>
+                <Link to="/">{t("footer.contacts.number1")}</Link>
               </li>
             </ul>
           </div>
