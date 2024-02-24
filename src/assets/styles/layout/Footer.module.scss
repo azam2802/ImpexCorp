@@ -12,15 +12,17 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 5vh;
-    padding-bottom: 7vh;
+    padding-bottom: 6vh;
     .row-2,
-    .row-3 {
-      margin-left: 180px;
+    .row-3,
+    .row-1 {
+      margin-right: 6vw;
     }
 
     .row-1,
     .row-2,
-    .row-3 {
+    .row-3,
+    .row-4 {
       ul li:first-child {
         font-size: 28px;
         font-weight: 600;
@@ -37,9 +39,14 @@ footer {
 
       ul li {
         color: #fff;
-        font-size: 24px;
+        font-family: Inter;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
         line-height: 70px;
+        letter-spacing: 0.44px;
         list-style-type: none;
+        width: 20vw;
       }
     }
   }
