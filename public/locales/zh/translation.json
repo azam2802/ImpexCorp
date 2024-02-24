@@ -23,23 +23,29 @@
   "footer": {
     "aboutus": {
       "name": "关于我们",
+      "company": "我们公司",
+      "locations": "我们的分支机构",
       "contacts": "联系方式",
-      "locations": "地点",
-      "review": "审查",
-      "promotion": "晋升"
+      "services": "服务"
     },
     "support": {
       "name": "支持",
-      "feedback": "反馈",
-      "delivery": "交货条件",
+      "feedback": "反馈意见",
+      "counseling": "在线咨询",
       "refund": "退款",
-      "howtoorder": "如何下订单?"
+      "insurance": "金融和保险服务"
     },
-    "selection": {
+    "branches": {
       "name": "选购",
-      "lineup": "车型阵容",
-      "services": "金融服务",
-      "testdrive": "试驾"
+      "address1": "VMG5+F44，比什凯克市，高尔基，沙卜丹-巴特尔街",
+      "address2": "比什凯克市安卡拉街 38a 号",
+      "address3": "Isakeeva str. 比什凯克市 Isakeeva 1/2"
+    },
+    "contacts": {
+      "name": "联系方式",
+      "number1": "+996 (555) 25-12-56",
+      "number2": "+996 (700) 22-25-32",
+      "number3": "+996 (708) 04-02-90"
     }
   }
 }
