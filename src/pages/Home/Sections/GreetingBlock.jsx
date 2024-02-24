@@ -4,12 +4,14 @@ import carImg from "@images/car.png"
 
 const GreetingBlock = () => {
   return (
-    <div>
-      <div className={s["parentBlock"]}>
-        <div className={s["firstBlock"]}>
-          <img className={s["carImg"]} src={carImg} alt="Car" />
+    <div className={s["container"]}>
+      <div className={s["row"]}>
+        <div className={s["col-6"]}>
+          <div className={s["carImg"]}>
+            <img src={carImg} alt="Car" />
+          </div>
         </div>
-        <div className="secondBlock">
+        <div className={s["col-6"]}>
           <h2 className={s["title"]}>
             Добро пожаловать в автосалон Impex Corp{" "}
           </h2>
