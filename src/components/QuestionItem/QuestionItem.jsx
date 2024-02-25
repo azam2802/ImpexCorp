@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import s from "@styles/components/QuestionItem.module.scss"
+
 export const QuestionItem = () => {
   const { t } = useTranslation()
   const [show, setShow] = useState(false)
@@ -11,7 +12,6 @@ export const QuestionItem = () => {
           {t("Lorem ipsum dolor sit amet.")}
         </h1>
         <span className={s["questions-plus"]}>
-          {/* <img src={plus} alt="plus" width={50} /> */}
           <span
             className={`${show === false ? s["plus-h"] : s["hide-h"]}`}></span>
           <span className={s["plus-g"]}></span>
