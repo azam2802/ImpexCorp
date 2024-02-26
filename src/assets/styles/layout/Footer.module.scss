@@ -13,16 +13,13 @@ footer {
     flex-wrap: wrap;
     padding-top: 5vh;
     padding-bottom: 6vh;
-    .row-2,
-    .row-3,
-    .row-1 {
-      margin-right: 6vw;
-    }
+    gap: 50px;
 
     .row-1,
     .row-2,
     .row-3,
     .row-4 {
+      width: 20%;
       ul li:first-child {
         font-size: 28px;
         font-weight: 600;
