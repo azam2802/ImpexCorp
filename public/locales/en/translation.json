@@ -2,19 +2,41 @@
   "text": "Text",
   "header": {
     "search": "Search",
-    "catalogue": "Catalogue",
+    "catalogue": "Catalog",
     "services": "Services",
     "calculator": "Calculator",
-    "ourcompany": "Our Company"
+    "ourcompany": "Our Company",
+    "HeaderCatalog": {
+      "model": "Popular models",
+      "countries": {
+        "title": "Сountry",
+        "items": {
+          "korea": "Korea",
+          "china": "China",
+          "japan": "Japan"
+        }
+      }
+    }
   },
-  "main": {
-    "model": "Popular models",
-    "countries": {
-      "title": "Сountry",
-      "items": {
-        "korea": "Korea",
-        "china": "China",
-        "japan": "Japan"
+
+  "HomePage": {
+    "GreetingBlock": {
+      "title": "Welcome to the Impex Corp car showroom",
+      "text": "Impex Corp is an auto company that offers its customers a wide range of products and services related to the automotive industry. Having become a leading player in the market, Impex Corp has several key advantages that make them an ideal choice for buyers",
+      "buttonText": "More details"
+    },
+    "CatalogBlock":{
+      "titles": {
+        "mainTitle":"Catalog",
+        "newProducts": "New products",
+        "fromChina": "Cars from China",
+        "fromKorea": "Cars from Korea"
+      },
+      "buttonText": "More details"
+    },
+    "FAQBlock":{
+      "titles":{
+        "mainTitle": "Frequently asked Questions"
       }
     }
   },

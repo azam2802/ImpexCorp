@@ -7,11 +7,19 @@ export const Catalogs = () => {
 
   return (
     <div className={s["catalogs"]}>
-      <h1 className={s["catalogs-title"]}>{t("Каталог")}</h1>
+      <h1 className={s["catalogs-title"]}>
+        {t("HomePage.CatalogBlock.titles.mainTitle")}
+      </h1>
       <ul>
-        <CatalogsItem catalogTitle={"Новинки"} />
-        <CatalogsItem catalogTitle={"Авто из Китая"} />
-        <CatalogsItem catalogTitle={"Авто из Кореи"} />
+        <CatalogsItem
+          catalogTitle={t("HomePage.CatalogBlock.titles.newProducts")}
+        />
+        <CatalogsItem
+          catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
+        />
+        <CatalogsItem
+          catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
+        />
       </ul>
     </div>
   )

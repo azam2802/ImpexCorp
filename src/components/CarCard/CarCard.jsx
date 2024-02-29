@@ -30,7 +30,9 @@ export const CarCard = () => {
       <hr />
       <div className={s["car-info"]}>
         <h1 className={s["car-price"]}>$ 120000</h1>
-        <button className={s["moreButton"]}>{t("Подробнее")}</button>
+        <button className={s["moreButton"]}>
+          {t("HomePage.CatalogBlock.buttonText")}
+        </button>
       </div>
     </li>
   )
