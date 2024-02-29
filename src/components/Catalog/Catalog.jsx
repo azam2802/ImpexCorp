@@ -16,27 +16,29 @@ const Catalog = ({ setShowCatalog }) => {
       <div className={s["container_childe"]}>
         <div className={s["row_1"]}>
           <div>
-            <p className={s["title"]}>{t("main.countries.title")}</p>
+            <p className={s["title"]}>
+              {t("header.HeaderCatalog.countries.title")}
+            </p>
             <ul>
               <li>
                 <Link to="/" onClick={() => setShowCatalog(false)}>
-                  {t("main.countries.items.korea")}
+                  {t("header.HeaderCatalog.countries.items.korea")}
                 </Link>
               </li>
               <li>
                 <Link to="/" onClick={() => setShowCatalog(false)}>
-                  {t("main.countries.items.china")}
+                  {t("header.HeaderCatalog.countries.items.china")}
                 </Link>
               </li>
               <li>
                 <Link to="/" onClick={() => setShowCatalog(false)}>
-                  {t("main.countries.items.japan")}
+                  {t("header.HeaderCatalog.countries.items.japan")}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <p className={s["title"]}>{t("main.model")}</p>
+            <p className={s["title"]}>{t("header.HeaderCatalog.model")}</p>
             <ul>
               <li>
                 <Link to="/" onClick={() => setShowCatalog(false)}>
