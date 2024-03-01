@@ -1,10 +1,9 @@
 import React from "react"
 import s from "@styles/pages/Home/Catalogs.module.scss"
 import { CarCard } from "@components/CarCard/CarCard"
-import right from "@images/chevron-right.svg"
-import { useTranslation } from "react-i18next"
 import PropTypes from "prop-types"
 import { motion } from "framer-motion"
+import { BsChevronRight } from "react-icons/bs"
 
 export const CatalogsItem = ({ catalogTitle }) => {
   const AnimBottom = {
@@ -19,7 +18,6 @@ export const CatalogsItem = ({ catalogTitle }) => {
     }),
   }
 
-  const { t } = useTranslation()
   const myArr = Array.from({ length: 6 })
   return (
     <motion.li
@@ -28,7 +26,7 @@ export const CatalogsItem = ({ catalogTitle }) => {
       viewport={{ once: true, amount: 0.2 }}
       className={s["catalogs-item"]}>
       <motion.h1 variants={AnimBottom} className={s["catalog-type-title"]}>
-        {t(catalogTitle)}
+        {catalogTitle}
       </motion.h1>
       <motion.ul
         variants={AnimBottom}
@@ -38,7 +36,10 @@ export const CatalogsItem = ({ catalogTitle }) => {
           <CarCard key={index} />
         ))}
         <li className={s["next-button"]}>
-          <img src={right} alt="right-chevron" />
+          <BsChevronRight
+            alt="right-chevron"
+            style={{ width: "80px", height: "100%", fill: "#fe9f31" }}
+          />
         </li>
       </motion.ul>
     </motion.li>

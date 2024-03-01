@@ -35,9 +35,8 @@ header {
     }
     input[type="search"]::-webkit-search-cancel-button {
       appearance: none;
-      width: 25px;
-      height: 25px;
-      background: url(../../img/cross_114275.svg) center no-repeat ;
+      width: 20px;
+      height: 20px;
       background-size: cover;
     }
 
@@ -56,7 +55,10 @@ header {
       color: orange;
       display: inline;
     }
-    img[alt="search_icon"] {
+    svg[alt="search_icon"] {
+      fill: gray;
+      stroke: gray;
+      stroke-width: 1px;
       position: absolute;
       right: 15px;
       bottom: 25%;

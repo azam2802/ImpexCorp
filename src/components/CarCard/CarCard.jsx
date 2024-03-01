@@ -10,21 +10,21 @@ export const CarCard = () => {
   const { t } = useTranslation()
   return (
     <li className={s["carCardItem"]}>
-      <button className={s["compactButton"]}>{t("Compact")}</button>
+      <button className={s["compactButton"]}>Compact</button>
       <img src={carImage} className={s["car-image"]} alt="" />
-      <h1 className={s["car-name"]}>{t("BYD Tang II")}</h1>
+      <h1 className={s["car-name"]}>BYD Tang II</h1>
       <ul className={s["car-struct-list"]}>
         <li className={s["car-struct-list-item"]}>
           <img className={s["car-struct-image"]} src={Icon} alt="" />
-          <p className={s["car-struct-text"]}> {t("25 000 km")}</p>
+          <p className={s["car-struct-text"]}>25 000 km</p>
         </li>
         <li className={s["car-struct-list-item"]}>
           <img className={s["car-struct-image"]} src={Icon2} alt="" />
-          <p className={s["car-struct-text"]}> {t("Auto")}</p>
+          <p className={s["car-struct-text"]}>Auto</p>
         </li>
         <li className={s["car-struct-list-item"]}>
           <img className={s["car-struct-image"]} src={Icon3} alt="" />
-          <p className={s["car-struct-text"]}>{t("4")}</p>
+          <p className={s["car-struct-text"]}>4</p>
         </li>
       </ul>
       <hr />
