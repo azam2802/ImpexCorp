@@ -7,7 +7,7 @@ import BackToTop from "@ui/BackToTop/BackToTop"
 import Home from "@pages/Home/Home"
 import { Routes, Route } from "react-router-dom"
 
-function App() {
+const App = () => {
   return (
     <Suspense fallback="Loading...">
       <div className="App">
