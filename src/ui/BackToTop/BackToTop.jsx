@@ -3,12 +3,12 @@ import { PiCaretDoubleUpThin } from "react-icons/pi"
 import s from "@styles/ui/BackToTop.module.scss"
 
 const BackToTop = () => {
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", () => {
     let scroll = document.querySelector("#top-btn")
     scroll.classList.toggle(s["active"], window.scrollY > 200)
   })
 
-  function toTop() {
+  const toTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
