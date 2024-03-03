@@ -1,7 +1,7 @@
 import React from "react"
 import s from "@styles/components/CarCard.module.scss"
 import { useTranslation } from "react-i18next"
-import carImage from "@images/carImage.png"
+import carImage from "@images/carImage.webp"
 import Icon from "@images/Union.svg"
 import Icon2 from "@images/Vector (1).svg"
 import Icon3 from "@images/Vector.svg"
