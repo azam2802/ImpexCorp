@@ -8,8 +8,23 @@ import WhatsUpIcon from "@images/image 7.png"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
+import en from "../../../public/locales/en/translation.json"
+import ru from "../../../public/locales/ru/translation.json"
+import ky from "../../../public/locales/ky/translation.json"
+import zh from "../../../public/locales/zh/translation.json"
+
 const Footer = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const languageData = { en, ru, ky, zh }
+  const currentLanguage = languageData[i18n.language] || en
+
+  const renderLinks = (links) => {
+    return Object.entries(links).map(([key, value]) => (
+      <li key={key}>
+        <Link to="/">{value}</Link>
+      </li>
+    ))
+  }
 
   return (
     <div>
@@ -23,87 +38,49 @@ const Footer = () => {
           <div className={s["row-1"]}>
             <ul>
               <li>{t("footer.aboutus.name")}</li>
-              <li>
-                <Link to="/">{t("footer.aboutus.contacts")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.aboutus.company")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.aboutus.locations")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.aboutus.contacts")}</Link>
-              </li>
+              {renderLinks(currentLanguage.footer.aboutus)}
             </ul>
           </div>
           <div className={s["row-2"]}>
             <ul>
               <li>{t("footer.support.name")}</li>
-              <li>
-                <Link to="/">{t("footer.support.feedback")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.support.counseling")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.support.refund")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.support.insurance")}</Link>
-              </li>
+              {renderLinks(currentLanguage.footer.support)}
             </ul>
           </div>
           <div className={s["row-3"]}>
             <ul>
               <li>{t("footer.branches.name")}</li>
-              <li>
-                <Link to="/">{t("footer.branches.address1")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.branches.address2")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.branches.address3")}</Link>
-              </li>
+              {renderLinks(currentLanguage.footer.branches)}
             </ul>
           </div>
           <div className={s["row-4"]}>
             <ul>
               <li>{t("footer.contacts.name")}</li>
-              <li>
-                <Link to="/">{t("footer.contacts.number1")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.contacts.number1")}</Link>
-              </li>
-              <li>
-                <Link to="/">{t("footer.contacts.number1")}</Link>
-              </li>
+              {renderLinks(currentLanguage.footer.contacts)}
             </ul>
           </div>
         </div>
         <div className={s["social-media"]}>
           <ul>
             <li>
-              <a href="#">
+              <Link to="#">
                 <img src={TelegramIcon} alt="Telegram Icon" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="#">
                 <img src={InstagramIcon} alt="Instagram Icon" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="#">
                 <img src={TwitterIcon} alt="Twitter Icon" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="#">
                 <img src={WhatsUpIcon} alt="WhatsApp Icon" />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
