@@ -8,7 +8,7 @@ import { useLang } from "@store/store"
 import { useTranslation } from "react-i18next"
 import PropTypes from "prop-types"
 import "@styles/ui/LangSwitcher.scss"
-import chevronDown from "@images/chevron-down.svg"
+import { FaChevronDown } from "react-icons/fa6"
 
 const LangSwitcher = ({ onCloseCatalog }) => {
   const { changeLang } = useLang()
@@ -47,7 +47,7 @@ const LangSwitcher = ({ onCloseCatalog }) => {
             <img src={RussianFlag} alt="Russia" />
           </div>
           Рус
-          <img src={chevronDown} className="langArrow" alt="arrowDown" />
+          <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       ) : i18n.language == "ky" ? (
         <button
@@ -59,7 +59,7 @@ const LangSwitcher = ({ onCloseCatalog }) => {
             <img src={KyrgyzFlag} alt="Kyrgyz" />
           </div>
           Кыр
-          <img src={chevronDown} className="langArrow" alt="arrowDown" />
+          <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       ) : i18n.language == "en" ? (
         <button
@@ -71,7 +71,7 @@ const LangSwitcher = ({ onCloseCatalog }) => {
             <img src={UKFlag} alt="English" />
           </div>
           Eng
-          <img src={chevronDown} className="langArrow" alt="arrowDown" />
+          <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       ) : (
         <button
@@ -83,7 +83,7 @@ const LangSwitcher = ({ onCloseCatalog }) => {
             <img src={ChinaFlag} alt="Chinese" />
           </div>
           文本
-          <img src={chevronDown} className="langArrow" alt="arrowDown" />
+          <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       )}
       <div className="dropdown-content">
