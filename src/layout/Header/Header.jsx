@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react"
-import s from "@styles/layout/Header.module.scss"
-import Logo from "@images/Logo.svg"
-import Search from "@images/search.svg"
-import LangSwitcher from "@ui/LangSwitcher/LangSwitcher"
-import BurgerMenuBtn from "@ui/BurgerMenuBtn/BurgerMenuBtn"
-import Navbar from "@components/HeaderNavbar/Navbar"
-import { Link } from "react-router-dom"
-import { useTranslation } from "react-i18next"
 import Catalog from "@components/Catalog/Catalog"
+import Navbar from "@components/HeaderNavbar/Navbar"
+import Logo from "@images/Logo.svg"
+import s from "@styles/layout/Header.module.scss"
+import BurgerMenuBtn from "@ui/BurgerMenuBtn/BurgerMenuBtn"
+import LangSwitcher from "@ui/LangSwitcher/LangSwitcher"
+import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
+import { CiSearch } from "react-icons/ci"
+import { MdOutlineCancel } from "react-icons/md"
+import { Link } from "react-router-dom"
 
 const Header = () => {
   const { t } = useTranslation()
@@ -22,15 +23,6 @@ const Header = () => {
   const onCloseCatalog = () => {
     setShowCatalog(false)
   }
-
-  useEffect(() => {
-    const searchIco = document.querySelector("#search-ico")
-    if (showSearchIco != "") {
-      searchIco.style.display = "none"
-    } else {
-      searchIco.style.display = "unset"
-    }
-  }, [showSearchIco])
 
   return (
     <div>
@@ -49,12 +41,21 @@ const Header = () => {
                 <input
                   type="search"
                   placeholder={t("header.search")}
+                  value={showSearchIco}
                   onChange={(e) => {
                     setShowSearchIco(e.target.value)
                   }}
                   onClick={onCloseCatalog}
                 />
-                <img src={Search} alt="search_icon" id="search-ico" />
+                {showSearchIco.trim() == "" ? (
+                  <CiSearch alt="search_icon" />
+                ) : (
+                  <MdOutlineCancel
+                    alt="search_icon"
+                    strokeOpacity="0"
+                    onClick={() => setShowSearchIco("")}
+                  />
+                )}
               </div>
             </div>
 

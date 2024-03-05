@@ -4,72 +4,26 @@
   height: 60px;
   background-color: #d8d8d8;
   bottom: 700px;
-  right: 5vw;
+  right: 3vw;
   z-index: 99;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 15px;
+  padding: 10px;
   border-radius: 50%;
   cursor: pointer;
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
-  img {
+  box-shadow: 0 1px 5px black;
+
+  svg {
+    vertical-align: middle;
     width: 100%;
-  }
-}
-
-@keyframes arrowUp {
-  0% {
-    padding: 15px;
-  }
-
-  50% {
-    padding: 0px 25px;
-  }
-
-  75% {
-    padding: 25px 15px 25px 15px;
-  }
-
-  100% {
-    padding: 15px;
-  }
-}
-
-@keyframes arrowVisibility {
-  0% {
-    opacity: 1;
-    transition: all 0.3s;
-  }
-
-  50% {
-    opacity: 0;
-    padding: 0 15px;
-  }
-
-  75% {
-    opacity: 0;
-    padding: -20px 15px;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.top-btn:hover {
-  animation-name: arrowUp;
-  animation-duration: 0.3s;
-  img {
-    animation: arrowVisibility 0.3s;
+    height: 100%;
   }
 }
 
 .active {
   visibility: visible;
   opacity: 1;
-  bottom: 100px;
+  bottom: 80px;
   z-index: 99;
 }

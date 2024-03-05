@@ -1,23 +1,29 @@
-import React from "react"
-import "./App.scss"
-import { Suspense } from "react"
-import Header from "@layout/Header/Header"
-import Footer from "@layout/Footer/Footer"
-import BackToTop from "@ui/BackToTop/BackToTop"
+import Layout from "@layout/Layout"
 import Home from "@pages/Home/Home"
-import { Routes, Route } from "react-router-dom"
+import React, { Suspense } from "react"
+import { Route, Routes } from "react-router-dom"
+import "./App.scss"
+import AboutUs from "@pages/AboutUs/AboutUs"
 
-function App() {
+const App = () => {
+  const router = [
+    {
+      path: "aboutus",
+      element: <AboutUs />,
+    },
+  ]
+
   return (
     <Suspense fallback="Loading...">
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <BackToTop />
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          {router.map((item, id) => (
+            <Route key={id} path={item.path} element={item.element} />
+          ))}
+          <Route path="*" element={<h1>ERROR 404</h1>} />
+        </Route>
+      </Routes>
     </Suspense>
   )
 }
