@@ -24,6 +24,7 @@
         width: 10px;
         height: 100%;
         transition: 0.2s;
+        transform-origin: 0 0;
         position: absolute;
         background-color: #000;
         left: 50%;
@@ -34,7 +35,8 @@
         width: 10px;
         height: 100%;
         transition: 0.2s;
-        opacity: 0;
+        transform-origin: 0 0;
+        rotate: 90deg;
         position: absolute;
         background-color: #000;
         left: 50%;
@@ -50,7 +52,6 @@
         top: 50%;
         transform: translate(-50%, -50%);
       }
-      // css is changed
     }
   }
 
