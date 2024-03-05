@@ -1,23 +1,18 @@
-import React from "react"
-import "./App.scss"
-import { Suspense } from "react"
-import Header from "@layout/Header/Header"
-import Footer from "@layout/Footer/Footer"
-import BackToTop from "@ui/BackToTop/BackToTop"
+import Layout from "@layout/Layout"
 import Home from "@pages/Home/Home"
-import { Routes, Route } from "react-router-dom"
+import React, { Suspense } from "react"
+import { Route, Routes } from "react-router-dom"
+import "./App.scss"
 
 const App = () => {
   return (
     <Suspense fallback="Loading...">
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <BackToTop />
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="*" element={<h1>ERROR 404</h1>} />
+        </Route>
+      </Routes>
     </Suspense>
   )
 }
