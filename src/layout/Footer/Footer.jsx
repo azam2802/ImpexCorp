@@ -8,15 +8,9 @@ import WhatsUpIcon from "@images/image 7.png"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
-import en from "../../../public/locales/en/translation.json"
-import ru from "../../../public/locales/ru/translation.json"
-import ky from "../../../public/locales/ky/translation.json"
-import zh from "../../../public/locales/zh/translation.json"
-
 const Footer = () => {
   const { t, i18n } = useTranslation()
-  const languageData = { en, ru, ky, zh }
-  const currentLanguage = languageData[i18n.language] || en
+  const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
 
   const renderLinks = (links) => {
     return Object.entries(links).map(([key, value]) => (
