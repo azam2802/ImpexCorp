@@ -12,8 +12,7 @@ export const QuestionItem = () => {
         <span className={s["questions-plus"]}>
           <span
             className={`${show === false ? s["plus-h"] : s["hide-h"]}`}></span>
-          <span
-            className={`${show === false ? s["plus-g"] : s["hide-g"]}`}></span>
+          <span className={s["plus-g"]}></span>
         </span>
       </div>
       <hr />
