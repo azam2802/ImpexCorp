@@ -46,16 +46,12 @@
     "aboutus": {
       "name": "关于我们",
       "company": "我们公司",
-      "locations": "我们的分支机构",
-      "contacts": "联系方式",
       "services": "服务"
     },
     "support": {
       "name": "支持",
       "feedback": "反馈意见",
-      "counseling": "在线咨询",
-      "refund": "退款",
-      "insurance": "金融和保险服务"
+      "counseling": "在线咨询"
     },
     "branches": {
       "name": "选购",

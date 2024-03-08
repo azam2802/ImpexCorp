@@ -46,16 +46,12 @@
     "aboutus": {
       "name": "О нас",
       "company": "Наша копмания",
-      "locations": "Наши филиалы",
-      "contacts": "Контакты",
       "services": "Услуги"
     },
     "support": {
       "name": "Поддержка",
       "feedback": "Обратная связь",
-      "counseling": "Онлайн-консультации",
-      "refund": "Гарантии",
-      "insurance": "Финансовые и страховые услуги "
+      "counseling": "Онлайн-консультации"
     },
     "branches": {
       "name": "Наши филиалы",

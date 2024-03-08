@@ -47,16 +47,12 @@
     "aboutus": {
       "name": "About Us",
       "company": "Our company",
-      "locations": "Our branches",
-      "contacts": "Contacts",
       "services": "Services"
     },
     "support": {
       "name": "Support",
       "feedback": "Feedback",
-      "counseling": "Online consultations",
-      "refund": "Refund",
-      "insurance": "Financial and insurance services"
+      "counseling": "Online consultations"
     },
     "branches": {
       "name": "Our branches",
