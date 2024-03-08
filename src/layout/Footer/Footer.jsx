@@ -1,6 +1,6 @@
 import React from "react"
 import s from "@styles/layout/Footer.module.scss"
-import Logo from "@images/NewLogo.svg"
+import Logo from "@images/Logo.svg"
 import TelegramIcon from "@images/TelegramIcon.webp"
 import InstagramIcon from "@images/InstagramIcon.webp"
 import GmailIcon from "@images/GmailIcon.webp"

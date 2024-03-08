@@ -8,12 +8,12 @@ const BurgerMenuBtn = () => {
       <nav className={s["mob-nav"]}>
         <div className={s.row}>
           <div className={s["col-6"]}>
+            <img src={Logo} alt="Impex Logotype" />
+          </div>
+          <div className={s["col-6"]}>
             <div className={s["burger-btn"]}>
               <span></span>
             </div>
-          </div>
-          <div className={s["col-6"]}>
-            <img src={Logo} alt="Impex Logotype" />
           </div>
         </div>
       </nav>

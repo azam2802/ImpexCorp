@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react"
-import RussianFlag from "@images/russia.png"
-import ChinaFlag from "@images/china.png"
-import KyrgyzFlag from "@images/kyrgyzstan.png"
-import UKFlag from "@images/united-kingdom.png"
+import RussianFlag from "@images/russia.svg"
+import ChinaFlag from "@images/china.svg"
+import KyrgyzFlag from "@images/kyrgyzstan.svg"
+import UKFlag from "@images/usa.svg"
 import { useLang } from "@store/store"
 import { useTranslation } from "react-i18next"
 import PropTypes from "prop-types"
@@ -46,7 +46,7 @@ const LangSwitcher = ({ onCloseCatalog }) => {
           <div>
             <img src={RussianFlag} alt="Russia" />
           </div>
-          Рус
+          Русский
           <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       ) : i18n.language == "ky" ? (
@@ -58,7 +58,7 @@ const LangSwitcher = ({ onCloseCatalog }) => {
           <div>
             <img src={KyrgyzFlag} alt="Kyrgyz" />
           </div>
-          Кыр
+          Кыргыз
           <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       ) : i18n.language == "en" ? (
@@ -70,7 +70,7 @@ const LangSwitcher = ({ onCloseCatalog }) => {
           <div>
             <img src={UKFlag} alt="English" />
           </div>
-          Eng
+          English
           <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       ) : (
@@ -82,14 +82,14 @@ const LangSwitcher = ({ onCloseCatalog }) => {
           <div>
             <img src={ChinaFlag} alt="Chinese" />
           </div>
-          文本
+          中国人
           <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       )}
       <div className="dropdown-content">
-        <button onClick={() => changeLanguage("Ru")}>Рус</button>
-        <button onClick={() => changeLanguage("En")}>Eng</button>
-        <button onClick={() => changeLanguage("Ky")}>Кыр</button>
+        <button onClick={() => changeLanguage("Ru")}>Русский</button>
+        <button onClick={() => changeLanguage("En")}>English</button>
+        <button onClick={() => changeLanguage("Ky")}>Кыргыз</button>
         <button onClick={() => changeLanguage("Zh")}>中国人</button>
       </div>
     </div>
