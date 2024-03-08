@@ -1,5 +1,5 @@
 .container{
-  width: 90%;
+  width: 94%;
   margin: 0 auto;
 }
 
@@ -8,22 +8,11 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-block: 10vh;
-}
-
-.carImg {
-  padding: 1vw;
-  border: 4px solid #FE9F31;
-  border-radius: 15px;
-  img{
-    width: 100%;
-    border: 2px solid #FE9F31;
-    border-radius: 15px;
-  }
+  padding-block: 20vh;
 }
 
 .col-6{
-  width: 48%;
+  width: 45%;
 }
 
 .button{
@@ -32,14 +21,38 @@
   font-size: 1.6rem;
   width: 19vw;
   padding: 0.6em;
-  background-color: orange;
+  border: 3px solid #19746B; 
+  color: #19746B; 
   border-radius: 10px;
+  float: right;
 }
+
+.prevButton,
+.nextButton {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.prevButton {
+  left:17px;
+}
+
+.nextButton {
+  left: 47.5vw;
+}
+
 
 .title {
   color: #000;
   font-family: Inter;
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
 }
 
@@ -49,5 +62,5 @@
   font-size: 1.6rem;
   font-weight: 400;
   margin: 21px 0 65px 0;
-  width: 35vw;
+  width: 44vw;
 }
