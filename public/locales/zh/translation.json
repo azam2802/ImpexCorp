@@ -24,17 +24,17 @@
       "text": "Impex Corp 是一家汽车公司，为客户提供与汽车行业相关的广泛产品和服务。 Impex Corp 已成为市场领先者，拥有多项关键优势，使其成为买家的理想选择",
       "buttonText": "更多细节"
     },
-    "CatalogBlock":{
+    "CatalogBlock": {
       "titles": {
-        "mainTitle":"目录",
+        "mainTitle": "目录",
         "newProducts": "新东西",
         "fromChina": "来自中国的汽车",
         "fromKorea": "来自韩国的汽车"
       },
       "buttonText": "更多细节"
     },
-    "FAQBlock":{
-      "titles":{
+    "FAQBlock": {
+      "titles": {
         "mainTitle": "常问问题"
       }
     }
@@ -43,16 +43,12 @@
     "aboutus": {
       "name": "关于我们",
       "company": "我们公司",
-      "locations": "我们的分支机构",
-      "contacts": "联系方式",
       "services": "服务"
     },
     "support": {
       "name": "支持",
       "feedback": "反馈意见",
-      "counseling": "在线咨询",
-      "refund": "退款",
-      "insurance": "金融和保险服务"
+      "counseling": "在线咨询"
     },
     "branches": {
       "name": "选购",

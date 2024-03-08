@@ -1,15 +1,15 @@
 import React from "react"
 import s from "@styles/layout/Footer.module.scss"
-import Logo from "@images/Logo.svg"
-import TelegramIcon from "@images/image 4.png"
-import InstagramIcon from "@images/image 5.png"
-import TwitterIcon from "@images/image 6.png"
-import WhatsUpIcon from "@images/image 7.png"
+import Logo from "@images/NewLogo.svg"
+import TelegramIcon from "@images/TelegramIcon.webp"
+import InstagramIcon from "@images/InstagramIcon.webp"
+import GmailIcon from "@images/GmailIcon.webp"
+import WhatsUpIcon from "@images/WhatsUpIcon.webp"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
 const Footer = () => {
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation()
   const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
 
   const renderLinks = (links) => {
@@ -31,26 +31,22 @@ const Footer = () => {
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>
             <ul>
-              <li>{t("footer.aboutus.name")}</li>
-              {renderLinks(currentLanguage.footer.aboutus)}
+              <li>{renderLinks(currentLanguage.footer.aboutus)}</li>
             </ul>
           </div>
           <div className={s["row-2"]}>
             <ul>
-              <li>{t("footer.support.name")}</li>
-              {renderLinks(currentLanguage.footer.support)}
+              <li> {renderLinks(currentLanguage.footer.support)}</li>
             </ul>
           </div>
           <div className={s["row-3"]}>
             <ul>
-              <li>{t("footer.branches.name")}</li>
-              {renderLinks(currentLanguage.footer.branches)}
+              <li>{renderLinks(currentLanguage.footer.branches)}</li>
             </ul>
           </div>
           <div className={s["row-4"]}>
             <ul>
-              <li>{t("footer.contacts.name")}</li>
-              {renderLinks(currentLanguage.footer.contacts)}
+              <li>{renderLinks(currentLanguage.footer.contacts)}</li>
             </ul>
           </div>
         </div>
@@ -68,7 +64,7 @@ const Footer = () => {
             </li>
             <li>
               <Link to="#">
-                <img src={TwitterIcon} alt="Twitter Icon" />
+                <img src={GmailIcon} alt="Gmail Icon" />
               </Link>
             </li>
             <li>
