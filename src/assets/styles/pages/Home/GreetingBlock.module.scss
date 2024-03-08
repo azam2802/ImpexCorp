@@ -1,9 +1,9 @@
-.container{
+.container {
   width: 94%;
   margin: 0 auto;
 }
 
-.row  {
+.row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,56 +11,82 @@
   padding-block: 20vh;
 }
 
-.col-6{
+.col-6 {
   width: 45%;
 }
 
-.button{
+.button {
   border: none;
   font-size: 3rem;
   font-size: 1.6rem;
   width: 19vw;
   padding: 0.6em;
-  border: 3px solid #19746B; 
-  color: #19746B; 
+  border: 3px solid #19746B;
+  color: #19746B;
   border-radius: 10px;
   float: right;
 }
 
-.prevButton,
-.nextButton {
-  width: 35px;
-  height: 35px;
-  flex-shrink: 0;
-  position: absolute;
-  top: 60%;
-  transform: translateY(-50%);
-  border: none;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0.06);
-}
-
-.prevButton {
-  left:17px;
-}
-
-.nextButton {
-  left: 47.5vw;
-}
-
-
-.title {
+.title,
+.text {
   color: #000;
   font-family: Inter;
+  font-weight: 400;
+}
+
+.title {
   font-size: 1.9rem;
   font-weight: 700;
 }
 
 .text {
-  color: #000;
-  font-family: Inter;
   font-size: 1.6rem;
-  font-weight: 400;
   margin: 21px 0 65px 0;
   width: 44vw;
+}
+
+.carImg img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .col-6 {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .title,
+  .text {
+    width: 100%;
+    margin: 10px 0; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%; 
+  }
+
+  .col-6 {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 15px; 
+  }
+
+  .title {
+    font-size: 1.7rem; 
+  }
+
+  .text {
+    font-size: 1.5rem; 
+    margin: 10px 0; 
+  }
 }

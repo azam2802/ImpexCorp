@@ -1,6 +1,4 @@
 import carImg from "@images/car.png"
-import prevIcon from "@images/prev.svg"
-import nextIcon from "@images/next.svg" // Подставьте правильные пути к вашим SVG-иконкам
 import s from "@styles/pages/Home/GreetingBlock.module.scss"
 import { motion } from "framer-motion"
 import React from "react"
@@ -57,25 +55,6 @@ const GreetingBlock = () => {
             variants={AnimRight}
             className={s["button"]}>
             {t("HomePage.GreetingBlock.buttonText")}
-          </motion.button>
-          {/* Добавляем кнопки prev и next */}
-          <motion.button
-            custom={4}
-            variants={AnimRight}
-            className={s["prevButton"]}
-            onClick={() => {
-              // Обработчик для кнопки prev
-            }}>
-            <img src={prevIcon} alt="Previous" />
-          </motion.button>
-          <motion.button
-            custom={5}
-            variants={AnimRight}
-            className={s["nextButton"]}
-            onClick={() => {
-              // Обработчик для кнопки next
-            }}>
-            <img src={nextIcon} alt="Next" />
           </motion.button>
         </div>
       </div>
