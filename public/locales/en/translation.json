@@ -25,17 +25,17 @@
       "text": "Impex Corp is an auto company that offers its customers a wide range of products and services related to the automotive industry. Having become a leading player in the market, Impex Corp has several key advantages that make them an ideal choice for buyers",
       "buttonText": "More details"
     },
-    "CatalogBlock":{
+    "CatalogBlock": {
       "titles": {
-        "mainTitle":"Catalog",
+        "mainTitle": "Catalog",
         "newProducts": "New products",
         "fromChina": "Cars from China",
         "fromKorea": "Cars from Korea"
       },
       "buttonText": "More details"
     },
-    "FAQBlock":{
-      "titles":{
+    "FAQBlock": {
+      "titles": {
         "mainTitle": "Frequently asked Questions"
       }
     }
@@ -44,16 +44,12 @@
     "aboutus": {
       "name": "About Us",
       "company": "Our company",
-      "locations": "Our branches",
-      "contacts": "Contacts",
       "services": "Services"
     },
     "support": {
       "name": "Support",
       "feedback": "Feedback",
-      "counseling": "Online consultations",
-      "refund": "Refund",
-      "insurance": "Financial and insurance services"
+      "counseling": "Online consultations"
     },
     "branches": {
       "name": "Our branches",
