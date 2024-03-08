@@ -24,19 +24,22 @@
       "text": "Impex Corp 是一家汽车公司，为客户提供与汽车行业相关的广泛产品和服务。 Impex Corp 已成为市场领先者，拥有多项关键优势，使其成为买家的理想选择",
       "buttonText": "更多细节"
     },
-    "CatalogBlock":{
+    "CatalogBlock": {
       "titles": {
-        "mainTitle":"目录",
+        "mainTitle": "目录",
         "newProducts": "新东西",
         "fromChina": "来自中国的汽车",
         "fromKorea": "来自韩国的汽车"
       },
       "buttonText": "更多细节"
     },
-    "FAQBlock":{
-      "titles":{
+    "FAQBlock": {
+      "titles": {
         "mainTitle": "常问问题"
       }
+    },
+    "firstBlock": {
+      "title": "安全、可靠、时尚，体现在每个细节上"
     }
   },
   "footer": {
@@ -66,5 +69,8 @@
       "number2": "+996 (700) 22-25-32",
       "number3": "+996 (708) 04-02-90"
     }
+  },
+  "uiButton": {
+    "title": "称呼"
   }
 }

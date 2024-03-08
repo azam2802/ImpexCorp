@@ -1,0 +1,26 @@
+.button {
+  display: flex;
+  padding: 0.6rem 4rem 0.6rem 4rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.625rem;
+  border: none;
+  border: 1px solid #19746b;
+  color: #19746b;
+}
+.button:hover {
+  color: #fff;
+  background: #19746b;
+}
+.button:active {
+  color: #fff;
+  background: #0f5c54;
+}
+
+@media (max-width: 348.561px) {
+  .button {
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    font-size: 8px;
+    border-radius: 5px;
+  }
+}
