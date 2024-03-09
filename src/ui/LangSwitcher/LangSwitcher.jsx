@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import RussianFlag from "@images/russia.svg"
 import ChinaFlag from "@images/china.svg"
 import KyrgyzFlag from "@images/kyrgyzstan.svg"
-import UKFlag from "@images/usa.svg"
+import UsaFlag from "@images/usa.svg"
 import { useLang } from "@store/store"
 import { useTranslation } from "react-i18next"
 import PropTypes from "prop-types"
@@ -19,12 +19,12 @@ const LangSwitcher = ({ onCloseCatalog }) => {
     const dropdown = document.querySelector(".dropdown-content")
     const arrow = document.querySelector(".langArrow")
     if (!showDrop) {
-      dropdown.style.display = "flex"
-      arrow.style.transform = "rotate(180deg)"
+      dropdown.classList.add("dropdown-content-show")
+      arrow.classList.add("langArrow-active")
       setShowDrop((prev) => !prev)
     } else {
-      dropdown.style.display = "none"
-      arrow.style.transform = "unset"
+      dropdown.classList.remove("dropdown-content-show")
+      arrow.classList.remove("langArrow-active")
       setShowDrop((prev) => !prev)
     }
   }
@@ -68,7 +68,7 @@ const LangSwitcher = ({ onCloseCatalog }) => {
             onCloseCatalog()
           }}>
           <div>
-            <img src={UKFlag} alt="English" />
+            <img src={UsaFlag} alt="English" />
           </div>
           English
           <FaChevronDown className="langArrow" alt="arrowDown" />
@@ -87,10 +87,22 @@ const LangSwitcher = ({ onCloseCatalog }) => {
         </button>
       )}
       <div className="dropdown-content">
-        <button onClick={() => changeLanguage("Ru")}>Русский</button>
-        <button onClick={() => changeLanguage("En")}>English</button>
-        <button onClick={() => changeLanguage("Ky")}>Кыргыз</button>
-        <button onClick={() => changeLanguage("Zh")}>中国人</button>
+        <button onClick={() => changeLanguage("Ru")}>
+          <img src={RussianFlag} alt="Russia" />
+          Русский
+        </button>
+        <button onClick={() => changeLanguage("En")}>
+          <img src={UsaFlag} alt="Russia" />
+          English
+        </button>
+        <button onClick={() => changeLanguage("Ky")}>
+          <img src={KyrgyzFlag} alt="Russia" />
+          Кыргыз
+        </button>
+        <button onClick={() => changeLanguage("Zh")}>
+          <img src={ChinaFlag} alt="Russia" />
+          中国人
+        </button>
       </div>
     </div>
   )

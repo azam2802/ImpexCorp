@@ -3,6 +3,7 @@ header {
   font-size: 1.2rem;
   font-family: "Montserrat";
   background: #f4f4f0;
+  box-shadow: 0 0 5px #000;
   @media screen and (max-width: 1024px) {
     .pc-nav {
       display: none;
@@ -11,14 +12,17 @@ header {
 }
 
 .row {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  .col-4 {
+  .col-6 {
     width: 33.3%;
     display: flex;
     align-items: center;
-   
+    svg{
+      margin-right: 3vw;
+    }
   }
 }

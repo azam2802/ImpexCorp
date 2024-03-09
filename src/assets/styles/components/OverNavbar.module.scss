@@ -1,0 +1,9 @@
+@import '../globalStyles.scss';
+
+.OverNavbar{
+    background-color: #f4f4f0;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-direction: row-reverse ;
+}
