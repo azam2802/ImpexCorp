@@ -40,7 +40,10 @@
       }
     },
     "firstBlock": {
-      "title": "security, reliability, and style in every detail!"
+      "title1": "security,",
+      "title2": "reliability, and style in",
+      "title3": "every detail!",
+      "button": "Call"
     }
   },
   "footer": {
@@ -66,8 +69,5 @@
       "number2": "+996 (700) 22-25-32",
       "number3": "+996 (708) 04-02-90"
     }
-  },
-  "uiButton": {
-    "title": "call"
   }
 }
