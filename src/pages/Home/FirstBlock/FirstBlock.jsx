@@ -18,7 +18,7 @@ const FirstBlock = () => {
           </div>
           <div>
             <button className={s["button"]}>
-              {t("HomePage.firstBlock.button")}
+              {t("HomePage.firstBlock.buttonText")}
             </button>
           </div>
         </div>
