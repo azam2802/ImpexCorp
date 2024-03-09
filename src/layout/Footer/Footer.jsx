@@ -1,12 +1,12 @@
 import React from "react"
 import s from "@styles/layout/Footer.module.scss"
-import Logo from "@images/Logo.svg"
 import TelegramIcon from "@images/TelegramIcon.webp"
 import InstagramIcon from "@images/InstagramIcon.webp"
 import GmailIcon from "@images/GmailIcon.webp"
 import WhatsUpIcon from "@images/WhatsUpIcon.webp"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
+import Logo from "@ui/Logo/Logo"
 
 const Footer = () => {
   const { i18n } = useTranslation()
@@ -25,7 +25,7 @@ const Footer = () => {
       <footer>
         <div className={s["logo"]}>
           <Link to="/">
-            <img src={Logo} alt="Impex Logotype" />
+            <Logo />
           </Link>
         </div>
         <div className={s["footer-content"]}>
