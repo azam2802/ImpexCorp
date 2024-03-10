@@ -38,12 +38,12 @@ const GreetingBlock = () => {
       viewport={{ once: true, amount: 0.2 }}
       className={styles.container}>
       <div className={styles.row}>
-        <div className={styles["col-6"]}>
+        <div className={styles.col - 6}>
           <motion.div variants={AnimLeft} className={styles.carImg}>
             <img src={carImg} alt="Car" />
           </motion.div>
         </div>
-        <div className={styles["col-6"]}>
+        <div className={styles.col - 6}>
           <motion.h2 custom={1} variants={AnimRight} className={styles.title}>
             {t("HomePage.GreetingBlock.title")}
           </motion.h2>
