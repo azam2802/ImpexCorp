@@ -1,5 +1,5 @@
 .container {
-  width: 94%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@
   font-size: 3rem;
   font-size: 1.6rem;
   width: 19vw;
-  padding: 0.6em;
+  padding: 0.4em;
   border: 3px solid #19746B;
   color: #19746B;
   border-radius: 10px;
@@ -35,14 +35,14 @@
 }
 
 .title {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
 .text {
   font-size: 1.6rem;
   margin: 21px 0 65px 0;
-  width: 44vw;
+  width: 40.4vw;
 }
 
 .carImg img {
@@ -56,8 +56,9 @@
   }
 
   .button {
-    width: 100%;
+    width: 60%;
     margin-top: 20px;
+    padding: 0.4em;
   }
 
   .title,
@@ -77,8 +78,9 @@
   }
 
   .button {
-    width: 100%;
+    width: 60%;
     margin-top: 15px; 
+    padding: 0.4em;
   }
 
   .title {
