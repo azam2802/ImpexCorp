@@ -7,7 +7,7 @@
 
     .next-button {
       width: 288px;
-      height: 677px;
+      height: 550px;
       flex-shrink: 0;
       border-radius: 15px;
       background: #fff;
@@ -15,21 +15,11 @@
       align-items: center;
       justify-content: center;
 
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }
   }
-}
-
-.catalogs-title {
-  color: #000;
-  font-family: Inter;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: normal;
-  text-align: center;
-  margin-bottom: 75px;
 }
 
 .catalog-type-title {
@@ -39,13 +29,13 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .car-card-list {
   box-sizing: border-box;
   display: flex;
-  overflow: scroll;
+  overflow-x: scroll;
 }
 
 .car-card-list::-webkit-scrollbar {

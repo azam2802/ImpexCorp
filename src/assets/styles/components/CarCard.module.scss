@@ -1,111 +1,88 @@
 .carCardItem {
-  width: 454px;
-  height: 677px;
+  width: 560px;
+  height: 550px;
   flex-shrink: 0;
   border-radius: 15px;
   background: #fff;
   margin-right: 20px;
   font-family: Montserrat;
+  padding: 25px;
+  background-color: #e5e5e1;
 
-  .compactButton {
-    display: flex;
-    width: 142px;
-    height: 42px;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border: none;
-    margin-top: 30px;
-    margin-left: 30px;
-    flex-shrink: 0;
-    border-radius: 12px;
-    background: #fe9f31;
-    color: #333;
-    font-family: inherit;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.484px;
-  }
   .car-image {
-    width: 394px;
-    height: 298px;
-    flex-shrink: 0;
-    margin: 30px 30px 0 30px;
+    width: 100%;
   }
+
   .car-name {
     color: #333;
-    text-overflow: ellipsis;
     font-family: inherit;
-    font-size: 25px;
+    font-size: 32px;
     font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.55px;
-    margin-left: 30px;
+    font-weight: bold;
   }
 
   .car-struct-list {
     display: flex;
-    margin: 30px;
+    flex-wrap: wrap;
     width: 100%;
+    margin-bottom: 20px;
 
     .car-struct-list-item {
       display: flex;
+      height: 43px;
       justify-content: space-between;
       align-items: center;
+      padding: 5px 10px;
+      color: #000;
+      font-size: 25px;
+      font-weight: bold;
+      background-color: #fff;
+      border-radius: 15px;
+      margin-top: 12px;
 
       &:not(:last-child) {
-        margin-right: 50px;
+        margin-right: 15px;
       }
 
-      .car-struct-image {
-        margin-right: 10px;
+      .car-struct-text{
+        margin-left: 15px;
+        font-weight: 600;
+
       }
-      .car-struct-text {
-        color: #6a6a6a;
-        font-family: inherit;
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: -0.33px;
-      }
+
     }
   }
 
   .car-info {
-    display: flex;
-    margin: 30px;
+    display: flex; 
     align-items: center;
     justify-content: space-between;
+    margin-top: 20px;
 
     .car-price {
-      color: #333;
+      color: #19746B;
       font-family: inherit;
-      font-size: 40px;
+      font-size: 31px;
       font-style: normal;
-      font-weight: 700;
+      font-weight: bold;
       line-height: normal;
-      letter-spacing: -0.88px;
     }
     .moreButton {
       display: flex;
       height: 35px;
-      padding: 15px 40px;
+      padding: 7px 18px;
       justify-content: center;
       align-items: center;
       gap: 10px;
       border-radius: 5px;
-      background: #333;
+      background: #19746B;
       color: #fff;
       font-family: inherit;
-      font-size: 15px;
+      font-size: 16px;
       font-style: normal;
-      font-weight: 500;
+      font-weight: 400;
       line-height: normal;
+      border: 1px solid #19746B;
       letter-spacing: -0.33px;
     }
   }
