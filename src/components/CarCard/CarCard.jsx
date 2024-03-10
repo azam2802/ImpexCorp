@@ -2,29 +2,42 @@ import React from "react"
 import s from "@styles/components/CarCard.module.scss"
 import { useTranslation } from "react-i18next"
 import carImage from "@images/carImage.webp"
-import Icon from "@images/Union.svg"
-import Icon2 from "@images/Vector (1).svg"
-import Icon3 from "@images/Vector.svg"
-
+import Icon1 from "@images/Vector5.svg"
+import Icon2 from "@images/Vector4.svg"
+import { LuFuel } from "react-icons/lu"
+import { FaRegCalendar } from "react-icons/fa"
+import { MdOutlineSpeed } from "react-icons/md"
+import { FaFlag } from "react-icons/fa6"
 export const CarCard = () => {
   const { t } = useTranslation()
   return (
     <li className={s["carCardItem"]}>
-      <button className={s["compactButton"]}>Compact</button>
       <img src={carImage} className={s["car-image"]} alt="" />
       <h1 className={s["car-name"]}>BYD Tang II</h1>
       <ul className={s["car-struct-list"]}>
         <li className={s["car-struct-list-item"]}>
-          <img className={s["car-struct-image"]} src={Icon} alt="" />
-          <p className={s["car-struct-text"]}>25 000 km</p>
+          <FaRegCalendar />
+          <p className={s["car-struct-text"]}>2023</p>
         </li>
         <li className={s["car-struct-list-item"]}>
           <img className={s["car-struct-image"]} src={Icon2} alt="" />
-          <p className={s["car-struct-text"]}>Auto</p>
+          <p className={s["car-struct-text"]}>Авто</p>
         </li>
         <li className={s["car-struct-list-item"]}>
-          <img className={s["car-struct-image"]} src={Icon3} alt="" />
-          <p className={s["car-struct-text"]}>4</p>
+          <LuFuel />
+          <p className={s["car-struct-text"]}>Электро</p>
+        </li>
+        <li className={s["car-struct-list-item"]}>
+          <MdOutlineSpeed />
+          <p className={s["car-struct-text"]}>12.500</p>
+        </li>
+        <li className={s["car-struct-list-item"]}>
+          <FaFlag />
+          <p className={s["car-struct-text"]}>Китай</p>
+        </li>
+        <li className={s["car-struct-list-item"]}>
+          <img className={s["car-struct-image"]} src={Icon1} alt="" />
+          <p className={s["car-struct-text"]}>2.5</p>
         </li>
       </ul>
       <hr />

@@ -7,9 +7,6 @@ export const Catalogs = () => {
 
   return (
     <div className={s["catalogs"]}>
-      <h1 className={s["catalogs-title"]}>
-        {t("HomePage.CatalogBlock.titles.mainTitle")}
-      </h1>
       <ul>
         <CatalogsItem
           catalogTitle={t("HomePage.CatalogBlock.titles.newProducts")}
