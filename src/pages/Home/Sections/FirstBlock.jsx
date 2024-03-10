@@ -13,8 +13,6 @@ const FirstBlock = () => {
             <p>
               <span>IMPEXCORP</span> {t("HomePage.firstBlock.title1")}
             </p>
-            <p>{t("HomePage.firstBlock.title2")}</p>
-            <p>{t("HomePage.firstBlock.title3")}</p>
           </div>
           <div>
             <button className={s["button"]}>
@@ -22,7 +20,9 @@ const FirstBlock = () => {
             </button>
           </div>
         </div>
-        <img src={ImageCar} alt="imageCar" />
+        <div>
+          <img src={ImageCar} alt="imageCar" />
+        </div>
       </div>
     </div>
   )

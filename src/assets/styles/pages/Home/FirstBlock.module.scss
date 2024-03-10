@@ -8,7 +8,7 @@
     #19746b
   );
   height: 90vh;
-  padding-left: 80px;
+  // padding-left: 80px;
 }
 
 .title {
@@ -22,16 +22,19 @@
 }
 
 .block {
+  margin: 0 auto;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   img {
-    width: 55vw;
+    width: 100%;
   }
 }
 
 .block-title {
+
   display: flex;
   flex-direction: column;
   gap: 3.16rem;
@@ -52,11 +55,12 @@
 
 @media (max-width: 768px) {
   .container {
+    height: 30vh;
     display: flex;
     justify-content: center;
-    width: 100vw;
-    height: 200px;
-    padding: 128px 0 0 32px;
+    // width: 100vw;
+    // height: 200px;
+    // padding: 128px 0 0 32px;
     background: none;
     img {
       display: none;
@@ -64,11 +68,13 @@
   }
 
   .title {
+    text-align: center;
+    text-wrap: balance;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    font-size: 7vw;
+    // width: 100vw;
+    font-size: 4vw;
   }
 
   .block-title {
