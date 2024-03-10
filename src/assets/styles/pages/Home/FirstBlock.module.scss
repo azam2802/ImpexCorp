@@ -8,7 +8,6 @@
     #19746b
   );
   height: 90vh;
-  // padding-left: 80px;
 }
 
 .title {
@@ -27,17 +26,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   img {
     width: 100%;
   }
 }
 
 .block-title {
-
   display: flex;
   flex-direction: column;
-  gap: 3.16rem;
+  gap: 47px;
 }
 
 .button {
@@ -58,26 +55,23 @@
     height: 30vh;
     display: flex;
     justify-content: center;
-    // width: 100vw;
-    // height: 200px;
-    // padding: 128px 0 0 32px;
     background: none;
     img {
       display: none;
     }
-    .block{
-      justify-content: center;
-    }
   }
 
   .title {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
     text-align: center;
     text-wrap: balance;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // width: 100vw;
-    font-size: 4vw;
+    margin-top: 65px;
+    text-transform: lowercase;
+    span {
+      text-transform: none;
+    }
   }
 
   .block-title {
@@ -87,6 +81,8 @@
   }
 
   .button {
-    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-weight: 200;
+    padding: 0.5rem 2.2rem 0.5rem 2.2rem;
+    border-radius: 1.82px;
   }
 }
