@@ -82,12 +82,38 @@
     font-size: 1rem;
   }
   .title {
-    font-size: 0.8rem; 
+    font-size: 1.2rem; 
     text-align: center;
   }
 
   .text {
     font-size: 0.8rem; 
+    margin: 10px 0; 
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 90%; 
+  }
+
+  .col-6 {
+    width: 100%;
+  }
+
+  .button {
+    width: 60%;
+    margin-top: 15px; 
+    padding: 0.1em 1em;
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 0.8rem; 
+    text-align: center;
+  }
+
+  .text {
+    font-size: 0.5rem; 
     margin: 10px 0; 
     margin-left: 5px;
   }
