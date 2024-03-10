@@ -21,9 +21,9 @@
   font-size: 1.6rem;
   width: 19vw;
   padding: 0.4em;
-  border: 3px solid #19746B;
+  border: 2px solid #19746B;
   color: #19746B;
-  border-radius: 10px;
+  border-radius: 5px;
   float: right;
 }
 
@@ -48,17 +48,15 @@
 .carImg img {
   max-width: 100%;
   height: auto;
+  margin-bottom: 70px;
 }
 
 @media screen and (max-width: 768px) {
-  .col-6 {
-    width: 100%;
-  }
-
   .button {
     width: 60%;
     margin-top: 20px;
-    padding: 0.4em;
+    padding: 0.2em 1em;
+    font-size: 1.4rem; 
   }
 
   .title,
@@ -80,15 +78,17 @@
   .button {
     width: 60%;
     margin-top: 15px; 
-    padding: 0.4em;
+    padding: 0.1em 1em;
+    font-size: 1rem;
   }
-
   .title {
-    font-size: 1.7rem; 
+    font-size: 0.8rem; 
+    text-align: center;
   }
 
   .text {
-    font-size: 1.5rem; 
+    font-size: 0.8rem; 
     margin: 10px 0; 
+    margin-left: 5px;
   }
 }
