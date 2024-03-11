@@ -40,6 +40,17 @@
     },
     "firstBlock": {
       "title": "安全、可靠、时尚，体现在每个细节上"
+    },
+    "OurServices":{
+      "title": "我們的服務",
+      "search": "搜尋並購買",
+      "cars": "來自韓國和中國的汽車",
+      "delivery": "送車",
+      "guarantee":"比斯凱克有擔保",
+      "registration": "吉爾吉斯共和國的汽車登記",
+      "accounting": "(REO GAI) 以及在吉爾吉斯共和國境外註銷",
+      "insurance": "全額保險",
+      "auto": "在運送到吉爾吉斯斯坦之前檢查您的汽車"
     }
   },
   "footer": {
