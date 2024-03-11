@@ -18,7 +18,7 @@
 .button {
   border: none;
   font-size: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   width: 19vw;
   padding: 0.4em;
   border: 3px solid #19746B;
@@ -29,7 +29,7 @@
 
 
 .title {
-  font-size: 2.2rem;
+  font-size: 2vw;
   font-weight: 700;
   font-family: "Inter";
 }
@@ -45,21 +45,18 @@
   max-width: 100%;
   height: auto;
 }
-@media screen and (max-width: 1024px) {
-  .title {
-    font-size: 1.1rem;
-  }
-}
 
 
 @media screen and (max-width: 768px) {
   .col_6 {
     width: 100%;
+    margin-top: 70px;
   }
 
   .button {
     width: 60%;
     margin-top: 20px;
+    font-size: 4vw; 
     padding: 0.4em;
   }
 
@@ -70,6 +67,9 @@
   }
   .title {
     font-size: 1.9rem; 
+  }
+  .text{
+    font-size: 4vw;
   }
 
 }
@@ -85,16 +85,17 @@
 
   .button {
     width: 60%;
+    font-size: 5vw; 
     margin-top: 15px; 
     padding: 0.4em;
   }
 
   .title {
-    font-size: 1.2rem; 
+    font-size: 7vw; 
   }
 
   .text {
-    font-size: 1.5vw; 
+    font-size: 5vw; 
     margin: 10px 0; 
   }
 }
@@ -109,16 +110,17 @@
 
   .button {
     width: 60%;
+    font-size: 5vw; 
     margin-top: 15px; 
     padding: 0.4em;
   }
 
   .title {
-    font-size: 0.8rem; 
+    font-size: 6vw; 
   }
 
   .text {
-    font-size: 1.5vw; 
+    font-size: 5vw; 
     margin: 10px 0; 
   }
 }
