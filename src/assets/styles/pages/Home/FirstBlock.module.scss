@@ -63,7 +63,7 @@
 
   .title {
     width: 100%;
-    font-size: 20px;
+    font-size: 2.5rem;
     font-weight: 400;
     text-align: center;
     text-wrap: balance;
@@ -84,5 +84,11 @@
     font-weight: 200;
     padding: 0.5rem 2.2rem 0.5rem 2.2rem;
     border-radius: 1.82px;
+  }
+}
+
+@media (max-width: 620px) {
+  .title{
+    font-size:6.4vw;
   }
 }
