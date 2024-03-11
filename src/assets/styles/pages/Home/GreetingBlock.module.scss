@@ -11,7 +11,7 @@
   padding-block: 20vh;
 }
 
-.col-6 {
+.col_6 {
   width: 45%;
 }
 
@@ -21,9 +21,9 @@
   font-size: 1.6rem;
   width: 19vw;
   padding: 0.4em;
-  border: 2px solid #19746B;
+  border: 3px solid #19746B;
   color: #19746B;
-  border-radius: 5px;
+  border-radius: 10px;
   float: right;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
@@ -48,15 +48,23 @@
 .carImg img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 70px;
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 1.1rem;
+  }
 }
 
+
 @media screen and (max-width: 768px) {
+  .col_6 {
+    width: 100%;
+  }
+
   .button {
     width: 60%;
     margin-top: 20px;
-    padding: 0.2em 1em;
-    font-size: 1.4rem; 
+    padding: 0.4em;
   }
 
   .title,
@@ -64,6 +72,10 @@
     width: 100%;
     margin: 10px 0; 
   }
+  .title {
+    font-size: 1.9rem; 
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -78,18 +90,16 @@
   .button {
     width: 60%;
     margin-top: 15px; 
-    padding: 0.1em 1em;
-    font-size: 1rem;
+    padding: 0.4em;
   }
+
   .title {
     font-size: 1.2rem; 
-    text-align: center;
   }
 
   .text {
-    font-size: 0.8rem; 
+    font-size: 1.5rem; 
     margin: 10px 0; 
-    margin-left: 5px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -97,24 +107,22 @@
     width: 90%; 
   }
 
-  .col-6 {
+  .col_6 {
     width: 100%;
   }
 
   .button {
     width: 60%;
     margin-top: 15px; 
-    padding: 0.1em 1em;
-    font-size: 1rem;
+    padding: 0.4em;
   }
+
   .title {
     font-size: 0.8rem; 
-    text-align: center;
   }
 
   .text {
-    font-size: 0.5rem; 
+    font-size: 1.5rem; 
     margin: 10px 0; 
-    margin-left: 5px;
   }
 }
