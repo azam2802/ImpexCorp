@@ -1,16 +1,17 @@
-/* Общие стили */
 .parentContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-left: 8.125vw;
+  padding-top: 50px;
+  padding-bottom: 140px;
 }
 
 .servicesContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 столбца на больших экранах */
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1.25em;
   justify-content: center;
   margin-top: 7vh;
   margin-bottom: 5.333rem;
@@ -22,58 +23,132 @@
 }
 
 .serviceItem img {
-  max-width: 100%; /* Максимальная ширина изображения 100% от родительского контейнера */
-  height: auto; /* Автоматическая высота для сохранения пропорций */
-  margin-right: 20px; /* добавлен отступ справа для изображения */
+  max-width: 100%; 
+  height: auto;
+  margin-right: 1.25em; 
 }
 
 h1 {
   font-family: 'SemiBold';
-  margin-top: 50px;
-  align-self: center;
-  font-size: 2rem;
+  margin-top: 3.125rem;
+  font-size: 3.5rem;
+  align-self: flex-start; 
+  margin-bottom: 70px;
 }
 
-/* Медиа-запросы для различных разрешений экрана */
-@media screen and (max-width: 780px) {
+.paragraph1, .paragraph2, .paragraph3, .paragraph4 {
+  font-weight: bold;
+  font-family: 'Montserrat';
+  font-size: 1.6rem; 
+  margin-bottom: 0.625em; 
+}
+
+.span1, .span2, .span3, .span4 {
+  font-size: 1.9rem; 
+  margin-top: 0.3125em;
+  font-family: 'Montserrat'; 
+}
+
+@media screen and (max-width: 56.25em) {
   .servicesContainer {
-    grid-template-columns: repeat(1, 1fr); /* 1 столбец на меньших экранах */
+    grid-template-columns: repeat(1, 1fr); 
+  }
+  h1{
+    align-self: center;
+    font-size: 2rem;
   }
 
   .serviceItem {
-    flex-direction: row; /* Изменил направление флекс-контейнера на строку */
+    flex-direction: row; 
     align-items: center;
+    margin-bottom: 1.875em;
   }
 
   .serviceItem img {
-    margin-right: 10px;
-    width: 85px; /* Уменьшил отступ справа для изображения на меньших экранах */
+    margin-right: 1.875em;
+    width: 9.375em; 
   }
 
   h1 {
-    margin-top: 30px;
-    font-size: 1.5rem; /* Уменьшил размер шрифта для меньших экранов */
+    margin-top: 1.875em;
+    font-size: 2rem; 
   }
 
   .parentContainer {
-    margin-left: 20px;
+    margin-left: 1.25em;
+  }
+
+  .paragraph1, .paragraph2, .paragraph3, .paragraph4 {
+    font-size: 1.6rem; 
+    margin-bottom: 0.5em; 
+  }
+  .span1,.span2,.span3,.span4{
+    font-size: 1.8rem;
   }
 }
 
-/* Уменьшение размера текста */
-.paragraph1,
-.paragraph2,
-.paragraph3,
-.paragraph4 {
-  font-weight: bold;
-  font-family: 'Montserrat';
-  font-size: 1rem; /* Уменьшил размер текста */
+@media screen and (max-width: 48.75em) {
+.serviceItem img {
+  width: 6.25em;
+  margin-right: 1.875em;
+  }
+  .serviceItem {
+    flex-direction: row; 
+    align-items: center;
+    margin-bottom: 1.875em;
+  }
+
+  .serviceItem img {
+    margin-right: 1.875em;
+    width: 6.25em; 
+  }
+
+  h1 {
+    margin-top: 1.875em;
+    font-size: 1.5rem; 
+  }
+
+  .parentContainer {
+    margin-left: 1.25em;
+  }
+
+  .paragraph1, .paragraph2, .paragraph3, .paragraph4 {
+    font-size: 1.7rem; 
+    margin-bottom: 0.5em; 
+  }
 }
 
-.span1,
-.span2,
-.span3,
-.span4 {
-  font-size: 1rem; /* Уменьшил размер текста */
-  margin-top: 5px; /* Уменьшил отступ сверху */
+@media screen and (max-width: 30em) {
+  .serviceItem img {
+    width: 6.25em;
+    margin-right: 1.875em;
+    }
+  }
+
+@media screen and (max-width: 20em) {
+  .serviceItem img {
+    width: 4.375em;
+    margin-right: 1.25em;
+  }
+
+  h1 {
+    font-size: 1.5rem; 
+    margin-top: 1.875em;
+  }
+
+  .parentContainer {
+    margin-left: 5%;
+  }
+
+  .paragraph1, .paragraph2, .paragraph3, .paragraph4 {
+    font-size: 1.1rem; 
+    margin-bottom: 0.375em;
+  }
+  .span1, .span2, .span3, .span4 {
+    font-size: 1.1rem; 
+    margin-top: 0.3125em;
+    font-family: 'Montserrat'; 
+    
+  }
+  
 }
