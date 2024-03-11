@@ -6,21 +6,14 @@ import Logo from "@ui/Logo/Logo"
 import React, { useState } from "react"
 // import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
+import { Link } from "react-router-dom"
 // import { Link } from "react-router-dom"
 
 const Header = () => {
   // const { t } = useTranslation()
 
   const [showCatalog, setShowCatalog] = useState(false)
-  const [showSearch, setShowSearch] = useState(false)
   // const [showSearchIco, setShowSearchIco] = useState("")
-
-  const handleShowSearch = () => {
-    let search_ico = document.querySelector("#search_ico")
-    search_ico.classList.toggle(s.showSearch)
-    setShowSearch((prev) => !prev)
-    console.log(showSearch)
-  }
 
   // const onOpenCatalog = () => {
   //   setShowCatalog((prev) => !prev)
@@ -39,16 +32,24 @@ const Header = () => {
           <div className={s.row}>
             <div className={s["col-6"]}>
               <Logo onClick={onCloseCatalog} />
-              <div className={s.search_div}>
-                <button
+            </div>
+            <div className={s["col-6"]}>
+              <div className={s.searchIco_div}>
+                <IoSearch
                   onClick={() => {
-                    onCloseCatalog, handleShowSearch
-                  }}>
-                  <IoSearch id="search_ico" />
-                </button>
+                    onCloseCatalog()
+                  }}
+                  id="search_ico"
+                  alt="search_ico"
+                />
+                <input type="search" placeholder="Поиск" />
+              </div>
+              <div className={s.Links}>
+                <Link to="about">Наша компания</Link>
+                <Link to="catalog">Каталог</Link>
+                <Link to="/">Калькулятор</Link>
               </div>
             </div>
-            <div className={s["col-6"]}></div>
           </div>
         </nav>
       </header>

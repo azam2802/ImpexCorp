@@ -11,38 +11,35 @@
   padding-block: 20vh;
 }
 
-.col-6 {
+.col_6 {
   width: 45%;
 }
 
 .button {
   border: none;
   font-size: 3rem;
-  font-size: 1.6rem;
+  font-size: 1.5vw;
   width: 19vw;
   padding: 0.4em;
   border: 3px solid #19746B;
   color: #19746B;
   border-radius: 10px;
   float: right;
+  transition: all .2s;
 }
 
-.title,
-.text {
-  color: #000;
-  font-family: Inter;
-  font-weight: 400;
-}
 
 .title {
-  font-size: 1.8rem;
+  font-size: 2vw;
   font-weight: 700;
+  font-family: "Inter";
 }
 
 .text {
-  font-size: 1.6rem;
-  margin: 21px 0 65px 0;
-  width: 40.4vw;
+  font-family: "Gotham Pro";
+  font-size: 1.5vw;
+  margin: 20px 0 65px 0;
+  width: 40vw;
 }
 
 .carImg img {
@@ -50,14 +47,17 @@
   height: auto;
 }
 
+
 @media screen and (max-width: 768px) {
-  .col-6 {
+  .col_6 {
     width: 100%;
+    margin-top: 70px;
   }
 
   .button {
     width: 60%;
     margin-top: 20px;
+    font-size: 4vw; 
     padding: 0.4em;
   }
 
@@ -66,6 +66,13 @@
     width: 100%;
     margin: 10px 0; 
   }
+  .title {
+    font-size: 1.9rem; 
+  }
+  .text{
+    font-size: 4vw;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -79,16 +86,48 @@
 
   .button {
     width: 60%;
+    font-size: 5vw; 
     margin-top: 15px; 
     padding: 0.4em;
   }
 
   .title {
-    font-size: 1.7rem; 
+    font-size: 7vw; 
   }
 
   .text {
-    font-size: 1.5rem; 
+    font-size: 5vw; 
     margin: 10px 0; 
   }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 90%; 
+  }
+
+  .col_6 {
+    width: 100%;
+  }
+
+  .button {
+    width: 60%;
+    font-size: 5vw; 
+    margin-top: 15px; 
+    padding: 0.4em;
+  }
+
+  .title {
+    font-size: 6vw; 
+  }
+
+  .text {
+    font-size: 5vw; 
+    margin: 10px 0; 
+  }
+}
+
+button:hover{
+  background-color: #19746B;
+  color: #fff;
+  transition: all .2s;
 }

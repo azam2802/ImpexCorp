@@ -1,7 +1,6 @@
 header {
   padding: 2vh 5vw;
   font-size: 1.2rem;
-  font-family: "Montserrat";
   background: #f4f4f0;
   box-shadow: 0 0 5px #000;
   @media screen and (max-width: 1024px) {
@@ -14,16 +13,36 @@ header {
 
 .row {
   width: 100%;
+  padding-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   .col-6 {
-    width: 33.3%;
     display: flex;
     align-items: center;
-    svg{
-      margin-right: 3vw;
+    .searchIco_div {
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+      align-items: center;
+      border: 1px solid #000;
+    }
+    input {
+      font-family: "Gotham Pro";
+      border: none;
+      background-color: transparent;
+      padding: 10px 10px;
+    }
+    .Links{
+      margin-left: 30px;
+      display: flex;
+      gap: 20px;
+      a{
+        font-family: "Gotham Pro";
+        color: #000;
+      }
     }
   }
 }
