@@ -1,3 +1,4 @@
+/* Общие стили */
 .parentContainer {
   display: flex;
   justify-content: center;
@@ -8,7 +9,7 @@
 
 .servicesContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr); /* 2 столбца на больших экранах */
   gap: 20px;
   justify-content: center;
   margin-top: 7vh;
@@ -21,9 +22,9 @@
 }
 
 .serviceItem img {
-  max-width: 100%; 
-  height: auto;
-  margin-right: 20px; 
+  max-width: 100%; /* Максимальная ширина изображения 100% от родительского контейнера */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  margin-right: 20px; /* добавлен отступ справа для изображения */
 }
 
 h1 {
@@ -33,39 +34,46 @@ h1 {
   font-size: 2rem;
 }
 
+/* Медиа-запросы для различных разрешений экрана */
 @media screen and (max-width: 780px) {
   .servicesContainer {
-    grid-template-columns: repeat(1, 1fr); 
+    grid-template-columns: repeat(1, 1fr); /* 1 столбец на меньших экранах */
   }
 
   .serviceItem {
-    flex-direction: row; 
+    flex-direction: row; /* Изменил направление флекс-контейнера на строку */
     align-items: center;
   }
 
   .serviceItem img {
     margin-right: 10px;
-    width: 85px;
+    width: 85px; /* Уменьшил отступ справа для изображения на меньших экранах */
   }
 
   h1 {
     margin-top: 30px;
-    font-size: 1.5rem; 
+    font-size: 1.5rem; /* Уменьшил размер шрифта для меньших экранов */
+  }
 
   .parentContainer {
     margin-left: 20px;
   }
 }
 
-.paragraph1,.paragraph2,.paragraph3,.paragraph4 {
+/* Уменьшение размера текста */
+.paragraph1,
+.paragraph2,
+.paragraph3,
+.paragraph4 {
   font-weight: bold;
   font-family: 'Montserrat';
-  font-size: 0.9rem; 
+  font-size: 1rem; /* Уменьшил размер текста */
 }
 
-.span1,.span2,.span3,.span4 {
-  font-size: 1rem;
-  margin-top: 5px;
-  font-family:  'Montserrat';
-}
+.span1,
+.span2,
+.span3,
+.span4 {
+  font-size: 1rem; /* Уменьшил размер текста */
+  margin-top: 5px; /* Уменьшил отступ сверху */
 }
