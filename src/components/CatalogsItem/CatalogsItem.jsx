@@ -38,7 +38,7 @@ export const CatalogsItem = ({ catalogTitle }) => {
         <li className={s["next-button"]}>
           <BsChevronRight
             alt="right-chevron"
-            style={{ width: "80px", height: "100%", fill: "#fe9f31" }}
+            style={{ width: "80px", height: "100%", fill: "#19746b" }}
           />
         </li>
       </motion.ul>
