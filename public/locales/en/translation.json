@@ -59,9 +59,9 @@
     },
     "branches": {
       "name": "Branches",
-      "address1": "street Gorky,  Bishkek",
-      "address2": "38a Ankara str., Bishkek",
-      "address3": "ul. Isakeeva 1/2, Bishkek city"
+      "address1": "20a Gorky St.,  Bishkek",
+      "address2": "38a Ankara St., Bishkek",
+      "address3": "Isakeeva 1/2 St., Bishkek"
     },
     "contacts": {
       "name": "Contacts",

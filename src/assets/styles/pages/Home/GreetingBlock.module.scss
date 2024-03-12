@@ -21,13 +21,17 @@
   font-size: 1.5vw;
   width: 19vw;
   padding: 0.4em;
-  border: 3px solid #19746B;
-  color: #19746B;
+  border: 3px solid #19746b;
+  color: #19746b;
   border-radius: 10px;
   float: right;
-  transition: all .2s;
+  transition: all 0.2s;
+  &:hover {
+    background-color: #19746b;
+    color: #fff;
+    transition: all 0.2s;
+  }
 }
-
 
 .title {
   font-size: 2vw;
@@ -47,7 +51,6 @@
   height: auto;
 }
 
-
 @media screen and (max-width: 768px) {
   .col_6 {
     width: 100%;
@@ -57,27 +60,26 @@
   .button {
     width: 60%;
     margin-top: 20px;
-    font-size: 4vw; 
+    font-size: 4vw;
     padding: 0.4em;
   }
 
   .title,
   .text {
     width: 100%;
-    margin: 10px 0; 
+    margin: 10px 0;
   }
   .title {
-    font-size: 1.9rem; 
+    font-size: 1.9rem;
   }
-  .text{
+  .text {
     font-size: 4vw;
   }
-
 }
 
 @media screen and (max-width: 480px) {
   .container {
-    width: 90%; 
+    width: 90%;
   }
 
   .col-6 {
@@ -86,23 +88,23 @@
 
   .button {
     width: 60%;
-    font-size: 5vw; 
-    margin-top: 15px; 
+    font-size: 5vw;
+    margin-top: 15px;
     padding: 0.4em;
   }
 
   .title {
-    font-size: 7vw; 
+    font-size: 7vw;
   }
 
   .text {
-    font-size: 5vw; 
-    margin: 10px 0; 
+    font-size: 5vw;
+    margin: 10px 0;
   }
 }
 @media screen and (max-width: 320px) {
   .container {
-    width: 90%; 
+    width: 90%;
   }
 
   .col_6 {
@@ -111,23 +113,17 @@
 
   .button {
     width: 60%;
-    font-size: 5vw; 
-    margin-top: 15px; 
+    font-size: 5vw;
+    margin-top: 15px;
     padding: 0.4em;
   }
 
   .title {
-    font-size: 6vw; 
+    font-size: 6vw;
   }
 
   .text {
-    font-size: 5vw; 
-    margin: 10px 0; 
+    font-size: 5vw;
+    margin: 10px 0;
   }
-}
-
-button:hover{
-  background-color: #19746B;
-  color: #fff;
-  transition: all .2s;
 }
