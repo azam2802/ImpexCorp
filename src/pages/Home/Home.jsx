@@ -2,7 +2,7 @@ import React from "react"
 import ApplicationForm from "./Sections/ApplicationForm"
 import GreetingBlock from "./Sections/GreetingBlock"
 import { Catalogs } from "./Sections/Catalogs"
-import { FAQ } from "./Sections/FAQ"
+// import { FAQ } from "./Sections/FAQ"
 import FirstBlock from "./Sections/FirstBlock"
 import OurServices from "./Sections/OurServices"
 
@@ -12,7 +12,7 @@ export const Home = () => {
       <FirstBlock />
       <GreetingBlock />
       <Catalogs />
-      <FAQ />
+      {/* <FAQ /> */}
       <ApplicationForm />
       <OurServices />
     </main>

@@ -1,8 +1,7 @@
 .container {
   position: relative;
   z-index: 99;
-}
-
+  
 .container_childe {
   background-color: black;
   padding: 30px 100px;
@@ -85,6 +84,8 @@ ul li a:hover {
 .row_2 img {
   width: 18vw;
 }
+}
+
 
 @media screen and (max-width: 1100px) {
   .row_2 {
