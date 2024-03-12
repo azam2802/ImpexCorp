@@ -6,7 +6,7 @@ footer {
     padding-left: 5vw;
     padding-top: 6.25vh;
   }
-  a{
+  a {
     color: #fff;
   }
   .footer-content {
@@ -44,7 +44,7 @@ footer {
         line-height: 50px;
         letter-spacing: 0.44px;
         list-style-type: none;
-        width: 20vw;
+        width: 100%;
       }
     }
   }
@@ -64,6 +64,47 @@ footer {
 
     li:last-child {
       margin-right: 0;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 426px) {
+    .footer-content {
+      .row-1,
+      .row-2,
+      .row-3,
+      .row-4 {
+        width: 80%;
+      }
+
+      ul {
+        li {
+          font-size: 1.3rem;
+          line-height: 40px;
+        }
+      }
+    }
+
+    .logo {
+      padding-left: 7vw;
+      padding-top: 5vh;
+    }
+
+    .social-media {
+      ul li {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 426px) and (max-width: 768px) {
+    .footer-content {
+      margin: 0 10%;
+      .row-1,
+      .row-2,
+      .row-3,
+      .row-4 {
+        width: calc(50% - 25px);
+      }
     }
   }
 }
