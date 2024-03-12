@@ -4,6 +4,7 @@ import TelegramIcon from "@images/TelegramIcon.webp"
 import InstagramIcon from "@images/InstagramIcon.webp"
 import GmailIcon from "@images/GmailIcon.webp"
 import WhatsUpIcon from "@images/WhatsUpIcon.webp"
+import FaceBookIcon from "@images/FacebookIcon.webp"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import Logo from "@ui/Logo/Logo"
@@ -52,6 +53,11 @@ const Footer = () => {
         </div>
         <div className={s["social-media"]}>
           <ul>
+            <li>
+              <Link to="#">
+                <img src={FaceBookIcon} alt="Facebook Icon" />
+              </Link>
+            </li>
             <li>
               <Link to="#">
                 <img src={TelegramIcon} alt="Telegram Icon" />

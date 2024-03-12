@@ -6,7 +6,7 @@ footer {
     padding-left: 5vw;
     padding-top: 6.25vh;
   }
-  a{
+  a {
     color: #fff;
   }
   .footer-content {
@@ -37,14 +37,13 @@ footer {
 
       ul li {
         color: #fff;
-        font-family: Montserrat;
-        font-size: 1.3rem;
+        font-family: "Montserrat";
+        font-size: 1.3vw;
         font-style: normal;
         font-weight: 300;
-        line-height: 50px;
         letter-spacing: 0.44px;
         list-style-type: none;
-        width: 20vw;
+        width: 100%;
       }
     }
   }
@@ -64,6 +63,68 @@ footer {
 
     li:last-child {
       margin-right: 0;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 426px) {
+    .footer-content {
+      padding-bottom: 0;
+      .row-1,
+      .row-2,
+      .row-3,
+      .row-4 {
+        width: calc(50% - 25px);
+        margin: 0 -10px;
+        ul li:first-child {
+          font-size: 1.2rem;
+        }
+        ul li {
+          font-size: 1rem;
+          line-height: 1.2rem;
+        }
+      }
+    }
+    .social-media {
+      margin-bottom: 0;
+      ul li {
+        margin-right: 1rem;
+        img {
+          width: 26px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 426px) and (max-width: 769px) {
+    .footer-content {
+      padding-bottom: 2rem;
+      .row-1,
+      .row-2,
+      .row-3,
+      .row-4 {
+        width: calc(50% - 25px);
+
+        ul li:first-child {
+          font-size: 1.5rem;
+        }
+        ul {
+          margin: 0 45px;
+          li {
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .social-media {
+      margin-bottom: 0;
+      ul li {
+        margin-right: 1rem;
+        img {
+          width: 35px;
+        }
+      }
     }
   }
 }
