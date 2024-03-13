@@ -4,16 +4,14 @@ import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
 import React, { useState } from "react"
-// import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
-// import { Link } from "react-router-dom"
 
 const Header = () => {
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
 
   const [showCatalog, setShowCatalog] = useState(false)
-  // const [showSearchIco, setShowSearchIco] = useState("")
 
   const onOpenCatalog = () => {
     setShowCatalog((prev) => !prev)
@@ -36,15 +34,18 @@ const Header = () => {
             <div className={s["col-6"]}>
               <div className={s.searchIco_div} onClick={onCloseCatalog}>
                 <IoSearch id="search_ico" alt="search_ico" />
-                <input type="search" placeholder="Поиск" />
+                <input type="search" placeholder={t("header.search")} />
               </div>
               <div className={s.Links}>
                 <Link to="about" onClick={onCloseCatalog}>
-                  Наша компания
+                  {t("header.ourcompany")}
                 </Link>
-                <Link onClick={onOpenCatalog}>Каталог</Link>
+                <Link onClick={onOpenCatalog}>{t("header.catalogue")}</Link>
+                <Link to="/" onClick={onOpenCatalog}>
+                  {t("header.services")}
+                </Link>
                 <Link to="/" onClick={onCloseCatalog}>
-                  Калькулятор
+                  {t("header.calculator")}
                 </Link>
               </div>
             </div>

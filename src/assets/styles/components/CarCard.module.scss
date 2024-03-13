@@ -5,8 +5,8 @@
   border-radius: 15px;
   background: #fff;
   margin-right: 20px;
-  font-family: "Montserrat";
   padding: 25px;
+  font-family: "Montserrat";
   background-color: #e5e5e1;
 
   .car-image {
@@ -14,11 +14,12 @@
   }
 
   .car-name {
-    color: #333;
+    color: #000;
+    margin-top: 25px;
     font-family: inherit;
     font-size: 32px;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   .car-struct-list {

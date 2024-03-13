@@ -10,7 +10,7 @@ const BackToTop = () => {
 
   const toTop = () => {
     window.scrollTo({
-      top: 0,
+      top,
       behavior: "smooth",
     })
   }

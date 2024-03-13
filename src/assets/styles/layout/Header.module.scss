@@ -30,6 +30,7 @@ header {
       border: none;
       background-color: transparent;
       padding: 10px 10px;
+      font-size: 16px;
     }
     .Links{
       margin-left: 30px;
@@ -38,7 +39,13 @@ header {
       a{
         font-family: "Gotham Pro";
         color: #000;
+        transition: all .2s;
+        &:hover{
+          color: #19746b;
+          transition: all .2s;
+        }
       }
+
     }
   }
 }
