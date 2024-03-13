@@ -19,7 +19,6 @@ const Header = () => {
 
   const onCloseCatalog = () => {
     setShowCatalog(false)
-    console.log("click")
   }
 
   return (
@@ -41,7 +40,7 @@ const Header = () => {
                   {t("header.ourcompany")}
                 </Link>
                 <Link onClick={onOpenCatalog}>{t("header.catalogue")}</Link>
-                <Link to="/" onClick={onOpenCatalog}>
+                <Link to="/" onClick={onCloseCatalog}>
                   {t("header.services")}
                 </Link>
                 <Link to="/" onClick={onCloseCatalog}>
