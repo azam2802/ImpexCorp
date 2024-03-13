@@ -31,24 +31,16 @@ const Footer = () => {
         </div>
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>
-            <ul>
-              <li>{renderLinks(currentLanguage.footer.aboutus)}</li>
-            </ul>
+            <ul>{renderLinks(currentLanguage.footer.aboutus)}</ul>
           </div>
           <div className={s["row-2"]}>
-            <ul>
-              <li> {renderLinks(currentLanguage.footer.support)}</li>
-            </ul>
+            <ul>{renderLinks(currentLanguage.footer.support)}</ul>
           </div>
           <div className={s["row-3"]}>
-            <ul>
-              <li>{renderLinks(currentLanguage.footer.branches)}</li>
-            </ul>
+            <ul>{renderLinks(currentLanguage.footer.branches)}</ul>
           </div>
           <div className={s["row-4"]}>
-            <ul>
-              <li>{renderLinks(currentLanguage.footer.contacts)}</li>
-            </ul>
+            <ul>{renderLinks(currentLanguage.footer.contacts)}</ul>
           </div>
         </div>
         <div className={s["social-media"]}>
