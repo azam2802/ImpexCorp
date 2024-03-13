@@ -7,8 +7,8 @@ import "swiper/css/pagination"
 import "swiper/css/effect-fade"
 import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules"
 
-import icLeft from "@images/ic-left.png"
-import icRight from "@images/ic-right.png"
+import { AiFillLeftSquare } from "react-icons/ai"
+import { AiFillRightSquare } from "react-icons/ai"
 import slide1 from "@images/frame1.png"
 import slide2 from "@images/frame2.png"
 import slide3 from "@images/frame3.png"
@@ -39,10 +39,10 @@ const Carousels = () => {
           <img src={slide3} alt="Slide 3" />
         </SwiperSlide>
         <div className="swiper-button-prev">
-          <img src={icLeft} alt="Prev" />
+          <AiFillLeftSquare color="grey" />
         </div>
         <div className="swiper-button-next">
-          <img src={icRight} alt="Next" />
+          <AiFillRightSquare color="grey" />
         </div>
       </Swiper>
     </div>
