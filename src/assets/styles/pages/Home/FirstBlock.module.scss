@@ -49,6 +49,7 @@
   background: #19746b;
   cursor: pointer;
   transition: all .2s;
+  will-change:contents;
   &:hover{
     background-color: transparent;
     color: #19746b;
@@ -57,7 +58,7 @@
 }
 
 .button:active {
-  background: #0f5c54;
+transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
