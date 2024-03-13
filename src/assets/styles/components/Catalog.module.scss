@@ -1,91 +1,90 @@
 .container {
   position: relative;
   z-index: 99;
-  
-.container_childe {
-  background-color: black;
-  padding: 30px 100px;
-  font-family: "Montserrat";
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  z-index: 3;
-}
 
-.row_1 {
-  display: flex;
-  width: 35%;
-  justify-content: space-between;
-}
+  .container_childe {
+    background-color: white;
+    padding: 30px 100px;
+    font-family: "Montserrat";
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 3;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
 
-ul {
-  list-style-type: none;
-}
+  .row_1 {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+  }
 
-li {
-  margin-top: 16px;
-  font-size: 18px;
-  color: #fff;
-  line-height: 50px;
-}
+  ul {
+    list-style-type: none;
+  }
 
-.title {
-  color: #fff;
-  font-weight: 700;
-  font-size: 22px;
-}
+  li {
+    margin-top: 16px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 50px;
+    font-weight: 600;
+  }
 
-ul li a:hover {
-  color: #fe9f31;
-  transition: all 0.3s;
-}
+  .title {
+    color: #000;
+    font-weight: 700;
+    font-size: 22px;
+  }
 
-.row_2-childe {
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-}
+  ul li a:hover {
+    color: #19746b;
+    transition: all 0.3s;
+  }
 
-.row_2-characteristic {
-  display: flex;
-  width: 23px;
-  gap: 20px;
-  align-items: center;
-}
+  .row_2_childe {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
 
-.row_2-characteristic p {
-  color: #6c6c6c;
-  font-size: 15px;
-  font-weight: 500;
-}
+  .row_2_characteristic {
+    display: flex;
+    width: 23px;
+    gap: 20px;
+    align-items: center;
+  }
 
-.title_car {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-}
-.price {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 700;
-}
-.row_2 {
-  display: flex;
-  padding: 0px 30px 0 30px;
-  align-items: center;
-  width: 50%;
-  height: 40vh;
-  border-radius: 8px;
-  border: 1px solid #5f5f5f;
-  justify-content: space-between;
-}
+  .row_2_characteristic p {
+    color: #6c6c6c;
+    font-size: 15px;
+    font-weight: 500;
+  }
 
-.row_2 img {
-  width: 18vw;
-}
-}
+  .title_car {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .price {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .row_2 {
+    display: flex;
+    padding: 0px 30px 0 30px;
+    align-items: center;
+    width: 50%;
+    height: 40vh;
+    border-radius: 8px;
+    border: 1px solid #5f5f5f;
+    justify-content: space-between;
+  }
 
+  .row_2 img {
+    width: 18vw;
+  }
+}
 
 @media screen and (max-width: 1100px) {
   .row_2 {
@@ -98,7 +97,7 @@ ul li a:hover {
     justify-content: space-between;
   }
 
-  .row_2-characteristic {
+  .row_2_characteristic {
     display: flex;
     gap: 10px;
   }

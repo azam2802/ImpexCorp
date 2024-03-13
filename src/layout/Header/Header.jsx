@@ -15,9 +15,9 @@ const Header = () => {
   const [showCatalog, setShowCatalog] = useState(false)
   // const [showSearchIco, setShowSearchIco] = useState("")
 
-  // const onOpenCatalog = () => {
-  //   setShowCatalog((prev) => !prev)
-  // }
+  const onOpenCatalog = () => {
+    setShowCatalog((prev) => !prev)
+  }
 
   const onCloseCatalog = () => {
     setShowCatalog(false)
@@ -34,20 +34,18 @@ const Header = () => {
               <Logo onClick={onCloseCatalog} />
             </div>
             <div className={s["col-6"]}>
-              <div className={s.searchIco_div}>
-                <IoSearch
-                  onClick={() => {
-                    onCloseCatalog()
-                  }}
-                  id="search_ico"
-                  alt="search_ico"
-                />
+              <div className={s.searchIco_div} onClick={onCloseCatalog}>
+                <IoSearch id="search_ico" alt="search_ico" />
                 <input type="search" placeholder="Поиск" />
               </div>
               <div className={s.Links}>
-                <Link to="about">Наша компания</Link>
-                <Link to="catalog">Каталог</Link>
-                <Link to="/">Калькулятор</Link>
+                <Link to="about" onClick={onCloseCatalog}>
+                  Наша компания
+                </Link>
+                <Link onClick={onOpenCatalog}>Каталог</Link>
+                <Link to="/" onClick={onCloseCatalog}>
+                  Калькулятор
+                </Link>
               </div>
             </div>
           </div>
