@@ -1,0 +1,45 @@
+$background-color_1: transparent;
+
+.swiper-container {
+  height: auto;
+  width: 45vw;
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+  }
+}
+
+.swiper-button-prev {
+  background-color: $background-color_1;
+  font-size: 24px;
+
+  &:after {
+    content: none;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.mySwiper {
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+.swiper-button-next {
+  &:after {
+    content: none;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -9,12 +9,10 @@ import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules"
 
 import icLeft from "@images/ic-left.png"
 import icRight from "@images/ic-right.png"
-
 import slide1 from "@images/frame1.png"
 import slide2 from "@images/frame2.png"
 import slide3 from "@images/frame3.png"
-// import s from '@styles/components/Carousels.module.scss'
-import "@styles/components/Carousels.css"
+import "@styles/components/Carousels.scss"
 
 const Carousels = () => {
   return (
