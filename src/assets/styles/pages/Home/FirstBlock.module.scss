@@ -13,10 +13,12 @@
 .title {
   width: 40vw;
   font-size: 3vw;
+  text-wrap: balance;
   font-family: "Gotham Pro";
   font-weight: 300;
   span {
     color: #19746b;
+    display: block;
   }
 }
 
@@ -39,11 +41,19 @@
 
 .button {
   padding: 0.6rem 4rem 0.6rem 4rem;
-  border-radius: 0.625rem;
-  border: none;
+  border-radius: 10px;
+  border: 2px solid #19746b;
   color: #fff;
+  font-size: 1.3rem;
+  font-family: "Inter";
   background: #19746b;
   cursor: pointer;
+  transition: all .2s;
+  &:hover{
+    background-color: transparent;
+    color: #19746b;
+    transition: all .2s;
+  }
 }
 
 .button:active {
@@ -52,7 +62,7 @@
 
 @media (max-width: 768px) {
   .container {
-    height: 30vh;
+    height: fit-content;
     display: flex;
     justify-content: center;
     background: none;
@@ -62,15 +72,17 @@
   }
 
   .title {
+    line-height: 120%;
     width: 100%;
     font-size: 2.5rem;
     font-weight: 400;
     text-align: center;
     text-wrap: balance;
-    margin-top: 65px;
+    margin-top: 30px;
     text-transform: lowercase;
     span {
       text-transform: none;
+      display: inline;
     }
   }
 
@@ -82,7 +94,6 @@
 
   .button {
     font-weight: 200;
-    padding: 0.5rem 2.2rem 0.5rem 2.2rem;
     border-radius: 1.82px;
   }
 }

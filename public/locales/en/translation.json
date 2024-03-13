@@ -40,9 +40,7 @@
       }
     },
     "firstBlock": {
-      "title1": "security,",
-      "title2": "reliability, and style in",
-      "title3": "every detail!",
+      "title1": "Security, Reliability, and Style in every detail!",  
       "buttonText": "Call"
     }
   },
@@ -58,10 +56,10 @@
       "counseling": "Online consultations"
     },
     "branches": {
-      "name": "Our branches",
-      "address1": "VMG5+F44, Gorky, Shabdan Baatyr St., Bishkek",
-      "address2": "38a Ankara str., Bishkek",
-      "address3": "ul. Isakeeva 1/2, Bishkek city"
+      "name": "Branches",
+      "address1": "20a Gorky St.,  Bishkek",
+      "address2": "38a Ankara St., Bishkek",
+      "address3": "Isakeeva 1/2 St., Bishkek"
     },
     "contacts": {
       "name": "Contacts",

@@ -32,30 +32,32 @@ const GreetingBlock = () => {
   }
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className={s.container}>
-      <div className={s.row}>
-        <div className={s.col_6}>
-          <motion.div variants={AnimLeft} className={s.carImg}>
-            <img src={carImg} alt="Car" />
-          </motion.div>
+    <section>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className={s.container}>
+        <div className={s.row}>
+          <div className={s.col_6}>
+            <motion.div variants={AnimLeft} className={s.carImg}>
+              <img src={carImg} alt="Car" />
+            </motion.div>
+          </div>
+          <div className={s.col_6}>
+            <motion.h2 custom={1} variants={AnimRight} className={s.title}>
+              {t("HomePage.GreetingBlock.title")}
+            </motion.h2>
+            <motion.p custom={2} variants={AnimRight} className={s.text}>
+              {t("HomePage.GreetingBlock.text")}
+            </motion.p>
+            <motion.button custom={3} variants={AnimRight} className={s.button}>
+              {t("HomePage.GreetingBlock.buttonText")}
+            </motion.button>
+          </div>
         </div>
-        <div className={s.col_6}>
-          <motion.h2 custom={1} variants={AnimRight} className={s.title}>
-            {t("HomePage.GreetingBlock.title")}
-          </motion.h2>
-          <motion.p custom={2} variants={AnimRight} className={s.text}>
-            {t("HomePage.GreetingBlock.text")}
-          </motion.p>
-          <motion.button custom={3} variants={AnimRight} className={s.button}>
-            {t("HomePage.GreetingBlock.buttonText")}
-          </motion.button>
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </section>
   )
 }
 
