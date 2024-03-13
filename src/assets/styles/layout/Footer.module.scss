@@ -4,7 +4,7 @@ footer {
   font-family: "Montserrat";
   .logo {
     padding-left: 5vw;
-    padding-top: 6.25vh;
+    padding-top: 5vh;
   }
   a {
     color: #fff;
@@ -13,7 +13,7 @@ footer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 5vh;
+    padding-top: 7vh;
     padding-bottom: 6vh;
     gap: 50px;
 
@@ -23,7 +23,7 @@ footer {
     .row-4 {
       width: 20%;
       ul li:first-child {
-        font-size: 1.8rem;
+        font-size: 1.8vw;
         font-weight: 600;
       }
 
@@ -38,10 +38,11 @@ footer {
       ul li {
         color: #fff;
         font-family: "Montserrat";
-        font-size: 1.3rem;
+        font-size: 1.3vw;
         font-style: normal;
         font-weight: 300;
         letter-spacing: 0.44px;
+        line-height: 55px;
         list-style-type: none;
         width: 100%;
       }
@@ -65,31 +66,31 @@ footer {
       margin-right: 0;
     }
   }
-
+  // adaptive
   @media only screen and (min-width: 320px) and (max-width: 426px) {
     .footer-content {
-      padding-bottom: 0;
+      padding-bottom: 5vh;
       .row-1,
       .row-2,
       .row-3,
       .row-4 {
         width: calc(50% - 25px);
-        margin: 0 -10px;
+        margin: 0 -15px;
         ul li:first-child {
-          font-size: 1.2rem;
+          font-size: 4vw;
         }
         ul li {
-          font-size: 1rem;
-          line-height: 1.2rem;
+          font-size: 3.7vw;
+          line-height: 1.5rem;
         }
       }
     }
     .social-media {
-      margin-bottom: 0;
+      margin-bottom: 2vh;
       ul li {
         margin-right: 1rem;
         img {
-          width: 26px;
+          width: 7vw;
         }
       }
     }
@@ -97,7 +98,7 @@ footer {
 
   @media only screen and (min-width: 426px) and (max-width: 769px) {
     .footer-content {
-      padding-bottom: 2rem;
+      padding-bottom: 7vh;
       .row-1,
       .row-2,
       .row-3,
@@ -105,24 +106,24 @@ footer {
         width: calc(50% - 25px);
 
         ul li:first-child {
-          font-size: 1.5rem;
+          font-size: 2.8vw;
         }
         ul {
           margin: 0 45px;
           li {
-            font-size: 1.2rem;
-            line-height: 1.2rem;
+            font-size: 2.4vw;
+            line-height: 2.5rem;
           }
         }
       }
     }
 
     .social-media {
-      margin-bottom: 0;
+      margin-bottom: 5vh;
       ul li {
         margin-right: 1rem;
         img {
-          width: 35px;
+          width: 4.5vw;
         }
       }
     }
