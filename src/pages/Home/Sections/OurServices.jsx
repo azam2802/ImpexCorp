@@ -12,15 +12,15 @@ const OurServices = () => {
 
   return (
     <div className={s.parentContainer}>
-      <h1>{t("HomePage.OurServices.title")}</h1>
+      <h2 className={s.serviceTitle}>{t("HomePage.OurServices.title")}</h2>
       <div className={s.servicesContainer}>
         <motion.div
           initial={{ opacity: 0, x: -150 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={s.serviceItem}>
-          <img className={s.searchImg} src={searchIcon} alt="search" />
-          <div>
+          <div className={s.searchBlock}>
+            <img className={s.searchImg} src={searchIcon} alt="search Icon" />
             <p className={s.paragraph1}>{t("HomePage.OurServices.search")}</p>
             <p className={s.span1}>{t("HomePage.OurServices.cars")}</p>
           </div>
@@ -31,8 +31,8 @@ const OurServices = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={s.serviceItem}>
-          <img src={autoIcon} alt="auto" />
-          <div>
+          <div className={s.searchBlock}>
+            <img src={autoIcon} alt="auto Icon" />
             <p className={s.paragraph3}>{t("HomePage.OurServices.delivery")}</p>
             <p className={s.span3}>{t("HomePage.OurServices.guarantee")}</p>
           </div>
@@ -43,8 +43,8 @@ const OurServices = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={s.serviceItem}>
-          <img src={registrationIcon} alt="registration" />
-          <div>
+          <div className={s.searchBlock}>
+            <img src={registrationIcon} alt="registration Icon" />
             <p className={s.paragraph2}>
               {t("HomePage.OurServices.registration")}
             </p>
@@ -57,8 +57,8 @@ const OurServices = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={s.serviceItem}>
-          <img src={insuranceIcon} alt="insurance" />
-          <div>
+          <div className={s.searchBlock}>
+            <img src={insuranceIcon} alt="Insurance Icon" />
             <p className={s.paragraph4}>
               {t("HomePage.OurServices.insurance")}
             </p>

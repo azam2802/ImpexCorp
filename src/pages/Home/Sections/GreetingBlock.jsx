@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 import React from "react"
 import { useTranslation } from "react-i18next"
-import carImg from "@images/car.png"
 import s from "@styles/pages/Home/GreetingBlock.module.scss"
+import Carousels from "@components/Carousels/Carousels.jsx"
 
 const GreetingBlock = () => {
   const { t } = useTranslation()
@@ -41,7 +41,7 @@ const GreetingBlock = () => {
         <div className={s.row}>
           <div className={s.col_6}>
             <motion.div variants={AnimLeft} className={s.carImg}>
-              <img src={carImg} alt="Car" />
+              <Carousels />
             </motion.div>
           </div>
           <div className={s.col_6}>

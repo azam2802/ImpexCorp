@@ -4,24 +4,21 @@ import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
 import React, { useState } from "react"
-// import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
-// import { Link } from "react-router-dom"
 
 const Header = () => {
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
 
   const [showCatalog, setShowCatalog] = useState(false)
-  // const [showSearchIco, setShowSearchIco] = useState("")
 
-  // const onOpenCatalog = () => {
-  //   setShowCatalog((prev) => !prev)
-  // }
+  const onOpenCatalog = () => {
+    setShowCatalog((prev) => !prev)
+  }
 
   const onCloseCatalog = () => {
     setShowCatalog(false)
-    console.log("click")
   }
 
   return (
@@ -34,20 +31,21 @@ const Header = () => {
               <Logo onClick={onCloseCatalog} />
             </div>
             <div className={s["col-6"]}>
-              <div className={s.searchIco_div}>
-                <IoSearch
-                  onClick={() => {
-                    onCloseCatalog()
-                  }}
-                  id="search_ico"
-                  alt="search_ico"
-                />
-                <input type="search" placeholder="Поиск" />
+              <div className={s.searchIco_div} onClick={onCloseCatalog}>
+                <IoSearch id="search_ico" alt="search_ico" />
+                <input type="search" placeholder={t("header.search")} />
               </div>
               <div className={s.Links}>
-                <Link to="about">Наша компания</Link>
-                <Link to="catalog">Каталог</Link>
-                <Link to="/">Калькулятор</Link>
+                <Link to="about" onClick={onCloseCatalog}>
+                  {t("header.ourcompany")}
+                </Link>
+                <Link onClick={onOpenCatalog}>{t("header.catalogue")}</Link>
+                <Link to="/" onClick={onCloseCatalog}>
+                  {t("header.services")}
+                </Link>
+                <Link to="/" onClick={onCloseCatalog}>
+                  {t("header.calculator")}
+                </Link>
               </div>
             </div>
           </div>

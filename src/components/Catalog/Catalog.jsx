@@ -12,11 +12,11 @@ const Catalog = ({ setShowCatalog }) => {
   const { t } = useTranslation()
 
   return (
-    <section className={s["container"]}>
-      <div className={s["container_childe"]}>
-        <div className={s["row_1"]}>
+    <section className={s.container}>
+      <div className={s.container_childe}>
+        <div className={s.row_1}>
           <div>
-            <p className={s["title"]}>
+            <p className={s.title}>
               {t("header.HeaderCatalog.countries.title")}
             </p>
             <ul>
@@ -38,7 +38,7 @@ const Catalog = ({ setShowCatalog }) => {
             </ul>
           </div>
           <div>
-            <p className={s["title"]}>{t("header.HeaderCatalog.model")}</p>
+            <p className={s.title}>{t("header.HeaderCatalog.model")}</p>
             <ul>
               <li>
                 <Link to="/" onClick={() => setShowCatalog(false)}>
@@ -69,10 +69,10 @@ const Catalog = ({ setShowCatalog }) => {
           </div>
         </div>
 
-        <div className={s["row_2"]}>
-          <div className={s["row_2-childe"]}>
-            <p className={s["title_car"]}>Mercedes benz 2024</p>
-            <div className={s["row_2-characteristic"]}>
+        <div className={s.row_2}>
+          <div className={s.row_2_childe}>
+            <p className={s.title_car}>Mercedes benz 2024</p>
+            <div className={s.row_2_characteristic}>
               <img src={Icon} alt="" />
               <p>13/100</p>
               <img src={Icon2} />
@@ -80,7 +80,7 @@ const Catalog = ({ setShowCatalog }) => {
               <img src={Icon3} />
               <p>4</p>
             </div>
-            <p className={s["price"]}>$ 34 000</p>
+            <p className={s.price}>$ 34 000</p>
           </div>
 
           <div>

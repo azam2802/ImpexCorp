@@ -2,11 +2,8 @@ header {
   padding: 2vh 5vw;
   font-size: 1.2rem;
   background: #f4f4f0;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   @media screen and (max-width: 1024px) {
-    .pc-nav {
-      display: none;
-    }
     display: none;
   }
 }
@@ -17,7 +14,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   .col-6 {
     display: flex;
     align-items: center;
@@ -34,6 +30,7 @@ header {
       border: none;
       background-color: transparent;
       padding: 10px 10px;
+      font-size: 16px;
     }
     .Links{
       margin-left: 30px;
@@ -42,7 +39,13 @@ header {
       a{
         font-family: "Gotham Pro";
         color: #000;
+        transition: all .2s;
+        &:hover{
+          color: #19746b;
+          transition: all .2s;
+        }
       }
+
     }
   }
 }

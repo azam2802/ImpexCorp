@@ -1,0 +1,31 @@
+$background-color_1: transparent;
+
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: $background-color_1;
+  font-size: 24px;
+
+  &:after {
+    display: none;
+  }
+  width: 35px;
+  height: 35px;
+  @media screen and (max-width: 425px) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.mySwiper {
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 85%;
+  }
+}
