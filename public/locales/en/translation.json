@@ -41,8 +41,21 @@
     "firstBlock": {
       "title1": "Security, Reliability, and Style in every detail!",
       "buttonText": "Call"
+    },
+    "OurServices":{
+      "title": "Our Servisces",
+      "search": "search and purchase",
+      "cars": "cars from Korea and China",
+      "delivery": "Car delivery",
+      "guarantee": "with guarantee in Bishkek",
+      "registration":"Car registration in the Kyrgyz Republic",
+      "accounting": "(REO GAI) and deregistration outside the Kyrgyz Republic",
+      "insurance": "Full insurance",
+      "auto": "of your car before delivery to Kyrgyzstan"
     }
+    
   },
+
   "footer": {
     "aboutus": {
       "name": "About Us",
