@@ -4,7 +4,8 @@ import App from "./App.jsx"
 import "./index.scss"
 import "./i18n.js"
 import { BrowserRouter } from "react-router-dom"
-;(function (w, d, u) {
+
+;((w, d, u) => {
   var s = d.createElement("script")
   s.async = true
   s.src = u + "?" + ((Date.now() / 60000) | 0)

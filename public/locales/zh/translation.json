@@ -46,25 +46,33 @@
   "footer": {
     "aboutus": {
       "name": "关于我们",
-      "company": "我们公司",
-      "services": "服务"
+      "menu": {
+        "company": "我们公司",
+        "services": "服务"
+      }
     },
     "support": {
       "name": "支持",
-      "feedback": "反馈意见",
-      "counseling": "在线咨询"
+      "menu": {
+        "feedback": "反馈意见",
+        "counseling": "在线咨询"
+      }
     },
     "branches": {
       "name": "选购",
-      "address1": "VMG5+F44，比什凯克市，高尔基，沙卜丹-巴特尔街",
-      "address2": "比什凯克市安卡拉街 38a 号",
-      "address3": "Isakeeva str. 比什凯克市 Isakeeva 1/2"
+      "menu": {
+        "address1": "VMG5+F44，比什凯克市，高尔基，沙卜丹-巴特尔街",
+        "address2": "比什凯克市安卡拉街 38a 号",
+        "address3": "Isakeeva str. 比什凯克市 Isakeeva 1/2"
+      }
     },
     "contacts": {
       "name": "联系方式",
-      "number1": "+996 (555) 25-12-56",
-      "number2": "+996 (700) 22-25-32",
-      "number3": "+996 (708) 04-02-90"
+      "menu": {
+        "number1": "+996 (555) 25-12-56",
+        "number2": "+996 (700) 22-25-32",
+        "number3": "+996 (708) 04-02-90"
+      }
     }
   }
 }
