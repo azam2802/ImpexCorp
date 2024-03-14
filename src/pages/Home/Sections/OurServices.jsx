@@ -30,7 +30,7 @@ const OurServices = () => {
     visible: (custom) => ({
       x: 0,
       opacity: 1,
-      transition: { duration: 0.5, delay: custom * 0.3 },
+      transition: { duration: 0.5, delay: custom * 0.2 },
     }),
   }
 
