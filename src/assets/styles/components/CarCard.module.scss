@@ -91,6 +91,7 @@
 }
 
 @media screen and (max-width: 768px) {
+
   .carCardItem {
     width: 460px;
     border-radius: 12px;
@@ -135,7 +136,8 @@
         height: 25px;
         padding: 5px 14px;
         gap: 8px;
-        font-size: 14px;
+        border-radius: 3px;
+        font-size: 14 px;
       }
     }
   }
@@ -143,7 +145,7 @@
 
 @media screen and (max-width: 500px) {
   .carCardItem {
-    width: 100%;
+    width: 93%;
     border-radius: 10px;
     margin-right: 10px;
     padding: 20px;
@@ -190,16 +192,6 @@
         padding: 5px 14px;
         gap: 8px;
         font-size: 14px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 405px) {
-  .carCardItem {
-    .car-struct-list {
-      .car-struct-list-item {
-        font-size: 10px;
       }
     }
   }

@@ -70,6 +70,7 @@
 
 @media screen and (max-width: 500px) {
   .catalogs {
+    width: 100%;
     .catalogs-list {
       width: 90%;
       margin: 0 auto;
@@ -99,7 +100,7 @@
 
 @media screen and (max-width: 405px) {
   .catalog-type-title {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
 }
