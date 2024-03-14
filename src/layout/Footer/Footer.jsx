@@ -25,9 +25,7 @@ const Footer = () => {
     <div>
       <footer>
         <div className={s["logo"]}>
-          <Link to="/">
-            <Logo />
-          </Link>
+          <Logo />
         </div>
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>

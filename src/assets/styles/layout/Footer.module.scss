@@ -4,8 +4,9 @@ footer {
   font-family: "Montserrat";
   margin-top: 50px;
   .logo {
-    padding-left: 5vw;
-    padding-top: 6.25vh;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 3.25vw;
   }
   a {
     color: #fff;
@@ -14,8 +15,8 @@ footer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 5vh;
-    padding-bottom: 6vh;
+    padding-top: 3vw;
+    padding-bottom: 4vw;
     gap: 50px;
 
     .row-1,
@@ -88,6 +89,9 @@ footer {
   }
 
   @media only screen and (max-width: 425px) {
+    .logo{
+      padding-block: 6.25vw;
+    }
     .footer-content {
       padding-bottom: 0;
       gap: 0;
