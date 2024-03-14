@@ -1,13 +1,17 @@
+
 .catalogs {
   width: 90%;
   margin: 0 auto;
 
+  .catalogs-list {
+    margin-bottom: 140px;
+  }
   .catalogs-item {
     margin-top: 100px;
+    list-style: none;
 
     .next-button {
       width: 288px;
-      height: 550px;
       flex-shrink: 0;
       border-radius: 15px;
       background: #fff;
@@ -41,3 +45,65 @@
 .car-card-list::-webkit-scrollbar {
   display: none;
 }
+
+@media screen and (max-width: 768px) {
+  .catalogs {
+    .catalogs-list {
+      margin-bottom: 100px;
+    }
+    .catalogs-item {
+      margin-top: 100px;
+      list-style: none;
+
+      .next-button {
+        width: 180px;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .catalog-type-title {
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .catalogs {
+    width: 100%;
+    .catalogs-list {
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 100px;
+    }
+    .catalogs-item {
+      width: 100%;
+      margin-top: 40px;
+      list-style: none;
+
+      .car-card-list {
+        width: 100%;
+      }
+
+      .next-button {
+        width: 180px;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .catalog-type-title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 405px) {
+  .catalog-type-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+
