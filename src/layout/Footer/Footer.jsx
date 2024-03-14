@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next"
 import Logo from "@ui/Logo/Logo"
 
 const Footer = () => {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
 
   const renderLinks = (links) => {
@@ -32,22 +32,27 @@ const Footer = () => {
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>
             <ul>
-              <li>{renderLinks(currentLanguage.footer.aboutus)}</li>
+              <li>{t("footer.aboutus.name")}</li>
+              {renderLinks(currentLanguage.footer.aboutus.menu)}
             </ul>
           </div>
           <div className={s["row-2"]}>
             <ul>
-              <li> {renderLinks(currentLanguage.footer.support)}</li>
+              <li>{t("footer.support.name")}</li>
+
+              {renderLinks(currentLanguage.footer.support.menu)}
             </ul>
           </div>
           <div className={s["row-3"]}>
             <ul>
-              <li>{renderLinks(currentLanguage.footer.branches)}</li>
+              <li>{t("footer.branches.name")}</li>
+              {renderLinks(currentLanguage.footer.branches.menu)}
             </ul>
           </div>
           <div className={s["row-4"]}>
             <ul>
-              <li>{renderLinks(currentLanguage.footer.contacts)}</li>
+              <li>{t("footer.contacts.name")}</li>
+              {renderLinks(currentLanguage.footer.contacts.menu)}
             </ul>
           </div>
         </div>
