@@ -3,6 +3,7 @@ import Home from "@pages/Home/Home"
 import React, { Suspense } from "react"
 import { Route, Routes } from "react-router-dom"
 import AboutUs from "@pages/AboutUs/AboutUs"
+import Loader from "@components/Loader/Loader"
 
 const App = () => {
   const router = [
@@ -13,7 +14,7 @@ const App = () => {
   ]
 
   return (
-    <Suspense fallback="Loading...">
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
