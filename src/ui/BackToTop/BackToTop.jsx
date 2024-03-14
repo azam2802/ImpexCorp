@@ -5,14 +5,15 @@ import s from "@styles/ui/BackToTop.module.scss"
 const BackToTop = () => {
   window.addEventListener("scroll", () => {
     let scroll = document.querySelector("#top-btn")
-    scroll.classList.toggle(s.active, window.scrollY > 200)
+    scroll.classList.toggle(s.active, window.scrollY > 800)
   })
 
   const toTop = () => {
-    window.scrollTo({
-      top,
-      behavior: "smooth",
-    })
+    var currentPosition = window.scrollY
+    if (currentPosition > 0) {
+      window.requestAnimationFrame(toTop)
+      window.scrollTo(0, currentPosition - currentPosition / 13)
+    }
   }
 
   return (
