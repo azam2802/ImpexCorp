@@ -33,7 +33,7 @@ footer {
         transition: all 0.3s;
       }
 
-      ul li:not(:first-child) :hover {
+      ul li a:hover {
         color: #19746b;
       }
 
@@ -69,23 +69,23 @@ footer {
     }
   }
 
-@media screen and (max-width: 1024px) {
-  .footer-content {
-    .row-1,
-    .row-2,
-    .row-3,
-    .row-4 {
-      ul li:first-child {
-        font-size: 1.5rem;
-        margin-bottom: 3vw;
-      }
-      ul li {
-        font-size: 0.9rem;
-        line-height: 1.2rem;
+  @media screen and (max-width: 1024px) {
+    .footer-content {
+      .row-1,
+      .row-2,
+      .row-3,
+      .row-4 {
+        ul li:first-child {
+          font-size: 1.5rem;
+          margin-bottom: 3vw;
+        }
+        ul li {
+          font-size: 0.9rem;
+          line-height: 1.2rem;
+        }
       }
     }
   }
-}
 
   @media only screen and (max-width: 425px) {
     .footer-content {

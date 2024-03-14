@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next"
 import Logo from "@ui/Logo/Logo"
 
 const Footer = () => {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
 
   const renderLinks = (links) => {
@@ -31,16 +31,29 @@ const Footer = () => {
         </div>
         <div className={s["footer-content"]}>
           <div className={s["row-1"]}>
-            <ul>{renderLinks(currentLanguage.footer.aboutus)}</ul>
+            <ul>
+              <li>{t("footer.aboutus.name")}</li>
+              {renderLinks(currentLanguage.footer.aboutus.menu)}
+            </ul>
           </div>
           <div className={s["row-2"]}>
-            <ul>{renderLinks(currentLanguage.footer.support)}</ul>
+            <ul>
+              <li>{t("footer.support.name")}</li>
+
+              {renderLinks(currentLanguage.footer.support.menu)}
+            </ul>
           </div>
           <div className={s["row-3"]}>
-            <ul>{renderLinks(currentLanguage.footer.branches)}</ul>
+            <ul>
+              <li>{t("footer.branches.name")}</li>
+              {renderLinks(currentLanguage.footer.branches.menu)}
+            </ul>
           </div>
           <div className={s["row-4"]}>
-            <ul>{renderLinks(currentLanguage.footer.contacts)}</ul>
+            <ul>
+              <li>{t("footer.contacts.name")}</li>
+              {renderLinks(currentLanguage.footer.contacts.menu)}
+            </ul>
           </div>
         </div>
         <div className={s["social-media"]}>
