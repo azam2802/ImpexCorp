@@ -39,7 +39,7 @@ const OurServices = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
         className={s.parentContainer}>
         <motion.h1 custom={1} variants={AnimLeft} className={s.serviceTitle}>
           {t("HomePage.OurServices.title")}
