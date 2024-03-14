@@ -1,9 +1,9 @@
 .top-btn {
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   background-color: #d8d8d8;
-  bottom: 700px;
+  bottom: 750px;
   right: 3vw;
   z-index: 99;
   padding: 10px;
@@ -24,6 +24,6 @@
 .active {
   visibility: visible;
   opacity: 1;
-  bottom: 80px;
+  bottom: 60px;
   z-index: 99;
 }
