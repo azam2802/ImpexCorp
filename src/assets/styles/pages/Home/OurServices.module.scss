@@ -3,8 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
+    margin-left: 8.125vw;
     padding-top: 3.472vw; 
     padding-bottom: 9.722vw;
   }
@@ -21,20 +20,19 @@
   .serviceItem {
     display: flex;
     align-items: center;
-    margin-bottom: 2.083vw;
-    margin-top: 20px;
+    margin-bottom: 2.083vw; 
   }
   
   .serviceItem img {
-    width: 90px;
+    max-width: 100%;
     height: auto;
     margin-right: 1vw; 
   }
   
   .serviceTitle {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     margin-top: 3.125vw; 
-    font-size: 2.5vw;
+    font-size: 2.5vw;   
     align-self: flex-start;
     margin-bottom: 5.208vw; 
   }
@@ -52,92 +50,123 @@
     font-family: 'Montserrat';
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .servicesContainer {
-      grid-template-columns: repeat(1, 1fr);
-      margin-top: 10vw;
-    }
-    .serviceItem {
-      flex-direction: row;
-      width: 100%;
-      align-items: center;
-      margin-bottom: 1.875vw;
-      margin-left: 10px;
-    }
-    .serviceItem img {
-      margin-right: 4vw; 
-      width: 10vw; 
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 10vw;
     }
     .serviceTitle {
-      margin-top: 1.875vw; 
-      font-size: 4vw;
-      align-self: center;
+        align-self: center;
+        font-size: 2vw;
     }
+  
+    .serviceItem {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1.875vw;
+    }
+  
+    .serviceItem img {
+        margin-right: 1.5vw; 
+        width: 9vw; 
+    }
+  
+    .serviceTitle {
+        margin-top: 1.875vw; 
+        font-size: 4vw;
+    }
+  
     .parentContainer {
-      margin-left: 1.736vw; 
+        margin-left: 1.736vw; 
     }
+  
     .paragraph1, .paragraph2, .paragraph3, .paragraph4 {
-      font-size: 3vw;
-      margin-bottom: 0.5vw; 
-      display: inline;
+        font-size: 3vw;
+        margin-bottom: 0.5vw; 
     }
     .span1, .span2, .span3, .span4 {
-      font-size: 3vw;
-      display: inline;
-      margin-left: 10px;
+        font-size: 3vw;
     }
   }
   
-  @media screen and (max-width: 468px) {
+  @media screen and (max-width: 768px) {
     .serviceItem img {
-      width: 4em;
-      margin-right: 1.875em;
+        width: 6.25em;
+        margin-right: 1.875em;
     }
     .serviceItem {
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 1.875em;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1.875em;
     }
+  
     .serviceItem img {
-      margin-right: 0.8em;
-      width: 4em;
+        margin-right: 1.875em;
+        width: 6.25em;
     }
+  
     .serviceTitle {
-      margin-top: 1.875em;
-      font-size: 4.5vw;
-      align-self: center;
+        margin-top: 1.875em;
+        font-size: 3vw;
     }
+  
     .parentContainer {
-      margin-left: 1.25em;
+        margin-left: 1.25em;
     }
+  
     .paragraph1, .paragraph2, .paragraph3, .paragraph4 {
-      font-size: 3.5vw; 
-      margin-bottom: 0.5em;
+        font-size: 3vw; 
+        margin-bottom: 0.5em;
     }
     .span1, .span2, .span3, .span4 {
-      font-size: 4.4vw;
-      margin-left: 5px;
+      font-size: 3vw;
+  }
+  }
+  
+  @media screen and  (max-width: 468px) {
+    .serviceTitle {
+        margin-top: 100vw;
+        font-size: 8vw;
+    }
+  
+    .serviceItem img {
+        width: 20vw;
+        margin-right: 1em;
+    }
+    .paragraph1, .paragraph2, .paragraph3, .paragraph4 {
+        font-size: 4.8vw; 
+        margin-bottom: 0.5em;
+    }
+    .span1, .span2, .span3, .span4 {
+        font-size: 4.8vw;
+        margin-top: 0.1302vw; 
+        font-family: 'Montserrat';
     }
   }
   
-  @media screen and  (max-width: 320px) {
-    .serviceTitle {
-      margin-top: 100vw;
-      font-size: 5vw;
-      align-self: center;
-    }
+  @media screen and (max-width: 320px) {
     .serviceItem img {
-      width: 15vw;
-      margin-right: 1em;
+        width: 2.5em;
+        margin-right: 1.25em;
     }
+  
+    .serviceTitle {
+        font-size: 3.5vw;
+        margin-top: 1.875em;
+    }
+  
+    .parentContainer {
+        margin-left: 5%;
+    }
+  
     .paragraph1, .paragraph2, .paragraph3, .paragraph4 {
-      font-size: 4vw; 
-      margin-bottom: 0.5em;
+        font-size: 2.5vw;
+        margin-bottom: 0.375em;
     }
     .span1, .span2, .span3, .span4 {
-      font-size: 4.2vw;
-      margin-top: 0.1302vw; 
-      font-family: 'Montserrat';
+        font-size: 3vw; 
+        margin-top: 0.1302vw; 
+        font-family: 'Montserrat';
     }
   }
   

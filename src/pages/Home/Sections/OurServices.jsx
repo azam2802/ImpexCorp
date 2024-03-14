@@ -19,7 +19,9 @@ const OurServices = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={s.serviceItem}>
-          <img className={s.searchImg} src={searchIcon} alt="search" />
+          <div className={s.imgDiv}>
+            <img src={searchIcon} alt="search" />
+          </div>
           <div>
             <p className={s.paragraph1}>{t("HomePage.OurServices.search")}</p>
             <p className={s.span1}>{t("HomePage.OurServices.cars")}</p>
@@ -31,7 +33,9 @@ const OurServices = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={s.serviceItem}>
-          <img src={autoIcon} alt="auto" />
+          <div className={s.imgDiv}>
+            <img src={autoIcon} alt="auto" />
+          </div>
           <div>
             <p className={s.paragraph3}>{t("HomePage.OurServices.delivery")}</p>
             <p className={s.span3}>{t("HomePage.OurServices.guarantee")}</p>
@@ -43,7 +47,9 @@ const OurServices = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={s.serviceItem}>
-          <img src={registrationIcon} alt="registration" />
+          <div className={s.imgDiv}>
+            <img src={registrationIcon} alt="registration" />
+          </div>
           <div>
             <p className={s.paragraph2}>
               {t("HomePage.OurServices.registration")}
@@ -57,7 +63,9 @@ const OurServices = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={s.serviceItem}>
-          <img src={insuranceIcon} alt="insurance" />
+          <div className={s.imgDiv}>
+            <img src={insuranceIcon} alt="insurance" />
+          </div>
           <div>
             <p className={s.paragraph4}>
               {t("HomePage.OurServices.insurance")}
