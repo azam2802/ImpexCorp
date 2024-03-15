@@ -10,18 +10,10 @@
     padding:15px;
     z-index: 99;
     width: 100%;
-    top: -100px;
-    transition: all .2s ease;
     @media screen and (max-width: 768px){
       margin-bottom: 60px;
     }
   }
-
-.mob-nav.fixed{
-  position: fixed;
-  transform: translateY(0);
-  top: 0;
-}
 
   .row{
     display: flex;

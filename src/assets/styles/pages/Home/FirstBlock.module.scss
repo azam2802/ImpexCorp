@@ -7,7 +7,7 @@
     #19746b 62vw,
     #19746b
   );
-  height: 90vh;
+  padding-block:  90px;
 }
 
 .title {
@@ -67,6 +67,7 @@
     display: flex;
     justify-content: center;
     background: none;
+    padding-block: unset;
     img {
       display: none;
     }

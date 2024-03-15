@@ -44,14 +44,14 @@
     },
     "OurServices":{
       "title": "Our Servisces",
-      "search": "search and purchase",
+      "search": "Search and purchase",
       "cars": "cars from Korea and China",
       "delivery": "Car delivery",
       "guarantee": "with guarantee in Bishkek",
-      "registration":"Car registration in the Kyrgyz Republic",
-      "accounting": "(REO GAI) and deregistration outside the Kyrgyz Republic",
+      "registration":"Car registration",
+      "accounting": "and deregistration (REO GAI)",
       "insurance": "Full insurance",
-      "auto": "of your car before delivery to Kyrgyzstan"
+      "auto": "while delivering to Kyrgyzstan"
     }
     
   },
@@ -76,7 +76,7 @@
       "menu": {
         "address1": "20a Gorky St.,  Bishkek",
         "address2": "38a Ankara St., Bishkek",
-        "address3": "Isakeeva 1/2 St., Bishkek"
+        "address3": "1/2 Isakeeva St., Bishkek"
       }
     },
     "contacts": {

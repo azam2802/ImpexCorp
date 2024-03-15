@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <div>
       <OverNavbar />
-      <header className={s["pc-nav, fixed"]} id="header">
+      <header className={s["pc-nav"]} id="header">
         <nav className={s["pc-nav"]}>
           <div className={s.row}>
             <div className={s["col-6"]}>

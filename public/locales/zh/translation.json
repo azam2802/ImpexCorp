@@ -46,12 +46,12 @@
       "title": "我們的服務",
       "search": "搜尋並購買",
       "cars": "來自韓國和中國的汽車",
-      "delivery": "送車",
-      "guarantee":"比斯凱克有擔保",
-      "registration": "吉爾吉斯共和國的汽車登記",
-      "accounting": "(REO GAI) 以及在吉爾吉斯共和國境外註銷",
-      "insurance": "全額保險",
-      "auto": "在運送到吉爾吉斯斯坦之前檢查您的汽車"
+      "delivery": "专车接送",
+      "guarantee":"比什凯克有担保",
+      "registration": "汽车登记",
+      "accounting": "注销(国家自动监察局)",
+      "insurance": "全额保险",
+      "auto": "运送到吉尔吉斯斯坦之前"
     }
   },
   "footer": {
@@ -72,9 +72,9 @@
     "branches": {
       "name": "选购",
       "menu": {
-        "address1": "VMG5+F44，比什凯克市，高尔基，沙卜丹-巴特尔街",
-        "address2": "比什凯克市安卡拉街 38a 号",
-        "address3": "Isakeeva str. 比什凯克市 Isakeeva 1/2"
+        "address1": "街道。Gorkogo 20a, 比什凯克",
+        "address2": "街道。Ankara 38a, 比什凯克",
+        "address3": "街道。Isakeeva 1/2, 比什凯克"
       }
     },
     "contacts": {
