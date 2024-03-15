@@ -128,14 +128,14 @@
   gap: 4vw;
   .col_6 {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 45%;
     .imgDiv {
-      width: 25%;
+        width: 25%;
     }
-    img {
+    img {   
       width: 85%;
-      margin-right: 2vw;
     }
     @media screen and (max-width: 768px) {
       .imgDiv {

@@ -10,25 +10,13 @@ import s from "@styles/pages/Home/OurServices.module.scss"
 const OurServices = () => {
   const { t } = useTranslation()
 
-  const AnimLeft = {
+  const AnimBottom = {
     hidden: {
-      x: -150,
+      y: 150,
       opacity: 0,
     },
     visible: (custom) => ({
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.5, delay: custom * 0.3 },
-    }),
-  }
-
-  const AnimRight = {
-    hidden: {
-      x: 150,
-      opacity: 0,
-    },
-    visible: (custom) => ({
-      x: 0,
+      y: 0,
       opacity: 1,
       transition: { duration: 0.5, delay: custom * 0.2 },
     }),
@@ -41,11 +29,11 @@ const OurServices = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         className={s.parentContainer}>
-        <motion.h1 custom={1} variants={AnimLeft} className={s.serviceTitle}>
+        <motion.h1 variants={AnimBottom} className={s.serviceTitle}>
           {t("HomePage.OurServices.title")}
         </motion.h1>
         <div className={s.row}>
-          <motion.div custom={2} variants={AnimLeft} className={s.col_6}>
+          <motion.div custom={2} variants={AnimBottom} className={s.col_6}>
             <div className={s.imgDiv}>
               <img src={searchIcon} alt="search" />
             </div>
@@ -54,7 +42,7 @@ const OurServices = () => {
               <p className={s.span1}>{t("HomePage.OurServices.cars")}</p>
             </div>
           </motion.div>
-          <motion.div custom={2} variants={AnimLeft} className={s.col_6}>
+          <motion.div custom={2} variants={AnimBottom} className={s.col_6}>
             <div className={s.imgDiv}>
               <img src={autoIcon} alt="auto" />
             </div>
@@ -65,7 +53,7 @@ const OurServices = () => {
               <p className={s.span3}>{t("HomePage.OurServices.guarantee")}</p>
             </div>
           </motion.div>
-          <motion.div custom={3} variants={AnimRight} className={s.col_6}>
+          <motion.div custom={3} variants={AnimBottom} className={s.col_6}>
             <div className={s.imgDiv}>
               <img src={registrationIcon} alt="registration" />
             </div>
@@ -76,7 +64,7 @@ const OurServices = () => {
               <p className={s.span2}>{t("HomePage.OurServices.accounting")}</p>
             </div>
           </motion.div>
-          <motion.div custom={3} variants={AnimRight} className={s.col_6}>
+          <motion.div custom={3} variants={AnimBottom} className={s.col_6}>
             <div className={s.imgDiv}>
               <img src={insuranceIcon} alt="insurance" />
             </div>
