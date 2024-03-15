@@ -1,6 +1,6 @@
 import React from "react"
 import s from "@styles/components/Catalog.module.scss"
-import ImageCar from "@images/image 35.png"
+import ImageCar from "@images/image 35.webp"
 import Icon from "@images/Union.svg"
 import Icon2 from "@images/Vector (1).svg"
 import Icon3 from "@images/Vector.svg"

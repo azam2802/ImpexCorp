@@ -1,6 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
-import ImageCar from "@images/image 44.png"
+import ImageCar from "@images/image 44.webp"
 import s from "@styles/pages/Home/FirstBlock.module.scss"
 import { useTranslation } from "react-i18next"
 

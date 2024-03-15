@@ -22,69 +22,67 @@ const Footer = () => {
   }
 
   return (
-    <div>
-      <footer>
-        <div className={s["logo"]}>
-          <Logo />
-        </div>
-        <div className={s["footer-content"]}>
-          <div className={s["row-1"]}>
-            <ul>
-              <li>{t("footer.aboutus.name")}</li>
-              {renderLinks(currentLanguage.footer.aboutus.menu)}
-            </ul>
-          </div>
-          <div className={s["row-2"]}>
-            <ul>
-              <li>{t("footer.support.name")}</li>
-
-              {renderLinks(currentLanguage.footer.support.menu)}
-            </ul>
-          </div>
-          <div className={s["row-3"]}>
-            <ul>
-              <li>{t("footer.branches.name")}</li>
-              {renderLinks(currentLanguage.footer.branches.menu)}
-            </ul>
-          </div>
-          <div className={s["row-4"]}>
-            <ul>
-              <li>{t("footer.contacts.name")}</li>
-              {renderLinks(currentLanguage.footer.contacts.menu)}
-            </ul>
-          </div>
-        </div>
-        <div className={s["social-media"]}>
+    <footer>
+      <div className={s["logo"]}>
+        <Logo />
+      </div>
+      <div className={s["footer-content"]}>
+        <div className={s["row-1"]}>
           <ul>
-            <li>
-              <Link to="#">
-                <img src={FaceBookIcon} alt="Facebook Icon" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <img src={TelegramIcon} alt="Telegram Icon" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <img src={InstagramIcon} alt="Instagram Icon" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <img src={GmailIcon} alt="Gmail Icon" />
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <img src={WhatsUpIcon} alt="WhatsApp Icon" />
-              </Link>
-            </li>
+            <li>{t("footer.aboutus.name")}</li>
+            {renderLinks(currentLanguage.footer.aboutus.menu)}
           </ul>
         </div>
-      </footer>
-    </div>
+        <div className={s["row-2"]}>
+          <ul>
+            <li>{t("footer.support.name")}</li>
+
+            {renderLinks(currentLanguage.footer.support.menu)}
+          </ul>
+        </div>
+        <div className={s["row-3"]}>
+          <ul>
+            <li>{t("footer.branches.name")}</li>
+            {renderLinks(currentLanguage.footer.branches.menu)}
+          </ul>
+        </div>
+        <div className={s["row-4"]}>
+          <ul>
+            <li>{t("footer.contacts.name")}</li>
+            {renderLinks(currentLanguage.footer.contacts.menu)}
+          </ul>
+        </div>
+      </div>
+      <div className={s["social-media"]}>
+        <ul>
+          <li>
+            <Link to="#">
+              <img src={FaceBookIcon} alt="Facebook Icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to="#">
+              <img src={TelegramIcon} alt="Telegram Icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to="#">
+              <img src={InstagramIcon} alt="Instagram Icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to="#">
+              <img src={GmailIcon} alt="Gmail Icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to="#">
+              <img src={WhatsUpIcon} alt="WhatsApp Icon" />
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </footer>
   )
 }
 

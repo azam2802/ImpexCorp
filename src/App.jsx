@@ -4,6 +4,7 @@ import React, { Suspense } from "react"
 import { Route, Routes } from "react-router-dom"
 import AboutUs from "@pages/AboutUs/AboutUs"
 import Loader from "@components/Loader/Loader"
+import PageNotFound from "@pages/Error404/PageNotFound"
 
 const App = () => {
   const router = [
@@ -15,15 +16,17 @@ const App = () => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          {router.map((item, id) => (
-            <Route key={id} path={item.path} element={item.element} />
-          ))}
-          <Route path="*" element={<h1>ERROR 404</h1>} />
-        </Route>
-      </Routes>
+      <div className="wrapper">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            {router.map((item, id) => (
+              <Route key={id} path={item.path} element={item.element} />
+            ))}
+            <Route path="*" element={<PageNotFound />} />
+          </Route>
+        </Routes>
+      </div>
     </Suspense>
   )
 }

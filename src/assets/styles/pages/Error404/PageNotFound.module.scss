@@ -1,0 +1,24 @@
+.NotFoundBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    font-family: "Gotham Pro";
+    height: 100%;
+    text-align: center;
+    svg{
+        margin-bottom: 20px;
+    }
+    h2{
+        margin-top: 30px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        span{
+            writing-mode: vertical-rl;
+        }
+    }
+}
