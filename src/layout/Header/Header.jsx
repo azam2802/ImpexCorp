@@ -11,8 +11,8 @@ const Header = () => {
   const { t } = useTranslation()
 
   document.onscroll = () => {
-    let header = document.querySelector("#header"),
-      headerH = document.querySelector("#header").clientHeight
+    let header = document.querySelector(s["pc-nav"]),
+      headerH = document.querySelector(s["pc-nav"]).clientHeight
     let scroll = window.scrollY
     console.log(scroll)
     if (scroll > 1.5 * headerH) {
@@ -21,9 +21,8 @@ const Header = () => {
       header.classList.remove(s.fixed)
     }
   }
-
   return (
-    <div>
+    <>
       <OverNavbar />
       <header className={s["pc-nav"]} id="header">
         <nav className={s["pc-nav"]}>
@@ -47,7 +46,7 @@ const Header = () => {
         </nav>
       </header>
       <BurgerMenu />
-    </div>
+    </>
   )
 }
 

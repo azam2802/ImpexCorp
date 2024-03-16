@@ -14,7 +14,7 @@ i18n
       useSuspense: true,
     },
     backend: {
-      loadPath: "/public/locales/{{lng}}/translation.json",
+      loadPath: "/locales/{{lng}}/translation.json",
     },
     detection: {
       order: ["queryString", "cookie", "localStorage"],

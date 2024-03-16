@@ -132,20 +132,27 @@
     align-items: center;
     width: 45%;
     .imgDiv {
-        width: 25%;
+      width: 25%;
     }
-    img {   
+    img {
       width: 85%;
     }
     @media screen and (max-width: 768px) {
-      .imgDiv {
-        width: 75%;
-        img {
-          width: 75px;
-        }
-      }
       width: 100%;
       gap: 20px;
+      justify-content: unset;
+      .imgDiv {
+        width: 20%;
+        img {
+          vertical-align: middle;
+          width: 100%;
+        }
+      }
+    }
+    @media screen and (max-width: 425px) {
+      .imgDiv {
+        width: 25%;
+      }
     }
   }
 }
