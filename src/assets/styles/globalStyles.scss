@@ -5,16 +5,15 @@
   outline: none;
 }
 
-body, html {
-  height: 100%;
+html {
   background-color: #f4f4f0;
   overflow-x: hidden;
 }
 
-#root, .wrapper{
+#root{
   display: flex;
+  height: 100vh;
   flex-direction: column;
-  height: 100%;
 }
 
 main{

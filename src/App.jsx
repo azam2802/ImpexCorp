@@ -16,17 +16,15 @@ const App = () => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <div className="wrapper">
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            {router.map((item, id) => (
-              <Route key={id} path={item.path} element={item.element} />
-            ))}
-            <Route path="*" element={<PageNotFound />} />
-          </Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          {router.map((item, id) => (
+            <Route key={id} path={item.path} element={item.element} />
+          ))}
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </Suspense>
   )
 }

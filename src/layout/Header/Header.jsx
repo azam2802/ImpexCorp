@@ -10,21 +10,23 @@ import { Link } from "react-router-dom"
 const Header = () => {
   const { t } = useTranslation()
 
-  document.onscroll = () => {
-    let header = document.querySelector(s["pc-nav"]),
-      headerH = document.querySelector(s["pc-nav"]).clientHeight
-    let scroll = window.scrollY
-    console.log(scroll)
-    if (scroll > 1.5 * headerH) {
+  const addFixedClassToHeader = () => {
+    const header = document.querySelector(".header")
+    const headerHeight = header.offsetHeight
+    const scrollThreshold = 1.7 * headerHeight
+    if (window.scrollY > scrollThreshold) {
       header.classList.add(s.fixed)
     } else {
       header.classList.remove(s.fixed)
     }
   }
+
+  window.addEventListener("scroll", addFixedClassToHeader)
+
   return (
     <>
       <OverNavbar />
-      <header className={s["pc-nav"]} id="header">
+      <header className="header">
         <nav className={s["pc-nav"]}>
           <div className={s.row}>
             <div className={s["col-6"]}>

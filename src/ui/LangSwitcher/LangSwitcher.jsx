@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from "react"
 import RussianFlag from "@images/russia.svg"
 import ChinaFlag from "@images/china.svg"
@@ -6,11 +5,10 @@ import KyrgyzFlag from "@images/kyrgyzstan.svg"
 import UsaFlag from "@images/usa.svg"
 import { useLang } from "@store/store"
 import { useTranslation } from "react-i18next"
-import PropTypes from "prop-types"
 import "@styles/ui/LangSwitcher.scss"
 import { FaChevronDown } from "react-icons/fa6"
 
-const LangSwitcher = ({ onCloseCatalog }) => {
+const LangSwitcher = () => {
   const { changeLang } = useLang()
   const [showDrop, setShowDrop] = useState(false)
   const { i18n } = useTranslation()
@@ -36,12 +34,11 @@ const LangSwitcher = ({ onCloseCatalog }) => {
   }
 
   return (
-    <div className="dropDown" onClick={onCloseCatalog}>
+    <div className="dropDown">
       {i18n.language == "ru" ? (
         <button
           onClick={() => {
             showDropDown()
-            onCloseCatalog()
           }}>
           <div>
             <img src={RussianFlag} alt="Russia" />
@@ -53,7 +50,6 @@ const LangSwitcher = ({ onCloseCatalog }) => {
         <button
           onClick={() => {
             showDropDown()
-            onCloseCatalog()
           }}>
           <div>
             <img src={KyrgyzFlag} alt="Kyrgyz" />
@@ -65,7 +61,6 @@ const LangSwitcher = ({ onCloseCatalog }) => {
         <button
           onClick={() => {
             showDropDown()
-            onCloseCatalog()
           }}>
           <div>
             <img src={UsaFlag} alt="English" />
@@ -77,7 +72,6 @@ const LangSwitcher = ({ onCloseCatalog }) => {
         <button
           onClick={() => {
             showDropDown()
-            onCloseCatalog()
           }}>
           <div>
             <img src={ChinaFlag} alt="Chinese" />
@@ -106,10 +100,6 @@ const LangSwitcher = ({ onCloseCatalog }) => {
       </div>
     </div>
   )
-}
-
-LangSwitcher.prototype = {
-  onCloseCatalog: PropTypes.func.isRequired,
 }
 
 export default LangSwitcher
