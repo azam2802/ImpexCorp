@@ -36,7 +36,7 @@ const Header = () => {
                 <input type="search" placeholder={t("header.search")} />
               </div>
               <div className={s.Links}>
-                <Link to="about" onClick={onCloseCatalog}>
+                <Link to="aboutus" onClick={onCloseCatalog}>
                   {t("header.ourcompany")}
                 </Link>
                 <Link onClick={onOpenCatalog}>{t("header.catalogue")}</Link>
