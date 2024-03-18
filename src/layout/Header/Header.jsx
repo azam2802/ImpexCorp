@@ -1,9 +1,8 @@
 import BurgerMenu from "@components/BurgerMenu/BurgerMenu"
-import Catalog from "@components/Catalog/Catalog"
 import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
-import React, { useState } from "react"
+import React from "react"
 import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
@@ -11,49 +10,45 @@ import { Link } from "react-router-dom"
 const Header = () => {
   const { t } = useTranslation()
 
-  const [showCatalog, setShowCatalog] = useState(false)
-
-  const onOpenCatalog = () => {
-    setShowCatalog((prev) => !prev)
+  const addFixedClassToHeader = () => {
+    const header = document.querySelector(".header")
+    const headerHeight = header.offsetHeight
+    const scrollThreshold = 1.7 * headerHeight
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add(s.fixed)
+    } else {
+      header.classList.remove(s.fixed)
+    }
   }
 
-  const onCloseCatalog = () => {
-    setShowCatalog(false)
-  }
+  window.addEventListener("scroll", addFixedClassToHeader)
 
   return (
-    <div>
-      <header className={s["pc-nav"]} id="header">
-        <OverNavbar />
+    <>
+      <OverNavbar />
+      <header className="header">
         <nav className={s["pc-nav"]}>
           <div className={s.row}>
             <div className={s["col-6"]}>
-              <Logo onClick={onCloseCatalog} />
+              <Logo />
             </div>
             <div className={s["col-6"]}>
-              <div className={s.searchIco_div} onClick={onCloseCatalog}>
+              <div className={s.searchIco_div}>
                 <IoSearch id="search_ico" alt="search_ico" />
                 <input type="search" placeholder={t("header.search")} />
               </div>
               <div className={s.Links}>
-                <Link to="aboutus" onClick={onCloseCatalog}>
-                  {t("header.ourcompany")}
-                </Link>
-                <Link onClick={onOpenCatalog}>{t("header.catalogue")}</Link>
-                <Link to="/" onClick={onCloseCatalog}>
-                  {t("header.services")}
-                </Link>
-                <Link to="/" onClick={onCloseCatalog}>
-                  {t("header.calculator")}
-                </Link>
+                <Link to="about">{t("header.ourcompany")}</Link>
+                <Link to="catalog">{t("header.catalogue")}</Link>
+                <Link to="/services">{t("header.services")}</Link>
+                <Link to="/">{t("header.calculator")}</Link>
               </div>
             </div>
           </div>
         </nav>
       </header>
       <BurgerMenu />
-      {showCatalog && <Catalog setShowCatalog={setShowCatalog} />}
-    </div>
+    </>
   )
 }
 

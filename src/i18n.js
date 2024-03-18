@@ -8,10 +8,16 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    debug: true,
+    debug: false,
     fallbackLng: "ru",
+    react: {
+      useSuspense: true,
+    },
+    backend: {
+      loadPath: "/locales/{{lng}}/translation.json",
+    },
     detection: {
-      order: ["queryString", "cookie"],
+      order: ["queryString", "cookie", "localStorage"],
       cahche: ["cookie"],
     },
     interpolation: {

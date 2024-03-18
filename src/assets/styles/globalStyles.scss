@@ -5,9 +5,19 @@
   outline: none;
 }
 
-body {
+html {
   background-color: #f4f4f0;
   overflow-x: hidden;
+}
+
+#root{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+main{
+  flex-grow: 1;
 }
 
 button,

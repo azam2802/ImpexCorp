@@ -7,7 +7,7 @@
     #19746b 62vw,
     #19746b
   );
-  height: 90vh;
+  padding-block:  90px;
 }
 
 .title {
@@ -17,7 +17,9 @@
   font-family: "Gotham Pro";
   font-weight: 300;
   span {
-    color: #19746b;
+    &:first-child {
+      color: #19746b;
+    }
     display: block;
   }
 }
@@ -48,18 +50,16 @@
   font-family: "Inter";
   background: #19746b;
   cursor: pointer;
-  transition: all .2s;
-  will-change:contents;
-  &:hover{
+  transition: all 0.2s;
+  will-change: contents;
+  &:hover {
     background-color: transparent;
     color: #19746b;
-    transition: all .2s;
+    transition: all 0.2s;
   }
 }
 
-.button:active {
-transform: scale(0.95);
-}
+
 
 @media (max-width: 768px) {
   .container {
@@ -67,6 +67,7 @@ transform: scale(0.95);
     display: flex;
     justify-content: center;
     background: none;
+    padding-block: unset;
     img {
       display: none;
     }
@@ -99,7 +100,7 @@ transform: scale(0.95);
 }
 
 @media (max-width: 620px) {
-  .title{
-    font-size:6.4vw;
+  .title {
+    font-size: 6.4vw;
   }
 }
