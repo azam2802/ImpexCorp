@@ -10,13 +10,13 @@ html {
   overflow-x: hidden;
 }
 
-#root{
+#root {
   display: flex;
   height: 100vh;
   flex-direction: column;
 }
 
-main{
+main {
   flex-grow: 1;
 }
 
@@ -33,12 +33,12 @@ a {
   text-decoration: none;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
-.b24-widget-button-position-bottom-left{
-  bottom: 60px !important; 
+.b24-widget-button-position-bottom-left {
+  bottom: 60px !important;
   left: 5vw !important;
 }
 
@@ -52,6 +52,20 @@ ul{
     url("../fonts/GothamPro.ttf") format("truetype"),
     url("../fonts/GothamPro.svg#GothamPro") format("svg");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham Pro";
+  src: url("../fonts/GothamPro-Bold.eot");
+  src:
+    url("../fonts/GothamPro-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/GothamPro-Bold.woff2") format("woff2"),
+    url("../fonts/GothamPro-Bold.woff") format("woff"),
+    url("../fonts/GothamPro-Bold.ttf") format("truetype"),
+    url("../fonts/GothamPro-Bold.svg#GothamPro-Bold") format("svg");
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
