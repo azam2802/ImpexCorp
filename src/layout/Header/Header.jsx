@@ -42,10 +42,9 @@ const Header = () => {
                 <Link to="about">{t("header.ourcompany")}</Link>
                 <Link to="catalog">{t("header.catalogue")}</Link>
                 <Link to="/services">{t("header.services")}</Link>
-                <Link to="/">{t("header.calculator")}</Link>
-                <button className={s.button} onClick={() => setShowModal(true)}>
-                  {t("header.modalButton")}
-                </button>
+                <Link onClick={() => setShowModal(true)}>
+                  {t("header.calculator")}
+                </Link>
                 {showModal && (
                   <ModalWindow
                     closeModal={() => setShowModal(false)}
