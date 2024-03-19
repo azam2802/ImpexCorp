@@ -9,7 +9,7 @@ const ModalWindow = ({ closeModal, showModal }) => {
         <div className={s.modal}>
           <div className={s.modalContent}>
             <p className={s.text}>Modal Window</p>
-            <button className={s.button} onClick={closeModal}>
+            <button className={s.close} onClick={closeModal}>
               Close Modal
             </button>
           </div>
