@@ -9,7 +9,7 @@ import PageNotFound from "@pages/Error404/PageNotFound"
 const App = () => {
   const router = [
     {
-      path: "aboutus",
+      path: "about",
       element: <AboutUs />,
     },
   ]
