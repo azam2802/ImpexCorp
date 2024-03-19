@@ -1,14 +1,16 @@
+import React, { useState } from "react"
 import BurgerMenu from "@components/BurgerMenu/BurgerMenu"
 import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
-import React from "react"
 import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
+import ModalWindow from "@components/ModalWindow/ModalWindow"
 
 const Header = () => {
   const { t } = useTranslation()
+  const [showModal, setShowModal] = useState(false)
 
   const addFixedClassToHeader = () => {
     const header = document.querySelector(".header")
@@ -42,6 +44,15 @@ const Header = () => {
                 <Link to="catalog">{t("header.catalogue")}</Link>
                 <Link to="/services">{t("header.services")}</Link>
                 <Link to="/">{t("header.calculator")}</Link>
+                <button className={s.button} onClick={() => setShowModal(true)}>
+                  {t("header.modalButton")}
+                </button>
+                {showModal && (
+                  <ModalWindow
+                    closeModal={() => setShowModal(false)}
+                    showModal={showModal}
+                  />
+                )}
               </div>
             </div>
           </div>

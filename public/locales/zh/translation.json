@@ -6,6 +6,7 @@
     "services": "服务",
     "calculator": "计算器",
     "ourcompany": "我们公司",
+    "modalButton":"Open",
     "HeaderCatalog": {
       "model": "热门车型",
       "countries": {

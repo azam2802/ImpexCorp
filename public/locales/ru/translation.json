@@ -6,6 +6,7 @@
     "services": "Услуги",
     "calculator": "Калькулятор",
     "ourcompany": "Наша компания",
+    "modalButton":"Открыть",
     "HeaderCatalog": {
       "model": "Популярные модели",
       "countries": {
