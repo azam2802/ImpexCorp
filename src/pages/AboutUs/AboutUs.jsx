@@ -3,10 +3,23 @@ import s from "@styles/pages/AboutUs/AboutUs.module.scss"
 import { useTranslation } from "react-i18next"
 import carImg1 from "@images/AboutUsTopImg.webp"
 import carImg2 from "@images/Group67.png"
+import { IoIosArrowBack } from "react-icons/io"
+import { useNavigate } from "react-router-dom"
+
 export const AboutUs = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   return (
     <main>
+      <div
+        onClick={() => {
+          navigate(-1)
+        }}
+        className={s["backToPrevious"]}>
+        <IoIosArrowBack />
+        <span>Назад</span>
+      </div>
+
       <h1 className={s["AboutCompanyTitle"]}>
         {t("AboutUs.AboutCompanyTitle")}
       </h1>
