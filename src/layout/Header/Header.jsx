@@ -12,9 +12,8 @@ const Header = () => {
 
   const addFixedClassToHeader = () => {
     const header = document.querySelector(".header")
-    const headerHeight = header.offsetHeight
-    const scrollThreshold = 1.7 * headerHeight
-    if (window.scrollY > scrollThreshold) {
+    const headerHeight = header.clientHeight
+    if (window.scrollY > 1.7 * headerHeight) {
       header.classList.add(s.fixed)
     } else {
       header.classList.remove(s.fixed)
