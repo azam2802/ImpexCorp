@@ -1,6 +1,10 @@
 main {
   font-family: "Inter";
 
+  .backToPrevious {
+    display: none;
+  }
+
   .AboutCompanyTitle,
   .AboutUsTitle {
     width: 80%;
@@ -114,9 +118,34 @@ main {
   }
 }
 
+@media screen and (max-width: 1025px) {
+  main {
+    .backToPrevious {
+      margin-top: 30px;
+      width: 18vw;
+      display: flex;
+      font-size: 3vw;
+      letter-spacing: 1px;
+      align-items: center;
+      margin-left: 5%;
+
+      span {
+        margin-left: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   main {
-    font-family: "Inter";
+
+    .backToPrevious {
+      margin-top: 0px;
+    }
 
     .AboutCompanyTitle {
       padding: 40px 0;
