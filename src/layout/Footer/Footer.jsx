@@ -82,6 +82,10 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+      <hr />
+      <p id={s.madeby}>
+        Made by <span>GeeksPRO</span>
+      </p>
     </footer>
   )
 }
