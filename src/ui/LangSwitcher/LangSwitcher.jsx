@@ -33,70 +33,33 @@ const LangSwitcher = () => {
     changeLang(language.toLowerCase())
   }
 
+  const langs = [
+    { code: "ru", name: "Русский", flag: RussianFlag },
+    { code: "ky", name: "Кыргыз", flag: KyrgyzFlag },
+    { code: "en", name: "English", flag: UsaFlag },
+    { code: "zh", name: "中国人", flag: ChinaFlag },
+  ]
+
   return (
     <div className="dropDown">
-      {i18n.language == "ru" ? (
-        <button
-          onClick={() => {
-            showDropDown()
-          }}>
-          <div>
-            <img src={RussianFlag} alt="Russia" />
-          </div>
-          Русский
-          <FaChevronDown className="langArrow" alt="arrowDown" />
-        </button>
-      ) : i18n.language == "ky" ? (
-        <button
-          onClick={() => {
-            showDropDown()
-          }}>
-          <div>
-            <img src={KyrgyzFlag} alt="Kyrgyz" />
-          </div>
-          Кыргыз
-          <FaChevronDown className="langArrow" alt="arrowDown" />
-        </button>
-      ) : i18n.language == "en" ? (
-        <button
-          onClick={() => {
-            showDropDown()
-          }}>
-          <div>
-            <img src={UsaFlag} alt="English" />
-          </div>
-          English
-          <FaChevronDown className="langArrow" alt="arrowDown" />
-        </button>
-      ) : (
-        <button
-          onClick={() => {
-            showDropDown()
-          }}>
-          <div>
-            <img src={ChinaFlag} alt="Chinese" />
-          </div>
-          中国人
-          <FaChevronDown className="langArrow" alt="arrowDown" />
-        </button>
-      )}
+      {langs
+        .filter((lang) => lang.code == i18n.language)
+        .map((lang, id) => (
+          <button key={id} onClick={() => showDropDown()}>
+            <div>
+              <img src={lang.flag} alt={lang.name} />
+            </div>
+            {lang.name}
+            <FaChevronDown className="langArrow" alt="arrowDown" />
+          </button>
+        ))}
       <div className="dropdown_content">
-        <button onClick={() => changeLanguage("Ru")}>
-          <img src={RussianFlag} alt="Russia" />
-          Русский
-        </button>
-        <button onClick={() => changeLanguage("En")}>
-          <img src={UsaFlag} alt="Russia" />
-          English
-        </button>
-        <button onClick={() => changeLanguage("Ky")}>
-          <img src={KyrgyzFlag} alt="Russia" />
-          Кыргыз
-        </button>
-        <button onClick={() => changeLanguage("Zh")}>
-          <img src={ChinaFlag} alt="Russia" />
-          中国人
-        </button>
+        {langs.map((i, id) => (
+          <button key={id} onClick={() => changeLanguage(i.code)}>
+            <img src={i.flag} alt={i.name} />
+            {i.name}
+          </button>
+        ))}
       </div>
     </div>
   )
