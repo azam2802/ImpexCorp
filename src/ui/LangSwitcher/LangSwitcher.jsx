@@ -28,9 +28,9 @@ const LangSwitcher = () => {
   }
 
   const changeLanguage = (language) => {
-    i18n.changeLanguage(language.toLowerCase())
+    i18n.changeLanguage(language)
     showDropDown()
-    changeLang(language.toLowerCase())
+    changeLang(language)
   }
 
   const langs = [
