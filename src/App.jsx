@@ -5,12 +5,17 @@ import { Route, Routes } from "react-router-dom"
 import AboutUs from "@pages/AboutUs/AboutUs"
 import Loader from "@components/Loader/Loader"
 import PageNotFound from "@pages/Error404/PageNotFound"
+import { FiltrationPage } from "@pages/Filtration/FiltrationPage"
 
 const App = () => {
   const router = [
     {
       path: "about",
       element: <AboutUs />,
+    },
+    {
+      path: "catalog",
+      element: <FiltrationPage />,
     },
   ]
 
