@@ -84,7 +84,10 @@ const Footer = () => {
       </div>
       <hr />
       <p id={s.madeby}>
-        Made by <span>GeeksPRO</span>
+        Made by{" "}
+        <a href="https://geeks.kg/geeks-pro" target="blank">
+          GeeksPRO
+        </a>
       </p>
     </footer>
   )
