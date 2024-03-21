@@ -1,5 +1,5 @@
-.questions-item {
-  .questions-item-title {
+.questions_item {
+  .questions_item_title {
     color: #000;
     font-family: inherit;
     font-size: 30px;
@@ -15,12 +15,12 @@
       cursor: pointer;
     }
 
-    .questions-plus {
+    .questions_plus {
       width: 50px;
       height: 50px;
       position: relative;
 
-      .plus-h {
+      .plus_h {
         width: 5px;
         height: 100%;
         transition: 0.2s;
@@ -33,7 +33,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
       }
-      .hide-h {
+      .hide_h {
         width: 5px;
         height: 100%;
         transition: 0.2s;
@@ -45,7 +45,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
       }
-      .plus-g {
+      .plus_g {
         width: 100%;
         height: 5px;
         position: absolute;
@@ -60,14 +60,14 @@
     }
   }
 
-  .questions-text-box {
+  .questions_text_block {
     height: 0;
     position: relative;
     overflow: hidden;
     transition: 0.5s;
     margin-top: 30px;
 
-    .questions-text {
+    .questions_text {
       position: absolute;
       color: black;
       opacity: 0.3;
@@ -79,7 +79,7 @@
     }
   }
 
-  .show-box {
+  .show_box {
     height: 200px;
     position: relative;
     overflow: hidden;

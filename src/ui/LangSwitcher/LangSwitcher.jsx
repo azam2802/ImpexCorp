@@ -14,89 +14,52 @@ const LangSwitcher = () => {
   const { i18n } = useTranslation()
 
   const showDropDown = () => {
-    const dropdown = document.querySelector(".dropdown-content")
+    const dropdown = document.querySelector(".dropdown_content")
     const arrow = document.querySelector(".langArrow")
     if (!showDrop) {
-      dropdown.classList.add("dropdown-content-show")
-      arrow.classList.add("langArrow-active")
+      dropdown.classList.add("dropdown_content_show")
+      arrow.classList.add("langArrow_active")
       setShowDrop((prev) => !prev)
     } else {
-      dropdown.classList.remove("dropdown-content-show")
-      arrow.classList.remove("langArrow-active")
+      dropdown.classList.remove("dropdown_content_show")
+      arrow.classList.remove("langArrow_active")
       setShowDrop((prev) => !prev)
     }
   }
 
   const changeLanguage = (language) => {
-    i18n.changeLanguage(language.toLowerCase())
+    i18n.changeLanguage(language)
     showDropDown()
-    changeLang(language.toLowerCase())
+    changeLang(language)
   }
+
+  const langs = [
+    { code: "ru", name: "Русский", flag: RussianFlag },
+    { code: "ky", name: "Кыргыз", flag: KyrgyzFlag },
+    { code: "en", name: "English", flag: UsaFlag },
+    { code: "zh", name: "中国人", flag: ChinaFlag },
+  ]
 
   return (
     <div className="dropDown">
-      {i18n.language == "ru" ? (
-        <button
-          onClick={() => {
-            showDropDown()
-          }}>
-          <div>
-            <img src={RussianFlag} alt="Russia" />
-          </div>
-          Русский
-          <FaChevronDown className="langArrow" alt="arrowDown" />
-        </button>
-      ) : i18n.language == "ky" ? (
-        <button
-          onClick={() => {
-            showDropDown()
-          }}>
-          <div>
-            <img src={KyrgyzFlag} alt="Kyrgyz" />
-          </div>
-          Кыргыз
-          <FaChevronDown className="langArrow" alt="arrowDown" />
-        </button>
-      ) : i18n.language == "en" ? (
-        <button
-          onClick={() => {
-            showDropDown()
-          }}>
-          <div>
-            <img src={UsaFlag} alt="English" />
-          </div>
-          English
-          <FaChevronDown className="langArrow" alt="arrowDown" />
-        </button>
-      ) : (
-        <button
-          onClick={() => {
-            showDropDown()
-          }}>
-          <div>
-            <img src={ChinaFlag} alt="Chinese" />
-          </div>
-          中国人
-          <FaChevronDown className="langArrow" alt="arrowDown" />
-        </button>
-      )}
-      <div className="dropdown-content">
-        <button onClick={() => changeLanguage("Ru")}>
-          <img src={RussianFlag} alt="Russia" />
-          Русский
-        </button>
-        <button onClick={() => changeLanguage("En")}>
-          <img src={UsaFlag} alt="Russia" />
-          English
-        </button>
-        <button onClick={() => changeLanguage("Ky")}>
-          <img src={KyrgyzFlag} alt="Russia" />
-          Кыргыз
-        </button>
-        <button onClick={() => changeLanguage("Zh")}>
-          <img src={ChinaFlag} alt="Russia" />
-          中国人
-        </button>
+      {langs
+        .filter((lang) => lang.code == i18n.language)
+        .map((lang, id) => (
+          <button key={id} onClick={() => showDropDown()}>
+            <div>
+              <img src={lang.flag} alt={lang.name} />
+            </div>
+            {lang.name}
+            <FaChevronDown className="langArrow" alt="arrowDown" />
+          </button>
+        ))}
+      <div className="dropdown_content">
+        {langs.map((i, id) => (
+          <button key={id} onClick={() => changeLanguage(i.code)}>
+            <img src={i.flag} alt={i.name} />
+            {i.name}
+          </button>
+        ))}
       </div>
     </div>
   )

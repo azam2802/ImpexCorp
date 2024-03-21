@@ -48,10 +48,10 @@ const FirstBlock = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}>
-      <div className={s["container"]}>
-        <div className={s["block"]}>
-          <div className={s["block-title"]}>
-            <div className={s["title"]}>
+      <div className={s.container}>
+        <div className={s.block}>
+          <div className={s.block_title}>
+            <div className={s.title}>
               <p>
                 <motion.span custom={1} variants={AnimLeft}>
                   IMPEXCORP
@@ -66,7 +66,7 @@ const FirstBlock = () => {
               <motion.button
                 custom={2}
                 variants={AnimBottom}
-                className={s["button"]}>
+                className={s.button}>
                 {t("HomePage.firstBlock.buttonText")}
               </motion.button>
             </div>
