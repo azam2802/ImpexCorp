@@ -14,15 +14,15 @@ const LangSwitcher = () => {
   const { i18n } = useTranslation()
 
   const showDropDown = () => {
-    const dropdown = document.querySelector(".dropdown-content")
+    const dropdown = document.querySelector(".dropdown_content")
     const arrow = document.querySelector(".langArrow")
     if (!showDrop) {
-      dropdown.classList.add("dropdown-content-show")
-      arrow.classList.add("langArrow-active")
+      dropdown.classList.add("dropdown_content_show")
+      arrow.classList.add("langArrow_active")
       setShowDrop((prev) => !prev)
     } else {
-      dropdown.classList.remove("dropdown-content-show")
-      arrow.classList.remove("langArrow-active")
+      dropdown.classList.remove("dropdown_content_show")
+      arrow.classList.remove("langArrow_active")
       setShowDrop((prev) => !prev)
     }
   }
@@ -80,7 +80,7 @@ const LangSwitcher = () => {
           <FaChevronDown className="langArrow" alt="arrowDown" />
         </button>
       )}
-      <div className="dropdown-content">
+      <div className="dropdown_content">
         <button onClick={() => changeLanguage("Ru")}>
           <img src={RussianFlag} alt="Russia" />
           Русский
