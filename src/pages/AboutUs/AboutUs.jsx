@@ -15,24 +15,22 @@ export const AboutUs = () => {
         onClick={() => {
           navigate(-1)
         }}
-        className={s["backToPrevious"]}>
+        className={s.backToPrevious}>
         <IoIosArrowBack />
         <span>Назад</span>
       </div>
 
-      <h1 className={s["AboutCompanyTitle"]}>
-        {t("AboutUs.AboutCompanyTitle")}
-      </h1>
-      <h1 className={s["AboutUsTitle"]}>{t("AboutUs.AboutUsTitle")}</h1>
-      <p className={s["AboutUsText"]}>
+      <h1 className={s.AboutCompanyTitle}>{t("AboutUs.AboutCompanyTitle")}</h1>
+      <h1 className={s.AboutUsTitle}>{t("AboutUs.AboutUsTitle")}</h1>
+      <p className={s.AboutUsText}>
         <b>{t("AboutUs.AboutUsText.bold")}</b>
         {t("AboutUs.AboutUsText.thin")}
       </p>
-      <div className={s["car-convience"]}>
-        <div className={s["car-img"]}>
+      <div className={s.car_convience}>
+        <div className={s.car_img}>
           <img src={carImg1} alt="carImg" />
         </div>
-        <ul className={s["convience-list"]}>
+        <ul className={s.convience_list}>
           <li>{t("AboutUs.AboutUsTechnichUl.quality")}</li>
           <li>{t("AboutUs.AboutUsTechnichUl.workersExp")}</li>
           <li>{t("AboutUs.AboutUsTechnichUl.insurance")}</li>
@@ -40,12 +38,12 @@ export const AboutUs = () => {
         </ul>
       </div>
 
-      <ul className={s["car-infoList"]}>
+      <ul className={s.car_infoList}>
         <li>
           <b>{t("AboutUs.key.bold")}</b> - {t("AboutUs.key.thin")}
         </li>
         <li>
-          <b className={s["receiveTitle"]}>{t("AboutUs.receive.title")}</b>
+          <b className={s.receiveTitle}>{t("AboutUs.receive.title")}</b>
           <b>{t("AboutUs.receive.bold")}</b>- {t("AboutUs.receive.thin")}
         </li>
         <li>
@@ -54,19 +52,19 @@ export const AboutUs = () => {
         <li>{t("AboutUs.choice.bottom")}</li>
       </ul>
 
-      <h1 className={s["AboutCompanyTitle"]}>
+      <h1 className={s.AboutCompanyTitle}>
         {t("AboutUs.AboutUsBottom.title")}
       </h1>
 
-      <div className={s["car-convience-bottom"]}>
-        <ul className={s["convience-list"]}>
+      <div className={s.car_convience_bottom}>
+        <ul className={s.convience_list}>
           <li>{t("AboutUs.AboutUsBottom.ul.li1")}</li>
           <li>{t("AboutUs.AboutUsBottom.ul.li2")}</li>
           <li>{t("AboutUs.AboutUsBottom.ul.li3")}</li>
           <li>{t("AboutUs.AboutUsBottom.ul.li4")}</li>
           <li>{t("AboutUs.AboutUsBottom.ul.li5")}</li>
         </ul>
-        <div className={s["car-img"]}>
+        <div className={s.car_img}>
           <img src={carImg2} alt="" />
         </div>
       </div>

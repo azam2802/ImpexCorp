@@ -4,8 +4,8 @@ import s from "@styles/pages/Home/ApplicationForm.module.scss"
 const ApplicationForm = () => {
   return (
     <section>
-      <div className={s["container"]}>
-        <div className={s["application-form"]}>
+      <div className={s.container}>
+        <div className={s.application_form}>
           <h2>Оставить заявку</h2>
           <form action="submit" method="">
             <input
@@ -26,7 +26,7 @@ const ApplicationForm = () => {
               type="text"
               id="car"
               name="car"
-              placeholder="Какая машина интересует?"
+              placeholder="Какая машина вас интересует?"
               required
             />
             <button type="submit">Отправить</button>

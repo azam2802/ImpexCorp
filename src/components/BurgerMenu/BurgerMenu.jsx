@@ -4,13 +4,13 @@ import Logo from "@ui/Logo/Logo"
 
 const BurgerMenu = () => {
   return (
-    <nav className={s["mob-nav"]}>
+    <nav className={s.mob_nav}>
       <div className={s.row}>
-        <div className={s["col-6"]}>
+        <div className={s.col_6}>
           <Logo />
         </div>
-        <div className={s["col-6"]}>
-          <div className={s["burger-btn"]}>
+        <div className={s.col_6}>
+          <div className={s.burger_btn}>
             <span></span>
           </div>
         </div>
