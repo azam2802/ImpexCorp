@@ -1,21 +1,34 @@
-import React, { useState } from "react"
 import BurgerMenu from "@components/BurgerMenu/BurgerMenu"
 import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
+import React from "react"
 import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
+
 import ModalWindow from "@components/ModalWindow/ModalWindow"
+import { create } from "zustand"
+
+const useModalStore = create((set) => ({
+  showModal: false,
+  setShowModal: (value) => set({ showModal: value }),
+}))
 
 const Header = () => {
   const { t } = useTranslation()
-  const [showModal, setShowModal] = useState(false)
+
+  const { showModal, setShowModal } = useModalStore()
+
+  const openModal = () => {
+    setShowModal(true)
+  }
 
   const addFixedClassToHeader = () => {
     const header = document.querySelector(".header")
-    const headerHeight = header.clientHeight
-    if (window.scrollY > 1.7 * headerHeight) {
+    const headerHeight = header.offsetHeight
+    const scrollThreshold = 1.7 * headerHeight
+    if (window.scrollY > scrollThreshold) {
       header.classList.add(s.fixed)
     } else {
       header.classList.remove(s.fixed)
@@ -42,21 +55,21 @@ const Header = () => {
                 <Link to="about">{t("header.ourcompany")}</Link>
                 <Link to="catalog">{t("header.catalogue")}</Link>
                 <Link to="/services">{t("header.services")}</Link>
-                <Link onClick={() => setShowModal(true)}>
+                <Link to="/" onClick={openModal}>
                   {t("header.calculator")}
                 </Link>
-                {showModal && (
-                  <ModalWindow
-                    closeModal={() => setShowModal(false)}
-                    showModal={showModal}
-                  />
-                )}
               </div>
             </div>
           </div>
         </nav>
       </header>
       <BurgerMenu />
+      {showModal && (
+        <ModalWindow
+          closeModal={() => setShowModal(false)}
+          showModal={showModal}
+        />
+      )}
     </>
   )
 }
