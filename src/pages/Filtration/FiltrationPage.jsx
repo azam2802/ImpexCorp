@@ -39,11 +39,10 @@ export const FiltrationPage = () => {
       </div>
       <section className={s["catalog-block"]}>
         <div className={s["filtration-block"]}>
-          <div className={s["filtration"]}>
+          <div className={s["filtration"]} onClick={onShowModal}>
             <p>Фильтр</p>
             <IoIosArrowUp
               cursor="pointer"
-              onClick={onShowModal}
               className={openModal ? s["rotates"] : s["rotate"]}
             />
           </div>
