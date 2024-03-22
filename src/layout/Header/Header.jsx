@@ -7,22 +7,10 @@ import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
 
-import ModalWindow from "@components/ModalWindow/ModalWindow"
-import { create } from "zustand"
+import PropTypes from "prop-types"
 
-const useModalStore = create((set) => ({
-  showModal: false,
-  setShowModal: (value) => set({ showModal: value }),
-}))
-
-const Header = () => {
+const Header = ({ openModal }) => {
   const { t } = useTranslation()
-
-  const { showModal, setShowModal } = useModalStore()
-
-  const openModal = () => {
-    setShowModal(true)
-  }
 
   const addFixedClassToHeader = () => {
     const header = document.querySelector(".header")
@@ -64,14 +52,12 @@ const Header = () => {
         </nav>
       </header>
       <BurgerMenu />
-      {showModal && (
-        <ModalWindow
-          closeModal={() => setShowModal(false)}
-          showModal={showModal}
-        />
-      )}
     </>
   )
+}
+
+Header.propTypes = {
+  openModal: PropTypes.func.isRequired,
 }
 
 export default Header
