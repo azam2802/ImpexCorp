@@ -42,12 +42,12 @@
       "title1": "安全, 可靠、时尚 体现在每个细节上",
       "buttonText": "称呼"
     },
-    "OurServices":{
+    "OurServices": {
       "title": "我們的服務",
       "search": "搜尋並購買",
       "cars": "來自韓國和中國的汽車",
       "delivery": "专车接送",
-      "guarantee":"比什凯克有担保",
+      "guarantee": "比什凯克有担保",
       "registration": "汽车登记",
       "accounting": "注销(国家自动监察局)",
       "insurance": "全额保险",
@@ -84,6 +84,53 @@
         "number2": "+996 (700) 22-25-32",
         "number3": "+996 (708) 04-02-90"
       }
+    }
+  },
+  "Catalog": {
+    "title": "目录",
+    "filter": "筛选",
+    "characteristics": {
+      "catalog": "目录",
+      "model": "模型",
+      "yearIssue": "发行年份",
+      "wheel": {
+        "title": "方向盘",
+        "left": "左边",
+        "right": "在右边"
+      },
+      "fuel": {
+        "title": "燃料",
+        "diesel": "柴油机",
+        "petrol": "汽油",
+        "electro": "电子"
+      },
+      "driveUnit": {
+        "title": "驱动单元",
+        "front": "正面",
+        "rear": "后部"
+      },
+      "transmission": {
+        "title": "传播",
+        "mechanical": "机械的",
+        "automatic": "自动的",
+        "stepless": "无级"
+      }
+    },
+    "country": {
+      "chine": "中国",
+      "korea": "韩国",
+      "newItems": "新东西"
+    },
+    "input": {
+      "pricesFrom": "价格从",
+      "priceBegore": "价格高达",
+      "mileageFrom": "里程从",
+      "mileageBefore": "里程可达",
+      "volumeFrom": "成交量来自",
+      "volumeBefore": "音量高达"
+    },
+    "button": {
+      "title": "寻找"
     }
   }
 }

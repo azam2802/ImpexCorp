@@ -92,7 +92,7 @@
       },
       "bottomTitle": "Ваша мечта в ваших руках!"
     }
-  },  
+  },
   "footer": {
     "aboutus": {
       "name": "О нас",
@@ -123,6 +123,53 @@
         "number2": "+996 (700) 22-25-32",
         "number3": "+996 (708) 04-02-90"
       }
+    }
+  },
+  "Catalog": {
+    "title": "Каталог",
+    "filter": "Фильтр",
+    "characteristics": {
+      "catalog": "Каталог",
+      "model": "Модель",
+      "yearIssue": "Год выпуска",
+      "wheel": {
+        "title": "Руль",
+        "left": "Слева",
+        "right": "Справа"
+      },
+      "fuel": {
+        "title": "Топливо",
+        "diesel": "Дизель",
+        "petrol": "Бензин",
+        "electro": "Электро"
+      },
+      "driveUnit": {
+        "title": "Привод",
+        "front": "Передний",
+        "rear": "Задний"
+      },
+      "transmission": {
+        "title": "Трансмиссия",
+        "mechanical": "Механические",
+        "automatic": "Автоматические",
+        "stepless": "Бесступенчатые"
+      }
+    },
+    "country": {
+      "chine": "Китай",
+      "korea": "Корея",
+      "newItems": "Новинки"
+    },
+    "input": {
+      "pricesFrom": "Цены от",
+      "priceBegore": "Цены до",
+      "mileageFrom": "Пробег от",
+      "mileageBefore": "Пробег до",
+      "volumeFrom": "Обьем от",
+      "volumeBefore": "Обьем до"
+    },
+    "button": {
+      "title": "Найти"
     }
   }
 }
