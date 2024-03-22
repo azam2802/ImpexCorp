@@ -7,3 +7,12 @@ export const useLang = create(
     changeLang: (language) => set({ lang: language }),
   })),
 )
+
+const store = create(
+  devtools((set) => ({
+    isModalOpen: false,
+    setIsModalOpen: (value) => set({ isModalOpen: value }),
+  })),
+)
+
+export default store
