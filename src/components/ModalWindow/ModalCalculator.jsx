@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import s from "@styles/components/ModalWindow.module.scss"
 
-const ModalWindow = ({ closeModal, showModal }) => {
+const ModalCalculator = ({ closeModal, showModal }) => {
   return (
     <div>
       <div className={s.darker}>
@@ -21,9 +21,9 @@ const ModalWindow = ({ closeModal, showModal }) => {
   )
 }
 
-ModalWindow.propTypes = {
+ModalCalculator.propTypes = {
   closeModal: PropTypes.func.isRequired,
   showModal: PropTypes.bool.isRequired,
 }
 
-export default ModalWindow
+export default ModalCalculator

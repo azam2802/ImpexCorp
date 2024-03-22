@@ -16,6 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition:  visibility 0.3s ease, transform 0.3s ease;
 }
 
 .modalContent {

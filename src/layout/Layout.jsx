@@ -3,8 +3,9 @@ import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
 import BackToTop from "@ui/BackToTop/BackToTop"
 import { Outlet } from "react-router-dom"
-import ModalWindow from "@components/ModalWindow/ModalWindow"
+import ModalCalculator from "@components/ModalWindow/ModalCalculator"
 import useModalState from "@store/store"
+
 const Layout = () => {
   const { isModalOpen, setIsModalOpen } = useModalState()
 
@@ -19,7 +20,7 @@ const Layout = () => {
       <BackToTop />
       <Footer />
       {isModalOpen && (
-        <ModalWindow
+        <ModalCalculator
           closeModal={() => setIsModalOpen(false)}
           showModal={isModalOpen}
         />
