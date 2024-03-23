@@ -1,0 +1,382 @@
+.main {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.title {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.back {
+  display: none;
+}
+
+.catalog_block {
+  margin-bottom: 80px;
+  padding-left: 60px;
+}
+
+.adaptive_none {
+  display: none;
+}
+
+.filtration_block {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-top: 80px;
+}
+
+.filtration {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 28vw;
+  height: 45px;
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+  padding: 0 10px 0 21px;
+
+  p {
+    font-family: Montserrat;
+    font-weight: 600;
+  }
+}
+
+.rotates {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.types_car {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+
+.country_car {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 12vw;
+  height: 45px;
+  border-radius: 12px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+
+  font-family: Inter;
+  font-weight: 600;
+}
+
+.volume_select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 9.1vw;
+  height: 45px;
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+  padding: 0 10px 0 16px;
+
+  p {
+    color: rgb(102, 102, 102);
+    font-family: Montserrat;
+  }
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 16px;
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+
+  p {
+    cursor: pointer;
+  }
+}
+
+.filter_modal {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 16px;
+  background: rgb(196, 196, 196);
+  margin-top: 80px;
+  padding: 100px;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.row_input {
+  display: flex;
+  gap: 2.6vw;
+
+  input {
+    width: 9.1vw;
+    height: 45px;
+    border-radius: 0.5rem;
+    background: rgb(255, 255, 255);
+    border: none;
+    padding: 16px;
+  }
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  button {
+    width: 21vw;
+    padding: 0.6rem 0 0.6rem 0;
+    border-radius: 10px;
+    border: 2px solid #19746b;
+    color: #fff;
+    font-size: 1.3rem;
+    font-family: "Inter";
+    background: #19746b;
+    cursor: pointer;
+    transition: all 0.2s;
+    will-change: contents;
+    &:hover {
+      background-color: transparent;
+      color: #19746b;
+      transition: all 0.2s;
+    }
+  }
+}
+
+.characteristic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 21vw;
+  height: 45px;
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+  padding: 0 10px 0 16px;
+
+  p {
+    font-family: Montserrat;
+    font-weight: 400;
+  }
+}
+
+.selected_car {
+  border: 1px solid rgb(0, 0, 0);
+  background: rgb(204, 204, 204);
+}
+
+// -------  Adaptive   -------  //
+
+@media screen and (max-width: 990px) {
+  .filter_modal {
+    padding: 40px;
+  }
+  .volume_select {
+    padding: 2px;
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .filter_modal {
+    padding: 20px;
+  }
+
+  .characteristic {
+    width: 21vw;
+    height: 35px;
+    p {
+      font-size: 10px;
+    }
+  }
+
+  .volume_select {
+    height: 35px;
+    p {
+      font-size: 10px;
+    }
+  }
+
+  .row_input {
+    input {
+      height: 35px;
+      padding: 2px;
+    }
+  }
+
+  .catalog_block {
+    padding-left: 0px;
+  }
+
+  .country_car {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .catalog_block {
+    margin-bottom: 28px;
+    padding-left: 0;
+  }
+
+  .filter_modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    border: none;
+    background: none;
+    margin-top: 14px;
+    padding: 0;
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+  }
+
+  .characteristic {
+    width: 100%;
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .volume_select {
+    width: 44vw;
+    padding: 10px;
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .row_input {
+    input {
+      width: 44vw;
+      padding: 10px;
+    }
+  }
+
+  .block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    button {
+      width: 50vw;
+      font-size: 1.1rem;
+      font-weight: 200;
+      padding: 0.2rem 0 0.2rem 0;
+    }
+  }
+
+  .country_car {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(204, 203, 203);
+
+    width: 4rem;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+
+  .filtration_block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 54px;
+  }
+
+  .types_car {
+    gap: 12px;
+  }
+
+  .filtration {
+    gap: 5px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid rgb(204, 203, 203);
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    font-family: Montserrat;
+  }
+
+  .main_title {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    p {
+      font-size: 18px;
+      color: #000000;
+    }
+  }
+
+  .selected_car {
+    border: none;
+    color: white;
+    background-color: #19746b;
+  }
+
+  .adaptive_none {
+    display: block;
+  }
+
+  .adaptive_block {
+    display: none;
+  }
+
+  .select {
+    border: 1px solid rgb(226, 225, 225);
+    p {
+      font-size: 10px;
+      font-weight: 200;
+    }
+  }
+}
