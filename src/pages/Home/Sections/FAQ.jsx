@@ -8,11 +8,11 @@ export const FAQ = () => {
   const myArr = Array.from({ length: 4 })
   return (
     <section>
-      <div className={s["question-section"]}>
-        <h1 className={s["question-title"]}>
+      <div className={s.question_section}>
+        <h1 className={s.question_title}>
           {t("HomePage.FAQBlock.titles.mainTitle")}
         </h1>
-        <ul className={s["questions-lists"]}>
+        <ul className={s.questions_lists}>
           {myArr.map((_, i) => (
             <QuestionItem key={i} />
           ))}

@@ -11,11 +11,11 @@
   background-color: #e5e5e1;
   list-style: none;
 
-  .car-image {
+  .car_image {
     width: 100%;
   }
 
-  .car-name {
+  .car_name {
     color: #333;
     font-family: inherit;
     font-size: 32px;
@@ -24,14 +24,14 @@
     margin-top: 20px;
   }
 
-  .car-struct-list {
+  .car_struct_list {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     margin-bottom: 19px;
     margin-top: 19px;
 
-    .car-struct-list-item {
+    .car_struct_list_item {
       display: flex;
       height: 43px;
       justify-content: space-between;
@@ -48,20 +48,20 @@
         margin-right: 15px;
       }
 
-      .car-struct-text {
+      .car_struct_text {
         margin-left: 15px;
         font-weight: 600;
       }
     }
   }
 
-  .car-info {
+  .car_info {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
 
-    .car-price {
+    .car_price {
       color: #19746b;
       font-family: inherit;
       font-size: 31px;
@@ -98,17 +98,17 @@
     margin-right: 20px;
     padding: 20px;
 
-    .car-name {
+    .car_name {
       font-size: 22px;
       margin-top: 12px;
     }
 
-    .car-struct-list {
+    .car_struct_list {
       width: 100%;
       margin-bottom: 12px;
       margin-top: 12px;
 
-      .car-struct-list-item {
+      .car_struct_list_item {
         height: 30px;
         padding: 5px 10px;
         color: #000;
@@ -120,16 +120,16 @@
           margin-right: 10px;
         }
 
-        .car-struct-text {
+        .car_struct_text {
           margin-left: 10px;
         }
       }
     }
 
-    .car-info {
+    .car_info {
       margin-top: 15px;
 
-      .car-price {
+      .car_price {
         font-size: 20px;
       }
       .moreButton {
@@ -150,17 +150,17 @@
     margin-right: 10px;
     padding: 20px;
 
-    .car-name {
+    .car_name {
       font-size: 18px;
       margin-top: 12px;
     }
 
-    .car-struct-list {
+    .car_struct_list {
       width: 100%;
       margin-bottom: 12px;
       margin-top: 8px;
 
-      .car-struct-list-item {
+      .car_struct_list_item {
         height: 30px;
         padding: 5px 10px;
         color: #000;
@@ -175,16 +175,16 @@
         img {
           width: 14px;
         }
-        .car-struct-text {
+        .car_struct_text {
           margin-left: 8px;
         }
       }
     }
 
-    .car-info {
+    .car_info {
       margin-top: 12px;
 
-      .car-price {
+      .car_price {
         font-size: 18px;
       }
       .moreButton {

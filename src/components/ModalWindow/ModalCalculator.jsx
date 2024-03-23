@@ -4,12 +4,12 @@ import s from "@styles/components/ModalWindow.module.scss"
 
 const ModalCalculator = ({ closeModal, showModal }) => {
   useEffect(() => {
-    const modal = document.querySelector(`.${s.modal}`)
-    if (modal) {
+    const darker = document.querySelector(`.${s.darker}`)
+    if (darker) {
       if (showModal) {
-        modal.classList.add(s.show)
+        darker.classList.add(s.show)
       } else {
-        modal.classList.remove(s.show)
+        darker.classList.remove(s.show)
       }
     }
   }, [showModal])

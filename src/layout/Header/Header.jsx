@@ -29,12 +29,12 @@ const Header = ({ openModal }) => {
     <>
       <OverNavbar />
       <header className="header">
-        <nav className={s["pc-nav"]}>
+        <nav className={s.pc_nav}>
           <div className={s.row}>
-            <div className={s["col-6"]}>
+            <div className={s.col_6}>
               <Logo />
             </div>
-            <div className={s["col-6"]}>
+            <div className={s.col_6}>
               <div className={s.searchIco_div}>
                 <IoSearch id="search_ico" alt="search_ico" />
                 <input type="search" placeholder={t("header.search")} />
@@ -43,9 +43,7 @@ const Header = ({ openModal }) => {
                 <Link to="about">{t("header.ourcompany")}</Link>
                 <Link to="catalog">{t("header.catalogue")}</Link>
                 <Link to="/services">{t("header.services")}</Link>
-                <button className={s.calculator} onClick={openModal}>
-                  {t("header.calculator")}
-                </button>
+                <button onClick={openModal}>{t("header.calculator")}</button>
               </div>
             </div>
           </div>

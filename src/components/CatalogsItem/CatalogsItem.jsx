@@ -24,18 +24,15 @@ export const CatalogsItem = ({ catalogTitle }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className={s["catalogs-item"]}>
-      <motion.h1 variants={AnimBottom} className={s["catalog-type-title"]}>
+      className={s.catalogs_item}>
+      <motion.h1 variants={AnimBottom} className={s.catalog_type_title}>
         {catalogTitle}
       </motion.h1>
-      <motion.ul
-        variants={AnimBottom}
-        custom={1}
-        className={s["car-card-list"]}>
+      <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
         {myArr.map((_, index) => (
           <CarCard key={index} />
         ))}
-        <li className={s["next-button"]}>
+        <li className={s.next_button}>
           <BsChevronRight
             alt="right-chevron"
             style={{ width: "80px", height: "100%", fill: "#19746b" }}

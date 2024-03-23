@@ -1,9 +1,11 @@
-import React from "react"
+import React, { Suspense } from "react"
 import ReactDOM from "react-dom/client"
-import App from "./App.jsx"
 import "./index.scss"
 import "./i18n.js"
+import Loader from "@components/Loader/Loader.jsx"
 import { BrowserRouter } from "react-router-dom"
+
+const App = React.lazy(() => import("./App.jsx"))
 
 ;((w, d, u) => {
   var s = d.createElement("script")
@@ -19,8 +21,10 @@ import { BrowserRouter } from "react-router-dom"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Suspense fallback={<Loader />}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Suspense>
   </React.StrictMode>,
 )

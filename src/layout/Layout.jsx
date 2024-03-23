@@ -19,12 +19,10 @@ const Layout = () => {
       <Outlet />
       <BackToTop />
       <Footer />
-      {isModalOpen && (
-        <ModalCalculator
-          closeModal={() => setIsModalOpen(false)}
-          showModal={isModalOpen}
-        />
-      )}
+      <ModalCalculator
+        closeModal={() => setIsModalOpen(false)}
+        showModal={isModalOpen}
+      />
     </>
   )
 }
