@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import s from "@styles/components/ModalWindow.module.scss"
+import s from "@styles/components/ModalCalculator.module.scss"
 
 const ModalCalculator = ({ closeModal, showModal }) => {
   useEffect(() => {

@@ -8,11 +8,9 @@ export const useLang = create(
   })),
 )
 
-const useModalState = create(
+export const useModalState = create(
   devtools((set) => ({
     isModalOpen: false,
     setIsModalOpen: (value) => set({ isModalOpen: value }),
   })),
 )
-
-export default useModalState
