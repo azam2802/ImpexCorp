@@ -7,3 +7,10 @@ export const useLang = create(
     changeLang: (language) => set({ lang: language }),
   })),
 )
+
+export const useModalState = create(
+  devtools((set) => ({
+    isModalOpen: false,
+    setIsModalOpen: (value) => set({ isModalOpen: value }),
+  })),
+)

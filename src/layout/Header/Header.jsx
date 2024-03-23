@@ -7,13 +7,16 @@ import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
 
-const Header = () => {
+import PropTypes from "prop-types"
+
+const Header = ({ openModal }) => {
   const { t } = useTranslation()
 
   const addFixedClassToHeader = () => {
     const header = document.querySelector(".header")
-    const headerHeight = header.clientHeight
-    if (window.scrollY > 1.7 * headerHeight) {
+    const headerHeight = header.offsetHeight
+    const scrollThreshold = 1.7 * headerHeight
+    if (window.scrollY > scrollThreshold) {
       header.classList.add(s.fixed)
     } else {
       header.classList.remove(s.fixed)
@@ -40,7 +43,7 @@ const Header = () => {
                 <Link to="about">{t("header.ourcompany")}</Link>
                 <Link to="catalog">{t("header.catalogue")}</Link>
                 <Link to="/services">{t("header.services")}</Link>
-                <Link to="/">{t("header.calculator")}</Link>
+                <button onClick={openModal}>{t("header.calculator")}</button>
               </div>
             </div>
           </div>
@@ -49,6 +52,10 @@ const Header = () => {
       <BurgerMenu />
     </>
   )
+}
+
+Header.propTypes = {
+  openModal: PropTypes.func.isRequired,
 }
 
 export default Header
