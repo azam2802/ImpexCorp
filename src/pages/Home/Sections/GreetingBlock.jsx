@@ -7,25 +7,13 @@ import Carousels from "@components/Carousels/Carousels.jsx"
 const GreetingBlock = () => {
   const { t } = useTranslation()
 
-  const AnimLeft = {
+  const AnimBottom = {
     hidden: {
-      x: -150,
+      y: 150,
       opacity: 0,
     },
     visible: (custom) => ({
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.5, delay: custom * 0.2 },
-    }),
-  }
-
-  const AnimRight = {
-    hidden: {
-      x: 150,
-      opacity: 0,
-    },
-    visible: (custom) => ({
-      x: 0,
+      y: 0,
       opacity: 1,
       transition: { duration: 0.5, delay: custom * 0.2 },
     }),
@@ -40,18 +28,21 @@ const GreetingBlock = () => {
         className={s.container}>
         <div className={s.row}>
           <div className={s.col_6}>
-            <motion.div variants={AnimLeft} className={s.carImg}>
+            <motion.div variants={AnimBottom} className={s.carImg}>
               <Carousels />
             </motion.div>
           </div>
           <div className={s.col_6}>
-            <motion.h2 custom={1} variants={AnimRight} className={s.title}>
+            <motion.h2 custom={1} variants={AnimBottom} className={s.title}>
               {t("HomePage.GreetingBlock.title")}
             </motion.h2>
-            <motion.p custom={2} variants={AnimRight} className={s.text}>
+            <motion.p custom={2} variants={AnimBottom} className={s.text}>
               {t("HomePage.GreetingBlock.text")}
             </motion.p>
-            <motion.button custom={3} variants={AnimRight} className={s.button}>
+            <motion.button
+              custom={3}
+              variants={AnimBottom}
+              className={s.button}>
               {t("HomePage.GreetingBlock.buttonText")}
             </motion.button>
           </div>

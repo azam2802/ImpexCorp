@@ -2,6 +2,7 @@
   "notFoundText": "抱歉，找不到该页面",
   "header": {
     "search": "搜索",
+    "home": "主页",
     "catalogue": "目录",
     "services": "服务",
     "calculator": "计算器",

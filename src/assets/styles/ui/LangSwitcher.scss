@@ -17,7 +17,6 @@
       img {
         width: 100%;
         height: 100%;
-
         vertical-align: text-top;
       }
     }
@@ -34,7 +33,8 @@
     background-color: #fff;
     border-radius: 10px;
     opacity: 0;
-    display:none;
+    visibility: hidden;
+    display: flex;
     gap: 5px;
     margin-top: 5px;
     flex-direction: column;
@@ -60,7 +60,7 @@
 
 .dropdown_content_show {
   opacity: 1 !important;
-  display: flex !important;
+  visibility: visible !important;
   transition: all .3s;
 }
 

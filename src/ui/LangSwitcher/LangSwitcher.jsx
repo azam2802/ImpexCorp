@@ -41,11 +41,11 @@ const LangSwitcher = () => {
   ]
 
   return (
-    <div className="dropDown">
+    <div className="dropDown" onClick={() => showDropDown()}>
       {langs
         .filter((lang) => lang.code == i18n.language)
         .map((lang, id) => (
-          <button key={id} onClick={() => showDropDown()}>
+          <button key={id}>
             <div>
               <img src={lang.flag} alt={lang.name} />
             </div>

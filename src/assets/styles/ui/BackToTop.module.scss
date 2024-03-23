@@ -5,8 +5,8 @@
   background-color: #d8d8d8;
   bottom: 750px;
   right: 3vw;
-  z-index: 99;
   padding: 10px;
+  z-index: 999;
   border-radius: 50%;
   cursor: pointer;
   visibility: hidden;
@@ -25,5 +25,4 @@
   visibility: visible;
   opacity: 1;
   bottom: 60px;
-  z-index: 99;
 }

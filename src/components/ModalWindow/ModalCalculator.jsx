@@ -7,9 +7,9 @@ const ModalCalculator = ({ closeModal, showModal }) => {
     const darker = document.querySelector(`.${s.darker}`)
     if (darker) {
       if (showModal) {
-        darker.classList.add(s.show)
+        darker.style.visibility = "visible"
       } else {
-        darker.classList.remove(s.show)
+        darker.style.visibility = "hidden"
       }
     }
   }, [showModal])
