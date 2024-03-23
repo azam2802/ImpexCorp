@@ -11,22 +11,23 @@ import PropTypes from "prop-types"
 const Header = ({ openModal }) => {
   const [screenWidth, setScreenWidth] = useState()
   const { t } = useTranslation()
-  const addFixedClassToHeader = () => {
-    const header = document.querySelector(".header")
-    const headerHeight = header.offsetHeight
-    const scrollThreshold = 1.7 * headerHeight
-    if (window.scrollY > scrollThreshold) {
-      header.classList.add(s.fixed)
-    } else {
-      header.classList.remove(s.fixed)
+  if (screenWidth > 1024) {
+    const addFixedClassToHeader = () => {
+      const header = document.querySelector(".header")
+      const headerHeight = header.offsetHeight
+      const scrollThreshold = 1.7 * headerHeight
+      if (window.scrollY > scrollThreshold) {
+        header.classList.add(s.fixed)
+      } else {
+        header.classList.remove(s.fixed)
+      }
     }
+    window.addEventListener("scroll", addFixedClassToHeader)
   }
 
   window.addEventListener("resize", () => {
     setScreenWidth(window.innerWidth)
   })
-
-  window.addEventListener("scroll", addFixedClassToHeader)
 
   return (
     <>
