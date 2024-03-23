@@ -7,13 +7,13 @@ header {
   width: 100%;
   z-index: 10;
   top: -200px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   @media screen and (max-width: 1024px) {
     display: none;
   }
 }
 
-.fixed{
+.fixed {
   position: fixed;
   top: 0;
   transform: translateY(0);
@@ -42,20 +42,30 @@ header {
       padding: 10px 10px;
       font-size: 16px;
     }
-    .Links{
+    .Links {
       margin-left: 30px;
       display: flex;
       gap: 20px;
-      a{
+      button {
+        font-size: inherit;
         font-family: "Gotham Pro";
         color: #000;
-        transition: all .2s;
-        &:hover{
+        transition: all 0.2s;
+        border: none;
+        &:hover {
           color: #19746b;
-          transition: all .2s;
+          transition: all 0.2s;
         }
       }
-
+      a {
+        font-family: "Gotham Pro";
+        color: #000;
+        transition: all 0.2s;
+        &:hover {
+          color: #19746b;
+          transition: all 0.2s;
+        }
+      }
     }
   }
 }

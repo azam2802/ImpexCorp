@@ -43,9 +43,7 @@ const Header = ({ openModal }) => {
                 <Link to="about">{t("header.ourcompany")}</Link>
                 <Link to="catalog">{t("header.catalogue")}</Link>
                 <Link to="/services">{t("header.services")}</Link>
-                <Link to="/" onClick={openModal}>
-                  {t("header.calculator")}
-                </Link>
+                <button onClick={openModal}>{t("header.calculator")}</button>
               </div>
             </div>
           </div>
