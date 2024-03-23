@@ -7,8 +7,8 @@ export const Catalogs = () => {
 
   return (
     <section>
-      <div className={s["catalogs"]}>
-        <ul className={s["catalogs-list"]}>
+      <div className={s.catalogs}>
+        <ul className={s.catalogs_list}>
           <CatalogsItem
             catalogTitle={t("HomePage.CatalogBlock.titles.newProducts")}
           />

@@ -29,9 +29,8 @@
     }
   }
 
-  .dropdown-content {
+  .dropdown_content {
     padding: 5px;
-
     background-color: #fff;
     border-radius: 10px;
     opacity: 0;
@@ -59,12 +58,12 @@
   }
 }
 
-.dropdown-content-show {
+.dropdown_content_show {
   opacity: 1 !important;
   display: flex !important;
   transition: all .3s;
 }
 
-.langArrow-active {
+.langArrow_active {
   transform: rotate(180deg);
 }

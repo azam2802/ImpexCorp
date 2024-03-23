@@ -17,7 +17,7 @@ const BackToTop = () => {
   }
 
   return (
-    <div className={s["top-btn"]} id="top-btn" onClick={toTop}>
+    <div className={s.top_btn} id="top-btn" onClick={toTop}>
       <PiCaretDoubleUpThin alt="top-btn" />
     </div>
   )

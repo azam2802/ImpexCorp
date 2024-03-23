@@ -3,14 +3,14 @@
   width: 90%;
   margin: 0 auto;
 
-  .catalogs-list {
+  .catalogs_list {
     margin-bottom: 140px;
   }
-  .catalogs-item {
+  .catalogs_item {
     margin-top: 100px;
     list-style: none;
 
-    .next-button {
+    .next_button {
       width: 288px;
       flex-shrink: 0;
       border-radius: 15px;
@@ -26,7 +26,7 @@
   }
 }
 
-.catalog-type-title {
+.catalog_type_title {
   color: #000;
   font-family: "Inter";
   font-size: 42px;
@@ -36,33 +36,33 @@
   margin-bottom: 50px;
 }
 
-.car-card-list {
+.car_card_list {
   box-sizing: border-box;
   display: flex;
   overflow-x: scroll;
 }
 
-.car-card-list::-webkit-scrollbar {
+.car_card_list::-webkit-scrollbar {
   display: none;
 }
 
 @media screen and (max-width: 768px) {
   .catalogs {
-    .catalogs-list {
+    .catalogs_list {
       margin-bottom: 100px;
     }
-    .catalogs-item {
+    .catalogs_item {
       margin-top: 100px;
       list-style: none;
 
-      .next-button {
+      .next_button {
         width: 180px;
         border-radius: 15px;
       }
     }
   }
 
-  .catalog-type-title {
+  .catalog_type_title {
     font-size: 35px;
     margin-bottom: 40px;
   }
@@ -71,34 +71,34 @@
 @media screen and (max-width: 500px) {
   .catalogs {
     width: 100%;
-    .catalogs-list {
+    .catalogs_list {
       width: 90%;
       margin: 0 auto;
     }
-    .catalogs-item {
+    .catalogs_item {
       width: 100%;
       margin-top: 40px;
       list-style: none;
 
-      .car-card-list {
+      .car_card_list {
         width: 100%;
       }
 
-      .next-button {
+      .next_button {
         width: 180px;
         border-radius: 15px;
       }
     }
   }
 
-  .catalog-type-title {
+  .catalog_type_title {
     font-size: 25px;
     margin-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 405px) {
-  .catalog-type-title {
+  .catalog_type_title {
     font-size: 20px;
     margin-bottom: 20px;
   }
