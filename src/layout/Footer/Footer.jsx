@@ -82,6 +82,13 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+      <hr />
+      <p id={s.madeby}>
+        Made by{" "}
+        <a href="https://geeks.kg/geeks-pro" target="blank">
+          GeeksPRO
+        </a>
+      </p>
     </footer>
   )
 }
