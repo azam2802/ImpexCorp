@@ -12,7 +12,7 @@ export const CarCard = () => {
   const { t } = useTranslation()
   return (
     <li className={s.carCardItem}>
-      <img src={carImage} className={s.car_image} alt="" />
+      <img src={carImage} className={s.car_image} alt="carImg" />
       <h1 className={s.car_name}>BYD Tang II</h1>
       <ul className={s.car_struct_list}>
         <li className={s.car_struct_list_item}>
@@ -20,7 +20,7 @@ export const CarCard = () => {
           <p className={s.car_struct_text}>2023</p>
         </li>
         <li className={s.car_struct_list_item}>
-          <img className={s.car_struct_image} src={Icon2} alt="" />
+          <img className={s.car_struct_image} src={Icon2} alt="struct-img" />
           <p className={s.car_struct_text}>Авто</p>
         </li>
         <li className={s.car_struct_list_item}>
@@ -36,7 +36,7 @@ export const CarCard = () => {
           <p className={s.car_struct_text}>Китай</p>
         </li>
         <li className={s.car_struct_list_item}>
-          <img className={s.car_struct_image} src={Icon1} alt="" />
+          <img className={s.car_struct_image} src={Icon1} alt="struct-img" />
           <p className={s.car_struct_text}>2.5</p>
         </li>
       </ul>
