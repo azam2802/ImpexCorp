@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { IoIosArrowUp } from "react-icons/io"
 import { IoIosArrowBack } from "react-icons/io"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
-import { FiltrModal } from "./ui/FiltrModal/FiltrModal"
+import { FiltrModal } from "./ui/FilterModal/FilterModal"
 import { Link } from "react-router-dom"
 import { CarCard } from "@components/CarCard/CarCard"
 import { AnimatePresence, motion } from "framer-motion"
@@ -77,16 +77,11 @@ export const Catalog = () => {
               transition={{ duration: 0.3 }}
               exit={{ opacity: 0, height: 0 }}
               style={{ overflow: "hidden" }}>
-              {openModal && (
-                <div>
-                  <FiltrModal setOpenModal={setOpenModal} />
-                </div>
-              )}
+              {openModal && <FiltrModal setOpenModal={setOpenModal} />}
             </motion.div>
           )}
         </AnimatePresence>
       </section>
-
       <CarCard />
     </main>
   )
