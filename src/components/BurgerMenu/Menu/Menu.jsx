@@ -36,7 +36,7 @@ const Menu = ({ active, setActive }) => {
             </Link>
           </li>
           <li>
-            <LangSwitcher />
+            <LangSwitcher setActive={setActive} />
           </li>
         </ul>
       </div>

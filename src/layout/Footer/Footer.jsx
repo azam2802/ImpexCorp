@@ -33,20 +33,20 @@ const Footer = () => {
             {renderLinks(currentLanguage.footer.aboutus.menu)}
           </ul>
         </div>
-        <div className={s["row_2"]}>
+        <div className={s.row_2}>
           <ul>
             <li>{t("footer.support.name")}</li>
 
             {renderLinks(currentLanguage.footer.support.menu)}
           </ul>
         </div>
-        <div className={s["row_3"]}>
+        <div className={s.row_3}>
           <ul>
             <li>{t("footer.branches.name")}</li>
             {renderLinks(currentLanguage.footer.branches.menu)}
           </ul>
         </div>
-        <div className={s["row_4"]}>
+        <div className={s.row_4}>
           <ul>
             <li>{t("footer.contacts.name")}</li>
             {renderLinks(currentLanguage.footer.contacts.menu)}

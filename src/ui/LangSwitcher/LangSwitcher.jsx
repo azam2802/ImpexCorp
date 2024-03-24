@@ -1,14 +1,15 @@
-import React, { useState } from "react"
-import RussianFlag from "@images/russia.svg"
 import ChinaFlag from "@images/china.svg"
 import KyrgyzFlag from "@images/kyrgyzstan.svg"
+import RussianFlag from "@images/russia.svg"
 import UsaFlag from "@images/usa.svg"
 import { useLang } from "@store/store"
-import { useTranslation } from "react-i18next"
 import "@styles/ui/LangSwitcher.scss"
+import PropTypes from "prop-types"
+import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { FaChevronDown } from "react-icons/fa6"
 
-const LangSwitcher = () => {
+const LangSwitcher = ({ setActive }) => {
   const { changeLang } = useLang()
   const [showDrop, setShowDrop] = useState(false)
   const { i18n } = useTranslation()
@@ -55,7 +56,9 @@ const LangSwitcher = () => {
         ))}
       <div className="dropdown_content">
         {langs.map((i, id) => (
-          <button key={id} onClick={() => changeLanguage(i.code)}>
+          <button
+            key={id}
+            onClick={() => (changeLanguage(i.code), setActive())}>
             <img src={i.flag} alt={i.name} />
             {i.name}
           </button>
@@ -63,6 +66,10 @@ const LangSwitcher = () => {
       </div>
     </div>
   )
+}
+
+LangSwitcher.propTypes = {
+  setActive: PropTypes.func.isRequired,
 }
 
 export default LangSwitcher

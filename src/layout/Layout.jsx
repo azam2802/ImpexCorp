@@ -8,6 +8,7 @@ import { useModalState } from "@store/store"
 
 const Layout = () => {
   const { key } = useLocation()
+  console.log(key)
   const { isModalOpen, setIsModalOpen } = useModalState()
 
   const openModal = () => {
