@@ -9,7 +9,7 @@ import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 const Header = ({ openModal }) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenWidth, setScreenWidth] = useState()
   const { t } = useTranslation()
 
   if (screenWidth > 1024) {
@@ -32,7 +32,7 @@ const Header = ({ openModal }) => {
 
   return (
     <>
-      {screenWidth > 1024 ? (
+      {window.innerWidth > 1024 ? (
         <>
           <OverNavbar />
           <header className="header">

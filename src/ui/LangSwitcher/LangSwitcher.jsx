@@ -30,7 +30,6 @@ const LangSwitcher = ({ setActive }) => {
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language)
-    showDropDown()
     changeLang(language)
   }
 
@@ -58,7 +57,9 @@ const LangSwitcher = ({ setActive }) => {
         {langs.map((i, id) => (
           <button
             key={id}
-            onClick={() => (changeLanguage(i.code), setActive())}>
+            onClick={() => {
+              changeLanguage(i.code), setActive(), showDrop()
+            }}>
             <img src={i.flag} alt={i.name} />
             {i.name}
           </button>
@@ -69,7 +70,7 @@ const LangSwitcher = ({ setActive }) => {
 }
 
 LangSwitcher.propTypes = {
-  setActive: PropTypes.func.isRequired,
+  setActive: PropTypes.func,
 }
 
 export default LangSwitcher

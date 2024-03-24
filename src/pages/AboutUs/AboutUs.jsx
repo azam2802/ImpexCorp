@@ -10,10 +10,10 @@ export const AboutUs = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   return (
-    <main>
+    <main className={s.about_main}>
       <div
         onClick={() => {
-          navigate(-1)
+          navigate("/")
         }}
         className={s.backToPrevious}>
         <IoIosArrowBack />

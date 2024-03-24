@@ -1,6 +1,5 @@
-main {
+.about_main {
   font-family: "Inter";
-
   .backToPrevious {
     display: none;
   }
@@ -118,8 +117,13 @@ main {
   }
 }
 
-@media screen and (max-width: 1025px) {
-  main {
+@media screen and (max-width: 1024px) {
+  .about_main {
+    margin-top: 10vh;
+    .AboutCompanyTitle {
+      padding: 40px 0;
+      margin: 40px auto;
+    }
     .backToPrevious {
       margin-top: 30px;
       width: 18vw;
@@ -141,8 +145,8 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-  main {
-
+  .about_main {
+    margin-top: 10vh;
     .backToPrevious {
       margin-top: 0px;
     }
@@ -209,7 +213,7 @@ main {
 }
 
 @media screen and (max-width: 400px) {
-  main {
+  .about_main {
     .AboutCompanyTitle {
       padding: 20px 0;
       margin: 20px auto;
