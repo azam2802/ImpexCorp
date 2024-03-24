@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { Select } from "../Select/Select"
@@ -7,6 +7,20 @@ import { useTranslation } from "react-i18next"
 
 export const FiltrModal = ({ setOpenModal }) => {
   const { t } = useTranslation()
+
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
+
+  const handleResize = () => {
+    setIsSmallScreen(window.innerWidth < 768)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -101,12 +115,21 @@ export const FiltrModal = ({ setOpenModal }) => {
         </div>
       </section>
 
-      <div className={s.block}>
+      {isSmallScreen ? (
         <div className={s.row_input}>
           <input type="text" placeholder={t("Catalog.input.pricesFrom")} />
           <input type="text" placeholder={t("Catalog.input.priceBegore")} />
         </div>
+      ) : (
+        <div className={s.block}>
+          <div className={s.row_input}>
+            <input type="text" placeholder={t("Catalog.input.pricesFrom")} />
+            <input type="text" placeholder={t("Catalog.input.priceBegore")} />
+          </div>
+        </div>
+      )}
 
+      <div className={s.block}>
         <button onClick={onSubmit}>{t("Catalog.button.title")}</button>
       </div>
     </main>
@@ -114,5 +137,5 @@ export const FiltrModal = ({ setOpenModal }) => {
 }
 
 FiltrModal.propTypes = {
-  setOpenModal: PropTypes.string.isRequired,
+  setOpenModal: PropTypes.func.isRequired,
 }
