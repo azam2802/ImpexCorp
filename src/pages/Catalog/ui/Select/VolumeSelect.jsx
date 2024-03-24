@@ -7,10 +7,10 @@ import s from "@styles/pages/Catalog/Catalog.module.scss"
 export const VolumeSelect = ({ title, firstType, secondType, thirdType }) => {
   const [openSelect, setOpenSelect] = useState(false)
   const [selectedValue, setSelectedValue] = useState()
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 769)
 
   const handleResize = () => {
-    setIsSmallScreen(window.innerWidth < 768)
+    setIsSmallScreen(window.innerWidth < 769)
   }
 
   useEffect(() => {
