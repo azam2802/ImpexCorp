@@ -25,8 +25,8 @@ const App = () => {
         {router.map((item, id) => (
           <Route key={id} path={item.path} element={item.element} />
         ))}
-        <Route path="*" element={<PageNotFound />} />
       </Route>
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   )
 }
