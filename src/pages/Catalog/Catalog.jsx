@@ -5,7 +5,7 @@ import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { FiltrModal } from "./ui/FiltrModal/FiltrModal"
 import { Link } from "react-router-dom"
 import { CarCard } from "@components/CarCard/CarCard"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { useTranslation } from "react-i18next"
 
 export const Catalog = () => {
@@ -33,11 +33,12 @@ export const Catalog = () => {
       </div>
       <section className={s.catalog_block}>
         <div className={s.filtration_block}>
-          <div className={s.filtration}>
+          <div
+            className={openModal ? s.filtration_open : s.filtration}
+            onClick={onShowModal}>
             <p>{t("Catalog.filter")}</p>
             <IoIosArrowUp
               cursor="pointer"
-              onClick={onShowModal}
               className={openModal ? s.rotates : s.rotate}
             />
           </div>
@@ -68,19 +69,22 @@ export const Catalog = () => {
             </div>
           </div>
         </div>
-        {openModal && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: openModal ? "auto" : 0 }}
-            transition={{ duration: 0.3 }}
-            style={{ overflow: "hidden" }}>
-            {openModal && (
-              <div>
-                <FiltrModal setOpenModal={setOpenModal} />
-              </div>
-            )}
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {openModal && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: openModal ? "auto" : 0 }}
+              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, height: 0 }}
+              style={{ overflow: "hidden" }}>
+              {openModal && (
+                <div>
+                  <FiltrModal setOpenModal={setOpenModal} />
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       <CarCard />
