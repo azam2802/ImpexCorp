@@ -125,5 +125,52 @@
         "number3": "+996 (708) 04-02-90"
       }
     }
+  },
+  "Catalog": {
+    "title": "Catalog",
+    "filter": "Filter",
+    "characteristics": {
+      "catalog": "Catalog",
+      "model": "Model",
+      "yearIssue": "Year of issue",
+      "wheel": {
+        "title": "Steering wheel",
+        "left": "Left",
+        "right": "Right"
+      },
+      "fuel": {
+        "title": "Fuel",
+        "diesel": "Diesel",
+        "petrol": "Petrol",
+        "electro": "Electro"
+      },
+      "driveUnit": {
+        "title": "Drive unit",
+        "front": "Front",
+        "rear": "Rear"
+      },
+      "transmission": {
+        "title": "Transmission",
+        "mechanical": "Mechanical",
+        "automatic": "Automatic",
+        "stepless": "Stepless"
+      }
+    },
+    "country": {
+      "chine": "China",
+      "korea": "Korea",
+      "newItems": "New arrivals"
+    },
+    "input": {
+      "pricesFrom": "Prices from",
+      "priceBegore": "Prices before",
+      "mileageFrom": "Mileage from",
+      "mileageBefore": "Mileage before",
+      "volumeFrom": "Volume from",
+      "volumeBefore": "Volume before"
+    },
+    "button": {
+      "title": "Find"
+    }
   }
 }
