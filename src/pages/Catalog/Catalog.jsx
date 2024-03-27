@@ -85,7 +85,7 @@ export const Catalog = () => {
         </AnimatePresence>
         <div className={s.row_catalog}>
           {data.length > 0 ? (
-            data.map((i) => (
+            [...data].reverse().map((i) => (
               <div className={s.col_4_catalog} key={i.car_slug}>
                 <CarCard
                   width="100%"
