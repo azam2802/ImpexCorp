@@ -11,6 +11,10 @@
 
   .car_image {
     width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .car_name {
@@ -45,7 +49,6 @@
       &:not(:last-child) {
         margin-right: 15px;
       }
-
       .car_struct_text {
         margin-left: 15px;
         font-weight: 600;
@@ -94,7 +97,9 @@
     border-radius: 12px;
     margin-right: 15px;
     padding: 15px;
-
+    .car_image{
+      height: 150px;
+    }
     .car_name {
       font-size: 18px;
       margin-top: 10px;

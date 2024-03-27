@@ -1,11 +1,12 @@
 import React from "react"
 import s from "@styles/pages/Home/Catalogs.module.scss"
-import { CarCard } from "@components/CarCard/CarCard"
+import CarCard from "@components/CarCard/CarCard"
 import PropTypes from "prop-types"
 import { motion } from "framer-motion"
 import { BsChevronRight } from "react-icons/bs"
+import { Link } from "react-router-dom"
 
-export const CatalogsItem = ({ catalogTitle }) => {
+export const CatalogsItem = ({ catalogTitle, data }) => {
   const AnimBottom = {
     hidden: {
       y: 150,
@@ -18,7 +19,6 @@ export const CatalogsItem = ({ catalogTitle }) => {
     }),
   }
 
-  const myArr = Array.from({ length: 6 })
   return (
     <motion.li
       initial="hidden"
@@ -29,15 +29,20 @@ export const CatalogsItem = ({ catalogTitle }) => {
         {catalogTitle}
       </motion.h1>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
-        {myArr.map((_, index) => (
-          <CarCard key={index} />
+        {data.slice(0, 6).map((i) => (
+          <CarCard
+            key={i.car_slug}
+            images={`http://34.159.107.65${i.images[0].image}`}
+            car_name={i.car_name}
+            price={i.price}
+            mileage={i.mileage}
+          />
         ))}
-        <li className={s.next_button}>
+        <Link className={s.next_button} to="catalog">
           <BsChevronRight
-            alt="right-chevron"
             style={{ width: "80px", height: "100%", fill: "#19746b" }}
           />
-        </li>
+        </Link>
       </motion.ul>
     </motion.li>
   )
@@ -45,4 +50,5 @@ export const CatalogsItem = ({ catalogTitle }) => {
 
 CatalogsItem.propTypes = {
   catalogTitle: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
 }

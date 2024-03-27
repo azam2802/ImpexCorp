@@ -12,8 +12,12 @@ const Header = ({ openModal }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const { t } = useTranslation()
 
-  if (screenWidth > 1024) {
-    const addFixedClassToHeader = () => {
+  window.addEventListener("resize", () => {
+    setScreenWidth(window.innerWidth)
+  })
+
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth > 1024) {
       const header = document.querySelector(".header")
       const headerHeight = header.offsetHeight
       const scrollThreshold = 1.7 * headerHeight
@@ -23,11 +27,6 @@ const Header = ({ openModal }) => {
         header.classList.remove(s.fixed)
       }
     }
-    window.addEventListener("scroll", addFixedClassToHeader)
-  }
-
-  window.addEventListener("resize", () => {
-    setScreenWidth(window.innerWidth)
   })
 
   return (
@@ -50,7 +49,6 @@ const Header = ({ openModal }) => {
                     <Link to="/">{t("header.home")}</Link>
                     <Link to="about">{t("header.ourcompany")}</Link>
                     <Link to="catalog">{t("header.catalogue")}</Link>
-                    <Link to="services">{t("header.services")}</Link>
                     <button onClick={openModal}>
                       {t("header.calculator")}
                     </button>

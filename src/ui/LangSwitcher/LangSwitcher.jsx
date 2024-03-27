@@ -2,7 +2,6 @@ import ChinaFlag from "@images/china.svg"
 import KyrgyzFlag from "@images/kyrgyzstan.svg"
 import RussianFlag from "@images/russia.svg"
 import UsaFlag from "@images/usa.svg"
-import { useLang } from "@store/store"
 import "@styles/ui/LangSwitcher.scss"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
@@ -10,7 +9,6 @@ import { useTranslation } from "react-i18next"
 import { FaChevronDown } from "react-icons/fa6"
 
 const LangSwitcher = ({ setActive }) => {
-  const { changeLang } = useLang()
   const [showDrop, setShowDrop] = useState(false)
   const { i18n } = useTranslation()
 
@@ -30,15 +28,20 @@ const LangSwitcher = ({ setActive }) => {
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language)
-    changeLang(language)
   }
 
   const langs = [
     { code: "ru", name: "Русский", flag: RussianFlag },
     { code: "ky", name: "Кыргыз", flag: KyrgyzFlag },
     { code: "en", name: "English", flag: UsaFlag },
-    { code: "zh", name: "中国人", flag: ChinaFlag },
+    { code: "zh", name: "中國的", flag: ChinaFlag },
   ]
+
+  const handleClick = (item) => {
+    changeLanguage(item.code)
+    setActive()
+    showDrop()
+  }
 
   return (
     <div className="dropDown" onClick={() => showDropDown()}>
@@ -55,11 +58,7 @@ const LangSwitcher = ({ setActive }) => {
         ))}
       <div className="dropdown_content">
         {langs.map((i, id) => (
-          <button
-            key={id}
-            onClick={() => {
-              changeLanguage(i.code), setActive(), showDrop()
-            }}>
+          <button key={id} onClick={() => handleClick(i)}>
             <img src={i.flag} alt={i.name} />
             {i.name}
           </button>

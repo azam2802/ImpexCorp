@@ -1,16 +1,15 @@
 {
-  "notFoundText": "抱歉，找不到该页面",
+  "notFoundText": "抱歉，找不到页面。",
   "header": {
     "search": "搜索",
-    "home": "主页",
+    "home": "首页",
     "catalogue": "目录",
-    "services": "服务",
     "calculator": "计算器",
-    "ourcompany": "我们公司",
+    "ourcompany": "我们的公司",
     "HeaderCatalog": {
-      "model": "热门车型",
+      "model": "热门型号",
       "countries": {
-        "title": "个国家",
+        "title": "国家",
         "items": {
           "korea": "韩国",
           "china": "中国",
@@ -22,44 +21,82 @@
   "HomePage": {
     "GreetingBlock": {
       "title": "欢迎来到 Impex Corp 汽车展厅",
-      "text": "Impex Corp 是一家汽车公司，为客户提供与汽车行业相关的广泛产品和服务。 Impex Corp 已成为市场领先者，拥有多项关键优势，使其成为买家的理想选择",
-      "buttonText": "更多细节"
+      "text": "Impex Corp 是一家汽车公司，为客户提供与汽车行业相关的广泛产品和服务。作为市场领导者，Impex Corp 拥有几个关键优势，使其成为购买者的理想选择。",
+      "buttonText": "了解更多"
     },
     "CatalogBlock": {
       "titles": {
         "mainTitle": "目录",
-        "newProducts": "新东西",
+        "newProducts": "新产品",
         "fromChina": "来自中国的汽车",
         "fromKorea": "来自韩国的汽车"
       },
-      "buttonText": "更多细节"
+      "buttonText": "了解更多"
     },
     "FAQBlock": {
       "titles": {
-        "mainTitle": "常问问题"
+        "mainTitle": "常见问题"
       }
     },
     "firstBlock": {
-      "title1": "安全, 可靠、时尚 体现在每个细节上",
-      "buttonText": "称呼"
+      "title1": "每个细节都充满安全性、可靠性和风格！",
+      "buttonText": "电话咨询"
     },
     "OurServices": {
-      "title": "我們的服務",
-      "search": "搜尋並購買",
-      "cars": "來自韓國和中國的汽車",
-      "delivery": "专车接送",
-      "guarantee": "比什凯克有担保",
-      "registration": "汽车登记",
-      "accounting": "注销(国家自动监察局)",
-      "insurance": "全额保险",
-      "auto": "运送到吉尔吉斯斯坦之前"
+      "title": "我们的服务",
+      "search": "搜索和购买",
+      "cars": "来自韩国和中国的汽车",
+      "delivery": "汽车交付",
+      "guarantee": "在比什凯克市提供保修",
+      "registration": "汽车注册",
+      "accounting": "以及注销 (交通警察局)",
+      "insurance": "全面保险",
+      "auto": "交付前检查"
+    }
+  },
+  "AboutUs": {
+    "AboutCompanyTitle": "公司“Impex Corp”提供从韩国和中国购买和进口汽车的服务！",
+    "AboutUsTitle": "欢迎来到 Impex Corp 汽车展厅",
+    "AboutUsText": {
+      "bold": "Impex Corp ",
+      "thin": "是一家汽车公司，为客户提供与汽车行业相关的广泛产品和服务。作为市场领导者，Impex Corp 拥有几个关键优势，使其成为购买者的理想选择。"
+    },
+    "AboutUsTechnichUl": {
+      "quality": "优质工作",
+      "workersExp": "经验丰富的员工",
+      "insurance": "汽车运输保险",
+      "logistic": "物流"
+    },
+    "key": {
+      "bold": "Impex Corp 无可挑剔的声誉",
+      "thin": "是您对交易的信心的保证"
+    },
+    "receive": {
+      "title": "您将获得：",
+      "bold": "可靠性",
+      "thin": "我们的公司在不到一年的时间里与7个独立国家和30个CIS城市签订了超过100份合同。"
+    },
+    "choice": {
+      "bold": "选择",
+      "thin": "我们公司的重要任务之一是为采矿、轻工业和农业工业的特殊技术、设备、原材料的选择和交付提供服务。我们还提供汽车零部件、配件和化学品。此外，“IMPEX CORP”公司还致力于发展食品和旅游业的进口和出口。我们公司的主要业务是从中国、韩国、日本、阿联酋、格鲁吉亚、欧洲和美国等国家进口和出口汽车。"
+    },
+    "AboutUsBottom": {
+      "title": "购买您的韩国和中国汽车非常简单！",
+      "ul": {
+        "li1": "确定国家（中国、韩国等）",
+        "li2": "汽车标准。",
+        "li3": "计算最终成本",
+        "li4": "购买",
+        "li5": "物流"
+      },
+      "bottomTitle": "您的梦想在您手中！"
     }
   },
   "footer": {
     "aboutus": {
       "name": "关于我们",
       "menu": {
-        "company": "我们公司",
+        "company": "我们的公司",
         "services": "服务"
       }
     },
@@ -71,11 +108,11 @@
       }
     },
     "branches": {
-      "name": "选购",
+      "name": "分支机构",
       "menu": {
-        "address1": "街道。Gorkogo 20a, 比什凯克",
-        "address2": "街道。Ankara 38a, 比什凯克",
-        "address3": "街道。Isakeeva 1/2, 比什凯克"
+        "address1": "Gorkogo Street 20a, Bishkek",
+        "address2": "Ankara Street 38a, Bishkek",
+        "address3": "Isaakiev Street 1/2, Bishkek"
       }
     },
     "contacts": {
@@ -92,46 +129,46 @@
     "filter": "筛选",
     "characteristics": {
       "catalog": "目录",
-      "model": "模型",
-      "yearIssue": "发行年份",
+      "model": "型号",
+      "yearIssue": "年份",
       "wheel": {
         "title": "方向盘",
-        "left": "左边",
-        "right": "在右边"
+        "left": "左",
+        "right": "右"
       },
       "fuel": {
         "title": "燃料",
-        "diesel": "柴油机",
+        "diesel": "柴油",
         "petrol": "汽油",
-        "electro": "电子"
+        "electro": "电动"
       },
       "driveUnit": {
-        "title": "驱动单元",
-        "front": "正面",
-        "rear": "后部"
+        "title": "驱动",
+        "front": "前驱",
+        "rear": "后驱"
       },
       "transmission": {
-        "title": "传播",
-        "mechanical": "机械的",
-        "automatic": "自动的",
-        "stepless": "无级"
+        "title": "传动",
+        "mechanical": "机械传动",
+        "automatic": "自动传动",
+        "stepless": "无级变速"
       }
     },
     "country": {
       "chine": "中国",
       "korea": "韩国",
-      "newItems": "新东西"
+      "newItems": "新品"
     },
     "input": {
       "pricesFrom": "价格从",
-      "priceBegore": "价格高达",
+      "priceBegore": "价格到",
       "mileageFrom": "里程从",
-      "mileageBefore": "里程可达",
-      "volumeFrom": "成交量来自",
-      "volumeBefore": "音量高达"
+      "mileageBefore": "里程到",
+      "volumeFrom": "容量从",
+      "volumeBefore": "容量到"
     },
     "button": {
-      "title": "寻找"
+      "title": "查找"
     }
   }
 }

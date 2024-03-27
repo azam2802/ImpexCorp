@@ -5,8 +5,14 @@ import { Route, Routes } from "react-router-dom"
 import AboutUs from "@pages/AboutUs/AboutUs"
 import PageNotFound from "@pages/Error404/PageNotFound"
 import { Catalog } from "@pages/Catalog/Catalog"
+import { useAutosList } from "@store/store"
+import { useTranslation } from "react-i18next"
 
 const App = () => {
+  const { fetchData } = useAutosList()
+  const { i18n } = useTranslation()
+  fetchData(i18n.language)
+
   const router = [
     {
       path: "about",

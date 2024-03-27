@@ -36,7 +36,6 @@ const Footer = () => {
         <div className={s.row_2}>
           <ul>
             <li>{t("footer.support.name")}</li>
-
             {renderLinks(currentLanguage.footer.support.menu)}
           </ul>
         </div>

@@ -31,11 +31,6 @@ const Menu = ({ active, setActive }) => {
             </Link>
           </li>
           <li>
-            <Link onClick={() => setActive()} to="services">
-              {t("header.services")}
-            </Link>
-          </li>
-          <li>
             <LangSwitcher setActive={setActive} />
           </li>
         </ul>
