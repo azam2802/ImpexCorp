@@ -18,7 +18,7 @@ export const useAutosList = create(
         useEffect(() => {
           axios
             .get(
-              `http://34.159.107.65/${lang == "zh" ? "zh-hant" : lang}/api/auto/`,
+              `http://209.38.228.54:81/${lang == "zh" ? "zh-hant" : lang}/api/auto/`,
               {
                 headers: {
                   "Content-Type": "application/json",

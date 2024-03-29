@@ -2,7 +2,7 @@ import BurgerMenu from "@components/BurgerMenu/BurgerMenu"
 import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
@@ -12,21 +12,22 @@ const Header = ({ openModal }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const { t } = useTranslation()
 
-  window.addEventListener("resize", () => {
-    setScreenWidth(window.innerWidth)
-  })
-
-  window.addEventListener("scroll", () => {
-    if (window.innerWidth > 1024) {
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setScreenWidth(window.innerWidth)
+    })
+    window.addEventListener("scroll", () => {
       const header = document.querySelector(".header")
-      const headerHeight = header.offsetHeight
-      const scrollThreshold = 1.7 * headerHeight
-      if (window.scrollY > scrollThreshold) {
-        header.classList.add(s.fixed)
-      } else {
-        header.classList.remove(s.fixed)
+      if (window.innerWidth > 1024) {
+        const headerHeight = header.offsetHeight
+        const scrollThreshold = 1.7 * headerHeight
+        if (window.scrollY > scrollThreshold) {
+          header.classList.add(s.fixed)
+        } else {
+          header.classList.remove(s.fixed)
+        }
       }
-    }
+    })
   })
 
   return (

@@ -7,6 +7,7 @@ import { BsChevronRight } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 export const CatalogsItem = ({ catalogTitle, data }) => {
+  console.log(data)
   const AnimBottom = {
     hidden: {
       y: 150,
@@ -29,13 +30,16 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
         {catalogTitle}
       </motion.h1>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
-        {data.slice(0, 6).map((i) => (
+        {data.slice(0, 6).map((car) => (
           <CarCard
-            key={i.car_slug}
-            images={`http://34.159.107.65${i.images[0].image}`}
-            car_name={i.car_name}
-            price={i.price}
-            mileage={i.mileage}
+            key={car.car_slug}
+            images={`http://209.38.228.54:81/${car.images[0].image}`}
+            car_name={car.car_name}
+            price={car.price}
+            volume={car.volume}
+            transmission={car.transmission}
+            country={car.country_of_assembly}
+            mileage={car.mileage}
           />
         ))}
         <Link className={s.next_button} to="catalog">
