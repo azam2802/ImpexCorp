@@ -9,16 +9,18 @@ import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 const Header = ({ openModal }) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenWidth, setScreenWidth] = useState(
+    window.matchMedia("(min-width: 1024px)").matches,
+  )
   const { t } = useTranslation()
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setScreenWidth(window.innerWidth)
+      setScreenWidth(window.matchMedia("(min-width: 1024px)").matches)
     })
     window.addEventListener("scroll", () => {
-      const header = document.querySelector(".header")
-      if (window.innerWidth > 1024) {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        const header = document.querySelector(".header")
         const headerHeight = header.offsetHeight
         const scrollThreshold = 1.7 * headerHeight
         if (window.scrollY > scrollThreshold) {
@@ -32,7 +34,7 @@ const Header = ({ openModal }) => {
 
   return (
     <>
-      {screenWidth > 1024 ? (
+      {screenWidth ? (
         <>
           <OverNavbar />
           <header className="header">

@@ -1,14 +1,12 @@
-import React, { useState } from "react"
-import { IoIosArrowUp } from "react-icons/io"
-import { IoIosArrowBack } from "react-icons/io"
-import s from "@styles/pages/Catalog/Catalog.module.scss"
-import { FiltrModal } from "./ui/FilterModal/FilterModal"
-import { Link } from "react-router-dom"
 import CarCard from "@components/CarCard/CarCard"
-import { AnimatePresence, motion } from "framer-motion"
-import { useTranslation } from "react-i18next"
 import { useAutosList } from "@store/store"
-import Loader from "@components/Loader/Loader"
+import s from "@styles/pages/Catalog/Catalog.module.scss"
+import { AnimatePresence, motion } from "framer-motion"
+import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
+import { IoIosArrowBack, IoIosArrowUp } from "react-icons/io"
+import { Link } from "react-router-dom"
+import { FiltrModal } from "./ui/FilterModal/FilterModal"
 
 export const Catalog = () => {
   const { t } = useTranslation()
@@ -85,11 +83,11 @@ export const Catalog = () => {
         </AnimatePresence>
         <div className={s.row_catalog}>
           {data.length > 0 ? (
-            [...data].reverse().map((car) => (
+            data.reverse().map((car) => (
               <div className={s.col_4_catalog} key={car.car_slug}>
                 <CarCard
                   width="100%"
-                  images={`http://34.159.107.65${car.images[0].image}`}
+                  images={`http://209.38.228.54:81/${car.images[0].image}`}
                   car_name={car.car_name}
                   price={car.price}
                   volume={car.volume}
@@ -100,7 +98,7 @@ export const Catalog = () => {
               </div>
             ))
           ) : (
-            <Loader />
+            <h1 className={s.title}>Извините, ничего не найдено...</h1>
           )}
         </div>
       </section>

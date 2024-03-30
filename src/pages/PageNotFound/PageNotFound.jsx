@@ -1,7 +1,7 @@
 import Logo from "@ui/Logo/Logo"
 import React from "react"
 import { useTranslation } from "react-i18next"
-import s from "@styles/pages/Error404/PageNotFound.module.scss"
+import s from "@styles/pages/PageNotFound/PageNotFound.module.scss"
 import Header from "@layout/Header/Header"
 
 const PageNotFound = () => {
