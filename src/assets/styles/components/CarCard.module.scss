@@ -1,5 +1,5 @@
 .carCardItem {
-  width: 560px;
+  width: 31vw;
   flex-shrink: 0;
   border-radius: 15px;
   background: #fff;
@@ -91,13 +91,39 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1614px) {
   .carCardItem {
-    width: 42vw;
+    .car_name {
+      margin-top: 15px;
+      font-size: 25px;
+    }
+
+    .car_struct_list {
+      .car_struct_list_item {
+        height: 30px;
+        font-size: 18px;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+        .car_struct_text {
+          margin-left: 10px;
+          font-weight: 600;
+        }
+        img{
+          width: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .carCardItem {
     border-radius: 12px;
     margin-right: 15px;
     padding: 15px;
-    .car_image{
+    .car_image {
       height: 150px;
     }
     .car_name {
@@ -146,6 +172,15 @@
         font-size: 14px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carCardItem {
+    width: 42vw;
+    border-radius: 12px;
+    margin-right: 15px;
+    padding: 15px;
   }
 }
 
