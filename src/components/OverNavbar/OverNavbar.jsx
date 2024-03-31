@@ -1,5 +1,6 @@
 import s from "@styles/components/OverNavbar.module.scss"
 import LangSwitcher from "@ui/LangSwitcher/LangSwitcher"
+
 import React from "react"
 
 const OverNavbar = () => {

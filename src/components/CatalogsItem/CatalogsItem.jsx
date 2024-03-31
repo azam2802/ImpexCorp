@@ -7,7 +7,6 @@ import { BsChevronRight } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 export const CatalogsItem = ({ catalogTitle, data }) => {
-  console.log(data)
   const AnimBottom = {
     hidden: {
       y: 150,

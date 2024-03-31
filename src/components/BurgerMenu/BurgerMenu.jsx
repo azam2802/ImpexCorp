@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import s from "@styles/components/BurgerMenu.module.scss"
 import Logo from "@ui/Logo/Logo"
 import Menu from "./Menu/Menu"
+import { useBurgerState } from "@store/store"
 
 const BurgerMenu = () => {
-  const [menuActive, setMenuActive] = useState(false)
+  const { menuActive, setMenuActive } = useBurgerState()
 
   return (
     <>

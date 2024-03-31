@@ -10,6 +10,13 @@ export const useModalState = create(
   })),
 )
 
+export const useBurgerState = create(
+  devtools((set) => ({
+    menuActive: false,
+    setMenuActive: (value) => set({ menuActive: value }),
+  })),
+)
+
 export const useAutosList = create(
   devtools((set) => ({
     data: [],
@@ -27,7 +34,8 @@ export const useAutosList = create(
               },
             )
             .then((res) => {
-              set({ data: res.data.results })
+              let data = [...res.data.results].reverse()
+              set({ data: data })
             })
         }, [lang])
       } catch {

@@ -10,28 +10,28 @@ const Menu = ({ active, setActive }) => {
   return (
     <div className={s.menu}>
       <div
-        onClick={() => setActive()}
+        onClick={() => setActive(!active)}
         className={active ? `${s.blur} ${s.active}` : s.blur}></div>
       <div
         className={active ? `${s.menu_content} ${s.active}` : s.menu_content}>
         <ul>
           <li>
-            <Link onClick={() => setActive()} to="/">
+            <Link onClick={() => setActive(!active)} to="/">
               {t("header.home")}
             </Link>
           </li>
           <li>
-            <Link onClick={() => setActive()} to="about">
+            <Link onClick={() => setActive(!active)} to="about">
               {t("header.ourcompany")}
             </Link>
           </li>
           <li>
-            <Link onClick={() => setActive()} to="catalog">
+            <Link onClick={() => setActive(!active)} to="catalog">
               {t("header.catalogue")}
             </Link>
           </li>
           <li>
-            <LangSwitcher setActive={setActive} />
+            <LangSwitcher />
           </li>
         </ul>
       </div>
