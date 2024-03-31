@@ -3,7 +3,7 @@ import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
 import BackToTop from "@ui/BackToTop/BackToTop"
 import { Outlet } from "react-router-dom"
-import ModalCalculator from "@components/ModalWindow/ModalCalculator"
+import ModalCalculator from "@components/ModalCalculator/ModalCalculator"
 import { useModalState } from "@store/store"
 
 const Layout = () => {
