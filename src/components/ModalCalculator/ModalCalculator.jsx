@@ -6,22 +6,19 @@ const ModalCalculator = ({ closeModal, showModal }) => {
   const modalRef = useRef(null)
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        closeModal()
-      }
-    }
-
     if (showModal) {
+      const handleOutsideClick = (e) => {
+        if (modalRef.current && !modalRef.current.contains(e.target)) {
+          closeModal()
+        }
+      }
       document.addEventListener("mousedown", handleOutsideClick)
       document.body.style.overflow = "hidden"
-    } else {
-      document.removeEventListener("mousedown", handleOutsideClick)
-      document.body.style.overflow = "auto"
-    }
 
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick)
+      return () => {
+        document.removeEventListener("mousedown", handleOutsideClick)
+        document.body.style.overflow = "auto"
+      }
     }
   }, [showModal, closeModal])
 
