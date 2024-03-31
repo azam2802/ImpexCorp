@@ -17,7 +17,7 @@ const ModalCalculator = ({ closeModal, showModal }) => {
 
       return () => {
         document.removeEventListener("mousedown", handleOutsideClick)
-        document.body.style.overflow = "auto"
+        document.body.style.overflow = "unset"
       }
     }
   }, [showModal, closeModal])
