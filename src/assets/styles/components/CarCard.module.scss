@@ -11,7 +11,7 @@
 
   .car_image {
     width: 100%;
-    height: 250px;
+    height: 200px;
     border-radius: 10px;
     object-fit: cover;
     object-position: center;
@@ -125,6 +125,7 @@
     padding: 15px;
     .car_image {
       height: 150px;
+      object-position: center;
     }
     .car_name {
       font-size: 18px;
@@ -188,6 +189,10 @@
   .carCardItem {
     width: 60vw;
     padding: 15px;
+    .car_image {
+      height: 130px;
+      object-position: center;
+    }
   }
 }
 
