@@ -102,5 +102,4 @@ ModalCalculator.propTypes = {
   closeModal: PropTypes.func.isRequired,
   showModal: PropTypes.bool.isRequired,
 }
-
 export default ModalCalculator
