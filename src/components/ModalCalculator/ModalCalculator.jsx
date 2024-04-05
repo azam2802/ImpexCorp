@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import PropTypes from "prop-types" // Импортируем prop-types
+import PropTypes from "prop-types"
 import s from "@styles/components/ModalCalculator.module.scss"
 import ShowCalculator from "./ShowCalculator"
 import arrow from "@images/arrow.png"
