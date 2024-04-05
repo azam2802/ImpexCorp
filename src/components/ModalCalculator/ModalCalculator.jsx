@@ -1,17 +1,20 @@
 import React, { useEffect, useRef, useState } from "react"
-import PropTypes from "prop-types"
+import PropTypes from "prop-types" // Импортируем prop-types
 import s from "@styles/components/ModalCalculator.module.scss"
-import AppContent from "./AppContent"
+import ShowCalculator from "./ShowCalculator"
+import arrow from "@images/arrow.png"
 
 const ModalCalculator = ({ closeModal, showModal }) => {
   const modalRef = useRef(null)
-  const [showAppContent, setShowAppContent] = useState(false)
+  const [showModalContent, setShowModalContent] = useState(false)
   const [engine, setEngine] = useState("")
+  const [showSelectOptions, setShowSelectOptions] = useState(false)
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         closeModal()
+        setShowModalContent(false)
       }
     }
 
@@ -29,18 +32,21 @@ const ModalCalculator = ({ closeModal, showModal }) => {
   }, [showModal, closeModal])
 
   const handleCalculate = () => {
-    setShowAppContent(true)
+    setShowModalContent(!showModalContent)
   }
 
-  const handleAppContentClick = () => {}
+  const handleSelectOption = (value) => {
+    setEngine(value)
+    setShowSelectOptions(false)
+  }
 
   return (
     <>
       {showModal && (
         <div className={s.darker}>
           <div className={s.modal} ref={modalRef}>
-            {showAppContent ? (
-              <AppContent onClick={handleAppContentClick} />
+            {showModalContent ? (
+              <ShowCalculator />
             ) : (
               <div className={s.modalContent}>
                 <div className={s.input__box}>
@@ -61,33 +67,46 @@ const ModalCalculator = ({ closeModal, showModal }) => {
                     <input type="text" className={s.name__input} value="text" />
                   </div>
                 </div>
-                <div className={s.input__type}>
-                  <select
-                    id="engine"
-                    value={engine}
-                    onChange={(e) => setEngine(e.target.value)}
-                    className={s.engineSelect}>
-                    <option value="" disabled hidden>
-                      Выберите тип двигателя
-                    </option>
-                    <option className={s.petrol} value="petrol">
-                      Бензиновый
-                    </option>
-                    <option className={s.diesel} value="diesel">
-                      Дизельный
-                    </option>
-                    <option className={s.hybrid} value="hybrid">
-                      Гибридный
-                    </option>
-                    <option className={s.electric} value="electric">
-                      Электрический
-                    </option>
-                  </select>
-                  <div>
-                    <button className={s.close} onClick={handleCalculate}>
-                      Просчитать
-                    </button>
+                <div className={s.custom_select}>
+                  <div
+                    className={s.custom_select_selected}
+                    onClick={() => setShowSelectOptions(!showSelectOptions)}>
+                    {engine ? engine : "Выберите тип двигателя"}
                   </div>
+                  <img
+                    className={`${s.arrow} ${showSelectOptions ? s.rotated : ""}`}
+                    src={arrow}
+                    alt="arrow"
+                  />
+                  {showSelectOptions && (
+                    <ul className={s.custom_select_options}>
+                      <li
+                        className={s.custom_select_option}
+                        onClick={() => handleSelectOption("Бензиновый")}>
+                        Бензиновый
+                      </li>
+                      <li
+                        className={s.custom_select_option}
+                        onClick={() => handleSelectOption("Дизильный")}>
+                        Дизильный
+                      </li>
+                      <li
+                        className={s.custom_select_option}
+                        onClick={() => handleSelectOption("Гибридный")}>
+                        Гибридный
+                      </li>
+                      <li
+                        className={s.custom_select_option}
+                        onClick={() => handleSelectOption("Электрический")}>
+                        Электрический
+                      </li>
+                    </ul>
+                  )}
+                </div>
+                <div>
+                  <button className={s.close} onClick={handleCalculate}>
+                    Просчитать
+                  </button>
                 </div>
               </div>
             )}
@@ -102,4 +121,5 @@ ModalCalculator.propTypes = {
   closeModal: PropTypes.func.isRequired,
   showModal: PropTypes.bool.isRequired,
 }
+
 export default ModalCalculator

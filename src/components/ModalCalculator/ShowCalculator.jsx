@@ -1,7 +1,7 @@
 import React from "react"
 import s from "@styles/components/AppContent.module.scss"
 
-const AppContent = () => {
+const ShowCalculator = () => {
   const calculations = [
     { label: "Вид", rate: "Ставка", amount: 'Сумма в "сом"' },
     { label: "Импортная пошлина", rate: "5 %", amount: "Сумма" },
@@ -31,4 +31,4 @@ const AppContent = () => {
   )
 }
 
-export default AppContent
+export default ShowCalculator
