@@ -52,19 +52,19 @@ const ModalCalculator = ({ closeModal, showModal }) => {
                 <div className={s.input__box}>
                   <div className={s.input__box1}>
                     <label className={s.name__input_label}>Марка авто</label>
-                    <input type="text" className={s.name__input} />
+                    <input type="text" className={s.name__input} value="text" />
                   </div>
                   <div className={s.input__box2}>
                     <label className={s.name__input_label}>Стоимость</label>
-                    <input type="text" className={s.name__input} />
+                    <input type="text" className={s.name__input} value="text" />
                   </div>
                   <div className={s.input__box3}>
                     <label className={s.name__input_label}>Мощность</label>
-                    <input type="text" className={s.name__input} />
+                    <input type="text" className={s.name__input} value="text" />
                   </div>
                   <div className={s.input__box4}>
                     <label className={s.name__input_label}>Дата выпуска</label>
-                    <input type="text" className={s.name__input} />
+                    <input type="text" className={s.name__input} value="text" />
                   </div>
                 </div>
                 <div className={s.custom_select}>
