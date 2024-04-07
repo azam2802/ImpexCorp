@@ -1,0 +1,49 @@
+.NotFoundBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  font-family: "Gotham Pro";
+  height: 100%;
+  text-align: center;
+  @media screen and (max-width: 728px) {
+    margin-top: 150px;
+    justify-content: unset;
+  }
+  svg {
+    margin-bottom: 20px;
+    transform: scale(2);
+    @media screen and (max-width: 728px) {
+      transform: unset;
+    }
+  }
+  h1 {
+    font-size: 3vw;
+    margin-top: 40px;
+    @media screen and (max-width: 728px) {
+      font-size: 5vw;
+      margin-top: unset;
+    }
+  }
+  h2 {
+    font-size: 3vw;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    #smile {
+      writing-mode: vertical-rl;
+      color: black;
+    }
+
+    @media screen and (max-width: 728px) {
+      font-size: 5.5vw;
+    }
+  }
+  #error {
+    color: red;
+  }
+}

@@ -1,0 +1,107 @@
+.container {
+  justify-content: space-between;
+  display: flex;
+  background: linear-gradient(
+    to right,
+    transparent 62vw,
+    #19746b 62vw,
+    #19746b
+  );
+  padding-block:  90px;
+}
+
+.title {
+  width: 40vw;
+  font-size: 3vw;
+  text-wrap: balance;
+  font-family: "Gotham Pro";
+  font-weight: 300;
+  span {
+    &:first-child {
+      color: #19746b;
+    }
+    display: block;
+  }
+}
+
+.block {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+
+.block_title {
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+}
+
+.button {
+  padding: 0.6rem 4rem 0.6rem 4rem;
+  border-radius: 10px;
+  border: 2px solid #19746b;
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: "Inter";
+  background: #19746b;
+  cursor: pointer;
+  transition: all 0.2s;
+  will-change: contents;
+  &:hover {
+    background-color: transparent;
+    color: #19746b;
+    transition: all 0.2s;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .container {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    background: none;
+    padding-block: unset;
+    margin-top: 100px;
+    img {
+      display: none;
+    }
+  }
+
+  .title {
+    line-height: 120%;
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-align: center;
+    text-wrap: balance;
+    margin-top: 30px;
+    span {
+      text-transform: none;
+      display: inline;
+    }
+  }
+
+  .block_title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .button {
+    font-weight: 200;
+    border-radius: 1.82px;
+  }
+}
+
+@media (max-width: 620px) {
+  .title {
+    font-size: 6.4vw;
+  }
+}

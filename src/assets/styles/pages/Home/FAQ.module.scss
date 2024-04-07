@@ -1,0 +1,19 @@
+.question_section {
+  width: 70%;
+  margin: 85px auto;
+  font-family: "Montserrat";
+
+  .question_title {
+    color: #000;
+    font-family: inherit;
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .questions_lists {
+    margin-top: 80px;
+  }
+}

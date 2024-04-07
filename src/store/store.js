@@ -1,3 +1,46 @@
-import { create } from "zustand";
+import axios from "axios"
+import { useEffect } from "react"
+import { create } from "zustand"
+import { devtools } from "zustand/middleware"
 
-export const useStore = create((set) => ({}))
+export const useModalState = create(
+  devtools((set) => ({
+    isModalOpen: false,
+    setIsModalOpen: (value) => set({ isModalOpen: value }),
+  })),
+)
+
+export const useBurgerState = create(
+  devtools((set) => ({
+    menuActive: false,
+    setMenuActive: (value) => set({ menuActive: value }),
+  })),
+)
+
+export const useAutosList = create(
+  devtools((set) => ({
+    data: [],
+    fetchData: (lang) => {
+      try {
+        useEffect(() => {
+          axios
+            .get(
+              `http://209.38.228.54:81/${lang == "zh" ? "zh-hant" : lang}/api/auto/`,
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                  "Accept-Language": lang == "zh" ? "zh-hant" : lang,
+                },
+              },
+            )
+            .then((res) => {
+              let data = [...res.data.results].reverse()
+              set({ data: data })
+            })
+        }, [lang])
+      } catch {
+        return
+      }
+    },
+  })),
+)

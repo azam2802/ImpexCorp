@@ -1,0 +1,128 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-block: 80px;
+}
+
+.col_6 {
+  width: 45%;
+}
+
+.button {
+  border: none;
+  font-size: 3rem;
+  font-size: 1.5vw;
+  width: 19vw;
+  padding: 0.4em;
+  border: 3px solid #19746b;
+  color: #19746b;
+  border-radius: 10px;
+  float: right;
+  transition: all 0.2s;
+  &:hover {
+    background-color: #19746b;
+    color: #fff;
+    transition: all 0.2s;
+  }
+}
+
+.title {
+  font-size: 1.8vw;
+  font-weight: 700;
+  font-family: "Inter";
+}
+
+.text {
+  font-family: "Gotham Pro";
+  font-size: 1.5vw;
+  margin: 20px 0 65px 0;
+  width: 40vw;
+}
+
+.carImg img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .col_6 {
+    width: 100%;
+    margin-top: 70px;
+  }
+
+  .button {
+    width: 60%;
+    margin-top: 20px;
+    font-size: 4vw;
+    padding: 0.4em;
+  }
+
+  .title,.text {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .title {
+    font-size: 1.9rem;
+  }
+  .text {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+
+  .col-6 {
+    width: 100%;
+  }
+
+  .button {
+    width: 60%;
+    font-size: 5vw;
+    margin-top: 15px;
+    padding: 0.4em;
+  }
+
+  .title {
+    font-size: 7vw;
+  }
+
+  .text {
+    font-size: 5vw;
+    margin: 10px 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 90%;
+  }
+
+  .col_6 {
+    width: 100%;
+  }
+
+  .button {
+    width: 60%;
+    font-size: 5vw;
+    margin-top: 15px;
+    padding: 0.4em;
+  }
+
+  .title {
+    font-size: 6vw;
+  }
+
+  .text {
+    font-size: 5vw;
+    margin: 10px 0;
+  }
+}

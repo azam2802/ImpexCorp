@@ -1,0 +1,175 @@
+{
+  "notFoundText": "Sorry, this page can not be found.",
+  "header": {
+    "search": "Search",
+    "catalogue": "Catalog",
+    "home": "Home",
+    "calculator": "Calculator",
+    "ourcompany": "Our Company",
+    "HeaderCatalog": {
+      "model": "Popular models",
+      "countries": {
+        "title": "Сountry",
+        "items": {
+          "korea": "Korea",
+          "china": "China",
+          "japan": "Japan"
+        }
+      }
+    }
+  },
+  "HomePage": {
+    "GreetingBlock": {
+      "title": "Welcome to the Impex Corp car showroom",
+      "text": "Impex Corp is an auto company that offers its customers a wide range of products and services related to the automotive industry. Having become a leading player in the market, Impex Corp has several key advantages that make them an ideal choice for buyers",
+      "buttonText": "More details"
+    },
+    "CatalogBlock": {
+      "titles": {
+        "mainTitle": "Catalog",
+        "newProducts": "New products",
+        "fromChina": "Cars from China",
+        "fromKorea": "Cars from Korea"
+      },
+      "buttonText": "More details"
+    },
+    "FAQBlock": {
+      "titles": {
+        "mainTitle": "Frequently asked Questions"
+      }
+    },
+    "firstBlock": {
+      "title1": "Security, Reliability, and Style in every detail!",
+      "buttonText": "Call"
+    },
+    "OurServices": {
+      "title": "Our Servisces",
+      "search": "Search and purchase",
+      "cars": "cars from Korea and China",
+      "delivery": "Car delivery",
+      "guarantee": "with guarantee in Bishkek",
+      "registration": "Car registration",
+      "accounting": "and deregistration (REO GAI)",
+      "insurance": "Full insurance",
+      "auto": "while delivering to Kyrgyzstan"
+    }
+  },
+  "AboutUs": {
+    "AboutCompanyTitle": "The Impex Corp company provides services for the purchase and import of cars from Korea and China!",
+    "AboutUsTitle": "Welcome to the Impex Corp car showroom",
+    "AboutUsText": {
+      "bold": "Impex Corp",
+      "thin": "is an auto company that offers its customers a wide range of products and services related to the automotive industry. Having become a leading player in the market, Impex Corp has several key advantages that make them an ideal choice for buyers."
+    },
+    "AboutUsTechnichUl": {
+      "quality": "Quality work",
+      "workersExp": "Experienced staff",
+      "insurance": "Road transport insurance",
+      "logistic": "Logistics"
+    },
+    "key": {
+      "bold": "Impeccable reputation Impex Corp",
+      "thin": "guarantee of your confidence in the transaction "
+    },
+    "receive": {
+      "title": "You are getting",
+      "bold": "RELIABILITY",
+      "thin": "In less than a year, our company has completed over 100 contracts with more than 7 countries and 30 cities of the CIS ."
+    },
+    "choice": {
+      "bold": "CHOICE",
+      "thin": " One of the important tasks for our company is the selection and delivery of special machinery, equipment, raw materials for the mining, light and agricultural industries. We also supply spare parts, accessories and chemicals for cars.",
+      "bottom": "Also, the company “IMPEX CORP” is developing in the direction of import-export of food products and tourism. The main activity of our company is the import-export of cars from countries such as China, Korea, Japan, UAE, Georgia, Europe, USA. "
+    },
+    "AboutUsBottom": {
+      "title": "The process of buying your car from Korea and China is very simple!",
+      "ul": {
+        "li1": "Direction determination(China, Korea.)",
+        "li2": "Auto criteria.",
+        "li3": "Calculation of the final cost",
+        "li4": "Acquisition",
+        "li5": "Logistics"
+      },
+      "bottomTitle": "Your dream is in your hands!"
+    }
+  },
+  "footer": {
+    "aboutus": {
+      "name": "About Us",
+      "menu": {
+        "company": "Our company",
+        "services": "Services"
+      }
+    },
+    "support": {
+      "name": "Support",
+      "menu": {
+        "feedback": "Feedback",
+        "counseling": "Online consultations"
+      }
+    },
+    "branches": {
+      "name": "Branches",
+      "menu": {
+        "address1": "20a Gorky St.,  Bishkek",
+        "address2": "38a Ankara St., Bishkek",
+        "address3": "1/2 Isakeeva St., Bishkek"
+      }
+    },
+    "contacts": {
+      "name": "Contacts",
+      "menu": {
+        "number1": "+996 (555) 25-12-56",
+        "number2": "+996 (700) 22-25-32",
+        "number3": "+996 (708) 04-02-90"
+      }
+    }
+  },
+  "Catalog": {
+    "title": "Catalog",
+    "filter": "Filter",
+    "characteristics": {
+      "catalog": "Catalog",
+      "model": "Model",
+      "yearIssue": "Year of issue",
+      "wheel": {
+        "title": "Steering wheel",
+        "left": "Left",
+        "right": "Right"
+      },
+      "fuel": {
+        "title": "Fuel",
+        "diesel": "Diesel",
+        "petrol": "Petrol",
+        "electro": "Electro"
+      },
+      "driveUnit": {
+        "title": "Drive unit",
+        "front": "Front",
+        "rear": "Rear"
+      },
+      "transmission": {
+        "title": "Transmission",
+        "mechanical": "Mechanical",
+        "automatic": "Automatic",
+        "stepless": "Stepless"
+      }
+    },
+    "country": {
+      "chine": "China",
+      "korea": "Korea",
+      "newItems": "New arrivals"
+    },
+    "input": {
+      "pricesFrom": "Prices from",
+      "priceBegore": "Prices before",
+      "mileageFrom": "Mileage from",
+      "mileageBefore": "Mileage before",
+      "volumeFrom": "Volume from",
+      "volumeBefore": "Volume before"
+    },
+    "button": {
+      "title": "Find"
+    }
+  }
+}
