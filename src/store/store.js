@@ -24,17 +24,14 @@ export const useAutosList = create(
       try {
         useEffect(() => {
           axios
-            .get(
-              `http://209.38.228.54:81/${lang == "zh" ? "zh-hant" : lang}/api/auto/`,
-              {
-                headers: {
-                  "Content-Type": "application/json",
-                  "Accept-Language": lang == "zh" ? "zh-hant" : lang,
-                },
+            .get(`http://209.38.228.54:81/ru/api/auto/`, {
+              headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang == "zh" ? "zh-hant" : lang,
               },
-            )
+            })
             .then((res) => {
-              let data = [...res.data.results].reverse()
+              let data = [...res.data].reverse()
               set({ data: data })
             })
         }, [lang])

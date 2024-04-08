@@ -109,19 +109,15 @@
       }
     },
     "branches": {
-      "name": "Branches",
+      "name": "Branch",
       "menu": {
-        "address1": "20a Gorky St.,  Bishkek",
-        "address2": "38a Ankara St., Bishkek",
-        "address3": "1/2 Isakeeva St., Bishkek"
+        "address1": "77 Usenbaeva St. Bishkek"
       }
     },
     "contacts": {
       "name": "Contacts",
       "menu": {
-        "number1": "+996 (555) 25-12-56",
-        "number2": "+996 (700) 22-25-32",
-        "number3": "+996 (708) 04-02-90"
+        "number1": "+996 (500) 67-76-33"
       }
     }
   },

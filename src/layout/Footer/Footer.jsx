@@ -4,7 +4,6 @@ import TelegramIcon from "@images/TelegramIcon.webp"
 import InstagramIcon from "@images/InstagramIcon.webp"
 import GmailIcon from "@images/GmailIcon.webp"
 import WhatsUpIcon from "@images/WhatsUpIcon.webp"
-import FaceBookIcon from "@images/FacebookIcon.webp"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import Logo from "@ui/Logo/Logo"
@@ -55,27 +54,24 @@ const Footer = () => {
       <div className={s.social_media}>
         <ul>
           <li>
-            <Link to="#">
-              <img src={FaceBookIcon} alt="Facebook Icon" />
-            </Link>
-          </li>
-          <li>
-            <Link to="#">
+            <Link to="https://t.me/impexcorpkg" target="_blank">
               <img src={TelegramIcon} alt="Telegram Icon" />
             </Link>
           </li>
           <li>
-            <Link to="#">
+            <Link to="https://www.instagram.com/impex.corp.kg" target="_blank">
               <img src={InstagramIcon} alt="Instagram Icon" />
             </Link>
           </li>
           <li>
-            <Link to="#">
+            <Link to="mailto:impexcorpkg@gmail.com" target="_blank">
               <img src={GmailIcon} alt="Gmail Icon" />
             </Link>
           </li>
           <li>
-            <Link to="#">
+            <Link
+              to="https://api.whatsapp.com/send?phone=996500677633"
+              target="_blank">
               <img src={WhatsUpIcon} alt="WhatsApp Icon" />
             </Link>
           </li>
@@ -84,9 +80,9 @@ const Footer = () => {
       <hr />
       <p id={s.madeby}>
         Made by{" "}
-        <a href="https://geeks.kg/geeks-pro" target="blank">
+        <Link to="https://geeks.kg/geeks-pro" target="_blank">
           GeeksPRO
-        </a>
+        </Link>
       </p>
     </footer>
   )
