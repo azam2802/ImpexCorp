@@ -32,7 +32,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
         {data.slice(0, 6).map((car) => (
           <CarCard
             key={car.car_slug}
-            images={`http://209.38.228.54:81/${car.images[0].image}`}
+            images={import.meta.env.VITE_API + "/" + car.images[0].image}
             car_name={car.car_name}
             price={car.price}
             volume={car.volume}
