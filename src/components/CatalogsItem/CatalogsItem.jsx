@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import s from "@styles/pages/Home/Catalogs.module.scss"
 import CarCard from "@components/CarCard/CarCard"
 import PropTypes from "prop-types"
@@ -21,6 +21,23 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       transition: { duration: 0.5, delay: custom * 0.2 },
     }),
   }
+  const [bodyWidth, setBodyWidth] = useState(0)
+  useEffect(() => {
+    const updateBodyWidth = () => {
+      setBodyWidth(document.body.clientWidth)
+    }
+
+    window.addEventListener("resize", updateBodyWidth)
+
+    updateBodyWidth()
+
+    return () => {
+      window.removeEventListener("resize", updateBodyWidth)
+    }
+  }, [])
+
+  const x =
+    bodyWidth > 765 ? 2.75 : bodyWidth > 565 ? 2 : bodyWidth > 410 ? 1.4 : 1.1
 
   return (
     <motion.li
@@ -33,10 +50,49 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       </motion.h1>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
         <Swiper
-          slidesPerView={data.length > 1 ? 3 : 2.8}
+          slidesPerView={x}
           style={{ width: "100%" }}
           freeMode={true}
           modules={[FreeMode]}>
+          {data.slice(0, 6).map((car) => (
+            <SwiperSlide key={car.car_slug}>
+              <CarCard
+                images={`http://209.38.228.54:81/${car.images[0].image}`}
+                car_name={car.car_name}
+                price={car.price}
+                volume={car.volume}
+                transmission={car.transmission}
+                country={car.country_of_assembly}
+                mileage={car.mileage}
+              />
+            </SwiperSlide>
+          ))}
+          {data.slice(0, 6).map((car) => (
+            <SwiperSlide key={car.car_slug}>
+              <CarCard
+                images={`http://209.38.228.54:81/${car.images[0].image}`}
+                car_name={car.car_name}
+                price={car.price}
+                volume={car.volume}
+                transmission={car.transmission}
+                country={car.country_of_assembly}
+                mileage={car.mileage}
+              />
+            </SwiperSlide>
+          ))}
+          {data.slice(0, 6).map((car) => (
+            <SwiperSlide key={car.car_slug}>
+              <CarCard
+                images={`http://209.38.228.54:81/${car.images[0].image}`}
+                car_name={car.car_name}
+                price={car.price}
+                volume={car.volume}
+                transmission={car.transmission}
+                country={car.country_of_assembly}
+                mileage={car.mileage}
+              />
+            </SwiperSlide>
+          ))}
           {data.slice(0, 6).map((car) => (
             <SwiperSlide key={car.car_slug}>
               <CarCard
