@@ -49,71 +49,23 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
         {catalogTitle}
       </motion.h1>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
-        <Swiper
-          slidesPerView={x}
-          style={{ width: "100%" }}
-          freeMode={true}
-          modules={[FreeMode]}>
-          {data.slice(0, 6).map((car) => (
-            <SwiperSlide key={car.car_slug}>
-              <CarCard
-                images={`http://209.38.228.54:81/${car.images[0].image}`}
-                car_name={car.car_name}
-                price={car.price}
-                volume={car.volume}
-                transmission={car.transmission}
-                country={car.country_of_assembly}
-                mileage={car.mileage}
-              />
-            </SwiperSlide>
-          ))}
-          {data.slice(0, 6).map((car) => (
-            <SwiperSlide key={car.car_slug}>
-              <CarCard
-                images={`http://209.38.228.54:81/${car.images[0].image}`}
-                car_name={car.car_name}
-                price={car.price}
-                volume={car.volume}
-                transmission={car.transmission}
-                country={car.country_of_assembly}
-                mileage={car.mileage}
-              />
-            </SwiperSlide>
-          ))}
-          {data.slice(0, 6).map((car) => (
-            <SwiperSlide key={car.car_slug}>
-              <CarCard
-                images={`http://209.38.228.54:81/${car.images[0].image}`}
-                car_name={car.car_name}
-                price={car.price}
-                volume={car.volume}
-                transmission={car.transmission}
-                country={car.country_of_assembly}
-                mileage={car.mileage}
-              />
-            </SwiperSlide>
-          ))}
-          {data.slice(0, 6).map((car) => (
-            <SwiperSlide key={car.car_slug}>
-              <CarCard
-                images={`http://209.38.228.54:81/${car.images[0].image}`}
-                car_name={car.car_name}
-                price={car.price}
-                volume={car.volume}
-                transmission={car.transmission}
-                country={car.country_of_assembly}
-                mileage={car.mileage}
-              />
-            </SwiperSlide>
-          ))}
-          <SwiperSlide>
-            <Link className={s.next_button} to="catalog">
-              <BsChevronRight
-                style={{ width: "80px", height: "100%", fill: "#19746b" }}
-              />
-            </Link>
-          </SwiperSlide>
-        </Swiper>
+        {data.slice(0, 6).map((car) => (
+          <CarCard
+            key={car.car_slug}
+            images={import.meta.env.VITE_API + "/" + car.images[0].image}
+            car_name={car.car_name}
+            price={car.price}
+            volume={car.volume}
+            transmission={car.transmission}
+            country={car.country_of_assembly}
+            mileage={car.mileage}
+          />
+        ))}
+        <Link className={s.next_button} to="catalog">
+          <BsChevronRight
+            style={{ width: "80px", height: "100%", fill: "#19746b" }}
+          />
+        </Link>
       </motion.ul>
     </motion.li>
   )

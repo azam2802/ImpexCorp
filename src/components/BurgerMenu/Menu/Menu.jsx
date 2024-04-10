@@ -16,19 +16,38 @@ const Menu = ({ active, setActive }) => {
         className={active ? `${s.menu_content} ${s.active}` : s.menu_content}>
         <ul>
           <li>
-            <Link onClick={() => setActive(!active)} to="/">
+            <Link
+              className={s.li_element}
+              onClick={() => setActive(!active)}
+              to="/">
               {t("header.home")}
             </Link>
           </li>
           <li>
-            <Link onClick={() => setActive(!active)} to="about">
+            <Link
+              className={s.li_element}
+              onClick={() => setActive(!active)}
+              to="about">
               {t("header.ourcompany")}
             </Link>
           </li>
           <li>
-            <Link onClick={() => setActive(!active)} to="catalog">
+            <Link
+              className={s.li_element}
+              onClick={() => setActive(!active)}
+              to="catalog">
               {t("header.catalogue")}
             </Link>
+          </li>
+          <li>
+            <button
+              className={s.li_element}
+              onClick={() => {
+                setActive(!active)
+              }}
+              to="calculator">
+              {t("header.calculator")}
+            </button>
           </li>
           <li>
             <LangSwitcher />
