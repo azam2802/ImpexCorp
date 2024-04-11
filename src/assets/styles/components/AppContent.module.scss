@@ -22,9 +22,9 @@
     font-family: 'Montserrat';
     color: #000000;
     margin-top: 8px;
-    line-height: 40px;
     padding-left: 0.5vw;
     margin-left: 1vw;
+    padding-top: 15px;
   }
   
   .bold {
@@ -64,7 +64,22 @@
     margin-top: 7vh;
     background: #19746b;
   }
-  @media screen and (max-width: 1340px) {
+  @media screen and (max-width: 1600px){
+    .text{
+      width: 740px;
+    }
+  }
+  @media screen and (max-width: 1430px){
+    .text{
+      width: 660px;
+    }
+    .calculation,
+    .bold{
+      line-height: 20px;
+      padding-top:15px ;
+    }
+  }
+  @media screen and (max-width: 1330px) {
     .pricingCalculator {
       background: #fff;
       width: 60vw;
@@ -90,9 +105,9 @@
       font-family: 'Montserrat';
       color: #000000;
       margin-top: 8px;
-      line-height: 40px;
       padding-left: 0.5vw;
       margin-left: 1vw;
+      padding-top: 5px;
     }
     
     .bold {
@@ -111,7 +126,7 @@
     .text {
       border: none;
       font-size: 1.25rem;
-      width: 770px;
+      width: 780px;
       font-family: "Montserrat";
       color: #ff0000;
       margin-top: 48px;
@@ -130,6 +145,21 @@
       margin-left: 40vw;
       margin-top: 7vh;
       background: #19746b;
+    }
+  }
+  @media screen and (max-width: 1250px){
+    .text{
+      width: 720px;
+    }
+  }
+  @media screen and (max-width: 1200px){
+    .text {
+      width: 635px;
+    }
+  }
+  @media screen and (max-width: 1160px){
+    .text {
+      width: 635px;
     }
   }
   @media screen and (max-width: 1024px) {
@@ -167,11 +197,11 @@
     }
     .calculation,
     .bold {
-      width: 12vw; 
+      width: 13vw; 
       height: 5.556vh;
       border: 1px solid #e7e7e7;
       border-radius: 4px;
-      font-size: 12px;
+      font-size: 10px;
       font-family: 'Montserrat';
       color: #000000;
       margin-top: 8px;
@@ -182,7 +212,6 @@
       padding-left: 10px;
     }
   }
-  
   @media screen and (max-width: 768px) {
     .pricingCalculator {
       width: 70vw;
@@ -192,7 +221,7 @@
       margin: 0 auto;
     }
     .text {
-      width: 480px;
+      width: 430px;
       font-size: 1.2rem;
       margin-top: 30px;
       margin: 0 auto;
@@ -215,9 +244,26 @@
       height: 6vh;
       font-size: 12px;
       margin-top: 10px;
-      line-height: 20px;
       padding-left: 5px;
       font-weight:Medium
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .text{
+      width: 340px;
+    }
+    .calculation,
+    .bold {
+      font-size: 9.5px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .text{
+      width: 300px;
+    }
+    .calculation,
+    .bold {
+      font-size: 9.5px;
     }
   }
   @media screen and (max-width: 468px) {
