@@ -20,6 +20,7 @@ const CarCard = ({
   width,
 }) => {
   const { t } = useTranslation()
+
   return (
     <li className={s.carCardItem} style={{ width: width }}>
       <img src={images} className={s.car_image} alt={car_name} />
