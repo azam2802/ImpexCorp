@@ -1,6 +1,6 @@
 .pricingCalculator {
     background: #fff;
-    width: 53vw;
+    width: 60vw;
     height: 80vh;
     padding-left: 40px;
     border-radius: 30px;
@@ -14,7 +14,7 @@
   
   .calculation,
   .bold {
-    width: 14vw; 
+    width: 16vw; 
     height: 5.556vh;
     border: 1px solid #e7e7e7;
     border-radius: 4px;
@@ -44,7 +44,7 @@
   .text {
     border: none;
     font-size: 1.25rem;
-    width: 830px;
+    width: 840px;
     font-family: 'Montserrat';
     color: #ff0000;
     margin-top: 48px;
@@ -63,5 +63,123 @@
     margin-left: 28vw;
     margin-top: 7vh;
     background: #19746b;
+  }
+  @media screen and (max-width: 1024px) {
+    .pricingCalculator {
+      background: #fff;
+      width: 53vw;
+      height: 70vh;
+      padding-left: 40px;
+      border-radius: 30px;
+      margin-bottom: 50px;
+      margin: 0 auto;
+    }
+    .text {
+      border: none;
+      font-size: 1rem;
+      width: 400px;
+      font-family: 'Montserrat';
+      color: #ff0000;
+      margin-top: 48px;
+      padding-left: 20px;
+      text-align: center;
+    }
+    .button {
+      border: none;
+      font-size: 3rem;
+      font-size: 1.5vw;
+      width: 19vw;
+      padding: 0.4em;
+      border: 3px solid #19746b;
+      color: #fff;
+      border-radius: 10px;
+      margin-left: 12vw;
+      margin-top: 7vh;
+      background: #19746b;
+    }
+    .calculation,
+    .bold {
+      width: 12vw; 
+      height: 5.556vh;
+      border: 1px solid #e7e7e7;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: 'Montserrat';
+      color: #000000;
+      margin-top: 8px;
+      line-height: 12px;
+      padding-left: 0.5vw;
+      margin-left: 1vw;
+      padding-top: 15px;
+      padding-left: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .pricingCalculator {
+      width: 70vw;
+      height: 80vh;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 0 auto;
+    }
+    .text {
+      width: 480px;
+      font-size: 1.2rem;
+      margin-top: 30px;
+      margin: 0 auto;
+      font-family: "Montserrat";
+      padding-top: 50px;
+      text-align: center;
+    }
+    .button {
+      font-size: 20px;
+      font-weight: "Montserrat";
+      width: 144px;
+      height: 40px;
+      margin-left: 20vw;
+      margin-top: 5vh;
+      padding-bottom: 35px;
+    }
+    .calculation,
+    .bold {
+      width: 20vw;
+      height: 6vh;
+      font-size: 12px;
+      margin-top: 10px;
+      line-height: 20px;
+      padding-left: 5px;
+      font-weight:Medium
+    }
+  }
+  @media screen and (max-width: 468px) {
+    .pricingCalculator {
+      width: 90vw;
+      height: 80vh;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .text {
+      width: 300px;
+      font-size: 15px;
+      padding-top: 30px;
+      text-align: center;
+      font-weight: Medium;
+    }
+    .button {
+      width: 120px;
+      font-size: 14px;
+      margin-left: calc(45vw - 60px);
+      margin-top: 4vh;
+      padding-bottom: 30px;
+    }
+    .calculation,
+    .bold {
+      width: 25vw;
+      font-size: 10px;
+      padding-left: 3px;
+      line-height: 15px;
+      margin-top: 8px;
+    }
   }
   

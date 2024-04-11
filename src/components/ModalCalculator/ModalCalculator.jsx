@@ -49,59 +49,79 @@ const ModalCalculator = ({ closeModal, showModal }) => {
               <ShowCalculator />
             ) : (
               <div className={s.modalContent}>
-                <div className={s.input__box}>
-                  <div className={s.input__box1}>
-                    <label className={s.name__input_label}>Марка авто</label>
-                    <input type="text" className={s.name__input} value="text" />
+                <div className={s.box}>
+                  <div className={s.input__box}>
+                    <div className={s.input__box1}>
+                      <label className={s.name__input_label}>Марка авто</label>
+                      <input
+                        type="text"
+                        className={s.name__input}
+                        placeholder="text"
+                      />
+                    </div>
+                    <div className={s.input__box2}>
+                      <label className={s.name__input_label}>Стоимость</label>
+                      <input
+                        type="text"
+                        className={s.name__input}
+                        placeholder="text"
+                      />
+                    </div>
+                    <div className={s.input__box3}>
+                      <label className={s.name__input_label}>Мощность</label>
+                      <input
+                        type="text"
+                        className={s.name__input}
+                        placeholder="text"
+                      />
+                    </div>
+                    <div className={s.input__box4}>
+                      <label className={s.name__input_label}>
+                        Дата выпуска
+                      </label>
+                      <input
+                        type="text"
+                        className={s.name__input}
+                        placeholder="text"
+                      />
+                    </div>
                   </div>
-                  <div className={s.input__box2}>
-                    <label className={s.name__input_label}>Стоимость</label>
-                    <input type="text" className={s.name__input} value="text" />
+                  <div className={s.custom_select}>
+                    <div
+                      className={s.custom_select_selected}
+                      onClick={() => setShowSelectOptions(!showSelectOptions)}>
+                      {engine ? engine : "Выберите тип двигателя"}
+                    </div>
+                    <img
+                      className={`${s.arrow} ${showSelectOptions ? s.rotated : ""}`}
+                      src={arrow}
+                      alt="arrow"
+                    />
+                    {showSelectOptions && (
+                      <ul className={s.custom_select_options}>
+                        <li
+                          className={`${s.custom_select_option} ${engine === "Бензиновый" && s.selected}`}
+                          onClick={() => handleSelectOption("Бензиновый")}>
+                          Бензиновый
+                        </li>
+                        <li
+                          className={`${s.custom_select_option} ${engine === "Дизельный" && s.selected}`}
+                          onClick={() => handleSelectOption("Дизельный")}>
+                          Дизельный
+                        </li>
+                        <li
+                          className={`${s.custom_select_option} ${engine === "Гибридный" && s.selected}`}
+                          onClick={() => handleSelectOption("Гибридный")}>
+                          Гибридный
+                        </li>
+                        <li
+                          className={`${s.custom_select_option} ${engine === "Электрический" && s.selected}`}
+                          onClick={() => handleSelectOption("Электрический")}>
+                          Электрический
+                        </li>
+                      </ul>
+                    )}
                   </div>
-                  <div className={s.input__box3}>
-                    <label className={s.name__input_label}>Мощность</label>
-                    <input type="text" className={s.name__input} value="text" />
-                  </div>
-                  <div className={s.input__box4}>
-                    <label className={s.name__input_label}>Дата выпуска</label>
-                    <input type="text" className={s.name__input} value="text" />
-                  </div>
-                </div>
-                <div className={s.custom_select}>
-                  <div
-                    className={s.custom_select_selected}
-                    onClick={() => setShowSelectOptions(!showSelectOptions)}>
-                    {engine ? engine : "Выберите тип двигателя"}
-                  </div>
-                  <img
-                    className={`${s.arrow} ${showSelectOptions ? s.rotated : ""}`}
-                    src={arrow}
-                    alt="arrow"
-                  />
-                  {showSelectOptions && (
-                    <ul className={s.custom_select_options}>
-                      <li
-                        className={`${s.custom_select_option} ${engine === "Бензиновый" && s.selected}`}
-                        onClick={() => handleSelectOption("Бензиновый")}>
-                        Бензиновый
-                      </li>
-                      <li
-                        className={`${s.custom_select_option} ${engine === "Дизельный" && s.selected}`}
-                        onClick={() => handleSelectOption("Дизельный")}>
-                        Дизельный
-                      </li>
-                      <li
-                        className={`${s.custom_select_option} ${engine === "Гибридный" && s.selected}`}
-                        onClick={() => handleSelectOption("Гибридный")}>
-                        Гибридный
-                      </li>
-                      <li
-                        className={`${s.custom_select_option} ${engine === "Электрический" && s.selected}`}
-                        onClick={() => handleSelectOption("Электрический")}>
-                        Электрический
-                      </li>
-                    </ul>
-                  )}
                 </div>
                 <div>
                   <button className={s.close} onClick={handleCalculate}>

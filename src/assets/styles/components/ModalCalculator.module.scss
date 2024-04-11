@@ -1,3 +1,14 @@
+.box {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.input__box {
+  margin-top: 50px;
+}
+
 .darker {
   position: fixed;
   top: 0;
@@ -10,27 +21,6 @@
   justify-content: center;
   align-items: center;
 }
-
-.modal {
-  background-color: #fff;
-  border-radius: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50vw;
-  height: 80vh;
-  padding: 6.25vw;
-}
-.modalContent {
-  background-color: #fff;
-  padding: 5%;
-  border-radius: 1.25rem;
-  display: flex;
-  width: 100%;
-  height: 80vh;
-}
-
 
 .close {
   position: absolute;
@@ -47,9 +37,26 @@
   width: 15vw;
 }
 
-.text {
-  font-size: 2vw;
-  text-align: center;
+.modalContent {
+  width: 800px;
+  height: 600px;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.engineSelect,
+.input__box1,
+.input__box2,
+.input__box3,
+.input__box4,
+.name__input,
+.name__input_label,
+.input__type,
+.custom_select,
+.custom_select_selected,
+.custom_select_option,
+.custom_select_options {
+  font-family: 'Montserrat';
 }
 
 .engineSelect {
@@ -57,15 +64,13 @@
   border: 0.0625rem solid #a4a4a4;
   border-radius: 0.25rem;
   color: #000;
-  font-family: 'Montserrat';
   font-size: 0.9375rem;
   height: 6vh;
-  margin-left: 1.875rem;
   padding-left: 1.5vw;
   width: 16.5vw;
 }
 
-.input__box,
+.input__box1,
 .input__box2,
 .input__box3,
 .input__box4 {
@@ -74,6 +79,9 @@
   gap: 1.875rem;
   position: relative;
   margin-right: 30px;
+  margin-top: 18px;
+  width: 100%;
+  max-width: 290px;
 }
 
 .name__input {
@@ -81,12 +89,9 @@
   border: 0.0625rem solid #a4a4a4;
   border-radius: 0.25rem;
   color: #000;
-  font-family: 'Montserrat';
   font-size: 1.25rem;
   height: 3.125rem;
-  margin-left: 2%;
   padding: 1.5%;
-  width: 290px;
 }
 
 .name__input_label {
@@ -103,23 +108,26 @@
 
 .custom_select {
   position: relative;
-  width: 290px;
+  width: 100%;
+  max-width: 290px; 
 }
 
 .custom_select_selected {
-  width: 290px;
-  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 6vh;
   background: #fff;
   border: 1px solid #a4a4a4;
   border-radius: 4px;
-  color: #000000;
+  color: #000;
   cursor: pointer;
-  font-family: 'Montserrat';
   font-size: 15px;
   padding-left: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 70px;
 }
 
 .custom_select_option {
@@ -127,25 +135,17 @@
   cursor: pointer;
   border: 1px solid #d2d2d2;
   height: 50px;
-  font-family: 'Montserrat'; 
 }
 
 .custom_select_option.selected {
-  color: black; 
-}
-
-.arrow {
-  width: 10px;
-  height: 5px;
-  color: #000000;
-  margin-right: 10px;
+  color: black;
 }
 
 .custom_select_options {
   position: absolute;
   left: 0;
-  width: 100%;
-  top: 50px;
+  width: 18vw;
+  top: 36%;
   border: 1px solid #d2d2d2;
   border-radius: 4px;
   background: #fff;
@@ -163,8 +163,124 @@
 .arrow {
   position: relative;
   bottom: 35px;
-  margin-left: 260px;
+  margin-left: 250px;
 }
-.rotated{
-    transform: rotate(180deg);
+
+.arrow.rotated {
+  transform: rotate(180deg);
+}
+@media  screen and (max-width: 1024px) {
+  .modal {
+    width: 90%;
+    max-width: 90%;
+    height: 90%;
+    max-height: 90%;
+    padding: 8%;
   }
+  .close {
+    top: 55%;
+    width: 30vw;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+@media  screen and (max-width: 768px) {
+  .modal {
+    width: 90%;
+    padding: 8%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  .modalContent{
+    width: 450px;
+    height: 600px;
+  }
+  .custom_select_selected {
+    height: 4vh;
+  }
+  .close {
+    top: 68%;
+    width: 25vw;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .input__box1,
+  .input__box2,
+  .input__box3,
+  .input__box4,
+  .custom_select_selected {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 18px;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+  }
+
+  .custom_select_selected {
+    margin-top: 10px;
+    margin-left: 2px;
+    height: 5vh;
+  }
+
+  .box > * {
+    width: 95%;
+  }
+  .custom_select_options{
+    width: 290px;
+    margin-top: 30px;
+    margin-left: 2px;
+  }
+}
+
+
+@media  screen and (max-width: 468px) {
+  .modal {
+    width: 90%;
+    max-width: 90%;
+    height: 90%;
+    max-height: 90%;
+    padding: 8%;
+  }
+  .custom_select_selected {
+    height: 5vh;
+  }
+  .close{
+    top: 68%;
+    width: 40vw;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .custom_select_options{
+    width: 290px;
+    margin-top: 30px;
+    margin-left: 2px;
+  }
+}
+
+@media  screen and (max-width: 320px) {
+  .modal {
+    width: 90%;
+    max-width: 90%;
+    height: 90%;
+    max-height: 90%;
+    padding: 8%;
+  }
+  .close{
+    width: 60vw;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .custom_select_options{
+    width: 290px;
+    margin-top: 30px;
+    margin-left: 2px;
+  }
+}
+

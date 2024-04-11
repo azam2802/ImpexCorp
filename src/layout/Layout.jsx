@@ -6,7 +6,6 @@ import { Outlet } from "react-router-dom"
 import ModalCalculator from "@components/ModalCalculator/ModalCalculator"
 
 import { useModalState } from "@store/store"
-import ShowCalculator from "@components/ModalCalculator/ShowCalculator"
 
 const Layout = () => {
   const { isModalOpen, setIsModalOpen } = useModalState()
@@ -25,7 +24,6 @@ const Layout = () => {
         closeModal={() => setIsModalOpen(false)}
         showModal={isModalOpen}
       />
-      <ShowCalculator />
     </>
   )
 }
