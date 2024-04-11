@@ -34,9 +34,6 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
     }
   }, [])
 
-  const x =
-    bodyWidth > 765 ? 2.75 : bodyWidth > 565 ? 2 : bodyWidth > 410 ? 1.4 : 1.1
-
   return (
     <motion.li
       initial="hidden"
@@ -48,7 +45,15 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       </motion.h1>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
         <Swiper
-          slidesPerView={x}
+          slidesPerView={
+            bodyWidth > 765
+              ? 2.75
+              : bodyWidth > 565
+                ? 2
+                : bodyWidth > 410
+                  ? 1.4
+                  : 1.1
+          }
           style={{ width: "100%" }}
           freeMode={true}
           modules={[FreeMode]}>
