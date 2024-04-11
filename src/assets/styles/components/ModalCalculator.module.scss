@@ -1,3 +1,4 @@
+
 .box {
   text-align: center;
   justify-content: center;
@@ -169,7 +170,12 @@
 .arrow.rotated {
   transform: rotate(180deg);
 }
-@media  screen and (max-width: 1024px) {
+@media screen and (max-width: 1600px) {
+.custom_select_options{
+  width: 290px;
+}
+}
+@media screen and (max-width: 1024px) {
   .modal {
     width: 90%;
     max-width: 90%;
@@ -183,9 +189,12 @@
     font-size: 1.5rem;
     padding: 1rem;
   }
+  .custom_select_options{
+    width: 290px;
+  }
 }
 
-@media  screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .modal {
     width: 90%;
     padding: 8%;
@@ -193,7 +202,7 @@
     justify-content: center; 
     align-items: center;
   }
-  .modalContent{
+  .modalContent {
     width: 450px;
     height: 600px;
   }
@@ -206,7 +215,6 @@
     font-size: 1.5rem;
     padding: 0.5rem;
   }
-
   .input__box1,
   .input__box2,
   .input__box3,
@@ -216,31 +224,27 @@
     margin: 0 auto;
     margin-top: 18px;
   }
-
   .box {
     display: flex;
     justify-content: center;
     margin-left: 10px;
   }
-
   .custom_select_selected {
     margin-top: 10px;
     margin-left: 2px;
     height: 5vh;
   }
-
   .box > * {
     width: 95%;
   }
-  .custom_select_options{
+  .custom_select_options {
     width: 290px;
     margin-top: 30px;
     margin-left: 2px;
   }
 }
 
-
-@media  screen and (max-width: 468px) {
+@media screen and (max-width: 468px) {
   .modal {
     width: 90%;
     max-width: 90%;
@@ -251,20 +255,20 @@
   .custom_select_selected {
     height: 5vh;
   }
-  .close{
+  .close {
     top: 68%;
     width: 40vw;
     font-size: 1.5rem;
     padding: 0.5rem;
   }
-  .custom_select_options{
+  .custom_select_options {
     width: 290px;
     margin-top: 30px;
     margin-left: 2px;
   }
 }
 
-@media  screen and (max-width: 320px) {
+@media screen and (max-width: 320px) {
   .modal {
     width: 90%;
     max-width: 90%;
@@ -272,15 +276,14 @@
     max-height: 90%;
     padding: 8%;
   }
-  .close{
+  .close {
     width: 60vw;
     font-size: 1.5rem;
     padding: 0.5rem;
   }
-  .custom_select_options{
+  .custom_select_options {
     width: 290px;
     margin-top: 30px;
     margin-left: 2px;
   }
 }
-
