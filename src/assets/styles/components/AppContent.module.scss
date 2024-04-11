@@ -1,6 +1,6 @@
 .pricingCalculator {
     background: #fff;
-    width: 60vw;
+    width: 53vw;
     height: 80vh;
     padding-left: 40px;
     border-radius: 30px;
@@ -14,7 +14,7 @@
   
   .calculation,
   .bold {
-    width: 16vw; 
+    width: 14vw; 
     height: 5.556vh;
     border: 1px solid #e7e7e7;
     border-radius: 4px;
@@ -44,7 +44,7 @@
   .text {
     border: none;
     font-size: 1.25rem;
-    width: 840px;
+    width: 830px;
     font-family: 'Montserrat';
     color: #ff0000;
     margin-top: 48px;
@@ -63,6 +63,74 @@
     margin-left: 28vw;
     margin-top: 7vh;
     background: #19746b;
+  }
+  @media screen and (max-width: 1340px) {
+    .pricingCalculator {
+      background: #fff;
+      width: 60vw;
+      height: 80vh;
+      padding-left: 5px;
+      border-radius: 30px;
+      margin-bottom: 50px;
+      padding-right: 20px;
+    }
+    
+    .calculation1 {
+      margin-top: 50px;
+      padding-top: 50px;
+    }
+    
+    .calculation,
+    .bold {
+      width: 17.9vw; 
+      height: 5.556vh;
+      border: 1px solid #e7e7e7;
+      border-radius: 4px;
+      font-size: 18px;
+      font-family: 'Montserrat';
+      color: #000000;
+      margin-top: 8px;
+      line-height: 40px;
+      padding-left: 0.5vw;
+      margin-left: 1vw;
+    }
+    
+    .bold {
+      font-weight: bold;
+    }
+    
+    .calculation1,
+    .calculation2,
+    .calculation3,
+    .calculation4,
+    .calculation5,
+    .calculation6 {
+      display: flex;
+    }
+    
+    .text {
+      border: none;
+      font-size: 1.25rem;
+      width: 770px;
+      font-family: "Montserrat";
+      color: #ff0000;
+      margin-top: 48px;
+      padding-left: 34px;
+    }
+    
+    .button {
+      border: none;
+      font-size: 3rem;
+      font-size: 1.5vw;
+      width: 19vw;
+      padding: 0.4em;
+      border: 3px solid #19746b;
+      color: #fff;
+      border-radius: 10px;
+      margin-left: 40vw;
+      margin-top: 7vh;
+      background: #19746b;
+    }
   }
   @media screen and (max-width: 1024px) {
     .pricingCalculator {
