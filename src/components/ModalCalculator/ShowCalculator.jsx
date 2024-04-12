@@ -1,5 +1,5 @@
 import React from "react"
-import s from "@styles/components/AppContent.module.scss"
+import s from "@styles/components/ShowCalculator.module.scss"
 
 const ShowCalculator = () => {
   const calculations = [
