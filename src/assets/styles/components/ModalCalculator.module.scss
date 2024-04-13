@@ -1,15 +1,10 @@
-
 .box {
   text-align: center;
   justify-content: center;
   display: flex;
   flex-wrap: wrap; 
+  padding-top: 50px;
 }
-
-.input__box {
-  margin-top: 50px;
-}
-
 .darker {
   position: fixed;
   top: 0;
@@ -22,6 +17,12 @@
   justify-content: center;
   align-items: center;
 }
+.custom_select {
+  position: relative;
+  width: 100%;
+  max-width: 290px; 
+  margin-left: 30px;
+}
 
 .close {
   position: absolute;
@@ -33,42 +34,19 @@
   background: #19746b;
   color: #fff;
   font-family: 'Montserrat';
-  font-size: 1.2vw;
+  font-size: 25px;
   padding: 1vw;
-  width: 15vw;
+  width: 290px;
+  height: 50px;
+  padding-top: 7px;
 }
 
 .modalContent {
-  width: 800px;
-  height: 600px;
+  width: 650px;
+  height: 500px;
   background-color: #FFFFFF;
   border-radius: 30px;
-}
-
-.engineSelect,
-.input__box1,
-.input__box2,
-.input__box3,
-.input__box4,
-.name__input,
-.name__input_label,
-.input__type,
-.custom_select,
-.custom_select_selected,
-.custom_select_option,
-.custom_select_options {
-  font-family: 'Montserrat';
-}
-
-.engineSelect {
-  background: #fff;
-  border: 0.0625rem solid #a4a4a4;
-  border-radius: 0.25rem;
-  color: #000;
-  font-size: 0.9375rem;
-  height: 6vh;
-  padding-left: 1.5vw;
-  width: 16.5vw;
+  margin-top: 50px;
 }
 
 .input__box1,
@@ -106,18 +84,11 @@
 .input__type {
   margin-left: 1.25rem;
 }
-
-.custom_select {
-  position: relative;
-  width: 100%;
-  max-width: 290px; 
-}
-
 .custom_select_selected {
-  width: 100%;
+  width: 290px;
   margin: 0 auto;
   margin-top: 10px;
-  height: 6vh;
+  height: 50px;
   background: #fff;
   border: 1px solid #a4a4a4;
   border-radius: 4px;
@@ -128,7 +99,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 70px;
+  margin-top: 18px;
+  font-family: 'Montserrat';
+  
 }
 
 .custom_select_option {
@@ -136,6 +109,9 @@
   cursor: pointer;
   border: 1px solid #d2d2d2;
   height: 50px;
+  font-size: 15px;
+  font-family: 'Montserrat';
+  padding-right: 60%;
 }
 
 .custom_select_option.selected {
@@ -144,9 +120,8 @@
 
 .custom_select_options {
   position: absolute;
-  left: 0;
-  width: 18vw;
-  top: 36%;
+  width: 290px;
+  top: 25%;
   border: 1px solid #d2d2d2;
   border-radius: 4px;
   background: #fff;
@@ -164,36 +139,35 @@
 .arrow {
   position: relative;
   bottom: 35px;
-  margin-left: 250px;
+  margin-left: 260px;
 }
 
 .arrow.rotated {
   transform: rotate(180deg);
 }
-@media screen and (max-width: 1600px) {
-.custom_select_options{
-  width: 290px;
-}
-}
+
 @media screen and (max-width: 1024px) {
   .modal {
     width: 90%;
-    max-width: 90%;
     height: 90%;
     max-height: 90%;
     padding: 8%;
   }
   .close {
-    top: 55%;
-    width: 30vw;
-    font-size: 1.5rem;
-    padding: 1rem;
+    top: 58%;
+    width: 25vw;
+    font-size: 25px;
+    left: 50%;
   }
   .custom_select_options{
     width: 290px;
   }
 }
-
+@media screen and (max-width: 850px){
+.close{
+  left: 50%;
+}
+}
 @media screen and (max-width: 768px) {
   .modal {
     width: 90%;
@@ -211,8 +185,9 @@
   }
   .close {
     top: 68%;
-    width: 25vw;
-    font-size: 1.5rem;
+    left: 50%;
+    width: 30vw;
+    font-size: 1.2rem;
     padding: 0.5rem;
   }
   .input__box1,
@@ -220,7 +195,7 @@
   .input__box3,
   .input__box4,
   .custom_select_selected {
-    width: 100%;
+    width: 290px;
     margin: 0 auto;
     margin-top: 18px;
   }
@@ -231,16 +206,18 @@
   }
   .custom_select_selected {
     margin-top: 10px;
-    margin-left: 2px;
     height: 5vh;
+    justify-content: center;
+    padding-right: 65%;
   }
   .box > * {
     width: 95%;
+    margin-left: 20px;
   }
   .custom_select_options {
     width: 290px;
-    margin-top: 30px;
-    margin-left: 2px;
+    margin-top: 40px;
+    justify-content: center;
   }
 }
 
@@ -253,18 +230,27 @@
     padding: 8%;
   }
   .custom_select_selected {
+    width: 260px;
     height: 5vh;
+    text-align: center;
+    margin-right: 30px;
+    padding-right: 55%;
   }
   .close {
     top: 68%;
     width: 40vw;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0.5rem;
   }
   .custom_select_options {
-    width: 290px;
-    margin-top: 30px;
-    margin-left: 2px;
+    width: 260px;
+    margin-top: 40px;
+  }
+  .name__input{
+    width: 260px;
+  }
+  .arrow{
+    margin-left: 180px;
   }
 }
 @media screen and (max-width: 320px) {

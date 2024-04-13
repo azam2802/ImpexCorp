@@ -7,34 +7,46 @@ const ShowCalculator = () => {
     <div>
       <div className={s.pricingCalculator}>
         <div className={s.calculation1}>
-          <p className={s.calculations}>Вид</p>
-          <p className={s.calculations}>Ставка</p>
-          <p className={s.calculations}>Сумма в &quot;сом&quot;</p>
+          <div className={s.summa1}>
+            <p className={s.calculations}>Вид</p>
+            <p className={s.calculations}>Ставка</p>
+            <p className={s.calculations}>Сумма в &ldquo;сом&rdquo;</p>
+          </div>
         </div>
         <div className={s.calculation2}>
-          <p className={s.calculation}>Импортная пошлина</p>
-          <p className={s.calculation}>5 %</p>
-          <p className={s.calculation}>Сумма</p>
+          <div className={s.summa2}>
+            <p className={s.calculation}>Импортная пошлина</p>
+            <p className={s.calculation}>5 %</p>
+            <p className={s.calculation}>Сумма</p>
+          </div>
         </div>
         <div className={s.calculation3}>
-          <p className={s.calculation}>Таможенные сборы</p>
-          <p className={s.calculation}>557 сом.за Л.С.</p>
-          <p className={s.calculation}>Сумма</p>
+          <div className={s.summa3}>
+            <p className={s.calculation}>Таможенные сборы</p>
+            <p className={s.calculation}>557 сом.за Л.С.</p>
+            <p className={s.calculation}>Сумма</p>
+          </div>
         </div>
         <div className={s.calculation4}>
-          <p className={s.calculation}>НДС</p>
-          <p className={s.calculation}>10 %</p>
-          <p className={s.calculation}>Сумма</p>
+          <div className={s.summa4}>
+            <p className={s.calculation}>НДС</p>
+            <p className={s.calculation}>10 %</p>
+            <p className={s.calculation}>Сумма</p>
+          </div>
         </div>
         <div className={s.calculation5}>
-          <p className={s.calculation}>Утилизационный сбор</p>
-          <p className={s.calculation}>0,17 x 20000 сом</p>
-          <p className={s.calculation}>Сумма</p>
+          <div className={s.summa5}>
+            <p className={s.calculation}>Утилизационный сбор</p>
+            <p className={s.calculation}>0,17 x 20000 сом</p>
+            <p className={s.calculation}>Сумма</p>
+          </div>
         </div>
         <div className={s.calculation6}>
-          <p className={s.calculation}>Итого</p>
-          <p className={s.calculation}></p>
-          <p className={s.calculation}>Сумма</p>
+          <div className={s.summa6}>
+            <p className={s.calculation}>Итого</p>
+            <p className={s.calculation}></p>
+            <p className={s.calculation}>Сумма</p>
+          </div>
         </div>
         <p className={s.text}>
           Расчёт стоимости автомобиля предварительный! Итоговая стоимость на
