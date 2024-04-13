@@ -21,7 +21,6 @@
   position: relative;
   width: 100%;
   max-width: 290px; 
-  margin-left: 30px;
 }
 
 .close {
@@ -42,11 +41,11 @@
 }
 
 .modalContent {
-  width: 650px;
-  height: 500px;
+  width: 700px;
+  height: 550px;
   background-color: #FFFFFF;
   border-radius: 30px;
-  margin-top: 50px;
+  gap: 10px;
 }
 
 .input__box1,
@@ -71,6 +70,7 @@
   font-size: 1.25rem;
   height: 3.125rem;
   padding: 1.5%;
+  margin-right: 20px;
 }
 
 .name__input_label {
@@ -212,7 +212,6 @@
   }
   .box > * {
     width: 95%;
-    margin-left: 20px;
   }
   .custom_select_options {
     width: 290px;
@@ -235,6 +234,7 @@
     text-align: center;
     margin-right: 30px;
     padding-right: 55%;
+    font-size: 12px;
   }
   .close {
     top: 68%;
@@ -267,8 +267,8 @@
     padding: 0.5rem;
   }
   .custom_select_options {
-    width: 290px;
-    margin-top: 30px;
+    width: 260px;
+    margin-top: 40px;
     margin-left: 2px;
   }
   .text{
