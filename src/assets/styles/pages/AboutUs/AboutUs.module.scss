@@ -1,246 +1,365 @@
 .about_main {
   font-family: "Inter";
-  .backToPrevious {
-    display: none;
-  }
+  margin: 0 auto;
+  width: 90vw;
 
-  .AboutCompanyTitle,
-  .AboutUsTitle {
-    width: 80%;
-    text-align: center;
-    margin: 105px auto;
-    font-size: 3vw;
-  }
-  .AboutCompanyTitle {
-    padding: 75px 0;
-    position: relative;
-
-    &:before {
-      content: "";
-      position: absolute;
-      width: 70%;
-      height: 2px;
-      background-color: #94ae9d;
-      left: 0;
-      top: 0;
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      width: 70%;
-      height: 2px;
-      background-color: #94ae9d;
-      right: 0;
-      bottom: 0;
+  .about_hero {
+    margin: 140px 0 70px;
+    width: 100%;
+    img {
+      width: 100%;
     }
   }
-  .AboutUsTitle {
-    margin-bottom: 40px;
-  }
-  .AboutUsText {
-    width: 80%;
-    text-align: center;
-    margin: 0 auto;
-    font-size: 2vw;
-    margin-bottom: 130px;
-  }
 
-  .car_convience,
-  .car_convience_bottom {
-    width: 80%;
-    margin: 0 auto;
+  .about_service {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    .car_img {
+    justify-content: space-between;
+    width: 71vw;
+    margin: 0 auto;
+    .service_left {
+      width: 40%;
+      font-size: 2.1vw;
+      font-weight: bold;
+    }
+    .service_right {
       width: 50%;
-
       img {
         width: 100%;
       }
     }
-
-    .convience_list {
-      width: 50%;
-      font-size: 2vw;
-      font-weight: 600;
-      line-height: 3vw;
-      letter-spacing: 2px;
-      list-style: disc;
-
-      li {
-        margin-left: 10%;
-      }
-    }
   }
 
-  .car_convience_bottom {
-    width: 85%;
-    display: flex;
-    justify-content: end;
-    margin: 0 auto;
+  .double_line,
+  .double_line_center {
     position: relative;
-    .convience_list {
-      width: 70%;
-      left: 0;
+    height: 3vw;
+    width: 89vw;
+    margin: 3vw auto;
+    &::after {
+      content: "";
       position: absolute;
+      left: 0;
+      width: 60%;
+      background-color: #94ae9d;
+      height: 2px;
     }
-    .car_img {
-      width: 40%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+
+      width: 60%;
+      background-color: #94ae9d;
+      height: 2px;
     }
   }
 
-  .car_infoList {
-    width: 80%;
-    text-align: left;
-    margin: 100px auto;
-    font-size: 2vw;
+  .double_line {
+    &::after {
+      top: 0;
+    }
+    &::before {
+      bottom: 0;
+    }
+  }
 
-    li {
-      margin-bottom: 30px;
+  .double_line_center {
+    height: 3vw;
+    &::after {
+      bottom: 0;
+    }
+    &::before {
+      top: 0;
+    }
+  }
 
-      .receiveTitle {
-        display: block;
-        margin-bottom: 20px;
+  .about_specialize {
+    display: flex;
+    align-items: center;
+
+    .specialize_left {
+      width: 30%;
+      img {
+        width: 100%;
+      }
+      div {
+        display: none;
+      }
+    }
+    .specialize_right {
+      width: 60%;
+      & :first-child {
+        font-size: 2vw;
+        margin-bottom: 2.5vw;
+        font-weight: bold;
+      }
+      div:not(:first-child) {
+        font-size: 1.5vw;
+      }
+      div:last-child {
+        margin-top: 25px;
       }
     }
   }
 
-  .bottomTitle {
-    width: 80%;
-    margin: 0 auto;
+  .about_cards,
+  .about_cards_bottom {
+    h1 {
+      font-size: 2.5vw;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        padding: 2.6vw;
+        width: 28vw;
+        box-shadow: 2px 1px 15px 0px rgba(0, 0, 0, 0.44);
+        border-radius: 22px;
+        .card_img_box {
+          width: 100%;
+          min-height: 14.2vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+            // height: 14vw;
+          }
+        }
+        p {
+          font-size: 1.4vw;
+          font-weight: 500;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .about_cards_bottom {
     text-align: center;
-    font-size: 3vw;
-    margin-top: 200px;
-    margin-bottom: 260px;
-  }
-}
+    margin-top: 5.2vw;
+    margin-bottom: 6.7vw;
 
-@media screen and (max-width: 1024px) {
-  .about_main {
-    margin-top: 10vh;
-    .AboutCompanyTitle {
-      padding: 40px 0;
-      margin: 40px auto;
-    }
-    a {
-      color: #000;
-      .backToPrevious {
-        width: 18vw;
-        display: flex;
-        align-items: center;
-        font-size: 3vw;
-        letter-spacing: 1px;
-        margin-left: 5%;
-        span {
-          margin-left: 5px;
-        }
-        &:hover {
-          cursor: pointer;
+    ul {
+      li {
+        .card_img_box {
+          min-height: 15.6vw;
         }
       }
     }
   }
-}
 
-@media screen and (max-width: 768px) {
-  .about_main {
-    margin-top: 10vh;
-    .backToPrevious {
-      margin-top: 0px;
+  .about_contract {
+    text-align: center;
+    margin-top: 6.8vw;
+
+    div {
+      font-size: 2vw;
+      font-weight: bold;
+      text-align: left;
+      width: 77vw;
+      margin: 0 auto;
+
+      span {
+        color: #19746b;
+      }
     }
 
-    .AboutCompanyTitle {
-      padding: 40px 0;
-      margin: 40px auto;
+    h3 {
+      font-size: 1.7vw;
+      margin: 4vw auto 2.6vw;
     }
-    .AboutUsTitle {
-      margin-bottom: 40px;
-      margin-top: 40px;
-    }
-    .AboutUsText {
-      margin-bottom: 40px;
-    }
-    .car_infoList {
-      width: 90%;
-      margin: 40px auto;
+
+    ul {
+      font-size: 1.7vw;
 
       li {
-        margin-bottom: 10px;
+        line-height: 2.2vw;
 
-        .receiveTitle {
-          margin-bottom: 5px;
+        span {
+          color: #19746b;
         }
       }
+
+      li:not(:last-child) {
+        margin-bottom: 4vw;
+      }
     }
-    .car_convience,
-    .car_convience_bottom {
+  }
+
+  .bottom_title {
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 12vw;
+    margin-bottom: 8vw;
+  }
+
+  .bottom_img {
+    width: 25vw;
+    margin: 0 auto;
+    margin-bottom: -55px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: "576px") {
+  .about_main {
+    .about_hero {
+      margin: 80px 0 40px;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .about_service {
+      width: 90vw;
+      .service_left {
+        font-size: 4vw;
+      }
+    }
+    .double_line,
+    .double_line_center {
+      height: 5vw;
+      &::after {
+        height: 1px;
+      }
+      &::before {
+        height: 1px;
+      }
+    }
+
+    .double_line_center {
+      height: 5vw;
+    }
+    .about_specialize {
       display: block;
 
-      .car_img {
-        width: 90%;
+      .specialize_left {
+        width: 90vw;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 50%;
+          display: block;
+        }
+        div {
+          display: block;
+          font-size: 4vw;
+          font-weight: bold;
+        }
+      }
+      .specialize_right {
+        margin-top: 4vw;
+        width: 90vw;
+        & :first-child {
+          display: none;
+        }
+        div:not(:first-child) {
+          font-size: 3.8vw;
+        }
+        div:last-child {
+          margin-top: 25px;
+        }
+      }
+    }
+    .about_cards,
+    .about_cards_bottom {
+      h1 {
+        font-size: 5vw;
+        margin: 20px auto;
       }
 
-      .convience_list {
-        width: 90%;
-        letter-spacing: 1px;
-        margin: 0 auto;
-        font-size: 3vw;
-        line-height: 5vw;
-        margin-top: 30px;
-        margin-bottom: 30px;
+      ul {
+        display: block;
+        li {
+          padding: 4vw;
+          width: 75vw;
+          margin: 0 auto;
+          margin-bottom: 30px;
+          .card_img_box {
+            width: 100%;
+            min-height: auto;
+            img {
+              width: 100%;
+            }
+          }
+          p {
+            font-size: 4vw;
+            margin-top: 30px;
+          }
+        }
       }
     }
 
-    .car_convience_bottom {
-      display: flex;
-      flex-direction: column-reverse;
-      position: relative;
-      .convience_list {
-        width: 100%;
-        position: static;
-      }
-      .car_img {
-        width: 100%;
+    .about_cards_bottom {
+      text-align: center;
+      ul {
+        li {
+          .card_img_box {
+            min-height: 15.6vw;
+          }
+        }
       }
     }
 
-    .bottomTitle {
-      display: none;
+    .about_contract {
+      text-align: left;
+      margin-top: 6.8vw;
+
+      div {
+        font-size: 3.8vw;
+        text-align: left;
+        width: 90vw;
+      }
+
+      h3 {
+        font-size: 3.5vw;
+      }
+
+      ul {
+        font-size: 3.5vw;
+
+        li {
+          line-height: 4vw;
+        }
+
+        li:not(:last-child) {
+          margin-bottom: 4vw;
+        }
+      }
+    }
+
+    .bottom_title {
+      font-size: 4vw;
     }
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: "376px") {
   .about_main {
-    .AboutCompanyTitle {
-      padding: 20px 0;
-      margin: 20px auto;
+    .about_service {
+      width: 90vw;
     }
-    .AboutUsTitle {
-      margin-bottom: 20px;
-      margin-top: 20px;
-    }
-    .AboutUsText {
-      margin-bottom: 20px;
-    }
-    .car_infoList {
-      margin: 20px auto;
 
-      li {
-        margin-bottom: 10px;
-
-        .receiveTitle {
-          margin-bottom: 5px;
+    .about_cards,
+    .about_cards_bottom {
+      ul {
+        li {
+          width: 90vw;
+          p {
+            margin-top: 20px;
+          }
         }
-      }
-    }
-    .car_convience,
-    .car_convience_bottom {
-      .convience_list {
-        margin-top: 15px;
-        margin-bottom: 15px;
       }
     }
   }
