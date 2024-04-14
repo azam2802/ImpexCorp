@@ -1,0 +1,236 @@
+.pricingCalculator {
+  width: 1000px;
+  height: 600px;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  padding-top: 50px;
+  font-family: "Montserrat";
+}
+.summa1,.summa2,.summa3,.summa4,.summa5,.summa6{
+  display: flex;
+  gap: 8px;
+}
+.calculation, .calculations {
+  width: 280px;
+  height: 50px;
+  border: 1px solid #D2D2D2;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  padding-left: 10px;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+}
+.calculations{
+  background-color: #E7E7E7;
+  font-family: "Montserrat";
+}
+.calculation1,.calculation2,.calculation3,.calculation4,.calculation5,.calculation6{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.text{
+  width: 800px;
+  font-size: 20px;
+  margin-left: 100px;
+  color: #FF0000;
+  font-family: "Montserrat";
+  margin-top: 20px;
+}
+.button {
+  width: 270px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 25px;
+  background-color: #19746B;
+  float: right;
+  margin-right: 150px;
+  margin-top: 20px;
+  font-family: "Montserrat";
+}
+@media (max-width: 1024px) {
+  .pricingCalculator {
+    width: 800px; 
+    height: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .calculation,
+  .calculations {
+    width: 200px;
+    text-align: center; 
+    justify-content: center;
+  }
+
+  .text {
+    width: 500px;
+    font-size: 20px;
+    margin-left: 0;
+    color: #FF0000;
+    font-family: "Montserrat";
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .button {
+    margin-top: 20px;
+    width: 270px;
+    height: 50px; 
+    border-radius: 10px; 
+    color: #FFFFFF; 
+    font-size: 25px; 
+    background-color: #19746B; 
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 30px;
+  }
+}
+@media (max-width: 900px){
+  .pricingCalculator {
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+  }
+
+  .calculation,
+  .calculations {
+    width: 200px;
+    text-align: center; 
+    justify-content: center;
+  }
+
+  .text {
+    width: 550px;
+    font-size: 20px;
+    margin-left: 0;
+    color: #FF0000;
+    font-family: "Montserrat";
+    margin-top: 50px;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .button {
+    margin-top: 20px;
+    width: 270px;
+    height: 50px; 
+    border-radius: 10px; 
+    color: #FFFFFF; 
+    font-size: 25px; 
+    background-color: #19746B; 
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .pricingCalculator {
+    width: 450px; 
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+  }
+
+  .calculation,
+  .calculations {
+    width: 130px;
+    height: 40px;
+    text-align: center; 
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .text {
+    width: 400px;
+    font-size: 18px;
+    margin-left: 0;
+    color: #FF0000;
+    font-family: "Montserrat";
+    margin-top: 50px;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .button {
+    margin-top: 20px;
+    width: 200px;
+    height: 40px; 
+    border-radius: 10px; 
+    color: #FFFFFF; 
+    font-size: 20px; 
+    background-color: #19746B; 
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 468px) {
+  .pricingCalculator {
+    width: 400px; 
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .calculation,
+  .calculations {
+    width: 120px;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+    padding-right: 10px;
+  }
+
+  .text {
+    width: 400px;
+    font-size: 12px;
+    margin-left: 0;
+    color: #FF0000;
+    font-family: "Montserrat";
+    margin-top: 20px;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .button {
+    margin-top: 20px;
+    width: 150px;
+    height: 40px; 
+    border-radius:5px; 
+    color: #FFFFFF; 
+    font-size: 18px; 
+    background-color: #19746B; 
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 20px;
+  }
+}
+
