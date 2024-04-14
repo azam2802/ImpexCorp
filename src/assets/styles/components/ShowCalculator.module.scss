@@ -9,8 +9,6 @@
 .summa1,.summa2,.summa3,.summa4,.summa5,.summa6{
   display: flex;
   gap: 8px;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 .calculation, .calculations {
   width: 280px;
@@ -65,6 +63,7 @@
     justify-content: center; 
     align-items: center; 
     text-align: center; 
+    padding-top: 5px;
   }
 
   .calculation,
@@ -99,7 +98,7 @@
 }
 @media (max-width: 900px){
   .pricingCalculator {
-    width: 100%; 
+    width: 700px;
     height: 700px;
     margin: 0 auto;
     display: flex;
@@ -111,19 +110,20 @@
 
   .calculation,
   .calculations {
-    width: 180px;
+    width: 200px;
     text-align: center; 
     justify-content: center;
   }
 
   .text {
-    width: 450px;
+    width: 550px;
     font-size: 20px;
     margin-left: 0;
     color: #FF0000;
     font-family: "Montserrat";
     margin-top: 50px;
     text-align: center;
+    text-wrap: balance;
   }
 
   .button {
@@ -141,7 +141,7 @@
 }
 @media (max-width: 768px) {
   .pricingCalculator {
-    width: 100%; 
+    width: 450px; 
     height: 600px;
     margin: 0 auto;
     display: flex;
@@ -153,7 +153,7 @@
 
   .calculation,
   .calculations {
-    width: 120px;
+    width: 130px;
     height: 40px;
     text-align: center; 
     justify-content: center;
@@ -161,13 +161,14 @@
   }
 
   .text {
-    width: 300px;
+    width: 400px;
     font-size: 18px;
     margin-left: 0;
     color: #FF0000;
     font-family: "Montserrat";
     margin-top: 50px;
     text-align: center;
+    text-wrap: balance;
   }
 
   .button {
@@ -186,33 +187,35 @@
 
 @media (max-width: 468px) {
   .pricingCalculator {
-    width: 100%; 
+    width: 400px; 
     height: 500px;
     margin: 0 auto;
     display: flex;
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    text-align: center; 
+    text-align: center;
+    border-radius: 0;
   }
 
   .calculation,
   .calculations {
-    width: 100px;
+    width: 120px;
     justify-content: center;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     padding-right: 10px;
   }
 
   .text {
-    width: 300px;
+    width: 400px;
     font-size: 12px;
     margin-left: 0;
     color: #FF0000;
     font-family: "Montserrat";
     margin-top: 20px;
     text-align: center;
+    text-wrap: balance;
   }
 
   .button {
@@ -225,6 +228,7 @@
     background-color: #19746B; 
     display: block; 
     margin: 0 auto; 
-    margin-top: 10px;
+    margin-top: 20px;
   }
 }
+

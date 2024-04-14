@@ -123,11 +123,9 @@ const ModalCalculator = ({ closeModal, showModal }) => {
                     )}
                   </div>
                 </div>
-                <div>
-                  <button className={s.close} onClick={handleCalculate}>
-                    Просчитать
-                  </button>
-                </div>
+                <button className={s.close} onClick={handleCalculate}>
+                  Просчитать
+                </button>
               </div>
             )}
           </div>
