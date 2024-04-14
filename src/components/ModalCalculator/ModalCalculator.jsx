@@ -11,6 +11,7 @@ const ModalCalculator = ({ closeModal, showModal }) => {
   const [showModalContent, setShowModalContent] = useState(false)
   const [engine, setEngine] = useState("")
   const [showSelectOptions, setShowSelectOptions] = useState(false)
+  const [isArrowAnimation, setIsArrowAnimation] = useState(false)
   const { t } = useTranslation()
 
   useEffect(() => {
@@ -41,6 +42,11 @@ const ModalCalculator = ({ closeModal, showModal }) => {
   const handleSelectOption = (value) => {
     setEngine(value)
     setShowSelectOptions(false)
+  }
+
+  const handleArrowClick = () => {
+    setShowSelectOptions(!showSelectOptions)
+    setIsArrowAnimation(!isArrowAnimation)
   }
 
   return (
@@ -98,11 +104,11 @@ const ModalCalculator = ({ closeModal, showModal }) => {
                   <div className={s.custom_select}>
                     <div
                       className={s.custom_select_selected}
-                      onClick={() => setShowSelectOptions(!showSelectOptions)}>
+                      onClick={handleArrowClick}>
                       {engine ? engine : t("Calculation.Calculator.type")}
                     </div>
                     <img
-                      className={`${s.arrow} ${showSelectOptions ? s.rotated : ""}`}
+                      className={`${s.arrow} ${isArrowAnimation ? s.active : ""}`}
                       src={arrow}
                       alt="arrow"
                     />

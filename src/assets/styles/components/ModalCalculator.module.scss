@@ -74,6 +74,7 @@
   padding: 1.5%;
   margin-right: 20px;
   width: 290px;
+  font-family: "Montserrat";
 }
 
 .name__input_label {
@@ -94,11 +95,11 @@
   display: flex;
   margin-top: 18px;
   font-family: 'Montserrat';
-  padding-top: 10px;
+  padding-top: 13px;
 }
 
 .custom_select_option {
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
   border: 1px solid #d2d2d2;
   height: 50px;
@@ -131,7 +132,7 @@
 
 .arrow {
   position: absolute;
-  top: 15%;
+  top: 14%;
   right: 30px;
 }
 
@@ -146,7 +147,7 @@
 
 @media screen and (max-width: 850px) {
   .close {
-    top: 75%;
+    top: 82%;
   }
   .arrow {
     top: 60%;
@@ -202,7 +203,7 @@
     height: 50px;
     justify-content: center;
     padding-right: 30%;
-    font-size: 14px;
+    font-size: 12px;
     margin-left:18px;
   }
   .custom_select {
@@ -229,7 +230,7 @@
     height: 50px;
     text-align: center;
     margin-right: 30px;
-    font-size: 12px;
+    font-size: 10px;
     margin-left: 15px;
   }
   .close {
@@ -294,4 +295,11 @@
   .arrow {
     top: 60%;
   }
+}
+.arrow {
+  transition: transform 0.3s ease; 
+}
+
+.active {
+  transform: rotate(180deg);
 }
