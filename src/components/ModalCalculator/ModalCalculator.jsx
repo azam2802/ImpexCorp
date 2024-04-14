@@ -105,13 +105,16 @@ const ModalCalculator = ({ closeModal, showModal }) => {
                     <div
                       className={s.custom_select_selected}
                       onClick={handleArrowClick}>
-                      {engine ? engine : t("Calculation.Calculator.type")}
+                      <p>
+                        {engine ? engine : t("Calculation.Calculator.type")}
+                      </p>
+                      <img
+                        className={`${s.arrow} ${isArrowAnimation ? s.active : ""}`}
+                        src={arrow}
+                        alt="arrow"
+                      />
                     </div>
-                    <img
-                      className={`${s.arrow} ${isArrowAnimation ? s.active : ""}`}
-                      src={arrow}
-                      alt="arrow"
-                    />
+
                     {showSelectOptions && (
                       <ul className={s.custom_select_options}>
                         <li

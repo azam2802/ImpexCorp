@@ -33,7 +33,7 @@
   border-radius: 0.625rem;
   background: #19746b;
   color: #fff;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-size: 25px;
   padding: 1vw;
   width: 290px;
@@ -44,7 +44,7 @@
 .modalContent {
   width: 700px;
   height: 550px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 30px;
 }
 
@@ -60,7 +60,6 @@
 .input__box3,
 .input__box4 {
   position: relative;
-  margin-right: 30px;
   margin-top: 18px;
   max-width: 290px;
 }
@@ -72,7 +71,6 @@
   font-size: 1.25rem;
   height: 50px;
   padding: 10px;
-  margin-right: 20px;
   width: 290px;
   font-family: "Montserrat";
 }
@@ -87,16 +85,21 @@
 }
 
 .custom_select_selected {
-  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid #a4a4a4;
   border-radius: 4px;
   cursor: pointer;
   font-size: 15px;
-  padding-left: 10px;
-  display: flex;
+  padding-inline: 10px;
   margin-top: 18px;
-  font-family: 'Montserrat';
-  padding-top: 13px;
+  font-family: "Montserrat";
+  p {
+    padding-block: 14px;
+    display: inline-block;
+  }
 }
 
 .custom_select_option {
@@ -105,7 +108,7 @@
   border: 1px solid #d2d2d2;
   height: 50px;
   font-size: 15px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   padding-right: 60%;
 }
 
@@ -113,10 +116,16 @@
   color: black;
 }
 
+.input__box {
+  display: flex;
+  width: 49%;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .custom_select_options {
-  position: absolute;
+  position: relative;
   width: 290px;
-  top: 25%;
   border: 1px solid #d2d2d2;
   border-radius: 4px;
   background: #fff;
@@ -124,44 +133,23 @@
   z-index: 1000;
   list-style: none;
   padding: 0;
-  color: #7a7979;
+  color: #777777;
 }
 
 .custom_select_option:hover {
   background: #f2f2f2;
 }
 
-.arrow {
-  position: absolute;
-  top: 14%;
-  right: 30px;
-}
-
-@media screen and (max-width: 1024px) {
-  .close {
-    top: 68%;
-    width: 25vw;
-    font-size: 25px;
-    left: 50%;
-  }
-}
-
 @media screen and (max-width: 850px) {
   .close {
     top: 82%;
   }
-  .arrow {
-    top: 60%;
-    right: 30px;
-  }
-  .custom_select {
-    margin-right: 20px;
-  }
-  .input__box {
-    margin-left: 10px;
-  }
+
   .modalContent {
     width: 500px;
+  }
+  .input__box {
+    width: unset;
   }
 }
 
@@ -169,29 +157,21 @@
   .modal {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
   }
   .modalContent {
     width: 400px;
     height: 600px;
   }
-  .custom_select_selected {
-    height: 4vh;
-  }
   .close {
-    top: 78%;
-    left: 50%;
-    width: 28vw;
-    font-size: 1.2rem;
-    padding: 0.5rem;
+    top: 75%;
   }
   .input__box1,
   .input__box2,
   .input__box3,
   .input__box4,
   .custom_select_selected {
-    width: 290px;
     margin: 0 auto;
     margin-top: 18px;
   }
@@ -200,92 +180,48 @@
     justify-content: center;
   }
   .custom_select_selected {
-    width: 290px;
-    height: 50px;
-    padding-right: 55%;
     font-size: 15px;
-    margin-left: 18px;
-    padding-top: 10px;
   }
   .custom_select {
-    width: 290px;
   }
   .box > * {
     width: 80%;
   }
   .custom_select_options {
     width: 290px;
-    margin-top: 50px;
     justify-content: center;
-    margin-left: 18px;
-  }
-  .arrow {
-    top: 60%;
-    right: 0;
   }
 }
 
 @media screen and (max-width: 468px) {
   .custom_select_selected {
-    width: 260px;
-    height: 50px;
     text-align: center;
-    margin-right: 30px;
-    font-size: 12px;
-    margin-left: 15px;
-    padding-top: 15px;
   }
   .close {
-    top: 80%;
-    width: 40vw;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 0.5rem;
   }
   .custom_select_options {
-    width: 260px;
-    margin-top: 35px;
     margin-left: 0;
   }
-  .name__input {
-    width: 260px;
-  }
-  .arrow {
-    top: 60%;
-    right: 30px;
-  }
-  .custom_select_options {
-    width: 260px;
-    margin-left: 17px;
-    margin-top: 50px;
-  }
+
   .modalContent {
     width: 400px;
-  }
-  .input__box {
-    margin-left: 10px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .box {
-    padding-right: 20px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .modal {
-    width: 90%;
-    max-width: 90%;
-    height: 90%;
-    max-height: 90%;
-    padding: 8%;
+  .name__input {
+    width: 260px;
+  }
+  .custom_select_selected {
+    width: 260px;
   }
   .close {
-    width: 60vw;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    top: 65%;
+    width: 260px;
+    font-size: 1.3rem;
   }
+
   .custom_select_options {
     width: 260px;
   }
@@ -293,14 +229,12 @@
     width: 240px;
   }
   .box {
-    margin-right: 20px;
-  }
-  .arrow {
-    top: 60%;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;  }
 }
 .arrow {
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .active {
