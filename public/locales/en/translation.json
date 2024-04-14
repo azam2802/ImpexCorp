@@ -1,7 +1,6 @@
 {
   "notFoundText": "Sorry, this page can not be found.",
   "header": {
-    "search": "Search",
     "catalogue": "Catalog",
     "home": "Home",
     "calculator": "Calculator",
@@ -122,6 +121,7 @@
     }
   },
   "Catalog": {
+    "search": "Search",
     "title": "Catalog",
     "filter": "Filter",
     "characteristics": {
@@ -152,6 +152,7 @@
       }
     },
     "country": {
+      "all": "All",
       "chine": "China",
       "korea": "Korea",
       "newItems": "New arrivals"
