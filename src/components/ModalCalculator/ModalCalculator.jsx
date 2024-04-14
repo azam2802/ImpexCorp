@@ -4,11 +4,14 @@ import s from "@styles/components/ModalCalculator.module.scss"
 import ShowCalculator from "./ShowCalculator"
 import arrow from "@images/arrow.png"
 
+import { useTranslation } from "react-i18next"
+
 const ModalCalculator = ({ closeModal, showModal }) => {
   const modalRef = useRef(null)
   const [showModalContent, setShowModalContent] = useState(false)
   const [engine, setEngine] = useState("")
   const [showSelectOptions, setShowSelectOptions] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -52,37 +55,43 @@ const ModalCalculator = ({ closeModal, showModal }) => {
                 <div className={s.box}>
                   <div className={s.input__box}>
                     <div className={s.input__box1}>
-                      <label className={s.name__input_label}>Марка авто</label>
-                      <input
-                        type="text"
-                        className={s.name__input}
-                        placeholder="text"
-                      />
-                    </div>
-                    <div className={s.input__box2}>
-                      <label className={s.name__input_label}>Стоимость</label>
-                      <input
-                        type="text"
-                        className={s.name__input}
-                        placeholder="text"
-                      />
-                    </div>
-                    <div className={s.input__box3}>
-                      <label className={s.name__input_label}>Мощность</label>
-                      <input
-                        type="text"
-                        className={s.name__input}
-                        placeholder="text"
-                      />
-                    </div>
-                    <div className={s.input__box4}>
                       <label className={s.name__input_label}>
-                        Дата выпуска
+                        {t("Calculation.Calculator.brand")}
                       </label>
                       <input
                         type="text"
                         className={s.name__input}
-                        placeholder="text"
+                        placeholder={t("Calculation.Calculator.text")}
+                      />
+                    </div>
+                    <div className={s.input__box2}>
+                      <label className={s.name__input_label}>
+                        {t("Calculation.Calculator.price")}
+                      </label>
+                      <input
+                        type="text"
+                        className={s.name__input}
+                        placeholder={t("Calculation.Calculator.text")}
+                      />
+                    </div>
+                    <div className={s.input__box3}>
+                      <label className={s.name__input_label}>
+                        {t("Calculation.Calculator.power")}
+                      </label>
+                      <input
+                        type="text"
+                        className={s.name__input}
+                        placeholder={t("Calculation.Calculator.text")}
+                      />
+                    </div>
+                    <div className={s.input__box4}>
+                      <label className={s.name__input_label}>
+                        {t("Calculation.Calculator.date_of_issue")}
+                      </label>
+                      <input
+                        type="text"
+                        className={s.name__input}
+                        placeholder={t("Calculation.Calculator.text")}
                       />
                     </div>
                   </div>
@@ -90,7 +99,7 @@ const ModalCalculator = ({ closeModal, showModal }) => {
                     <div
                       className={s.custom_select_selected}
                       onClick={() => setShowSelectOptions(!showSelectOptions)}>
-                      {engine ? engine : "Выберите тип двигателя"}
+                      {engine ? engine : t("Calculation.Calculator.type")}
                     </div>
                     <img
                       className={`${s.arrow} ${showSelectOptions ? s.rotated : ""}`}
@@ -100,31 +109,47 @@ const ModalCalculator = ({ closeModal, showModal }) => {
                     {showSelectOptions && (
                       <ul className={s.custom_select_options}>
                         <li
-                          className={`${s.custom_select_option} ${engine === "Бензиновый" && s.selected}`}
-                          onClick={() => handleSelectOption("Бензиновый")}>
-                          Бензиновый
+                          className={`${s.custom_select_option} ${engine === t("Calculation.Calculator.petrol") && s.selected}`}
+                          onClick={() =>
+                            handleSelectOption(
+                              t("Calculation.Calculator.petrol"),
+                            )
+                          }>
+                          {t("Calculation.Calculator.petrol")}
                         </li>
                         <li
-                          className={`${s.custom_select_option} ${engine === "Дизельный" && s.selected}`}
-                          onClick={() => handleSelectOption("Дизельный")}>
-                          Дизельный
+                          className={`${s.custom_select_option} ${engine === t("Calculation.Calculator.diesel") && s.selected}`}
+                          onClick={() =>
+                            handleSelectOption(
+                              t("Calculation.Calculator.diesel"),
+                            )
+                          }>
+                          {t("Calculation.Calculator.diesel")}
                         </li>
                         <li
-                          className={`${s.custom_select_option} ${engine === "Гибридный" && s.selected}`}
-                          onClick={() => handleSelectOption("Гибридный")}>
-                          Гибридный
+                          className={`${s.custom_select_option} ${engine === t("Calculation.Calculator.hybrid") && s.selected}`}
+                          onClick={() =>
+                            handleSelectOption(
+                              t("Calculation.Calculator.hybrid"),
+                            )
+                          }>
+                          {t("Calculation.Calculator.hybrid")}
                         </li>
                         <li
-                          className={`${s.custom_select_option} ${engine === "Электрический" && s.selected}`}
-                          onClick={() => handleSelectOption("Электрический")}>
-                          Электрический
+                          className={`${s.custom_select_option} ${engine === t("Calculation.Calculator.electric") && s.selected}`}
+                          onClick={() =>
+                            handleSelectOption(
+                              t("Calculation.Calculator.electric"),
+                            )
+                          }>
+                          {t("Calculation.Calculator.electric")}
                         </li>
                       </ul>
                     )}
                   </div>
                 </div>
                 <button className={s.close} onClick={handleCalculate}>
-                  Просчитать
+                  {t("Calculation.Calculator.button")}
                 </button>
               </div>
             )}

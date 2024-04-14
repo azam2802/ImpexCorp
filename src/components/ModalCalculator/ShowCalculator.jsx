@@ -1,58 +1,68 @@
 import React from "react"
 import PropTypes from "prop-types"
 import s from "@styles/components/ShowCalculator.module.scss"
+import { useTranslation } from "react-i18next"
 
 const ShowCalculator = () => {
+  const { t } = useTranslation("Calculation")
+
   return (
     <div>
       <div className={s.pricingCalculator}>
         <div className={s.calculation1}>
           <div className={s.summa1}>
-            <p className={s.calculations}>Вид</p>
-            <p className={s.calculations}>Ставка</p>
-            <p className={s.calculations}>Сумма в &ldquo;сом&rdquo;</p>
+            <p className={s.calculations}>{t("Calculation.Calculator.view")}</p>
+            <p className={s.calculations}>{t("Calculation.Calculator.bid")}</p>
+            <p className={s.calculations}>
+              {t("Calculation.Calculator.amount")}
+            </p>
           </div>
         </div>
         <div className={s.calculation2}>
           <div className={s.summa2}>
-            <p className={s.calculation}>Импортная пошлина</p>
-            <p className={s.calculation}>5 %</p>
-            <p className={s.calculation}>Сумма</p>
+            <p className={s.calculation}>{t("Calculation.Calculator.duty")}</p>
+            <p className={s.calculation}>
+              {t("Calculation.Calculator.five_percent")}
+            </p>
+            <p className={s.calculation}>{t("Calculation.Calculator.sum")}</p>
           </div>
         </div>
         <div className={s.calculation3}>
           <div className={s.summa3}>
-            <p className={s.calculation}>Таможенные сборы</p>
-            <p className={s.calculation}>557 сом.за Л.С.</p>
-            <p className={s.calculation}>Сумма</p>
+            <p className={s.calculation}>{t("Calculation.Calculator.fees")}</p>
+            <p className={s.calculation}>{t("Calculation.Calculator.som1")}</p>
+            <p className={s.calculation}>{t("Calculation.Calculator.sum")}</p>
           </div>
         </div>
         <div className={s.calculation4}>
           <div className={s.summa4}>
-            <p className={s.calculation}>НДС</p>
-            <p className={s.calculation}>10 %</p>
-            <p className={s.calculation}>Сумма</p>
+            <p className={s.calculation}>{t("Calculation.Calculator.VAT")}</p>
+            <p className={s.calculation}>
+              {t("Calculation.Calculator.ten_percent")}
+            </p>
+            <p className={s.calculation}>{t("Calculation.Calculator.sum")}</p>
           </div>
         </div>
         <div className={s.calculation5}>
           <div className={s.summa5}>
-            <p className={s.calculation}>Утилизационный сбор</p>
-            <p className={s.calculation}>0,17 x 20000 сом</p>
-            <p className={s.calculation}>Сумма</p>
+            <p className={s.calculation}>
+              {t("Calculation.Calculator.collection")}
+            </p>
+            <p className={s.calculation}>{t("Calculation.Calculator.som2")}</p>
+            <p className={s.calculation}>{t("Calculation.Calculator.sum")}</p>
           </div>
         </div>
         <div className={s.calculation6}>
           <div className={s.summa6}>
-            <p className={s.calculation}>Итого</p>
+            <p className={s.calculation}>{t("Calculation.Calculator.Total")}</p>
             <p className={s.calculation}></p>
-            <p className={s.calculation}>Сумма</p>
+            <p className={s.calculation}>{t("Calculation.Calculator.sum")}</p>
           </div>
         </div>
-        <p className={s.text}>
-          Расчёт стоимости автомобиля предварительный! Итоговая стоимость на
-          день покупки может отличаться и зависит от цены покупки валюты
-        </p>
-        <button className={s.button}>Позвонить</button>
+        <p className={s.text}>{t("Calculation.Calculator.text1")}</p>
+        <button className={s.button}>
+          {t("Calculation.Calculator.button1")}
+        </button>
       </div>
     </div>
   )
