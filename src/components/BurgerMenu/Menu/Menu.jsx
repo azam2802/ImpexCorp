@@ -4,9 +4,11 @@ import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import PropTypes from "prop-types"
 import LangSwitcher from "@ui/LangSwitcher/LangSwitcher"
+import { useModalState } from "@store/store"
 
 const Menu = ({ active, setActive }) => {
   const { t } = useTranslation()
+  const { setIsModalOpen } = useModalState()
   return (
     <div className={s.menu}>
       <div
@@ -44,6 +46,7 @@ const Menu = ({ active, setActive }) => {
               className={s.li_element}
               onClick={() => {
                 setActive(!active)
+                setIsModalOpen(true)
               }}
               to="calculator">
               {t("header.calculator")}
