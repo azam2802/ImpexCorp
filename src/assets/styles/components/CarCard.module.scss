@@ -1,5 +1,5 @@
 .carCardItem {
-  width: 560px;
+  width: 31vw;
   flex-shrink: 0;
   border-radius: 15px;
   background: #fff;
@@ -11,7 +11,7 @@
 
   .car_image {
     width: 100%;
-    height: 250px;
+    height: 200px;
     border-radius: 10px;
     object-fit: cover;
     object-position: center;
@@ -32,7 +32,6 @@
     width: 100%;
     margin-bottom: 19px;
     margin-top: 19px;
-
     .car_struct_list_item {
       display: flex;
       height: 43px;
@@ -91,14 +90,41 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1614px) {
   .carCardItem {
-    width: 42vw;
+    .car_name {
+      margin-top: 15px;
+      font-size: 25px;
+    }
+
+    .car_struct_list {
+      .car_struct_list_item {
+        height: 30px;
+        font-size: 18px;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+        .car_struct_text {
+          margin-left: 10px;
+          font-weight: 600;
+        }
+        img{
+          width: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .carCardItem {
     border-radius: 12px;
     margin-right: 15px;
     padding: 15px;
-    .car_image{
+    .car_image {
       height: 150px;
+      object-position: center;
     }
     .car_name {
       font-size: 18px;
@@ -149,10 +175,23 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .carCardItem {
+    width: 42vw;
+    border-radius: 12px;
+    margin-right: 15px;
+    padding: 15px;
+  }
+}
+
 @media screen and (max-width: 564px) {
   .carCardItem {
     width: 60vw;
     padding: 15px;
+    .car_image {
+      height: 130px;
+      object-position: center;
+    }
   }
 }
 

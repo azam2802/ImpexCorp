@@ -1,6 +1,5 @@
 header {
-  padding: 2vh 5vw;
-  padding-top: 3vh;
+  padding: 4vh 5vw;
   font-size: 1rem;
   background: #f4f4f0;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -8,7 +7,6 @@ header {
   z-index: 10;
   top: -200px;
   transition: all 0.3s ease;
-
 }
 
 .fixed {
@@ -25,27 +23,13 @@ header {
   .col_6 {
     display: flex;
     align-items: center;
-    .searchIco_div {
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      padding: 0px 10px;
-      align-items: center;
-      border: 1px solid #000;
-    }
-    input {
-      font-family: "Gotham Pro";
-      border: none;
-      background-color: transparent;
-      padding: 10px 10px;
-      font-size: 16px;
-    }
     .Links {
       margin-left: 30px;
       display: flex;
       align-items: center;
       gap: 20px;
       button {
+        background-color: transparent;
         font-size: inherit;
         font-family: "Gotham Pro";
         color: #000;

@@ -83,6 +83,13 @@
   z-index: 100;
   transform: translateX(100%);
   border-bottom-left-radius: 30px;
+  p{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+  }
   ul {
     gap: 15px;
     display: flex;
@@ -90,6 +97,13 @@
     flex-direction: column;
     a {
       color: #000;
+    }
+    button{
+      border: none;
+      font-size: inherit;
+      font-weight: inherit;
+      font-family: inherit;
+      background-color: #fff;
     }
   }
 }

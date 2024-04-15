@@ -8,23 +8,21 @@ export const Catalogs = () => {
   const { t } = useTranslation()
   const { data } = useAutosList()
 
-  const apiData = [...data].reverse()
-
   return (
     <section>
       <div className={s.catalogs}>
         <ul className={s.catalogs_list}>
           <CatalogsItem
             catalogTitle={t("HomePage.CatalogBlock.titles.newProducts")}
-            data={apiData}
+            data={data}
           />
           <CatalogsItem
             catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
-            data={apiData}
+            data={data}
           />
           <CatalogsItem
             catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
-            data={apiData}
+            data={data}
           />
         </ul>
       </div>

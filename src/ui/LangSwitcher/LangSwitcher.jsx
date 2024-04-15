@@ -2,29 +2,27 @@ import ChinaFlag from "@images/china.svg"
 import KyrgyzFlag from "@images/kyrgyzstan.svg"
 import RussianFlag from "@images/russia.svg"
 import UsaFlag from "@images/usa.svg"
-import "@styles/ui/LangSwitcher.scss"
-import PropTypes from "prop-types"
-import React, { useState } from "react"
+import { useBurgerState } from "@store/store"
+import s from "@styles/ui/LangSwitcher.module.scss"
+import React, { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { FaChevronDown } from "react-icons/fa6"
 
-const LangSwitcher = ({ setActive }) => {
+const LangSwitcher = () => {
   const [showDrop, setShowDrop] = useState(false)
   const { i18n } = useTranslation()
+  const { setMenuActive } = useBurgerState()
 
-  const showDropDown = () => {
-    const dropdown = document.querySelector(".dropdown_content")
-    const arrow = document.querySelector(".langArrow")
-    if (!showDrop) {
-      dropdown.classList.add("dropdown_content_show")
-      arrow.classList.add("langArrow_active")
-      setShowDrop((prev) => !prev)
-    } else {
-      dropdown.classList.remove("dropdown_content_show")
-      arrow.classList.remove("langArrow_active")
-      setShowDrop((prev) => !prev)
+  let ref = useRef()
+  useEffect(() => {
+    const handleClose = (e) => {
+      if (!ref.current.contains(e.target)) {
+        setShowDrop(false)
+        document.removeEventListener("click", handleClose)
+      }
     }
-  }
+    document.addEventListener("click", handleClose)
+  }, [])
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language)
@@ -39,12 +37,14 @@ const LangSwitcher = ({ setActive }) => {
 
   const handleClick = (item) => {
     changeLanguage(item.code)
-    setActive()
-    showDrop()
+    setMenuActive(false)
   }
 
   return (
-    <div className="dropDown" onClick={() => showDropDown()}>
+    <div
+      className={s.dropDown}
+      onClick={() => setShowDrop(!showDrop)}
+      ref={ref}>
       {langs
         .filter((lang) => lang.code == i18n.language)
         .map((lang, id) => (
@@ -53,10 +53,20 @@ const LangSwitcher = ({ setActive }) => {
               <img src={lang.flag} alt={lang.name} />
             </div>
             {lang.name}
-            <FaChevronDown className="langArrow" alt="arrowDown" />
+            <FaChevronDown
+              className={
+                showDrop ? `${s.langArrow} ${s.langArrow_active}` : s.langArrow
+              }
+              alt="arrowDown"
+            />
           </button>
         ))}
-      <div className="dropdown_content">
+      <div
+        className={
+          showDrop
+            ? `${s.dropdown_content} ${s.dropdown_content_show}`
+            : `${s.dropdown_content}`
+        }>
         {langs.map((i, id) => (
           <button key={id} onClick={() => handleClick(i)}>
             <img src={i.flag} alt={i.name} />
@@ -66,10 +76,6 @@ const LangSwitcher = ({ setActive }) => {
       </div>
     </div>
   )
-}
-
-LangSwitcher.propTypes = {
-  setActive: PropTypes.func,
 }
 
 export default LangSwitcher

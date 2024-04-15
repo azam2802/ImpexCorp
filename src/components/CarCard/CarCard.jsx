@@ -9,8 +9,18 @@ import { MdOutlineSpeed } from "react-icons/md"
 import { FaFlag } from "react-icons/fa6"
 import PropTypes from "prop-types"
 
-const CarCard = ({ car_name, images, price, mileage, width }) => {
+const CarCard = ({
+  car_name,
+  images,
+  price,
+  mileage,
+  volume,
+  country,
+  transmission,
+  width,
+}) => {
   const { t } = useTranslation()
+
   return (
     <li className={s.carCardItem} style={{ width: width }}>
       <img src={images} className={s.car_image} alt={car_name} />
@@ -22,11 +32,13 @@ const CarCard = ({ car_name, images, price, mileage, width }) => {
         </li>
         <li className={s.car_struct_list_item}>
           <img className={s.car_struct_image} src={Icon2} alt="struct-img" />
-          <p className={s.text_transmission + " " + s.car_struct_text}>Авто</p>
+          <p className={s.text_transmission + " " + s.car_struct_text}>
+            {transmission}
+          </p>
         </li>
         <li className={s.car_struct_list_item}>
           <LuFuel />
-          <p className={s.car_struct_text}>Электро</p>
+          <p className={s.car_struct_text}>Бензин</p>
         </li>
         <li className={s.car_struct_list_item}>
           <MdOutlineSpeed />
@@ -34,11 +46,11 @@ const CarCard = ({ car_name, images, price, mileage, width }) => {
         </li>
         <li className={s.car_struct_list_item}>
           <FaFlag />
-          <p className={s.car_struct_text}>Китай</p>
+          <p className={s.car_struct_text}>{country}</p>
         </li>
         <li className={s.car_struct_list_item}>
           <img className={s.car_struct_image} src={Icon1} alt="struct-img" />
-          <p className={s.car_struct_text}>2.5</p>
+          <p className={s.car_struct_text}>{volume}</p>
         </li>
       </ul>
       <hr />
@@ -57,7 +69,9 @@ CarCard.propTypes = {
   images: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   mileage: PropTypes.number.isRequired,
-  img_alt: PropTypes.string.isRequired,
+  volume: PropTypes.number.isRequired,
+  country: PropTypes.string.isRequired,
+  transmission: PropTypes.string.isRequired,
   width: PropTypes.string,
 }
 

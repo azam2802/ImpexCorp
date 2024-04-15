@@ -2,36 +2,38 @@ import BurgerMenu from "@components/BurgerMenu/BurgerMenu"
 import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 const Header = ({ openModal }) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenWidth, setScreenWidth] = useState(
+    window.matchMedia("(min-width: 1024px)").matches,
+  )
   const { t } = useTranslation()
 
-  window.addEventListener("resize", () => {
-    setScreenWidth(window.innerWidth)
-  })
-
-  window.addEventListener("scroll", () => {
-    if (window.innerWidth > 1024) {
-      const header = document.querySelector(".header")
-      const headerHeight = header.offsetHeight
-      const scrollThreshold = 1.7 * headerHeight
-      if (window.scrollY > scrollThreshold) {
-        header.classList.add(s.fixed)
-      } else {
-        header.classList.remove(s.fixed)
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setScreenWidth(window.matchMedia("(min-width: 1024px)").matches)
+    })
+    window.addEventListener("scroll", () => {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        const header = document.querySelector(".header")
+        const headerHeight = header.offsetHeight
+        const scrollThreshold = 1.7 * headerHeight
+        if (window.scrollY > scrollThreshold) {
+          header.classList.add(s.fixed)
+        } else {
+          header.classList.remove(s.fixed)
+        }
       }
-    }
+    })
   })
 
   return (
     <>
-      {screenWidth > 1024 ? (
+      {screenWidth ? (
         <>
           <OverNavbar />
           <header className="header">
@@ -41,10 +43,6 @@ const Header = ({ openModal }) => {
                   <Logo />
                 </div>
                 <div className={s.col_6}>
-                  <div className={s.searchIco_div}>
-                    <IoSearch id="search_ico" alt="search_ico" />
-                    <input type="search" placeholder={t("header.search")} />
-                  </div>
                   <div className={s.Links}>
                     <Link to="/">{t("header.home")}</Link>
                     <Link to="about">{t("header.ourcompany")}</Link>

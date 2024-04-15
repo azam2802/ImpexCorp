@@ -12,6 +12,8 @@ import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 const Carousels = () => {
+  let slides = [slide1, slide2, slide3]
+
   return (
     <div className="swiper-container">
       <Swiper
@@ -26,15 +28,11 @@ const Carousels = () => {
         }}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
         className="mySwiper">
-        <SwiperSlide>
-          <img src={slide1} alt="Slide 1" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slide2} alt="Slide 2" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slide3} alt="Slide 3" />
-        </SwiperSlide>
+        {slides.map((item, id) => (
+          <SwiperSlide key={id}>
+            <img src={item} alt="Slide" />
+          </SwiperSlide>
+        ))}
         <div className="swiper-button-prev">
           <AiFillLeftSquare color="grey" />
         </div>

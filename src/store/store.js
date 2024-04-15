@@ -10,6 +10,13 @@ export const useModalState = create(
   })),
 )
 
+export const useBurgerState = create(
+  devtools((set) => ({
+    menuActive: false,
+    setMenuActive: (value) => set({ menuActive: value }),
+  })),
+)
+
 export const useAutosList = create(
   devtools((set) => ({
     data: [],
@@ -17,17 +24,14 @@ export const useAutosList = create(
       try {
         useEffect(() => {
           axios
-            .get(
-              `http://34.159.107.65/${lang == "zh" ? "zh-hant" : lang}/api/auto/`,
-              {
-                headers: {
-                  "Content-Type": "application/json",
-                  "Accept-Language": lang == "zh" ? "zh-hant" : lang,
-                },
+            .get(import.meta.env.VITE_API_AUTO_LIST, {
+              headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang == "zh" ? "zh-hant" : lang,
               },
-            )
+            })
             .then((res) => {
-              set({ data: res.data.results })
+              set({ data: [...res.data].reverse() })
             })
         }, [lang])
       } catch {

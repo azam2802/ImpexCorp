@@ -1,7 +1,6 @@
 {
   "notFoundText": "抱歉，找不到页面。",
   "header": {
-    "search": "搜索",
     "home": "首页",
     "catalogue": "目录",
     "calculator": "计算器",
@@ -110,21 +109,18 @@
     "branches": {
       "name": "分支机构",
       "menu": {
-        "address1": "Gorkogo Street 20a, Bishkek",
-        "address2": "Ankara Street 38a, Bishkek",
-        "address3": "Isaakiev Street 1/2, Bishkek"
+        "address1": "77 Usenbaeva st. Bishkek"
       }
     },
     "contacts": {
       "name": "联系方式",
       "menu": {
-        "number1": "+996 (555) 25-12-56",
-        "number2": "+996 (700) 22-25-32",
-        "number3": "+996 (708) 04-02-90"
+        "number1": "+996 (500) 67-76-33"
       }
     }
   },
   "Catalog": {
+    "search": "搜索",
     "title": "目录",
     "filter": "筛选",
     "characteristics": {
@@ -155,6 +151,7 @@
       }
     },
     "country": {
+      "all": "全部",
       "chine": "中国",
       "korea": "韩国",
       "newItems": "新品"
@@ -170,5 +167,35 @@
     "button": {
       "title": "查找"
     }
+  },
+  "Calculation":{
+    "Calculator":{
+      "brand":"汽車品牌",
+      "text":"文字",
+      "price":"價格",
+      "power":"力量",
+      "date_of_issue":"簽發日期",
+      "type":"選擇引擎類型",
+      "petrol":" 汽油",
+      "diesel":"柴油引擎",
+      "hybrid":"雜交種",
+      "electric":"電的",
+      "button":"計算",
+      "view":"看法",
+      "bid":"出價",
+      "amount":"金額以「索姆」為單位",
+      "duty":"進口關稅",
+      "five_percent":"5%",
+      "sum":"和",
+      "fees":"關稅",
+      "som1":"557 索姆 給 L.S.",
+      "VAT":"加值稅",
+      "ten_percent":"10%",
+      "collection":"回收收集",
+      "som2":"0.17 x 20000 索姆",
+      "Total":"全部的",
+      "text1": "初步用車成本計算！購買當天的最終費用可能會有所不同，具體取決於貨幣的購買價格",
+      "button1":"稱呼"
+  }
   }
 }
