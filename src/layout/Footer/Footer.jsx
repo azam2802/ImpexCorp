@@ -26,6 +26,7 @@ const Footer = () => {
       <div className={s.logo}>
         <Logo />
       </div>
+
       <div className={s.footer_content}>
         <div className={s.row_1}>
           <ul>
