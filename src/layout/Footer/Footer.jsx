@@ -1,24 +1,42 @@
 import React from "react"
 import s from "@styles/layout/Footer.module.scss"
+import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
+import Logo from "@ui/Logo/Logo"
 import TelegramIcon from "@images/TelegramIcon.webp"
 import InstagramIcon from "@images/InstagramIcon.webp"
 import GmailIcon from "@images/GmailIcon.webp"
 import WhatsUpIcon from "@images/WhatsUpIcon.webp"
-import { Link } from "react-router-dom"
-import { useTranslation } from "react-i18next"
-import Logo from "@ui/Logo/Logo"
 
 const Footer = () => {
   const { t, i18n } = useTranslation()
   const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
 
-  const renderLinks = (links) => {
-    return Object.entries(links).map(([key, value]) => (
+  const renderLinks = (menu) =>
+    Object.keys(menu).map((key) => (
       <li key={key}>
-        <Link to="/">{value}</Link>
+        <Link to="/"> {menu[key]}</Link>
       </li>
     ))
-  }
+
+  const footerColumns = [
+    {
+      title: t("footer.aboutus.name"),
+      menu: currentLanguage.footer.aboutus.menu,
+    },
+    {
+      title: t("footer.support.name"),
+      menu: currentLanguage.footer.support.menu,
+    },
+    {
+      title: t("footer.branches.name"),
+      menu: currentLanguage.footer.branches.menu,
+    },
+    {
+      title: t("footer.contacts.name"),
+      menu: currentLanguage.footer.contacts.menu,
+    },
+  ]
 
   return (
     <footer>
@@ -27,31 +45,16 @@ const Footer = () => {
       </div>
 
       <div className={s.footer_content}>
-        <div className={s.row_1}>
-          <ul>
-            <li>{t("footer.aboutus.name")}</li>
-            {renderLinks(currentLanguage.footer.aboutus.menu)}
-          </ul>
-        </div>
-        <div className={s.row_2}>
-          <ul>
-            <li>{t("footer.support.name")}</li>
-            {renderLinks(currentLanguage.footer.support.menu)}
-          </ul>
-        </div>
-        <div className={s.row_3}>
-          <ul>
-            <li>{t("footer.branches.name")}</li>
-            {renderLinks(currentLanguage.footer.branches.menu)}
-          </ul>
-        </div>
-        <div className={s.row_4}>
-          <ul>
-            <li>{t("footer.contacts.name")}</li>
-            {renderLinks(currentLanguage.footer.contacts.menu)}
-          </ul>
-        </div>
+        {footerColumns.map((column, index) => (
+          <div className={s[`row_${index + 1}`]} key={index}>
+            <ul>
+              <li>{column.title}</li>
+              {renderLinks(column.menu)}
+            </ul>
+          </div>
+        ))}
       </div>
+
       <div className={s.social_media}>
         <ul>
           <li>
@@ -78,6 +81,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+
       <hr />
       <p id={s.madeby}>
         Made by{" "}
