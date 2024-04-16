@@ -59,7 +59,12 @@
   }
 }
 
-
+.ConversationImage{
+  width: 75%;
+  @media screen and (max-width: 580px) {
+    width: 100%;
+  }
+}
 
 @media (max-width: 768px) {
   .container {
@@ -69,9 +74,10 @@
     background: none;
     padding-block: unset;
     margin-top: 100px;
-    img {
+    .ImageCar {
       display: none;
     }
+
   }
 
   .title {
@@ -91,6 +97,7 @@
   .block_title {
     display: flex;
     align-items: center;
+    gap: 0px;
     flex-direction: column;
   }
 

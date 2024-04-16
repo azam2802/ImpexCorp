@@ -1,11 +1,21 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import ImageCar from "@images/image 44.webp"
+import ConversationImg from "@images/conversation-flatline (1) 1.svg"
 import s from "@styles/pages/Home/FirstBlock.module.scss"
 import { useTranslation } from "react-i18next"
 
 const FirstBlock = () => {
   const { t } = useTranslation()
+  const [windowWidth, setWindowWidth] = useState(
+    window.matchMedia("(max-width: 768px)").matches,
+  )
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.matchMedia("(max-width: 768px)").matches)
+      console.log(windowWidth)
+    })
+  })
 
   const AnimLeft = {
     hidden: {
@@ -62,6 +72,13 @@ const FirstBlock = () => {
                 </motion.span>
               </p>
             </div>
+            {windowWidth ? (
+              <div className={s.ConversationImage}>
+                <img src={ConversationImg} alt="Conversation Img" />
+              </div>
+            ) : (
+              <></>
+            )}
             <div>
               <motion.button
                 custom={2}
@@ -73,6 +90,7 @@ const FirstBlock = () => {
           </div>
           <div>
             <motion.img
+              className={s.ImageCar}
               custom={2}
               variants={AnimRight}
               src={ImageCar}
