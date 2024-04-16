@@ -1,7 +1,6 @@
 {
   "notFoundText": "Кечиресиз, бул барак табылган жок.",
   "header": {
-    "search": "Издөө",
     "home": "Негизги",
     "catalogue": "Каталог",
     "calculator": "Калькулятор",
@@ -128,6 +127,7 @@
     }
   },
   "Catalog": {
+    "search": "Издөө",
     "title": "Каталог",
     "filter": "Фильтирлөө",
     "characteristics": {
@@ -158,6 +158,7 @@
       }
     },
     "country": {
+      "all": "Баары",
       "chine": "Кытай",
       "korea": "Корея",
       "newItems": "Жаңылар"

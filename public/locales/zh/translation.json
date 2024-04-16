@@ -1,7 +1,6 @@
 {
   "notFoundText": "抱歉，找不到页面。",
   "header": {
-    "search": "搜索",
     "home": "首页",
     "catalogue": "目录",
     "calculator": "计算器",
@@ -128,6 +127,7 @@
     }
   },
   "Catalog": {
+    "search": "搜索",
     "title": "目录",
     "filter": "筛选",
     "characteristics": {
@@ -158,6 +158,7 @@
       }
     },
     "country": {
+      "all": "全部",
       "chine": "中国",
       "korea": "韩国",
       "newItems": "新品"

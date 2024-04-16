@@ -22,7 +22,7 @@ const LangSwitcher = () => {
       }
     }
     document.addEventListener("click", handleClose)
-  })
+  }, [])
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language)
