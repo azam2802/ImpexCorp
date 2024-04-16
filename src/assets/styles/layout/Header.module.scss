@@ -33,20 +33,43 @@ header {
         font-size: inherit;
         font-family: "Gotham Pro";
         color: #000;
-        transition: all 0.2s;
         border: none;
+        &::after {
+          transition: all 0.5s;
+          display: block;
+          content: " ";
+          height: 1px;
+          width: 0;
+        }
         &:hover {
-          color: #19746b;
-          transition: all 0.2s;
+          &::after {
+            content: " ";
+            transition: all 0.3s;
+            width: 100%;
+            height: 1px;
+            background-color: #19746b;
+          }
         }
       }
       a {
         font-family: "Gotham Pro";
         color: #000;
-        transition: all 0.2s;
+        line-height: 20px;
+        &::after {
+          transition: all 0.5s;
+          display: block;
+          content: " ";
+          height: 1px;
+          width: 0;
+        }
         &:hover {
-          color: #19746b;
-          transition: all 0.2s;
+          &::after {
+            content: " ";
+            transition: all 0.3s;
+            width: 100%;
+            height: 1px;
+            background-color: #19746b;
+          }
         }
       }
     }
