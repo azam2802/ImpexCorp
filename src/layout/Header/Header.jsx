@@ -4,7 +4,6 @@ import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
 import React, { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { IoSearch } from "react-icons/io5"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
@@ -44,10 +43,6 @@ const Header = ({ openModal }) => {
                   <Logo />
                 </div>
                 <div className={s.col_6}>
-                  <div className={s.searchIco_div}>
-                    <IoSearch id="search_ico" alt="search_ico" />
-                    <input type="search" placeholder={t("header.search")} />
-                  </div>
                   <div className={s.Links}>
                     <Link to="/">{t("header.home")}</Link>
                     <Link to="about">{t("header.ourcompany")}</Link>

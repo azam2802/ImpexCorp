@@ -1,7 +1,6 @@
 {
   "notFoundText": "抱歉，找不到页面。",
   "header": {
-    "search": "搜索",
     "home": "首页",
     "catalogue": "目录",
     "calculator": "计算器",
@@ -55,41 +54,48 @@
     }
   },
   "AboutUs": {
-    "AboutCompanyTitle": "公司“Impex Corp”提供从韩国和中国购买和进口汽车的服务！",
-    "AboutUsTitle": "欢迎来到 Impex Corp 汽车展厅",
-    "AboutUsText": {
-      "bold": "Impex Corp ",
-      "thin": "是一家汽车公司，为客户提供与汽车行业相关的广泛产品和服务。作为市场领导者，Impex Corp 拥有几个关键优势，使其成为购买者的理想选择。"
+    "service_left": "Impex Corp公司提供從韓國和中國購買和進口汽車的服務!",
+    "specialize_right": [
+      "Impex corp 是一家專門從事高品質汽車銷售的公司",
+      "我們提供各種品牌和型號的新車和二手車供您選擇，以滿足最挑剔的客戶的需求。提供便利的購買條件，包括汽車融資和交換計劃.",
+      "我們盡一切努力使客戶的購車過程盡可能簡單、方便。"
+    ],
+    "aboutCard": {
+      "title": "我們在做什麼",
+      "texts": [
+        "我們銷售來自中國和韓國的優質汽車",
+        "我們提供優秀的專家和專業人士",
+        "我們提供良好的建議和服務"
+      ]
     },
-    "AboutUsTechnichUl": {
-      "quality": "优质工作",
-      "workersExp": "经验丰富的员工",
-      "insurance": "汽车运输保险",
-      "logistic": "物流"
+    "aboutCardBottom": {
+      "title": "為什麼選擇我們",
+      "texts": ["網上支付", "Good service", "好服務"]
     },
-    "key": {
-      "bold": "Impex Corp 无可挑剔的声誉",
-      "thin": "是您对交易的信心的保证"
-    },
-    "receive": {
-      "title": "您将获得：",
-      "bold": "可靠性",
-      "thin": "我们的公司在不到一年的时间里与7个独立国家和30个CIS城市签订了超过100份合同。"
-    },
-    "choice": {
-      "bold": "选择",
-      "thin": "我们公司的重要任务之一是为采矿、轻工业和农业工业的特殊技术、设备、原材料的选择和交付提供服务。我们还提供汽车零部件、配件和化学品。此外，“IMPEX CORP”公司还致力于发展食品和旅游业的进口和出口。我们公司的主要业务是从中国、韩国、日本、阿联酋、格鲁吉亚、欧洲和美国等国家进口和出口汽车。"
-    },
+
     "AboutUsBottom": {
-      "title": "购买您的韩国和中国汽车非常简单！",
-      "ul": {
-        "li1": "确定国家（中国、韩国等）",
-        "li2": "汽车标准。",
-        "li3": "计算最终成本",
-        "li4": "购买",
-        "li5": "物流"
+      "title": "你會得到 :",
+      "info": {
+        "text1": "無可挑剔的工作 ",
+        "text2": "保證您在購買汽車或訂購時對交易充滿信心",
+        "span": "Impex Corp"
       },
-      "bottomTitle": "您的梦想在您手中！"
+      "receive": {
+        "span": "可靠性",
+        "text": " 不到一年的時間，我公司已與獨聯體7個國家、30多個城市完成了100多個合約 ."
+      },
+      "choice": {
+        "span": "選擇",
+        "text": "選擇 我們公司的重要任務之一是為採礦、輕工和農業行業選擇和交付專用機械、設備、原材料。我們也供應汽車零件、配件和化學品。",
+        "bottom": "「IMPEX CORP」公司也正在朝向食品進出口和旅遊業的方向發展。我們公司的主要業務是從中國、韓國、日本、阿聯酋、喬治亞、歐洲、美國等國家進口和出口汽車。"
+      },
+
+      "li1": {
+        "span": "Impex Corp",
+        "text": "還有公司",
+        "text2": "正在向食品進出口和旅遊業方向發展。我們公司的主要業務是從中國、日本、阿聯酋、喬治亞、歐洲、美國等國家進口和出口汽車 "
+      },
+      "bottomTitle": "你的夢想就在你的手中！"
     }
   },
   "footer": {
@@ -110,21 +116,18 @@
     "branches": {
       "name": "分支机构",
       "menu": {
-        "address1": "Gorkogo Street 20a, Bishkek",
-        "address2": "Ankara Street 38a, Bishkek",
-        "address3": "Isaakiev Street 1/2, Bishkek"
+        "address1": "77 Usenbaeva st. Bishkek"
       }
     },
     "contacts": {
       "name": "联系方式",
       "menu": {
-        "number1": "+996 (555) 25-12-56",
-        "number2": "+996 (700) 22-25-32",
-        "number3": "+996 (708) 04-02-90"
+        "number1": "+996 (500) 67-76-33"
       }
     }
   },
   "Catalog": {
+    "search": "搜索",
     "title": "目录",
     "filter": "筛选",
     "characteristics": {
@@ -155,6 +158,7 @@
       }
     },
     "country": {
+      "all": "全部",
       "chine": "中国",
       "korea": "韩国",
       "newItems": "新品"
@@ -170,5 +174,35 @@
     "button": {
       "title": "查找"
     }
+  },
+  "Calculation":{
+    "Calculator":{
+      "brand":"汽車品牌",
+      "text":"文字",
+      "price":"價格",
+      "power":"力量",
+      "date_of_issue":"簽發日期",
+      "type":"選擇引擎類型",
+      "petrol":" 汽油",
+      "diesel":"柴油引擎",
+      "hybrid":"雜交種",
+      "electric":"電的",
+      "button":"計算",
+      "view":"看法",
+      "bid":"出價",
+      "amount":"金額以「索姆」為單位",
+      "duty":"進口關稅",
+      "five_percent":"5%",
+      "sum":"和",
+      "fees":"關稅",
+      "som1":"557 索姆 給 L.S.",
+      "VAT":"加值稅",
+      "ten_percent":"10%",
+      "collection":"回收收集",
+      "som2":"0.17 x 20000 索姆",
+      "Total":"全部的",
+      "text1": "初步用車成本計算！購買當天的最終費用可能會有所不同，具體取決於貨幣的購買價格",
+      "button1":"稱呼"
+  }
   }
 }

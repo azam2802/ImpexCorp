@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import s from "@styles/pages/Home/Catalogs.module.scss"
 import CarCard from "@components/CarCard/CarCard"
 import PropTypes from "prop-types"
 import { motion } from "framer-motion"
 import { BsChevronRight } from "react-icons/bs"
 import { Link } from "react-router-dom"
-
+import { Swiper, SwiperSlide } from "swiper/react"
+import { FreeMode } from "swiper/modules"
 export const CatalogsItem = ({ catalogTitle, data }) => {
   const AnimBottom = {
     hidden: {
@@ -18,6 +19,20 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       transition: { duration: 0.5, delay: custom * 0.2 },
     }),
   }
+  const [bodyWidth, setBodyWidth] = useState(0)
+  useEffect(() => {
+    const updateBodyWidth = () => {
+      setBodyWidth(document.body.clientWidth)
+    }
+
+    window.addEventListener("resize", updateBodyWidth)
+
+    updateBodyWidth()
+
+    return () => {
+      window.removeEventListener("resize", updateBodyWidth)
+    }
+  }, [])
 
   return (
     <motion.li
@@ -29,23 +44,40 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
         {catalogTitle}
       </motion.h1>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
-        {data.slice(0, 6).map((car) => (
-          <CarCard
-            key={car.car_slug}
-            images={`http://209.38.228.54:81/${car.images[0].image}`}
-            car_name={car.car_name}
-            price={car.price}
-            volume={car.volume}
-            transmission={car.transmission}
-            country={car.country_of_assembly}
-            mileage={car.mileage}
-          />
-        ))}
-        <Link className={s.next_button} to="catalog">
-          <BsChevronRight
-            style={{ width: "80px", height: "100%", fill: "#19746b" }}
-          />
-        </Link>
+        <Swiper
+          slidesPerView={
+            bodyWidth > 765
+              ? 2.75
+              : bodyWidth > 565
+                ? 2
+                : bodyWidth > 410
+                  ? 1.4
+                  : 1.1
+          }
+          style={{ width: "100%" }}
+          freeMode={true}
+          modules={[FreeMode]}>
+          {data.slice(0, 6).map((car) => (
+            <SwiperSlide key={car.car_slug}>
+              <CarCard
+                images={`http://209.38.228.54:81/${car.images[0]}`}
+                car_name={car.car_name}
+                price={car.price}
+                volume={car.volume}
+                transmission={car.transmission}
+                country={car.country_of_assembly}
+                mileage={car.mileage}
+              />
+            </SwiperSlide>
+          ))}
+          <SwiperSlide>
+            <Link className={s.next_button} to="catalog">
+              <BsChevronRight
+                style={{ width: "80px", height: "100%", fill: "#19746b" }}
+              />
+            </Link>
+          </SwiperSlide>
+        </Swiper>
       </motion.ul>
     </motion.li>
   )

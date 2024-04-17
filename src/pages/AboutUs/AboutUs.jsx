@@ -1,74 +1,109 @@
 import React from "react"
 import s from "@styles/pages/AboutUs/AboutUs.module.scss"
 import { useTranslation } from "react-i18next"
-import carImg1 from "@images/AboutUsTopImg.webp"
-import carImg2 from "@images/Group67.png"
-import { IoIosArrowBack } from "react-icons/io"
-import { Link } from "react-router-dom"
-
+import heroImg from "@images/aboutUsImg.png"
+import img1 from "@images/aboutUs01.png"
+import img2 from "@images/aboutUs02.png"
+import img3 from "@images/aboutUs03.png"
+import img4 from "@images/aboutUs04.png"
+import img5 from "@images/aboutUs05.png"
+import img6 from "@images/aboutUs06.png"
+import img7 from "@images/aboutUs07.png"
+import img8 from "@images/aboutUs08.png"
+import img9 from "@images/aboutUs09.png"
+import AboutCard from "@components/AboutCard/AboutCard"
 export const AboutUs = () => {
   const { t } = useTranslation()
+  const arr = [undefined, undefined, undefined]
+  const aboutCardImg = [img3, img4, img5]
+  const aboutCardBottomImg = [img6, img7, img8]
   return (
     <main className={s.about_main}>
-      <Link to="/">
-        <div className={s.backToPrevious}>
-          <IoIosArrowBack />
-          <span>Назад</span>
-        </div>
-      </Link>
-
-      <h1 className={s.AboutCompanyTitle}>{t("AboutUs.AboutCompanyTitle")}</h1>
-      <h1 className={s.AboutUsTitle}>{t("AboutUs.AboutUsTitle")}</h1>
-      <p className={s.AboutUsText}>
-        <b>{t("AboutUs.AboutUsText.bold")}</b>
-        {t("AboutUs.AboutUsText.thin")}
-      </p>
-      <div className={s.car_convience}>
-        <div className={s.car_img}>
-          <img src={carImg1} alt="carImg" />
-        </div>
-        <ul className={s.convience_list}>
-          <li>{t("AboutUs.AboutUsTechnichUl.quality")}</li>
-          <li>{t("AboutUs.AboutUsTechnichUl.workersExp")}</li>
-          <li>{t("AboutUs.AboutUsTechnichUl.insurance")}</li>
-          <li>{t("AboutUs.AboutUsTechnichUl.logistic")}</li>
-        </ul>
+      <div className={s.about_hero}>
+        <img src={heroImg} alt="" />
       </div>
 
-      <ul className={s.car_infoList}>
-        <li>
-          <b>{t("AboutUs.key.bold")}</b> - {t("AboutUs.key.thin")}
-        </li>
-        <li>
-          <b className={s.receiveTitle}>{t("AboutUs.receive.title")}</b>
-          <b>{t("AboutUs.receive.bold")}</b>- {t("AboutUs.receive.thin")}
-        </li>
-        <li>
-          <b>{t("AboutUs.choice.bold")}</b> - {t("AboutUs.choice.thin")}
-        </li>
-        <li>{t("AboutUs.choice.bottom")}</li>
-      </ul>
-
-      <h1 className={s.AboutCompanyTitle}>
-        {t("AboutUs.AboutUsBottom.title")}
-      </h1>
-
-      <div className={s.car_convience_bottom}>
-        <ul className={s.convience_list}>
-          <li>{t("AboutUs.AboutUsBottom.ul.li1")}</li>
-          <li>{t("AboutUs.AboutUsBottom.ul.li2")}</li>
-          <li>{t("AboutUs.AboutUsBottom.ul.li3")}</li>
-          <li>{t("AboutUs.AboutUsBottom.ul.li4")}</li>
-          <li>{t("AboutUs.AboutUsBottom.ul.li5")}</li>
-        </ul>
-        <div className={s.car_img}>
-          <img src={carImg2} alt="" />
+      <div className={s.about_service}>
+        <div className={s.service_left}>{t(`AboutUs.service_left`)}</div>
+        <div className={s.service_right}>
+          <img src={img1} alt="img1" />
         </div>
       </div>
 
-      <h1 className={s["bottomTitle"]}>
-        {t("AboutUs.AboutUsBottom.bottomTitle")}
-      </h1>
+      <div className={s.double_line}></div>
+
+      <div className={s.about_specialize}>
+        <div className={s.specialize_left}>
+          <img src={img2} alt="img2" />
+          <div>{t(`AboutUs.specialize_right.${0}`)}</div>
+        </div>
+        <div className={s.specialize_right}>
+          {arr.map((_, i) => (
+            <div key={i}>{t(`AboutUs.specialize_right.${i}`)}</div>
+          ))}
+        </div>
+      </div>
+
+      <div className={s.double_line_center}></div>
+
+      <div className={s.about_cards}>
+        <h1>{t("AboutUs.aboutCard.title")}</h1>
+        <ul>
+          {aboutCardImg.map((el, i) => (
+            <AboutCard
+              key={i}
+              imgsrc={el}
+              text={t(`AboutUs.aboutCard.texts.${i}`)}
+            />
+          ))}
+        </ul>
+      </div>
+
+      <div className={s.about_cards_bottom}>
+        <h1>{t("AboutUs.aboutCardBottom.title")}</h1>
+        <ul>
+          {aboutCardBottomImg.map((el, i) => (
+            <AboutCard
+              key={i}
+              imgsrc={el}
+              text={t(`AboutUs.aboutCardBottom.texts.${i}`)}
+            />
+          ))}
+        </ul>
+      </div>
+      <div className={s.about_contract}>
+        <div>
+          {t(`AboutUs.AboutUsBottom.info.text1`)} “{" "}
+          <span>{t(`AboutUs.AboutUsBottom.info.span`)}</span> “ -
+          {t(`AboutUs.AboutUsBottom.info.text2`)}“{" "}
+          <span>{t(`AboutUs.AboutUsBottom.info.span`)}</span> “
+        </div>
+
+        <h3>{t(`AboutUs.AboutUsBottom.title`)}</h3>
+        <ul>
+          <li>
+            1. <span>{t(`AboutUs.AboutUsBottom.receive.span`)}</span> - наша
+            {t(`AboutUs.AboutUsBottom.receive.text`)}
+          </li>
+          <li>
+            2. <span>{t(`AboutUs.AboutUsBottom.choice.span`)}</span> - наша
+            {t(`AboutUs.AboutUsBottom.choice.text`)}
+          </li>
+          <li>
+            3. {t(`AboutUs.AboutUsBottom.li1.text`)} “{" "}
+            <span>{t(`AboutUs.AboutUsBottom.li1.span`)}</span> “ -
+            {t(`AboutUs.AboutUsBottom.li1.text2`)}“{" "}
+          </li>
+        </ul>
+      </div>
+
+      <div className={s.bottom_title}>
+        {t(`AboutUs.AboutUsBottom.bottomTitle`)}
+      </div>
+
+      <div className={s.bottom_img}>
+        <img src={img9} alt="img9" />
+      </div>
     </main>
   )
 }
