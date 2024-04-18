@@ -18,6 +18,8 @@ const CarCard = ({
   country,
   transmission,
   width,
+  year,
+  fuel,
 }) => {
   const { t } = useTranslation()
 
@@ -28,7 +30,7 @@ const CarCard = ({
       <ul className={s.car_struct_list}>
         <li className={s.car_struct_list_item}>
           <FaRegCalendar />
-          <p className={s.car_struct_text}>2023</p>
+          <p className={s.car_struct_text}>{year}</p>
         </li>
         <li className={s.car_struct_list_item}>
           <img className={s.car_struct_image} src={Icon2} alt="struct-img" />
@@ -38,11 +40,11 @@ const CarCard = ({
         </li>
         <li className={s.car_struct_list_item}>
           <LuFuel />
-          <p className={s.car_struct_text}>Бензин</p>
+          <p className={s.car_struct_text}>{fuel}</p>
         </li>
         <li className={s.car_struct_list_item}>
           <MdOutlineSpeed />
-          <p className={s.car_struct_text}>{mileage}</p>
+          <p className={s.car_struct_text}>{mileage} km</p>
         </li>
         <li className={s.car_struct_list_item}>
           <FaFlag />
@@ -55,7 +57,7 @@ const CarCard = ({
       </ul>
       <hr />
       <div className={s.car_info}>
-        <h1 className={s.car_price}>${price}</h1>
+        <h1 className={s.car_price}>$ {price}</h1>
         <button className={s.moreButton}>
           {t("HomePage.CatalogBlock.buttonText")}
         </button>
@@ -72,6 +74,8 @@ CarCard.propTypes = {
   volume: PropTypes.number.isRequired,
   country: PropTypes.string.isRequired,
   transmission: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+  fuel: PropTypes.string.isRequired,
   width: PropTypes.string,
 }
 
