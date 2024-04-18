@@ -13,7 +13,6 @@ const FirstBlock = () => {
   useEffect(() => {
     window.addEventListener("resize", () => {
       setWindowWidth(window.matchMedia("(max-width: 768px)").matches)
-      console.log(windowWidth)
     })
   })
 
