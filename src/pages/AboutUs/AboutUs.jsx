@@ -12,6 +12,7 @@ import img7 from "@images/aboutUs07.png"
 import img8 from "@images/aboutUs08.png"
 import img9 from "@images/aboutUs09.png"
 import AboutCard from "@components/AboutCard/AboutCard"
+
 export const AboutUs = () => {
   const { t } = useTranslation()
   const arr = [undefined, undefined, undefined]
@@ -20,7 +21,8 @@ export const AboutUs = () => {
   return (
     <main className={s.about_main}>
       <div className={s.about_hero}>
-        <img src={heroImg} alt="" />
+        <h1>IMPEXCORP</h1>
+        <img src={heroImg} alt="Car" />
       </div>
 
       <div className={s.about_service}>
