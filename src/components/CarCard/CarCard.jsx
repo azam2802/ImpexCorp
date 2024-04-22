@@ -22,7 +22,7 @@ const CarCard = ({
   fuel,
 }) => {
   const { t } = useTranslation()
-
+  console.log(images)
   return (
     <li className={s.carCardItem} style={{ width: width }}>
       <img src={images} className={s.car_image} alt={car_name} />
