@@ -14,26 +14,24 @@ const ModalCalculator = ({ closeModal, showModal }) => {
   const [isArrowAnimation, setIsArrowAnimation] = useState(false)
   const { t } = useTranslation()
 
+  const handleOutsideClick = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      closeModal()
+      setShowModalContent(false)
+    }
+  }
+
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        closeModal()
-        setShowModalContent(false)
-      }
-    }
-
     if (showModal) {
-      document.addEventListener("mousedown", handleOutsideClick)
       document.body.style.overflow = "hidden"
+      document.body.style.touchAction = "none"
+      document.addEventListener("mousedown", handleOutsideClick)
     } else {
-      document.removeEventListener("mousedown", handleOutsideClick)
       document.body.style.overflow = "unset"
-    }
-
-    return () => {
+      document.body.style.touchAction = "unset"
       document.removeEventListener("mousedown", handleOutsideClick)
     }
-  }, [showModal, closeModal])
+  }, [showModal])
 
   const handleCalculate = () => {
     setShowModalContent(!showModalContent)
