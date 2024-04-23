@@ -11,6 +11,7 @@ import WhatsUpIcon from "@images/WhatsUpIcon.webp"
 const Footer = () => {
   const { t, i18n } = useTranslation()
   const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
+
   const location = useLocation()
 
   useEffect(() => {
@@ -44,17 +45,19 @@ const Footer = () => {
     {
       title: t("footer.support.name"),
       menu: currentLanguage.footer.support.menu,
-      path: "https://api.whatsapp.com/send?phone=996500677633",
+      path: ["https://api.whatsapp.com/send?phone=996500677633"],
     },
     {
       title: t("footer.branches.name"),
       menu: currentLanguage.footer.branches.menu,
-      path: "https://2gis.kg/bishkek/geo/15763234351111077?m=74.61276%2C42.870892%2F19.15",
+      path: [
+        "https://2gis.kg/bishkek/geo/15763234351111077?m=74.61276%2C42.870892%2F19.15",
+      ],
     },
     {
       title: t("footer.contacts.name"),
       menu: currentLanguage.footer.contacts.menu,
-      path: "tel:+996500677633",
+      path: ["tel:+996500677633"],
     },
   ]
 
