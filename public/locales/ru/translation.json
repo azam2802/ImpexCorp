@@ -109,8 +109,7 @@
     "support": {
       "name": "Поддержка",
       "menu": {
-        "feedback": "Обратная связь",
-        "counseling": "Онлайн-консультации"
+        "feedback": "Обратная связь"
       }
     },
     "branches": {
