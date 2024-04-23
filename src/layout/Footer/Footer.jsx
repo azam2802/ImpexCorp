@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import s from "@styles/layout/Footer.module.scss"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import Logo from "@ui/Logo/Logo"
 import TelegramIcon from "@images/TelegramIcon.webp"
@@ -11,16 +11,26 @@ import WhatsUpIcon from "@images/WhatsUpIcon.webp"
 const Footer = () => {
   const { t, i18n } = useTranslation()
   const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
+  const location = useLocation()
 
-  const renderLinks = (menu, path) =>
-    Object.keys(menu).map((key) => (
+  useEffect(() => {
+    if (location.pathname === "/about" && location.hash === "#Services") {
+      const servicesElement = document.getElementById("Services")
+      if (servicesElement) {
+        servicesElement.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  }, [location])
+
+  const renderLinks = (menu, paths) =>
+    Object.keys(menu).map((key, index) => (
       <li key={key}>
-        {path.startsWith("http") ? (
-          <a href={path} target="_blank" rel="noopener noreferrer">
+        {paths[index].startsWith("http") ? (
+          <a href={paths[index]} target="_blank" rel="noopener noreferrer">
             {menu[key]}
           </a>
         ) : (
-          <Link to={path}>{menu[key]}</Link>
+          <Link to={paths[index]}>{menu[key]}</Link>
         )}
       </li>
     ))
@@ -29,7 +39,7 @@ const Footer = () => {
     {
       title: t("footer.aboutus.name"),
       menu: currentLanguage.footer.aboutus.menu,
-      path: "/about",
+      path: ["/about", "/about#Services"],
     },
     {
       title: t("footer.support.name"),
