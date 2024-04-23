@@ -6,7 +6,6 @@ import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { IoIosArrowBack, IoIosArrowUp } from "react-icons/io"
 import { Link } from "react-router-dom"
-import { IoSearch } from "react-icons/io5"
 
 import { FiltrModal } from "./ui/FilterModal/FilterModal"
 
@@ -81,15 +80,9 @@ export const Catalog = () => {
     },
   ]
   const [openModal, setOpenModal] = useState(false)
-  const [search, setSearch] = useState("")
-  const [selectedCar, setSelectedCar] = useState("Все")
 
   const onShowModal = () => {
     setOpenModal((show) => !show)
-  }
-
-  const handleCarClick = (car) => {
-    setSelectedCar(car)
   }
 
   return (
@@ -102,15 +95,6 @@ export const Catalog = () => {
         <h1 className={s.title}>{t("Catalog.title")}</h1>
       </div>
       <section className={s.catalog_block}>
-        <div className={s.search}>
-          <IoSearch />
-          <input
-            type="search"
-            placeholder={t("Catalog.search")}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
         <div className={s.filtration_block}>
           <div
             className={openModal ? s.filtration_open : s.filtration}
@@ -120,40 +104,6 @@ export const Catalog = () => {
               cursor="pointer"
               className={openModal ? s.rotates : s.rotate}
             />
-          </div>
-
-          <div className={s.types_car}>
-            <div
-              className={`${s.country_car} ${
-                selectedCar === "Все" ? s.selected_car : ""
-              }`}
-              onClick={() => handleCarClick("Все")}>
-              {t("Catalog.country.all")}
-            </div>
-
-            <div
-              className={`${s.country_car} ${
-                selectedCar === "Китай" ? s.selected_car : ""
-              }`}
-              onClick={() => handleCarClick("Китай")}>
-              {t("Catalog.country.chine")}
-            </div>
-
-            <div
-              className={`${s.country_car} ${
-                selectedCar === "Корея" ? s.selected_car : ""
-              }`}
-              onClick={() => handleCarClick("Корея")}>
-              {t("Catalog.country.korea")}
-            </div>
-
-            <div
-              className={`${s.country_car} ${
-                selectedCar === "Новинки" ? s.selected_car : ""
-              }`}
-              onClick={() => handleCarClick("Новинки")}>
-              {t("Catalog.country.newItems")}
-            </div>
           </div>
         </div>
 
