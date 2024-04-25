@@ -4,7 +4,7 @@ import s from "@styles/ui/BackToTop.module.scss"
 import { useLocation } from "react-router-dom"
 
 const BackToTop = () => {
-  const { location } = useLocation()
+  const location = useLocation()
   const ref = useRef(null)
 
   useEffect(() => {
@@ -14,7 +14,10 @@ const BackToTop = () => {
   })
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
   }, [location.key])
 
   const toTop = () => {
