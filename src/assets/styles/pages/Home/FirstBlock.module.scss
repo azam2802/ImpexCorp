@@ -1,24 +1,24 @@
 .container {
   justify-content: space-between;
   display: flex;
-  background: linear-gradient(
-    to right,
-    transparent 62vw,
-    #19746b 62vw,
-    #19746b
-  );
-  padding-block:  90px;
+  padding-block: 90px;
+  background-image: url(../../../img/FirstBlock.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 .title {
-  width: 40vw;
+  width: 45vw;
   font-size: 3vw;
   text-wrap: balance;
-  font-family: "Gotham Pro";
+  font-family: Inter;
   font-weight: 300;
+  color: white;
   span {
     &:first-child {
-      color: #19746b;
+      font-size: 100px;
+      font-weight: 400;
     }
     display: block;
   }
@@ -59,7 +59,7 @@
   }
 }
 
-.ConversationImage{
+.ConversationImage {
   width: 75%;
   @media screen and (max-width: 580px) {
     width: 100%;
@@ -77,19 +77,28 @@
     .ImageCar {
       display: none;
     }
+  }
 
+  .block {
+    display: flex;
+    justify-content: center;
+    margin-top: 101px;
   }
 
   .title {
-    line-height: 120%;
-    width: 100%;
-    font-size: 2.5rem;
+    width: 30rem;
+    font-family: Inter;
+    font-size: 40px;
     font-weight: 400;
     text-align: center;
-    text-wrap: balance;
-    margin-top: 30px;
+    color: black;
+
     span {
-      text-transform: none;
+      &:first-child {
+        font-size: 40px;
+        color: rgb(25, 116, 107);
+        padding-right: 0.5rem;
+      }
       display: inline;
     }
   }
@@ -102,6 +111,8 @@
   }
 
   .button {
+    margin-top: 57px;
+    margin-bottom: 249px;
     font-weight: 200;
     border-radius: 1.82px;
   }
@@ -110,5 +121,20 @@
 @media (max-width: 620px) {
   .title {
     font-size: 6.4vw;
+
+    span {
+      &:first-child {
+        font-size: 6.4vw;
+        color: rgb(25, 116, 107);
+        padding-right: 0.5rem;
+      }
+      display: inline;
+    }
+  }
+}
+
+@media (max-width: 399px) {
+  .title {
+    width: 20rem;
   }
 }
