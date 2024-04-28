@@ -1,21 +1,24 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import { PiCaretDoubleUpThin } from "react-icons/pi"
 import s from "@styles/ui/BackToTop.module.scss"
 import { useLocation } from "react-router-dom"
 
 const BackToTop = () => {
-  const { pathname } = useLocation()
+  const location = useLocation()
+  const ref = useRef(null)
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      let scroll = document.querySelector("#top-btn")
-      scroll.classList.toggle(s.active, window.scrollY > 800)
+      ref.current.classList.toggle(s.active, window.scrollY > 800)
     })
   })
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }, [location.key])
 
   const toTop = () => {
     let currentPosition = window.scrollY
@@ -26,7 +29,7 @@ const BackToTop = () => {
   }
 
   return (
-    <div className={s.top_btn} id="top-btn" onClick={toTop}>
+    <div className={s.top_btn} id="top-btn" onClick={toTop} ref={ref}>
       <PiCaretDoubleUpThin alt="top-btn" />
     </div>
   )

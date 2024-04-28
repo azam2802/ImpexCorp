@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { motion } from "framer-motion"
-import ImageCar from "@images/image 44.webp"
-import ConversationImg from "@images/conversation-flatline (1) 1.svg"
 import s from "@styles/pages/Home/FirstBlock.module.scss"
 import { useTranslation } from "react-i18next"
 
 const FirstBlock = () => {
   const { t } = useTranslation()
-  const [windowWidth, setWindowWidth] = useState(
-    window.matchMedia("(max-width: 768px)").matches,
-  )
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWindowWidth(window.matchMedia("(max-width: 768px)").matches)
-    })
-  })
 
   const AnimLeft = {
     hidden: {
@@ -40,22 +30,11 @@ const FirstBlock = () => {
     }),
   }
 
-  const AnimRight = {
-    hidden: {
-      x: 150,
-      opacity: 0,
-    },
-    visible: (custom) => ({
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.5, delay: custom * 0.2 },
-    }),
-  }
-
   return (
     <motion.section
       initial="hidden"
       whileInView="visible"
+      className={s.FirstBlock_section}
       viewport={{ once: true, amount: 0.3 }}>
       <div className={s.container}>
         <div className={s.block}>
@@ -64,20 +43,13 @@ const FirstBlock = () => {
               <p>
                 <motion.span custom={1} variants={AnimLeft}>
                   IMPEXCORP
-                </motion.span>{" "}
+                </motion.span>
                 <motion.span custom={1} variants={AnimLeft}>
-                  {" "}
-                  {t("HomePage.firstBlock.title1")}{" "}
+                  {t("HomePage.firstBlock.title1")}
                 </motion.span>
               </p>
             </div>
-            {windowWidth ? (
-              <div className={s.ConversationImage}>
-                <img src={ConversationImg} alt="Conversation Img" />
-              </div>
-            ) : (
-              <></>
-            )}
+
             <div>
               <motion.button
                 custom={2}
@@ -86,15 +58,6 @@ const FirstBlock = () => {
                 {t("HomePage.firstBlock.buttonText")}
               </motion.button>
             </div>
-          </div>
-          <div>
-            <motion.img
-              className={s.ImageCar}
-              custom={2}
-              variants={AnimRight}
-              src={ImageCar}
-              alt="imageCar"
-            />
           </div>
         </div>
       </div>
