@@ -34,6 +34,7 @@ const FirstBlock = () => {
     <motion.section
       initial="hidden"
       whileInView="visible"
+      className={s.FirstBlock_section}
       viewport={{ once: true, amount: 0.3 }}>
       <div className={s.container}>
         <div className={s.block}>
