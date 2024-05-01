@@ -49,15 +49,18 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
             bodyWidth > 765
               ? 2.75
               : bodyWidth > 565
-                ? 2
-                : bodyWidth > 410
-                  ? 1.4
-                  : 1.1
+                ? 2.6
+                : bodyWidth > 565
+                  ? 2
+                  : bodyWidth > 410
+                    ? 1.4
+                    : 1.1
           }
           style={{ width: "100%" }}
           freeMode={true}
           modules={[FreeMode]}>
           {[...data]
+            .filter((item) => item.images.length != 0)
             .reverse()
             .slice(0, 6)
             .map((car) => (
