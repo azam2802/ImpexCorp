@@ -69,6 +69,7 @@ export const Catalog = () => {
                     transmission={car.transmission}
                     country={car.country_of_assembly}
                     mileage={car.mileage}
+                    year={car.release_period}
                   />
                 </div>
               ))
