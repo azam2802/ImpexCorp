@@ -61,9 +61,9 @@ export const AboutUs = () => {
         </ul>
       </div>
 
-      <div className={s.about_cards_bottom}>
+      <div id="Services" className={s.about_cards_bottom}>
         <h1>{t("AboutUs.aboutCardBottom.title")}</h1>
-        <ul id="Services">
+        <ul>
           {aboutCardBottomImg.map((el, i) => (
             <AboutCard
               key={i}
