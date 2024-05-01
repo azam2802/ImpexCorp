@@ -7,6 +7,7 @@ import PageNotFound from "@pages/PageNotFound/PageNotFound"
 import { Catalog } from "@pages/Catalog/Catalog"
 import { useAutosList } from "@store/store"
 import { useTranslation } from "react-i18next"
+import CardInfo from "@pages/CardInfo/CardInfo"
 
 const App = () => {
   const { fetchData } = useAutosList()
@@ -21,6 +22,10 @@ const App = () => {
     {
       path: "/catalog",
       element: <Catalog />,
+    },
+    {
+      path: "/cardinfo",
+      element: <CardInfo />,
     },
   ]
 
