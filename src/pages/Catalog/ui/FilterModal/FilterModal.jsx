@@ -4,9 +4,42 @@ import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { Select } from "../Select/Select"
 import { VolumeSelect } from "../Select/VolumeSelect"
 import { useTranslation } from "react-i18next"
+import { useFilterStore } from "@store/store"
+import axios from "axios"
 
-export const FiltrModal = ({ setOpenModal }) => {
+export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
   const { t } = useTranslation()
+  const { selectedFilters, setSelectedFilters, cars, setCars } =
+    useFilterStore()
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        console.log(selectedFilters)
+        const response = await axios.get("http://34.159.206.220/api/auto/", {
+          params: selectedFilters,
+        })
+        setCars(response.data)
+
+        console.log(response.data) // Вывод данных до фильтрации
+
+        // Применяем фильтры к данным
+        const filteredData = response.data.filter((car) => {
+          // Проверяем, соответствует ли каждая машина всем выбранным фильтрам
+          return Object.keys(selectedFilters).every((key) => {
+            // Проверяем, соответствует ли свойство машины выбранному значению фильтра
+            return car[key] === selectedFilters[key]
+          })
+        })
+
+        // Устанавливаем отфильтрованные данные
+        setFilteredCars(filteredData)
+      } catch (error) {
+        console.error("Error fetching data:", error)
+      }
+    }
+
+    fetchData()
+  }, [selectedFilters])
 
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
 
@@ -25,6 +58,8 @@ export const FiltrModal = ({ setOpenModal }) => {
   const onSubmit = (e) => {
     e.preventDefault()
     setOpenModal(false)
+
+    setFilteredCars(cars)
   }
 
   return (
@@ -35,6 +70,12 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType="Mersedes"
           secondType="Audi"
           thirdType="Toyota"
+          onSelect={(value) =>
+            setSelectedFilters((prevFilters) => ({
+              ...prevFilters,
+              catalog: value,
+            }))
+          }
         />
 
         <Select
@@ -42,6 +83,12 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType="Solares"
           secondType="Sonata"
           thirdType="Supra"
+          onSelect={(value) =>
+            setSelectedFilters((prevFilters) => ({
+              ...prevFilters,
+              model: value,
+            }))
+          }
         />
 
         <Select
@@ -49,6 +96,12 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType="2010"
           secondType="2011"
           thirdType="2012"
+          onSelect={(value) =>
+            setSelectedFilters((prevFilters) => ({
+              ...prevFilters,
+              yearIssue: value,
+            }))
+          }
         />
       </section>
 
@@ -57,6 +110,12 @@ export const FiltrModal = ({ setOpenModal }) => {
           title={t("Catalog.characteristics.wheel.title")}
           firstType={t("Catalog.characteristics.wheel.right")}
           secondType={t("Catalog.characteristics.wheel.left")}
+          onSelect={(value) =>
+            setSelectedFilters((prevFilters) => ({
+              ...prevFilters,
+              wheel: value,
+            }))
+          }
         />
 
         <Select
@@ -64,6 +123,12 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType={t("Catalog.characteristics.fuel.diesel")}
           secondType={t("Catalog.characteristics.fuel.petrol")}
           thirdType={t("Catalog.characteristics.fuel.electro")}
+          onSelect={(value) =>
+            setSelectedFilters((prevFilters) => ({
+              ...prevFilters,
+              fuelType: value,
+            }))
+          }
         />
 
         <Select
@@ -71,6 +136,12 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType={t("Catalog.characteristics.driveUnit.front")}
           secondType={t("Catalog.characteristics.driveUnit.rear")}
           thirdType="4wd"
+          onSelect={(value) =>
+            setSelectedFilters((prevFilters) => ({
+              ...prevFilters,
+              driveUnit: value,
+            }))
+          }
         />
 
         <div className={s.adaptive_none}>
@@ -79,6 +150,12 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType={t("Catalog.characteristics.transmission.mechanical")}
             secondType={t("Catalog.characteristics.transmission.automatic")}
             thirdType={t("Catalog.characteristics.transmission.stepless")}
+            onSelect={(value) =>
+              setSelectedFilters((prevFilters) => ({
+                ...prevFilters,
+                transmission: value,
+              }))
+            }
           />
         </div>
       </section>
@@ -95,6 +172,12 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType={t("Catalog.characteristics.transmission.mechanical")}
             secondType={t("Catalog.characteristics.transmission.automatic")}
             thirdType={t("Catalog.characteristics.transmission.stepless")}
+            onSelect={(value) =>
+              setSelectedFilters((prevFilters) => ({
+                ...prevFilters,
+                transmission: value,
+              }))
+            }
           />
         </div>
 
@@ -104,6 +187,12 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType="2.2"
             secondType="2.2"
             thirdType="2.2"
+            onSelect={(value) =>
+              setSelectedFilters((prevFilters) => ({
+                ...prevFilters,
+                volumeFrom: value,
+              }))
+            }
           />
 
           <VolumeSelect
@@ -111,6 +200,12 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType="2.2"
             secondType="2.2"
             thirdType="2.2"
+            onSelect={(value) =>
+              setSelectedFilters((prevFilters) => ({
+                ...prevFilters,
+                volumeBefore: value,
+              }))
+            }
           />
         </div>
       </section>
@@ -138,4 +233,5 @@ export const FiltrModal = ({ setOpenModal }) => {
 
 FiltrModal.propTypes = {
   setOpenModal: PropTypes.func.isRequired,
+  setFilteredCars: PropTypes.func.isRequired,
 }
