@@ -15,6 +15,11 @@
           "japan": "Japan"
         }
       }
+    },
+    "MetaTags":{
+      "home":"ImpexCorp/Home",
+      "ourcompany":"ImpexCorp/Our Company",
+      "catalogue":"ImpexCorp/Catalog"
     }
   },
   "HomePage": {
