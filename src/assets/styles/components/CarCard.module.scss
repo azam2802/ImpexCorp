@@ -1,5 +1,6 @@
 .carCardItem {
   width: 31vw;
+  position: relative;
   flex-shrink: 0;
   border-radius: 15px;
   background: #fff;
@@ -30,10 +31,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    min-height: 165px;
+    align-content: flex-start;
     margin-bottom: 19px;
     margin-top: 19px;
     .car_struct_list_item {
       display: flex;
+      overflow: hidden;
       height: 43px;
       justify-content: space-between;
       align-items: center;
@@ -56,6 +60,7 @@
   }
 
   .car_info {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -110,7 +115,7 @@
           margin-left: 10px;
           font-weight: 600;
         }
-        img{
+        img {
           width: 18px;
         }
       }
@@ -178,7 +183,6 @@
 
 @media screen and (max-width: 768px) {
   .carCardItem {
-    width: 42vw;
     border-radius: 12px;
     margin-right: 15px;
     padding: 15px;
