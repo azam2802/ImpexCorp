@@ -54,49 +54,27 @@
     }
   },
   "AboutUs": {
-    "service_left": "The Impex Corp company provides services for the purchase and import of cars from Korea and China!",
-    "specialize_right": [
-      "Impex corp is a company specializing in the sale of high-quality cars",
-      "We offer a wide selection of new and used cars of various makes and models to satisfy the needs of the most demanding customers. Offers convenient purchasing conditions, including car financing and exchange programs.",
-      "We do everything possible to make the process of purchasing a car as simple and convenient as possible for our customers."
-    ],
-    "aboutCard": {
-      "title": "What are we doing",
-      "texts": [
-        "We sell quality cars from China and Korea",
-        "We offer good experts and professionals",
-        "We offer good advice and service"
-      ]
+    "main_title": "The Impex Corp company provides services for the purchase and import of cars from Korea and China!",
+    "buttonText": "Call",
+    "title": "You'll get :",
+    "card1": {
+      "text": " For our company is the selection and delivery of special machinery and equipment. We also supply spare parts, accessories and chemicals for cars.",
+      "bold": "Choice is one of the important tasks"
     },
-    "aboutCardBottom": {
-      "title": "Why choose us",
-      "texts": ["Online payments", "Good service", "Towing"]
+    "card2": {
+      "bold": "Reliability is our company",
+      "text": "in less than a year, completed over 100 contracts with more than 7 countries and 30 cities of the CIS"
     },
-
-    "AboutUsBottom": {
-      "title": "You'll get :",
-      "info": {
-        "text1": "Impeccable work",
-        "text2": "guarantee of your confidence in the transaction when purchasing a car or ordering from",
-        "span": "Impex Corp"
-      },
-      "receive": {
-        "span": "RELIABILITY",
-        "text": " In less than a year, our company has completed over 100 contracts with more than 7 countries and 30 cities of the CIS."
-      },
-      "choice": {
-        "span": "CHOICE",
-        "text": "SELECTION One of the important tasks for our company is the selection and delivery of special machinery, equipment, raw materials for the mining, light and agricultural industries. We also supply spare parts, accessories and chemicals for cars.",
-        "bottom": "The company “IMPEX CORP” is also developing in the direction of import-export of food products and tourism. The main activity of our company is the import-export of cars from countries such as China, Korea, Japan, UAE, Georgia, Europe, USA. "
-      },
-
-      "li1": {
-        "span": "Impex Corp",
-        "text": "Also the company",
-        "text2": "is developing in the direction of import-export of food products and tourism. The main activity of our company is the import-export of cars from countries such as China, Japan, UAE, Georgia, Europe, USA"
-      },
-      "bottomTitle": "Your dream is in your hands!"
-    }
+    "card3": {
+      "bold": "Also the company “Impex Corp.”",
+      "text": " is developing in the direction of import-export of food products and tourism. The main activity of our company is the import-export of cars from countries such as China, Korea, Japan, UAE, Georgia, Europe, USA."
+    },
+    "back": {
+      "span": "Impex Corp",
+      "text": "Impeccable work",
+      "text2": "- a guarantee of your confidence in the transaction when purchasing a car or ordering from “Impex Corp.”"
+    },
+    "bottomTitle": " The main activity of our company is the import and export of cars from countries such as China, Japan, UAE, Georgia, Europe, USA"
   },
   "footer": {
     "aboutus": {

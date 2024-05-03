@@ -1,396 +1,189 @@
+.hero {
+  width: 100%;
+  position: relative;
+  .hero_image {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -5;
+  }
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: linear-gradient(to right, #16665e, #737373);
+  }
+  .hero_box {
+    margin-left: 5.2vw;
+    margin-top: 14vw;
+    margin-bottom: 23vw;
+    z-index: 6;
+    position: relative;
+    h1 {
+      font-size: 3.2vw;
+      font-style: "Inter";
+      width: 54vw;
+      margin-bottom: 4vw;
+      color: #fff;
+    }
+    button {
+      background-color: #19746b;
+      border-radius: 0.5vw;
+      color: #fff;
+      border: none;
+      padding: 0.5vw 4vw;
+      font-size: 2vw;
+    }
+  }
+}
 .about_main {
   font-family: "Inter";
   margin: 0 auto;
   width: 90vw;
-
-  .about_hero {
-    margin: 100px auto 50px auto;
-    padding-top: 110px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-
-    h1 {
-      animation: scroll 5s linear infinite;
-      white-space: nowrap;
-      position: absolute;
-      z-index: -1;
-      top: 0px;
+  .about_title {
+    font-size: 2vw;
+    font-weight: bold;
+    letter-spacing: 4%;
+    margin-top: 6vw;
+    span {
       color: #19746b;
+    }
+  }
+  .question {
+    font-size: 1.5vw;
+    font-weight: bolder;
+    margin-top: 2.5vw;
+    margin-bottom: 2.5vw;
+  }
+
+  .about_cards {
+    .question {
       text-align: center;
-      font-weight: 400;
-      font-size: 160px;
-      letter-spacing: 75px;
-      font-family: "Gotham Pro";
-    }
-    @keyframes scroll {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
     }
 
-
-    img {
-      position: relative;
-      width: 80%;
-    }
-  }
-
-  .about_service {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 71vw;
-    margin: 0 auto;
-    .service_left {
-      width: 40%;
-      font-size: 2.1vw;
-      font-weight: bold;
-    }
-    .service_right {
-      width: 50%;
-      img {
-        width: 100%;
-      }
-    }
-  }
-
-  .double_line,
-  .double_line_center {
-    position: relative;
-    height: 3vw;
-    width: 89vw;
-    margin: 3vw auto;
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 60%;
-      background-color: #94ae9d;
-      height: 2px;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      right: 0;
-
-      width: 60%;
-      background-color: #94ae9d;
-      height: 2px;
-    }
-  }
-
-  .double_line {
-    &::after {
-      top: 0;
-    }
-    &::before {
-      bottom: 0;
-    }
-  }
-
-  .double_line_center {
-    height: 3vw;
-    &::after {
-      bottom: 0;
-    }
-    &::before {
-      top: 0;
-    }
-  }
-
-  .about_specialize {
-    display: flex;
-    align-items: center;
-
-    .specialize_left {
-      width: 30%;
-      img {
-        width: 100%;
-      }
-      div {
-        display: none;
-      }
-    }
-    .specialize_right {
-      width: 60%;
-      & :first-child {
-        font-size: 2vw;
-        margin-bottom: 2.5vw;
-        font-weight: bold;
-      }
-      div:not(:first-child) {
-        font-size: 1.5vw;
-      }
-      div:last-child {
-        margin-top: 25px;
-      }
-    }
-  }
-
-  .about_cards,
-  .about_cards_bottom {
-    h1 {
-      font-size: 2.5vw;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    ul {
+    .cards_list {
       display: flex;
       justify-content: space-between;
-      li {
-        padding: 2.6vw;
-        width: 28vw;
-        box-shadow: 2px 1px 15px 0px rgba(0, 0, 0, 0.44);
-        border-radius: 22px;
-        .card_img_box {
+      .card_item {
+        width: 30%;
+        img {
           width: 100%;
-          min-height: 14.2vw;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          img {
-            width: 100%;
-            // height: 14vw;
+        }
+        div {
+          width: 90%;
+          margin: 0 auto;
+          margin-top: 2.4vw;
+          font-size: 1.25vw;
+          text-align: center;
+          span {
+            font-weight: bold;
           }
         }
-        p {
-          font-size: 1.4vw;
-          font-weight: 500;
-          margin-top: 20px;
-        }
       }
     }
   }
 
-  .about_cards_bottom {
-    text-align: center;
-    margin-top: 5.2vw;
-    margin-bottom: 6.7vw;
-
-    ul {
-      li {
-        .card_img_box {
-          min-height: 15.6vw;
-        }
-      }
-    }
-  }
-
-  .about_contract {
-    text-align: center;
-    margin-top: 6.8vw;
-
-    div {
-      font-size: 2vw;
-      font-weight: bold;
-      text-align: left;
-      width: 77vw;
-      margin: 0 auto;
-
-      span {
-        color: #19746b;
-      }
-    }
-
-    h3 {
-      font-size: 1.7vw;
-      margin: 4vw auto 2.6vw;
-    }
-
-    ul {
-      font-size: 1.7vw;
-
-      li {
-        line-height: 2.2vw;
-
-        span {
-          color: #19746b;
-        }
-      }
-
-      li:not(:last-child) {
-        margin-bottom: 4vw;
-      }
-    }
-  }
-
-  .bottom_title {
-    font-size: 2.5vw;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 12vw;
-    margin-bottom: 8vw;
-  }
-
-  .bottom_img {
-    width: 25vw;
+  .swiper_container {
+    width: 30vw;
     margin: 0 auto;
-    margin-bottom: -55px;
-    img {
-      width: 100%;
-    }
+    margin-top: 5vw;
+  }
+  .bottom_text {
+    width: 50vw;
+    margin: 0 auto;
+    font-size: 1.8vw;
+    text-align: center;
+    margin-top: 6.25vw;
   }
 }
-
-@media screen and (max-width: "576px") {
-  .about_main {
-    .about_hero {
-      margin: 80px 0 40px;
-      width: 100%;
+.about_back {
+  margin-top: 7.2vw;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(30, 149, 137, 1) 100%
+  );
+  .info {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+      width: 66vw;
+      font-size: 1.8vw;
+      font-weight: bold;
+      span {
+        color: #fff;
+      }
+    }
+    .img_box {
+      width: 24vw;
       img {
         width: 100%;
       }
     }
-    .about_service {
-      width: 90vw;
-      .service_left {
-        font-size: 4vw;
-      }
-    }
-    .double_line,
-    .double_line_center {
-      height: 5vw;
-      &::after {
-        height: 1px;
-      }
-      &::before {
-        height: 1px;
-      }
-    }
-
-    .double_line_center {
-      height: 5vw;
-    }
-    .about_specialize {
-      display: block;
-
-      .specialize_left {
-        width: 90vw;
-        display: flex;
-        align-items: center;
-
-        img {
-          width: 50%;
-          display: block;
-        }
-        div {
-          display: block;
-          font-size: 4vw;
-          font-weight: bold;
-        }
-      }
-      .specialize_right {
-        margin-top: 4vw;
-        width: 90vw;
-        & :first-child {
-          display: none;
-        }
-        div:not(:first-child) {
-          font-size: 3.8vw;
-        }
-        div:last-child {
-          margin-top: 25px;
-        }
-      }
-    }
-    .about_cards,
-    .about_cards_bottom {
-      h1 {
-        font-size: 5vw;
-        margin: 20px auto;
-      }
-
-      ul {
-        display: block;
-        li {
-          padding: 4vw;
-          width: 75vw;
-          margin: 0 auto;
-          margin-bottom: 30px;
-          .card_img_box {
-            width: 100%;
-            min-height: auto;
-            img {
-              width: 100%;
-            }
-          }
-          p {
-            font-size: 4vw;
-            margin-top: 30px;
-          }
-        }
-      }
-    }
-
-    .about_cards_bottom {
-      text-align: center;
-      ul {
-        li {
-          .card_img_box {
-            min-height: 15.6vw;
-          }
-        }
-      }
-    }
-
-    .about_contract {
-      text-align: left;
-      margin-top: 6.8vw;
-
-      div {
-        font-size: 3.8vw;
-        text-align: left;
-        width: 90vw;
-      }
-
-      h3 {
-        font-size: 3.5vw;
-      }
-
-      ul {
-        font-size: 3.5vw;
-
-        li {
-          line-height: 4vw;
-        }
-
-        li:not(:last-child) {
-          margin-bottom: 4vw;
-        }
-      }
-    }
-
-    .bottom_title {
-      font-size: 4vw;
-    }
   }
 }
-
-@media screen and (max-width: "376px") {
-  .about_main {
-    .about_service {
-      width: 90vw;
+@media screen and (max-width:770px){
+  .hero {
+    margin-top: 50px;
+    .hero_box {
+      margin-left: 7vw;
+      margin-top: 18vw;
     }
-
-    .about_cards,
-    .about_cards_bottom {
-      ul {
-        li {
-          width: 90vw;
-          p {
-            margin-top: 20px;
+  }
+  .about_main {
+    font-family: "Inter";
+    margin: 0 auto;
+    width: 90vw;
+    .question {
+      font-size: 4vw;
+    }
+  
+    .about_cards {
+      .cards_list {
+        display: block;
+        .card_item {
+          width: 70%;
+          &:not(:last-child){
+            margin-bottom: 4vw;
           }
+          &:nth-child(2){
+            margin-left: 30%;
+          }
+          img {
+            width: 100%;
+          }
+          div {
+            font-size: 3vw;
+            text-align: left;
+          }
+        }
+      }
+    }
+  
+    .swiper_container {
+      width: 60vw;
+    }
+    .bottom_text {
+      width: 80vw;
+      margin: 0 auto;
+      font-size: 3vw;
+      text-align: center;
+      margin-top: 6.25vw;
+    }
+  }
+  .about_back {
+
+    .info {
+      .text {
+        font-size: 2.2vw;
+        span {
+          color: #fff;
         }
       }
     }
