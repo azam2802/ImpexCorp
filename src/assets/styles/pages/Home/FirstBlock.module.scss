@@ -1,24 +1,24 @@
 .container {
   justify-content: space-between;
   display: flex;
-  background: linear-gradient(
-    to right,
-    transparent 62vw,
-    #19746b 62vw,
-    #19746b
-  );
-  padding-block:  90px;
+  padding-block: 90px;
+  background-image: url(../../../img/FirstBlock.png);
+  background-size: cover;
+  background-position: center;
+  height: 86.2vh;
 }
 
 .title {
-  width: 40vw;
+  width: 45vw;
   font-size: 3vw;
   text-wrap: balance;
-  font-family: "Gotham Pro";
+  font-family: Inter;
   font-weight: 300;
+  color: white;
   span {
     &:first-child {
-      color: #19746b;
+      font-size: 100px;
+      font-weight: 400;
     }
     display: block;
   }
@@ -53,13 +53,12 @@
   transition: all 0.2s;
   will-change: contents;
   &:hover {
-    background-color: transparent;
-    color: #19746b;
+    transform: scaleX(1.01);
     transition: all 0.2s;
   }
 }
 
-.ConversationImage{
+.ConversationImage {
   width: 75%;
   @media screen and (max-width: 580px) {
     width: 100%;
@@ -70,26 +69,51 @@
   .container {
     height: fit-content;
     display: flex;
+    position: relative;
     justify-content: center;
     background: none;
     padding-block: unset;
-    margin-top: 100px;
+    margin-top: 50px;
+    overflow: hidden;
+
+    &::before {
+      margin: -20px;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-clip: border-box;
+      background-position: center;
+      z-index: -1;
+      filter: blur(5px);
+      background-image: url(../../../img/FirstBlock.png);
+    }
     .ImageCar {
       display: none;
     }
+  }
 
+  .block {
+    display: flex;
+    justify-content: center;
+    margin: 120px 0;
   }
 
   .title {
-    line-height: 120%;
-    width: 100%;
-    font-size: 2.5rem;
+    width: 30rem;
+    font-family: Inter;
+    font-size: 40px;
     font-weight: 400;
     text-align: center;
-    text-wrap: balance;
-    margin-top: 30px;
     span {
-      text-transform: none;
+      &:first-child {
+        font-size: 40px;
+        color: rgb(19, 209, 190);
+        padding-right: 0.5rem;
+      }
       display: inline;
     }
   }
@@ -102,13 +126,26 @@
   }
 
   .button {
+    margin-top: 57px;
     font-weight: 200;
-    border-radius: 1.82px;
+    border-radius: 10px;
   }
 }
 
 @media (max-width: 620px) {
   .title {
     font-size: 6.4vw;
+
+    span {
+      &:first-child {
+        font-size: 6.4vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 399px) {
+  .title {
+    width: 20rem;
   }
 }

@@ -16,6 +16,10 @@ html {
   flex-direction: column;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 main {
   flex-grow: 1;
 }

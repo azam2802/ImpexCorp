@@ -3,10 +3,8 @@ import s from "@styles/components/CarCard.module.scss"
 import { useTranslation } from "react-i18next"
 import Icon1 from "@images/Vector5.svg"
 import Icon2 from "@images/Vector4.svg"
-import { LuFuel } from "react-icons/lu"
 import { FaRegCalendar } from "react-icons/fa"
 import { MdOutlineSpeed } from "react-icons/md"
-import { FaFlag } from "react-icons/fa6"
 import PropTypes from "prop-types"
 
 const CarCard = ({
@@ -15,14 +13,12 @@ const CarCard = ({
   price,
   mileage,
   volume,
-  country,
   transmission,
   width,
   year,
-  fuel,
 }) => {
   const { t } = useTranslation()
-
+  console.log(images)
   return (
     <li className={s.carCardItem} style={{ width: width }}>
       <img src={images} className={s.car_image} alt={car_name} />
@@ -39,16 +35,8 @@ const CarCard = ({
           </p>
         </li>
         <li className={s.car_struct_list_item}>
-          <LuFuel />
-          <p className={s.car_struct_text}>{fuel}</p>
-        </li>
-        <li className={s.car_struct_list_item}>
           <MdOutlineSpeed />
           <p className={s.car_struct_text}>{mileage} km</p>
-        </li>
-        <li className={s.car_struct_list_item}>
-          <FaFlag />
-          <p className={s.car_struct_text}>{country}</p>
         </li>
         <li className={s.car_struct_list_item}>
           <img className={s.car_struct_image} src={Icon1} alt="struct-img" />
@@ -72,10 +60,8 @@ CarCard.propTypes = {
   price: PropTypes.number.isRequired,
   mileage: PropTypes.number.isRequired,
   volume: PropTypes.number.isRequired,
-  country: PropTypes.string.isRequired,
   transmission: PropTypes.string.isRequired,
   year: PropTypes.number.isRequired,
-  fuel: PropTypes.string.isRequired,
   width: PropTypes.string,
 }
 

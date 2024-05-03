@@ -2,7 +2,7 @@ import BurgerMenu from "@components/BurgerMenu/BurgerMenu"
 import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
@@ -16,19 +16,20 @@ const Header = ({ openModal }) => {
   const [description, setDescription] = useState("")
   const { t } = useTranslation()
 
+  const ref = useRef(null)
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       setScreenWidth(window.matchMedia("(min-width: 1024px)").matches)
     })
     window.addEventListener("scroll", () => {
       if (window.matchMedia("(min-width: 1024px)").matches) {
-        const header = document.querySelector(".header")
-        const headerHeight = header.offsetHeight
+        const headerHeight = ref.current.offsetHeight
         const scrollThreshold = 1.7 * headerHeight
         if (window.scrollY > scrollThreshold) {
-          header.classList.add(s.fixed)
+          ref.current.classList.add(s.fixed)
         } else {
-          header.classList.remove(s.fixed)
+          ref.current.classList.remove(s.fixed)
         }
       }
     })
@@ -43,7 +44,7 @@ const Header = ({ openModal }) => {
       {screenWidth ? (
         <>
           <OverNavbar />
-          <header className="header">
+          <header className="header" ref={ref}>
             <nav className={s.pc_nav}>
               <div className={s.row}>
                 <div className={s.col_6}>

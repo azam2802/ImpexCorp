@@ -43,7 +43,7 @@
       }
     },
     "firstBlock": {
-      "title1": "Security, Reliability, and Style in every detail!",
+      "title1": "Security, reliability, and style in every detail!",
       "buttonText": "Call"
     },
     "OurServices": {
@@ -114,8 +114,7 @@
     "support": {
       "name": "Support",
       "menu": {
-        "feedback": "Feedback",
-        "counseling": "Online consultations"
+        "feedback": "Feedback"
       }
     },
     "branches": {
@@ -180,34 +179,34 @@
       "title": "Find"
     }
   },
-  "Calculation":{
-    "Calculator":{
-      "brand":"Car brand",
-      "text":"text",
-      "price":"Price",
-      "power":"Power",
-      "date_of_issue":"Date of issue",
-      "type":"Select engine type",
-      "petrol":"Petrol",
-      "diesel":"Diesel",
-      "hybrid":"Hybrid",
-      "electric":"Electric",
-      "button":"Calculate",
-      "view":"View",
-      "bid":"Bid",
-      "amount":"Amount in 'som'",
-      "duty":"Import duty",
-      "five_percent":"5%",
-      "sum":"Sum",
-      "fees":"Customs duties",
-      "som1":"557 som for L.S.",
-      "VAT":"VAT",
-      "ten_percent":"10%",
-      "collection":"Recycling collection",
-      "som2":"0.17 x 20000 som",
-      "Total":"Total",
+  "Calculation": {
+    "Calculator": {
+      "brand": "Car brand",
+      "text": "text",
+      "price": "Price",
+      "power": "Power",
+      "date_of_issue": "Date of issue",
+      "type": "Select engine type",
+      "petrol": "Petrol",
+      "diesel": "Diesel",
+      "hybrid": "Hybrid",
+      "electric": "Electric",
+      "button": "Calculate",
+      "view": "View",
+      "bid": "Bid",
+      "amount": "Amount in 'som'",
+      "duty": "Import duty",
+      "five_percent": "5%",
+      "sum": "Sum",
+      "fees": "Customs duties",
+      "som1": "557 som for L.S.",
+      "VAT": "VAT",
+      "ten_percent": "10%",
+      "collection": "Recycling collection",
+      "som2": "0.17 x 20000 som",
+      "Total": "Total",
       "text1": "Preliminary car cost calculation! The final cost on the day of purchase may differ and depends on the purchase price of the currency",
-      "button1":"Call"
-  }
+      "button1": "Call"
+    }
   }
 }

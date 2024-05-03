@@ -15,11 +15,11 @@ const App = () => {
 
   const router = [
     {
-      path: "about",
+      path: "/about",
       element: <AboutUs />,
     },
     {
-      path: "catalog",
+      path: "/catalog",
       element: <Catalog />,
     },
   ]
