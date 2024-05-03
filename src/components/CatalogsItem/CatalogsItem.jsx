@@ -75,6 +75,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
                   mileage={car.mileage}
                   year={car.release_period}
                   fuel={car.fuel}
+                  car_slug={car.car_slug}
                 />
               </SwiperSlide>
             ))}

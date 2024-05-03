@@ -1,7 +1,7 @@
 .card_info_section {
   width: 90vw;
   margin: 0 auto;
-  font-family: "Montserrat" sans-serif;
+  font-family: "Montserrat";
   margin-top: 50px;
   .card_slide_block {
     display: flex;
@@ -10,11 +10,26 @@
       width: 60vw;
 
       .card_slide_main {
+        width: max-content;
         position: relative;
-        width: 100%;
         overflow: hidden;
-        img {
+        @media screen and (max-width: 768px) {
           width: 100%;
+        }
+        img {
+          width: 60vw;
+          height: 33vw;
+          border-radius: 20px;
+          margin-bottom: 15px;
+          object-fit: cover;
+          @media screen and (max-width: 1024px) {
+            height: 30vw;
+          }
+          @media screen and (max-width: 768px) {
+            height: 45vw;
+            width: 100%;
+          }
+       
         }
         button {
           position: absolute;
@@ -30,16 +45,25 @@
         .left {
           left: 50px;
           top: 50%;
+          @media screen and (max-width: 1024px) {
+            left: 20px;
+            top: 45%;
+          }
         }
         .right {
           top: 50%;
           right: 50px;
+          @media screen and (max-width: 1024px) {
+            top: 45%;
+            right: 20px;
+          }
         }
       }
 
       .card_slide_list {
         display: flex;
         width: 100%;
+
         overflow-x: scroll;
         &::-webkit-scrollbar {
           display: none;
@@ -53,14 +77,21 @@
           }
 
           img {
+            height: 8vw;
+            border-radius: 20px;
             width: 100%;
+            object-fit: cover;
+            @media screen and (max-width: 768px) {
+              border-radius: 15px;
+              height: 15vw;
+            }
           }
         }
       }
     }
     .card_info_card {
       width: 28vw;
-      height: 30vw;
+      height: fit-content;
       padding: 1vw;
       background-color: #eaeaea;
       border-radius: 1.7vw;
@@ -81,6 +112,10 @@
         width: 100%;
         margin-bottom: 1vw;
         margin-top: 1vw;
+        @media screen and (max-width: 768px) {
+          justify-content: flex-start;
+          gap: 0 5%;
+        }
         .car_struct_list_item {
           display: flex;
           width: 48%;
@@ -92,13 +127,16 @@
           background-color: #fff;
           border-radius: 15px;
           margin-top: 0.7vw;
-
           img {
             width: 1.5vw;
           }
 
           .car_struct_text {
             margin-left: 0.8vw;
+            max-width: 80%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             font-weight: 600;
           }
         }
@@ -126,7 +164,6 @@
     span {
       margin-left: 1vw;
     }
-    // width: ;
   }
   .character_main_title {
     margin-bottom: 4vw;
@@ -135,9 +172,9 @@
   }
   .character_cards {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
     .card {
-      width: 30%;
+      width: 35%;
       height: auto;
       .card_title {
         text-align: left;
@@ -243,7 +280,7 @@
     .character_main_title {
       margin-bottom: 3vw;
       font-size: 5vw;
-      margin-top: 2vw;
+      margin-top: 25px;
     }
     .character_cards {
       display: block;

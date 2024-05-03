@@ -47,8 +47,8 @@ const LangSwitcher = () => {
       ref={ref}>
       {langs
         .filter((lang) => lang.code == i18n.language)
-        .map((lang, id) => (
-          <button key={id}>
+        .map((lang) => (
+          <button key={lang.code}>
             <div>
               <img src={lang.flag} alt={lang.name} />
             </div>

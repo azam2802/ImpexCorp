@@ -70,9 +70,12 @@
     },
     "aboutCardBottom": {
       "title": "為什麼選擇我們",
-      "texts": ["網上支付", "Good service", "好服務"]
+      "texts": [
+        "網上支付",
+        "Good service",
+        "好服務"
+      ]
     },
-
     "AboutUsBottom": {
       "title": "你會得到 :",
       "info": {
@@ -89,7 +92,6 @@
         "text": "選擇 我們公司的重要任務之一是為採礦、輕工和農業行業選擇和交付專用機械、設備、原材料。我們也供應汽車零件、配件和化學品。",
         "bottom": "「IMPEX CORP」公司也正在朝向食品進出口和旅遊業的方向發展。我們公司的主要業務是從中國、韓國、日本、阿聯酋、喬治亞、歐洲、美國等國家進口和出口汽車。"
       },
-
       "li1": {
         "span": "Impex Corp",
         "text": "還有公司",
@@ -202,6 +204,29 @@
       "Total": "全部的",
       "text1": "初步用車成本計算！購買當天的最終費用可能會有所不同，具體取決於貨幣的購買價格",
       "button1": "稱呼"
+    }
+  },
+  "CarInfo": {
+    "titles": {
+      "common": {
+        "title": "常見信息",
+        "car_type": "車身類型",
+        "number_doors": "門數",
+        "number_seats": "座位數量",
+        "mileage": "里程",
+        "period": "生產周期",
+        "transmission": "變速器",
+        "drive": "驅動方式",
+        "trunk": "行李箱容量"
+      },
+      "engine": {
+        "title": "發動機",
+        "eng_type": "發動機類型",
+        "power": "功率",
+        "volume": "體積（cm³）",
+        "battery_capacity": "電池容量",
+        "consumption": "消耗"
+      }
     }
   }
 }

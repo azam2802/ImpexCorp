@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom"
 
 const CarCard = ({
   car_name,
+  car_slug,
   images,
   price,
   mileage,
@@ -19,7 +20,6 @@ const CarCard = ({
   year,
 }) => {
   const { t } = useTranslation()
-  console.log(images)
   const navigate = useNavigate()
 
   return (
@@ -51,7 +51,7 @@ const CarCard = ({
         <h1 className={s.car_price}>$ {price}</h1>
         <button
           onClick={() => {
-            navigate("/cardinfo")
+            navigate(`/cardinfo/${car_slug}`)
           }}
           className={s.moreButton}>
           {t("HomePage.CatalogBlock.buttonText")}
@@ -68,7 +68,8 @@ CarCard.propTypes = {
   mileage: PropTypes.number.isRequired,
   volume: PropTypes.number.isRequired,
   transmission: PropTypes.string.isRequired,
-  year: PropTypes.number.isRequired,
+  year: PropTypes.string.isRequired,
+  car_slug: PropTypes.string.isRequired,
   width: PropTypes.string,
 }
 
