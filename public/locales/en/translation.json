@@ -70,9 +70,12 @@
     },
     "aboutCardBottom": {
       "title": "Why choose us",
-      "texts": ["Online payments", "Good service", "Towing"]
+      "texts": [
+        "Online payments",
+        "Good service",
+        "Towing"
+      ]
     },
-
     "AboutUsBottom": {
       "title": "You'll get :",
       "info": {
@@ -89,7 +92,6 @@
         "text": "SELECTION One of the important tasks for our company is the selection and delivery of special machinery, equipment, raw materials for the mining, light and agricultural industries. We also supply spare parts, accessories and chemicals for cars.",
         "bottom": "The company “IMPEX CORP” is also developing in the direction of import-export of food products and tourism. The main activity of our company is the import-export of cars from countries such as China, Korea, Japan, UAE, Georgia, Europe, USA. "
       },
-
       "li1": {
         "span": "Impex Corp",
         "text": "Also the company",
@@ -202,6 +204,29 @@
       "Total": "Total",
       "text1": "Preliminary car cost calculation! The final cost on the day of purchase may differ and depends on the purchase price of the currency",
       "button1": "Call"
+    }
+  },
+  "CarInfo": {
+    "titles": {
+      "common": {
+        "title": "Common Information",
+        "car_type": "Body Type",
+        "number_doors": "Doors",
+        "number_seats": "Seats",
+        "mileage": "Mileage",
+        "period": "Realese Period",
+        "transmission": "Transmission",
+        "drive": "Drive",
+        "trunk": "Trunk Volume"
+      },
+      "engine": {
+        "title": "Engine",
+        "eng_type": "Engine Type",
+        "power": "Power",
+        "volume": "Volume in cm³",
+        "battery_capacity": "Battery Capacity",
+        "consumption": "Consumption"
+      }
     }
   }
 }
