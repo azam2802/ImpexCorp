@@ -181,5 +181,28 @@
       "text1": "初步用車成本計算！購買當天的最終費用可能會有所不同，具體取決於貨幣的購買價格",
       "button1": "稱呼"
     }
+  },
+  "CarInfo": {
+    "titles": {
+      "common": {
+        "title": "常見信息",
+        "car_type": "車身類型",
+        "number_doors": "門數",
+        "number_seats": "座位數量",
+        "mileage": "里程",
+        "period": "生產周期",
+        "transmission": "變速器",
+        "drive": "驅動方式",
+        "trunk": "行李箱容量"
+      },
+      "engine": {
+        "title": "發動機",
+        "eng_type": "發動機類型",
+        "power": "功率",
+        "volume": "體積（cm³）",
+        "battery_capacity": "電池容量",
+        "consumption": "消耗"
+      }
+    }
   }
 }

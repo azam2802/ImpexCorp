@@ -181,5 +181,28 @@
       "text1": "Preliminary car cost calculation! The final cost on the day of purchase may differ and depends on the purchase price of the currency",
       "button1": "Call"
     }
+  },
+  "CarInfo": {
+    "titles": {
+      "common": {
+        "title": "Common Information",
+        "car_type": "Body Type",
+        "number_doors": "Doors",
+        "number_seats": "Seats",
+        "mileage": "Mileage",
+        "period": "Realese Period",
+        "transmission": "Transmission",
+        "drive": "Drive",
+        "trunk": "Trunk Volume"
+      },
+      "engine": {
+        "title": "Engine",
+        "eng_type": "Engine Type",
+        "power": "Power",
+        "volume": "Volume in cm³",
+        "battery_capacity": "Battery Capacity",
+        "consumption": "Consumption"
+      }
+    }
   }
 }
