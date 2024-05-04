@@ -3,19 +3,20 @@
   height: 95vh;
   position: relative;
   font-family: "Inter";
+  margin-bottom: 20px;
   .hero_image {
     left: 0;
     top: 0;
     width: 100%;
     object-fit: cover;
-    height: 90vh;
+    height: 100%;
     position: absolute;
     z-index: -5;
   }
   .back {
     position: absolute;
     width: 100%;
-    height: 90vh;
+    height: 100%;
     opacity: 0.4;
     background-image: linear-gradient(to right, #16665e, #737373);
   }
