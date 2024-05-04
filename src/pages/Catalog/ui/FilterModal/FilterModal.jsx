@@ -9,39 +9,27 @@ import axios from "axios"
 
 export const FiltrModal = ({ setOpenModal }) => {
   const { t } = useTranslation()
-  const {
-    selectedFilters,
-    setSelectedFilters,
-    // cars,
-    filteredCars,
-    setCars,
-    setFilteredCars,
-  } = useFilterStore()
+  const { selectedFilters, setSelectedFilters, filteredCars, setFilteredCars } =
+    useFilterStore()
 
+  console.log(selectedFilters)
   useEffect(() => {
     const fetchData = async () => {
       try {
         console.log(selectedFilters)
         const queryParams = new URLSearchParams(selectedFilters).toString()
+        console.log(queryParams)
         const url = `${import.meta.env.VITE_API_AUTO_LIST}?${queryParams}`
         const response = await axios.get(url)
-        setCars(response.data)
+        setFilteredCars(response.data)
         console.log(response.data)
-
-        const filteredData = response.data.filter((car) =>
-          Object.keys(selectedFilters).every(
-            (key) => !selectedFilters[key] || car[key] === selectedFilters[key],
-          ),
-        )
-
-        setFilteredCars(filteredData)
-        console.log(filteredCars)
       } catch (error) {
         console.log("Fetching error", error)
       }
     }
     fetchData()
   }, [selectedFilters])
+  console.log(filteredCars)
 
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
 
@@ -64,13 +52,14 @@ export const FiltrModal = ({ setOpenModal }) => {
     setFilteredCars()
   }
 
-  const handleInputChange = (event, setter) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target
-    console.log(setFilteredCars)
-    setter((prevValues) => ({
-      ...prevValues,
+    console.log(selectedFilters)
+    console.log(event)
+    console.log(name, value)
+    setSelectedFilters({
       [name]: value,
-    }))
+    })
   }
 
   return (
@@ -81,7 +70,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType="Mersedes"
           secondType="Audi"
           thirdType="Toyota"
-          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+          onSelect={(event) => handleInputChange(event)}
         />
 
         <Select
@@ -89,7 +78,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType="Solares"
           secondType="Sonata"
           thirdType="Supra"
-          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+          onSelect={(event) => handleInputChange(event)}
         />
 
         <Select
@@ -97,7 +86,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType="2010"
           secondType="2011"
           thirdType="2012"
-          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+          onSelect={(event) => handleInputChange(event)}
         />
       </section>
 
@@ -106,7 +95,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           title={t("Catalog.characteristics.wheel.title")}
           firstType={t("Catalog.characteristics.wheel.right")}
           secondType={t("Catalog.characteristics.wheel.left")}
-          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+          onSelect={(event) => handleInputChange(event)}
         />
 
         <Select
@@ -114,7 +103,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType={t("Catalog.characteristics.fuel.diesel")}
           secondType={t("Catalog.characteristics.fuel.petrol")}
           thirdType={t("Catalog.characteristics.fuel.electro")}
-          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+          onSelect={(event) => handleInputChange(event)}
         />
 
         <Select
@@ -122,7 +111,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType={t("Catalog.characteristics.driveUnit.front")}
           secondType={t("Catalog.characteristics.driveUnit.rear")}
           thirdType="4wd"
-          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+          onSelect={(event) => handleInputChange(event)}
         />
 
         <div className={s.adaptive_none}>
@@ -131,7 +120,7 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType={t("Catalog.characteristics.transmission.mechanical")}
             secondType={t("Catalog.characteristics.transmission.automatic")}
             thirdType={t("Catalog.characteristics.transmission.stepless")}
-            onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+            onSelect={(event) => handleInputChange(event)}
           />
         </div>
       </section>
@@ -140,14 +129,15 @@ export const FiltrModal = ({ setOpenModal }) => {
         <div className={s.row_input}>
           <input
             type="text"
+            name="mileage"
             placeholder={t("Catalog.input.mileageFrom")}
-            onChange={(event) => handleInputChange(event, setSelectedFilters)}
+            onChange={(event) => handleInputChange(event)}
           />
 
           <input
             type="text"
             placeholder={t("Catalog.input.mileageBefore")}
-            onChange={(event) => handleInputChange(event, setSelectedFilters)}
+            onChange={(event) => handleInputChange(event)}
           />
         </div>
 
@@ -157,7 +147,7 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType={t("Catalog.characteristics.transmission.mechanical")}
             secondType={t("Catalog.characteristics.transmission.automatic")}
             thirdType={t("Catalog.characteristics.transmission.stepless")}
-            onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+            onSelect={(event) => handleInputChange(event)}
           />
         </div>
 
@@ -167,7 +157,7 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType="2.2"
             secondType="2.2"
             thirdType="2.2"
-            onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+            onSelect={(event) => handleInputChange(event)}
           />
 
           <VolumeSelect
@@ -175,7 +165,7 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType="2.2"
             secondType="2.2"
             thirdType="2.2"
-            onSelect={(event) => handleInputChange(event, setSelectedFilters)}
+            onSelect={(event) => handleInputChange(event)}
           />
         </div>
       </section>
@@ -185,12 +175,12 @@ export const FiltrModal = ({ setOpenModal }) => {
           <input
             type="text"
             placeholder={t("Catalog.input.pricesFrom")}
-            onChange={(event) => handleInputChange(event, setSelectedFilters)}
+            onChange={(event) => handleInputChange(event)}
           />
           <input
             type="text"
             placeholder={t("Catalog.input.priceBegore")}
-            onChange={(event) => handleInputChange(event, setSelectedFilters)}
+            onChange={(event) => handleInputChange(event)}
           />
         </div>
       ) : (
@@ -199,12 +189,12 @@ export const FiltrModal = ({ setOpenModal }) => {
             <input
               type="text"
               placeholder={t("Catalog.input.pricesFrom")}
-              onChange={(event) => handleInputChange(event, setSelectedFilters)}
+              onChange={(event) => handleInputChange(event)}
             />
             <input
               type="text"
               placeholder={t("Catalog.input.priceBegore")}
-              onChange={(event) => handleInputChange(event, setSelectedFilters)}
+              onChange={(event) => handleInputChange(event)}
             />
           </div>
         </div>

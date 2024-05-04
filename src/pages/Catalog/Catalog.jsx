@@ -56,7 +56,6 @@ export const Catalog = () => {
                   // setFilteredCars={setFilteredCars}
                 />
               )}{" "}
-              а
             </motion.div>
           )}
         </AnimatePresence>
