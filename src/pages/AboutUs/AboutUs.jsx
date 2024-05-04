@@ -1,10 +1,11 @@
 import React from "react"
 import s from "@styles/pages/AboutUs/AboutUs.module.scss"
-// import { useTranslation } from "react-i18next"
 import heroImage from "@images/image56.png"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow } from "swiper/modules"
-
+import Slide1 from "@images/scale_1200 1.png"
+import Slide2 from "@images/scale_1200 1.png"
+import Slide3 from "@images/scale_1200 1.png"
 import img2 from "@images/image44.png"
 import img3 from "@images/Rectangle124.png"
 import img4 from "@images/Rectangle125.png"
@@ -13,11 +14,7 @@ import { useTranslation } from "react-i18next"
 export const AboutUs = () => {
   const { t } = useTranslation()
 
-  const aboutCardImg = [
-    "http://marveltheme.com/tf/html/appai/appai/img/app-screenshots/12.jpg",
-    "http://marveltheme.com/tf/html/appai/appai/img/app-screenshots/11.jpg",
-    "http://marveltheme.com/tf/html/appai/appai/img/app-screenshots/12.jpg",
-  ]
+  const aboutCardImg = [Slide1, Slide2, Slide3]
 
   return (
     <>
@@ -57,7 +54,7 @@ export const AboutUs = () => {
       <div className={s.about_back}>
         <div className={s.info}>
           <div className={s.text}>
-            {t("AboutUs.back.text")} <span>{t("AboutUs.back.span")} </span>“{" "}
+            {t("AboutUs.back.text")} “<span>{t("AboutUs.back.span")}</span>“{" "}
             {t("AboutUs.back.text2")}
           </div>
           <div className={s.img_box}>
@@ -86,9 +83,7 @@ export const AboutUs = () => {
             modules={[EffectCoverflow]}
             className="mySwiper">
             {aboutCardImg.map((item, i) => (
-              <SwiperSlide
-                style={{ width: "20vw", height: "20vw", overflow: "hidden" }}
-                key={i}>
+              <SwiperSlide style={{ width: "30vw", height: "auto" }} key={i}>
                 <img style={{ width: "100%" }} src={item} alt={item} />
               </SwiperSlide>
             ))}
