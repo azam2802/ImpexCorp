@@ -63,6 +63,7 @@ export const Catalog = () => {
                   <CarCard
                     width="100%"
                     images={import.meta.env.VITE_API + car.images[0].image}
+                    car_slug={car.car_slug}
                     car_name={car.car_name}
                     price={car.price}
                     volume={car.volume}

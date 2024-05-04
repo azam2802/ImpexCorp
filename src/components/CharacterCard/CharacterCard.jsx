@@ -4,6 +4,7 @@ import s from "@styles/pages/CardInfo/CardInfo.module.scss"
 import { useTranslation } from "react-i18next"
 const CharacterCard = ({ data }) => {
   const { t } = useTranslation()
+  console.log(data)
   const titles = ["CarInfo.titles.common.", "CarInfo.titles.engine."]
 
   return (
@@ -15,7 +16,7 @@ const CharacterCard = ({ data }) => {
             <li>
               <div className={s.keys_list}>
                 {item == titles[0] ? (
-                  <>
+                  <div>
                     <div>{t(item + "car_type")}</div>
                     <div>{t(item + "number_doors")}</div>
                     <div>{t(item + "number_seats")}</div>
@@ -24,14 +25,14 @@ const CharacterCard = ({ data }) => {
                     <div>{t(item + "transmission")}</div>
                     <div>{t(item + "drive")}</div>
                     <div>{t(item + "trunk")}</div>
-                  </>
+                  </div>
                 ) : (
-                  <>
+                  <div>
                     <div key={i}>{t(item + "eng_type")}</div>
                     <div key={i}>{t(item + "power")}</div>
                     <div key={i}>{t(item + "volume")}</div>
                     <div key={i}>{t(item + "consumption")}</div>
-                  </>
+                  </div>
                 )}
               </div>
               <div className={s.values_list}>
