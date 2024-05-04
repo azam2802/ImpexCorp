@@ -40,31 +40,31 @@ export const useAutosList = create(
     },
   })),
 )
-
-export const useFilterStore = create((set) => ({
-  cars: [],
-  selectedFilters: {
-    catalog: "",
-    model: "",
-    yearIssue: "",
-    wheel: "",
-    fuelType: "",
-    driveUnit: "",
-    transmission: "",
-    mileageFrom: "",
-    mileageBefore: "",
-    volumeFrom: "",
-    volumeBefore: "",
-    priceFrom: "",
-    priceBefore: "",
-  },
-  setCars: (cars) => set({ cars }),
-  setSelectedFilters: (newFilters) =>
-    set((state) => ({
-      ...state, // сохраняем текущее состояние
-      selectedFilters: {
-        ...state.selectedFilters, // сохраняем текущие фильтры
-        ...newFilters, // обновляем фильтры с новыми значениями
-      },
-    })),
-}))
+export const useFilterStore = create(
+  devtools((set) => ({
+    selectedFilters: {
+      catalog: "",
+      model: "",
+      yearIssue: "",
+      wheel: "",
+      fuelType: "",
+      driveUnit: "",
+      transmission: "",
+      mileageFrom: "",
+      mileageBefore: "",
+      volumeFrom: "",
+      volumeBefore: "",
+      priceFrom: "",
+      priceBefore: "",
+    },
+    cars: [],
+    filteredCars: [],
+    setSelectedFilters: (newFilters) =>
+      set((state) => ({
+        ...state,
+        selectedFilters: { ...state.selectedFilters, ...newFilters },
+      })),
+    setCars: (cars) => set({ cars }),
+    setFilteredCars: (filteredCars) => set({ filteredCars }),
+  })),
+)

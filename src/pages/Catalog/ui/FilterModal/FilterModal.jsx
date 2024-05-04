@@ -7,37 +7,39 @@ import { useTranslation } from "react-i18next"
 import { useFilterStore } from "@store/store"
 import axios from "axios"
 
-export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
+export const FiltrModal = ({ setOpenModal }) => {
   const { t } = useTranslation()
-  const { selectedFilters, setSelectedFilters, cars, setCars } =
-    useFilterStore()
+  const {
+    selectedFilters,
+    setSelectedFilters,
+    // cars,
+    filteredCars,
+    setCars,
+    setFilteredCars,
+  } = useFilterStore()
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         console.log(selectedFilters)
-        const response = await axios.get("http://34.159.206.220/api/auto/", {
-          params: selectedFilters,
-        })
+        const queryParams = new URLSearchParams(selectedFilters).toString()
+        const url = `${import.meta.env.VITE_API_AUTO_LIST}?${queryParams}`
+        const response = await axios.get(url)
         setCars(response.data)
+        console.log(response.data)
 
-        console.log(response.data) // Вывод данных до фильтрации
+        const filteredData = response.data.filter((car) =>
+          Object.keys(selectedFilters).every(
+            (key) => !selectedFilters[key] || car[key] === selectedFilters[key],
+          ),
+        )
 
-        // Применяем фильтры к данным
-        const filteredData = response.data.filter((car) => {
-          // Проверяем, соответствует ли каждая машина всем выбранным фильтрам
-          return Object.keys(selectedFilters).every((key) => {
-            // Проверяем, соответствует ли свойство машины выбранному значению фильтра
-            return car[key] === selectedFilters[key]
-          })
-        })
-
-        // Устанавливаем отфильтрованные данные
         setFilteredCars(filteredData)
+        console.log(filteredCars)
       } catch (error) {
-        console.error("Error fetching data:", error)
+        console.log("Fetching error", error)
       }
     }
-
     fetchData()
   }, [selectedFilters])
 
@@ -58,8 +60,17 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
   const onSubmit = (e) => {
     e.preventDefault()
     setOpenModal(false)
+    console.log(filteredCars)
+    setFilteredCars()
+  }
 
-    setFilteredCars(cars)
+  const handleInputChange = (event, setter) => {
+    const { name, value } = event.target
+    console.log(setFilteredCars)
+    setter((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }))
   }
 
   return (
@@ -70,12 +81,7 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
           firstType="Mersedes"
           secondType="Audi"
           thirdType="Toyota"
-          onSelect={(value) =>
-            setSelectedFilters((prevFilters) => ({
-              ...prevFilters,
-              catalog: value,
-            }))
-          }
+          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
         />
 
         <Select
@@ -83,12 +89,7 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
           firstType="Solares"
           secondType="Sonata"
           thirdType="Supra"
-          onSelect={(value) =>
-            setSelectedFilters((prevFilters) => ({
-              ...prevFilters,
-              model: value,
-            }))
-          }
+          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
         />
 
         <Select
@@ -96,12 +97,7 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
           firstType="2010"
           secondType="2011"
           thirdType="2012"
-          onSelect={(value) =>
-            setSelectedFilters((prevFilters) => ({
-              ...prevFilters,
-              yearIssue: value,
-            }))
-          }
+          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
         />
       </section>
 
@@ -110,12 +106,7 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
           title={t("Catalog.characteristics.wheel.title")}
           firstType={t("Catalog.characteristics.wheel.right")}
           secondType={t("Catalog.characteristics.wheel.left")}
-          onSelect={(value) =>
-            setSelectedFilters((prevFilters) => ({
-              ...prevFilters,
-              wheel: value,
-            }))
-          }
+          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
         />
 
         <Select
@@ -123,12 +114,7 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
           firstType={t("Catalog.characteristics.fuel.diesel")}
           secondType={t("Catalog.characteristics.fuel.petrol")}
           thirdType={t("Catalog.characteristics.fuel.electro")}
-          onSelect={(value) =>
-            setSelectedFilters((prevFilters) => ({
-              ...prevFilters,
-              fuelType: value,
-            }))
-          }
+          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
         />
 
         <Select
@@ -136,12 +122,7 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
           firstType={t("Catalog.characteristics.driveUnit.front")}
           secondType={t("Catalog.characteristics.driveUnit.rear")}
           thirdType="4wd"
-          onSelect={(value) =>
-            setSelectedFilters((prevFilters) => ({
-              ...prevFilters,
-              driveUnit: value,
-            }))
-          }
+          onSelect={(event) => handleInputChange(event, setSelectedFilters)}
         />
 
         <div className={s.adaptive_none}>
@@ -150,20 +131,24 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
             firstType={t("Catalog.characteristics.transmission.mechanical")}
             secondType={t("Catalog.characteristics.transmission.automatic")}
             thirdType={t("Catalog.characteristics.transmission.stepless")}
-            onSelect={(value) =>
-              setSelectedFilters((prevFilters) => ({
-                ...prevFilters,
-                transmission: value,
-              }))
-            }
+            onSelect={(event) => handleInputChange(event, setSelectedFilters)}
           />
         </div>
       </section>
 
       <section className={s.row}>
         <div className={s.row_input}>
-          <input type="text" placeholder={t("Catalog.input.mileageFrom")} />
-          <input type="text" placeholder={t("Catalog.input.mileageBefore")} />
+          <input
+            type="text"
+            placeholder={t("Catalog.input.mileageFrom")}
+            onChange={(event) => handleInputChange(event, setSelectedFilters)}
+          />
+
+          <input
+            type="text"
+            placeholder={t("Catalog.input.mileageBefore")}
+            onChange={(event) => handleInputChange(event, setSelectedFilters)}
+          />
         </div>
 
         <div className={s.adaptive_block}>
@@ -172,12 +157,7 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
             firstType={t("Catalog.characteristics.transmission.mechanical")}
             secondType={t("Catalog.characteristics.transmission.automatic")}
             thirdType={t("Catalog.characteristics.transmission.stepless")}
-            onSelect={(value) =>
-              setSelectedFilters((prevFilters) => ({
-                ...prevFilters,
-                transmission: value,
-              }))
-            }
+            onSelect={(event) => handleInputChange(event, setSelectedFilters)}
           />
         </div>
 
@@ -187,12 +167,7 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
             firstType="2.2"
             secondType="2.2"
             thirdType="2.2"
-            onSelect={(value) =>
-              setSelectedFilters((prevFilters) => ({
-                ...prevFilters,
-                volumeFrom: value,
-              }))
-            }
+            onSelect={(event) => handleInputChange(event, setSelectedFilters)}
           />
 
           <VolumeSelect
@@ -200,26 +175,37 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
             firstType="2.2"
             secondType="2.2"
             thirdType="2.2"
-            onSelect={(value) =>
-              setSelectedFilters((prevFilters) => ({
-                ...prevFilters,
-                volumeBefore: value,
-              }))
-            }
+            onSelect={(event) => handleInputChange(event, setSelectedFilters)}
           />
         </div>
       </section>
 
       {isSmallScreen ? (
         <div className={s.row_input}>
-          <input type="text" placeholder={t("Catalog.input.pricesFrom")} />
-          <input type="text" placeholder={t("Catalog.input.priceBegore")} />
+          <input
+            type="text"
+            placeholder={t("Catalog.input.pricesFrom")}
+            onChange={(event) => handleInputChange(event, setSelectedFilters)}
+          />
+          <input
+            type="text"
+            placeholder={t("Catalog.input.priceBegore")}
+            onChange={(event) => handleInputChange(event, setSelectedFilters)}
+          />
         </div>
       ) : (
         <div className={s.block}>
           <div className={s.row_input}>
-            <input type="text" placeholder={t("Catalog.input.pricesFrom")} />
-            <input type="text" placeholder={t("Catalog.input.priceBegore")} />
+            <input
+              type="text"
+              placeholder={t("Catalog.input.pricesFrom")}
+              onChange={(event) => handleInputChange(event, setSelectedFilters)}
+            />
+            <input
+              type="text"
+              placeholder={t("Catalog.input.priceBegore")}
+              onChange={(event) => handleInputChange(event, setSelectedFilters)}
+            />
           </div>
         </div>
       )}
@@ -233,5 +219,4 @@ export const FiltrModal = ({ setOpenModal, setFilteredCars }) => {
 
 FiltrModal.propTypes = {
   setOpenModal: PropTypes.func.isRequired,
-  setFilteredCars: PropTypes.func.isRequired,
 }
