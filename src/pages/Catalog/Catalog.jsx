@@ -1,5 +1,5 @@
 import CarCard from "@components/CarCard/CarCard"
-import { useAutosList } from "@store/store"
+import { useAutosList, useFilterStore } from "@store/store"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { AnimatePresence, motion } from "framer-motion"
 import React, { useState } from "react"
@@ -12,7 +12,7 @@ import { FiltrModal } from "./ui/FilterModal/FilterModal"
 export const Catalog = () => {
   const { t } = useTranslation()
   const { data } = useAutosList()
-  // const { filteredCars, setFilteredCars } = useFilterStore()
+  const { filteredCars, setFilteredCars } = useFilterStore()
 
   const [openModal, setOpenModal] = useState(false)
 
@@ -53,7 +53,7 @@ export const Catalog = () => {
               {openModal && (
                 <FiltrModal
                   setOpenModal={setOpenModal}
-                  // setFilteredCars={setFilteredCars}
+                  setFilteredCars={setFilteredCars}
                 />
               )}{" "}
             </motion.div>
@@ -61,7 +61,7 @@ export const Catalog = () => {
         </AnimatePresence>
         <div className={s.row_catalog}>
           {data.length > 0 ? (
-            data
+            filteredCars
               .filter((item) => item.images.length != 0)
               .reverse()
               .map((car) => (
