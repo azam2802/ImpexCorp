@@ -36,7 +36,6 @@ export const FiltrModal = ({ setOpenModal }) => {
   const handleResize = () => {
     setIsSmallScreen(window.innerWidth < 768)
   }
-
   useEffect(() => {
     window.addEventListener("resize", handleResize)
 

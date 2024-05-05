@@ -61,27 +61,29 @@ export const Catalog = () => {
         </AnimatePresence>
         <div className={s.row_catalog}>
           {data.length > 0 ? (
-            filteredCars
-              .filter((item) => item.images.length != 0)
-              .reverse()
-              .map((car) => (
-                <div className={s.col_4_catalog} key={car.car_slug}>
-                  <CarCard
-                    width="100%"
-                    images={import.meta.env.VITE_API + car.images[0].image}
-                    car_name={car.car_name}
-                    price={car.price}
-                    volume={car.volume}
-                    transmission={car.transmission}
-                    country={car.country_of_assembly}
-                    mileage={car.mileage}
-                    year={car.release_period}
-                  />
-                </div>
-              ))
-          ) : (
-            <h1 className={s.title}>Извините, ничего не найдено...</h1>
-          )}
+            Array.isArray(filteredCars) && filteredCars.length > 0 ? (
+              filteredCars
+                .filter((item) => item.images.length !== 0)
+                .reverse()
+                .map((car) => (
+                  <div className={s.col_4_catalog} key={car.car_slug}>
+                    <CarCard
+                      width="100%"
+                      images={import.meta.env.VITE_API + car.images[0].image}
+                      car_name={car.car_name}
+                      price={car.price}
+                      volume={car.volume}
+                      transmission={car.transmission}
+                      country={car.country_of_assembly}
+                      mileage={car.mileage}
+                      year={car.release_period}
+                    />
+                  </div>
+                ))
+            ) : (
+              <h1 className={s.title}>Извините, ничего не найдено...</h1>
+            )
+          ) : null}
         </div>
       </section>
     </main>

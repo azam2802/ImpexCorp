@@ -43,7 +43,7 @@ export const useAutosList = create(
 export const useFilterStore = create(
   devtools((set) => ({
     selectedFilters: {
-      // name: value,add
+      name: "value",
     },
     cars: [],
     filteredCars: [],
