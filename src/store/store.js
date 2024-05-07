@@ -10,6 +10,15 @@ export const useModalState = create(
   })),
 )
 
+export const useSliderState = create(
+  devtools((set) => ({
+    slide: 0,
+    nextSlide: () => set((state) => ({ slide: state.slide + 1 })),
+    prevSlide: () => set((state) => ({ slide: state.slide - 1 })),
+    setSlide: (value) => set({ slide: value }),
+  })),
+)
+
 export const useBurgerState = create(
   devtools((set) => ({
     menuActive: false,
@@ -32,6 +41,32 @@ export const useAutosList = create(
             })
             .then((res) => {
               set({ data: [...res.data].reverse() })
+              console.log(res.data)
+            })
+        }, [lang])
+      } catch {
+        return
+      }
+    },
+  })),
+)
+
+export const useAutoInfo = create(
+  devtools((set) => ({
+    data: [],
+    fetchData: (lang, car_slug) => {
+      try {
+        useEffect(() => {
+          axios
+            .get(import.meta.env.VITE_API_AUTO_LIST + car_slug, {
+              headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang == "zh" ? "zh-hant" : lang,
+              },
+            })
+            .then((res) => {
+              set({ data: res.data })
+              console.log(res.data)
             })
         }, [lang])
       } catch {
@@ -42,17 +77,13 @@ export const useAutosList = create(
 )
 export const useFilterStore = create(
   devtools((set) => ({
-    selectedFilters: {
-      name: "value",
-    },
-    cars: [],
+    selectedFilters: {},
     filteredCars: [],
     setSelectedFilters: (newFilters) =>
       set((state) => ({
         ...state,
         selectedFilters: { ...state.selectedFilters, ...newFilters },
       })),
-    setCars: (cars) => set({ cars }),
     setFilteredCars: (filteredCars) => set({ filteredCars }),
   })),
 )

@@ -6,9 +6,11 @@ import Icon2 from "@images/Vector4.svg"
 import { FaRegCalendar } from "react-icons/fa"
 import { MdOutlineSpeed } from "react-icons/md"
 import PropTypes from "prop-types"
+import { useNavigate } from "react-router-dom"
 
 const CarCard = ({
   car_name,
+  car_slug,
   images,
   price,
   mileage,
@@ -18,7 +20,8 @@ const CarCard = ({
   year,
 }) => {
   const { t } = useTranslation()
-  // console.log(images)
+  const navigate = useNavigate()
+
   return (
     <li className={s.carCardItem} style={{ width: width }}>
       <img src={images} className={s.car_image} alt={car_name} />
@@ -46,7 +49,11 @@ const CarCard = ({
       <hr />
       <div className={s.car_info}>
         <h1 className={s.car_price}>$ {price}</h1>
-        <button className={s.moreButton}>
+        <button
+          onClick={() => {
+            navigate(`/cardinfo/${car_slug}`)
+          }}
+          className={s.moreButton}>
           {t("HomePage.CatalogBlock.buttonText")}
         </button>
       </div>
@@ -61,7 +68,8 @@ CarCard.propTypes = {
   mileage: PropTypes.number.isRequired,
   volume: PropTypes.number.isRequired,
   transmission: PropTypes.string.isRequired,
-  year: PropTypes.number.isRequired,
+  year: PropTypes.string.isRequired,
+  car_slug: PropTypes.string.isRequired,
   width: PropTypes.string,
 }
 
