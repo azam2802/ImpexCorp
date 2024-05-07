@@ -53,17 +53,23 @@ export const FiltrModal = ({ setOpenModal }) => {
       </section>
 
       <section className={s.row}>
-        <Select
+        {/* <Select
           title={t("Catalog.characteristics.wheel.title")}
           firstType={t("Catalog.characteristics.wheel.right")}
           secondType={t("Catalog.characteristics.wheel.left")}
-        />
+        /> */}
 
         <Select
           title={t("Catalog.characteristics.fuel.title")}
           firstType={t("Catalog.characteristics.fuel.diesel")}
           secondType={t("Catalog.characteristics.fuel.petrol")}
           thirdType={t("Catalog.characteristics.fuel.electro")}
+        />
+        <Select
+          title={t("Catalog.characteristics.transmission.title")}
+          firstType={t("Catalog.characteristics.transmission.mechanical")}
+          secondType={t("Catalog.characteristics.transmission.automatic")}
+          thirdType={t("Catalog.characteristics.transmission.stepless")}
         />
 
         <Select
@@ -90,12 +96,25 @@ export const FiltrModal = ({ setOpenModal }) => {
         </div>
 
         <div className={s.adaptive_block}>
-          <Select
-            title={t("Catalog.characteristics.transmission.title")}
-            firstType={t("Catalog.characteristics.transmission.mechanical")}
-            secondType={t("Catalog.characteristics.transmission.automatic")}
-            thirdType={t("Catalog.characteristics.transmission.stepless")}
-          />
+          {isSmallScreen ? (
+            <div className={s.row_input}>
+              <input type="text" placeholder={t("Catalog.input.pricesFrom")} />
+              <input type="text" placeholder={t("Catalog.input.priceBegore")} />
+            </div>
+          ) : (
+            <div className={s.block}>
+              <div className={s.row_input}>
+                <input
+                  type="text"
+                  placeholder={t("Catalog.input.pricesFrom")}
+                />
+                <input
+                  type="text"
+                  placeholder={t("Catalog.input.priceBegore")}
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         <div className={s.row_input}>
@@ -114,20 +133,6 @@ export const FiltrModal = ({ setOpenModal }) => {
           />
         </div>
       </section>
-
-      {isSmallScreen ? (
-        <div className={s.row_input}>
-          <input type="text" placeholder={t("Catalog.input.pricesFrom")} />
-          <input type="text" placeholder={t("Catalog.input.priceBegore")} />
-        </div>
-      ) : (
-        <div className={s.block}>
-          <div className={s.row_input}>
-            <input type="text" placeholder={t("Catalog.input.pricesFrom")} />
-            <input type="text" placeholder={t("Catalog.input.priceBegore")} />
-          </div>
-        </div>
-      )}
 
       <div className={s.block}>
         <button onClick={onSubmit}>{t("Catalog.button.title")}</button>
