@@ -107,7 +107,7 @@
     "title": "Каталог",
     "filter": "Фильтр",
     "characteristics": {
-      "catalog": "Каталог",
+      "catalog": "Марка",
       "model": "Модель",
       "yearIssue": "Год выпуска",
       "wheel": {

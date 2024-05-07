@@ -107,7 +107,7 @@
     "title": "Catalog",
     "filter": "Filter",
     "characteristics": {
-      "catalog": "Catalog",
+      "catalog": "Brand",
       "model": "Model",
       "yearIssue": "Year of issue",
       "wheel": {
