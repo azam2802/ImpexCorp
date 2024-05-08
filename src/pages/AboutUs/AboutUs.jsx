@@ -21,7 +21,6 @@ export const AboutUs = () => {
   return (
     <main className={s.about_main}>
       <div className={s.about_hero}>
-        <h1>IMPEXCORP</h1>
         <img src={heroImg} alt="Car" />
       </div>
 
@@ -61,7 +60,7 @@ export const AboutUs = () => {
         </ul>
       </div>
 
-      <div id="Services" className={s.about_cards_bottom}>
+      <div className={s.about_cards_bottom}>
         <h1>{t("AboutUs.aboutCardBottom.title")}</h1>
         <ul>
           {aboutCardBottomImg.map((el, i) => (
@@ -84,11 +83,11 @@ export const AboutUs = () => {
         <h3>{t(`AboutUs.AboutUsBottom.title`)}</h3>
         <ul>
           <li>
-            1. <span>{t(`AboutUs.AboutUsBottom.receive.span`)}</span> -
+            1. <span>{t(`AboutUs.AboutUsBottom.receive.span`)}</span> - наша
             {t(`AboutUs.AboutUsBottom.receive.text`)}
           </li>
           <li>
-            2. <span>{t(`AboutUs.AboutUsBottom.choice.span`)}</span> -
+            2. <span>{t(`AboutUs.AboutUsBottom.choice.span`)}</span> - наша
             {t(`AboutUs.AboutUsBottom.choice.text`)}
           </li>
           <li>
