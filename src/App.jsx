@@ -7,6 +7,7 @@ import PageNotFound from "@pages/PageNotFound/PageNotFound"
 import { Catalog } from "@pages/Catalog/Catalog"
 import { useAutosList } from "@store/store"
 import { useTranslation } from "react-i18next"
+import CardInfo from "@pages/CardInfo/CardInfo"
 
 const App = () => {
   const { fetchData } = useAutosList()
@@ -15,12 +16,16 @@ const App = () => {
 
   const router = [
     {
-      path: "about",
+      path: "/about",
       element: <AboutUs />,
     },
     {
-      path: "catalog",
+      path: "/catalog",
       element: <Catalog />,
+    },
+    {
+      path: "/cardinfo/:car_slug",
+      element: <CardInfo />,
     },
   ]
 
@@ -28,8 +33,8 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        {router.map((item, id) => (
-          <Route key={id} path={item.path} element={item.element} />
+        {router.map((item) => (
+          <Route key={item.path} path={item.path} element={item.element} />
         ))}
       </Route>
       <Route path="*" element={<PageNotFound />} />

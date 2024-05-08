@@ -2,7 +2,7 @@ import BurgerMenu from "@components/BurgerMenu/BurgerMenu"
 import OverNavbar from "@components/OverNavbar/OverNavbar"
 import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
@@ -12,9 +12,9 @@ const Header = ({ openModal }) => {
   const [screenWidth, setScreenWidth] = useState(
     window.matchMedia("(min-width: 1024px)").matches,
   )
-  const [title, setTitle] = useState()
-  const [description, setDescription] = useState("")
   const { t } = useTranslation()
+
+  const ref = useRef(null)
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -22,13 +22,12 @@ const Header = ({ openModal }) => {
     })
     window.addEventListener("scroll", () => {
       if (window.matchMedia("(min-width: 1024px)").matches) {
-        const header = document.querySelector(".header")
-        const headerHeight = header.offsetHeight
+        const headerHeight = ref.current.offsetHeight
         const scrollThreshold = 1.7 * headerHeight
         if (window.scrollY > scrollThreshold) {
-          header.classList.add(s.fixed)
+          ref.current.classList.add(s.fixed)
         } else {
-          header.classList.remove(s.fixed)
+          ref.current.classList.remove(s.fixed)
         }
       }
     })
@@ -37,13 +36,16 @@ const Header = ({ openModal }) => {
   return (
     <>
       <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{t("header.MetaTags.home")}</title>
+        <meta
+          name="description"
+          content={t("header.MetaTags.defaultDescription")}
+        />
       </Helmet>
       {screenWidth ? (
         <>
           <OverNavbar />
-          <header className="header">
+          <header className="header" ref={ref}>
             <nav className={s.pc_nav}>
               <div className={s.row}>
                 <div className={s.col_6}>
@@ -54,24 +56,21 @@ const Header = ({ openModal }) => {
                     <Link
                       to="/"
                       onClick={() => {
-                        setTitle(t("header.MetaTags.home"))
-                        setDescription("Описание главной страницы")
+                        document.title = t("header.MetaTags.home")
                       }}>
                       {t("header.home")}
                     </Link>
                     <Link
                       to="/about"
                       onClick={() => {
-                        setTitle(t("header.MetaTags.ourcompany"))
-                        setDescription("Описание страницы о нашей компании")
+                        document.title = t("header.MetaTags.ourcompany")
                       }}>
                       {t("header.ourcompany")}
                     </Link>
                     <Link
                       to="/catalog"
                       onClick={() => {
-                        setTitle(t("header.MetaTags.catalogue"))
-                        setDescription("Описание страницы с каталогом")
+                        document.title = t("header.MetaTags.catalogue")
                       }}>
                       {t("header.catalogue")}
                     </Link>

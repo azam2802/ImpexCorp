@@ -23,33 +23,6 @@
 
   .catalog_block {
     margin-bottom: 80px;
-    .search {
-      width: 40%;
-      box-shadow: 1px 1px 3px 1px #777;
-      margin: 0 auto;
-      margin-top: 60px;
-      display: flex;
-      align-items: center;
-      background-color: #fff;
-      border-radius: 15px;
-      padding-inline: 10px;
-      @media screen and (max-width: "768px") {
-        width: 100%;
-      }
-      input {
-        font-size: 1.3rem;
-        width: 100%;
-        border-radius: 15px;
-        display: inline;
-        border: none;
-        padding-block: 15px;
-        padding-inline: 10px;
-        @media screen and (max-width: "768px") {
-        padding-block: 10px;
-        font-size: 1rem;
-        }
-      }
-    }
   }
 
   .adaptive_none {
@@ -80,7 +53,8 @@
       border-radius: 0.5rem;
       background: rgb(255, 255, 255);
       padding: 0 10px 0 21px;
-      @media screen and (max-width: "550px") {
+      margin: 0 auto;
+      @media screen and (max-width: "768px") {
         width: 100%;
       }
       p {
@@ -93,14 +67,14 @@
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
-
+      margin: 0 auto;
       width: 28vw;
       height: 45px;
       border-radius: 0.5rem;
       border: 1px solid black;
       background: rgb(255, 255, 255);
       padding: 0 10px 0 21px;
-      @media screen and (max-width: "550px") {
+      @media screen and (max-width: "768px") {
         width: 100%;
       }
       p {
@@ -119,35 +93,6 @@
     transition: transform 0.3s ease;
   }
 
-  .types_car {
-    display: flex;
-    align-items: center;
-    gap: 19px;
-    @media screen and (max-width: "550px") {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  .country_car {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 13.1vw;
-    height: 45px;
-    border-radius: 12px;
-    background: rgb(255, 255, 255);
-    cursor: pointer;
-
-    font-family: "Inter";
-    font-weight: 600;
-    @media screen and (max-width: "550px") {
-      width: 25vw !important;
-    }
-  }
-
   .volume_select {
     display: flex;
     align-items: center;
@@ -161,20 +106,6 @@
     p {
       font-size: 13px;
       color: rgb(102, 102, 102);
-    }
-  }
-
-  .select {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-    border-radius: 0.5rem;
-    background: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
-
-    p {
-      cursor: pointer;
     }
   }
 
@@ -250,12 +181,6 @@
     }
   }
 
-  .selected_car {
-    border-radius: 12px;
-    border: 1px solid rgb(0, 0, 0);
-    color: #fff;
-    background: rgb(45, 150, 149);
-  }
   .row_catalog {
     display: flex;
     width: 100%;
@@ -287,15 +212,6 @@
     }
     .characteristic {
       width: 25vw;
-    }
-
-    .row_input {
-      input {
-        width: 11.2vw;
-      }
-      input::placeholder {
-        font-size: 11px;
-      }
     }
   }
 
@@ -364,19 +280,6 @@
       }
     }
 
-    .country_car {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid rgb(204, 203, 203);
-
-      width: 12vw;
-      height: 35px;
-      border-radius: 5px;
-      font-size: 10px;
-      font-weight: 400;
-    }
-
     .filtration_block {
       display: flex;
       justify-content: space-between;
@@ -429,12 +332,6 @@
         font-size: 18px;
         color: #000000;
       }
-    }
-
-    .selected_car {
-      border: none;
-      color: white;
-      background-color: #19746b;
     }
 
     .adaptive_none {

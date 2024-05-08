@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import s from "@styles/layout/Footer.module.scss"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import Logo from "@ui/Logo/Logo"
 import TelegramIcon from "@images/TelegramIcon.webp"
@@ -12,16 +12,26 @@ const Footer = () => {
   const { t, i18n } = useTranslation()
   const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
 
-  const renderLinks = (menu, path) =>
-    Object.keys(menu).map((key) => (
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.pathname === "/about" && location.hash === "#Services") {
+      const servicesElement = document.getElementById("Services")
+      if (servicesElement) {
+        servicesElement.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  }, [location])
+
+  const renderLinks = (menu, paths) =>
+    Object.keys(menu).map((key, index) => (
       <li key={key}>
-        {/* Changed 'Link' to 'a' for external links */}
-        {path.startsWith("http") ? (
-          <a href={path} target="_blank" rel="noopener noreferrer">
+        {paths[index].startsWith("http") ? (
+          <a href={paths[index]} target="_blank" rel="noopener noreferrer">
             {menu[key]}
           </a>
         ) : (
-          <Link to={path}>{menu[key]}</Link>
+          <Link to={paths[index]}>{menu[key]}</Link>
         )}
       </li>
     ))
@@ -30,22 +40,24 @@ const Footer = () => {
     {
       title: t("footer.aboutus.name"),
       menu: currentLanguage.footer.aboutus.menu,
-      path: "/about",
+      path: ["/about", "/about#Services"],
     },
     {
       title: t("footer.support.name"),
       menu: currentLanguage.footer.support.menu,
-      path: "https://api.whatsapp.com/send?phone=996500677633",
+      path: ["https://api.whatsapp.com/send?phone=996500677633"],
     },
     {
       title: t("footer.branches.name"),
       menu: currentLanguage.footer.branches.menu,
-      path: "https://2gis.kg/bishkek/geo/15763234351111077?m=74.61276%2C42.870892%2F19.15",
+      path: [
+        "https://2gis.kg/bishkek/geo/15763234351111077?m=74.61276%2C42.870892%2F19.15",
+      ],
     },
     {
       title: t("footer.contacts.name"),
       menu: currentLanguage.footer.contacts.menu,
-      path: "tel:+996500677633",
+      path: ["tel:+996500677633"],
     },
   ]
 
@@ -57,9 +69,8 @@ const Footer = () => {
 
       <div className={s.footer_content}>
         {footerColumns.map((column, index) => (
-          <div className={s["row_" + (index + 1)]} key={index}>
-            {/* Added className to ul */}
-            <ul className={s.footer_links}>
+          <div className={s[`row_${index + 1}`]} key={index}>
+            <ul>
               <li>{column.title}</li>
               {renderLinks(column.menu, column.path)}
             </ul>
@@ -105,7 +116,7 @@ const Footer = () => {
       </div>
 
       <hr />
-      <p className={s.madeby}>
+      <p id={s.madeby}>
         Made by{" "}
         <a
           href="https://geeks.kg/geeks-pro"

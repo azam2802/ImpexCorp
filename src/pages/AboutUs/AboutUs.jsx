@@ -12,6 +12,7 @@ import img7 from "@images/aboutUs07.png"
 import img8 from "@images/aboutUs08.png"
 import img9 from "@images/aboutUs09.png"
 import AboutCard from "@components/AboutCard/AboutCard"
+
 export const AboutUs = () => {
   const { t } = useTranslation()
   const arr = [undefined, undefined, undefined]
@@ -20,7 +21,8 @@ export const AboutUs = () => {
   return (
     <main className={s.about_main}>
       <div className={s.about_hero}>
-        <img src={heroImg} alt="" />
+        <h1>IMPEXCORP</h1>
+        <img src={heroImg} alt="Car" />
       </div>
 
       <div className={s.about_service}>
@@ -59,7 +61,7 @@ export const AboutUs = () => {
         </ul>
       </div>
 
-      <div className={s.about_cards_bottom}>
+      <div id="Services" className={s.about_cards_bottom}>
         <h1>{t("AboutUs.aboutCardBottom.title")}</h1>
         <ul>
           {aboutCardBottomImg.map((el, i) => (
@@ -82,11 +84,11 @@ export const AboutUs = () => {
         <h3>{t(`AboutUs.AboutUsBottom.title`)}</h3>
         <ul>
           <li>
-            1. <span>{t(`AboutUs.AboutUsBottom.receive.span`)}</span> - наша
+            1. <span>{t(`AboutUs.AboutUsBottom.receive.span`)}</span> -
             {t(`AboutUs.AboutUsBottom.receive.text`)}
           </li>
           <li>
-            2. <span>{t(`AboutUs.AboutUsBottom.choice.span`)}</span> - наша
+            2. <span>{t(`AboutUs.AboutUsBottom.choice.span`)}</span> -
             {t(`AboutUs.AboutUsBottom.choice.text`)}
           </li>
           <li>
