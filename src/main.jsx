@@ -21,12 +21,10 @@ const App = React.lazy(() => import("./App.jsx"))
 )
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Suspense fallback={<Loader />}>
-      <BrowserRouter>
-        <App />
-        <SpeedInsights />
-      </BrowserRouter>
-    </Suspense>
-  </React.StrictMode>,
+  <Suspense fallback={<Loader />}>
+    <BrowserRouter>
+      <App />
+      <SpeedInsights />
+    </BrowserRouter>
+  </Suspense>,
 )

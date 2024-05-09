@@ -11,12 +11,12 @@ const Header = () => {
     window.matchMedia("(min-width: 1024px)").matches,
   )
   const { t } = useTranslation()
-
-  const ref = useRef(null)
+  const ref = useRef()
 
   useEffect(() => {
     window.addEventListener("resize", () => {
       setScreenWidth(window.matchMedia("(min-width: 1024px)").matches)
+      console.log(screenWidth)
     })
     window.addEventListener("scroll", () => {
       if (window.matchMedia("(min-width: 1024px)").matches) {
@@ -29,7 +29,7 @@ const Header = () => {
         }
       }
     })
-  })
+  }, [])
 
   return (
     <>
