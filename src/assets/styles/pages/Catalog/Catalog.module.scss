@@ -109,6 +109,21 @@
     }
   }
 
+  .select {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 16px;
+    border-radius: 0.5rem;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+
+    p {
+      cursor: pointer;
+    }
+  }
+
   .filter_modal {
     display: flex;
     flex-direction: column;
