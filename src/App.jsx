@@ -30,15 +30,17 @@ const App = () => {
   ]
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        {router.map((item) => (
-          <Route key={item.path} path={item.path} element={item.element} />
-        ))}
-      </Route>
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <div id="wrapper">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          {router.map((item) => (
+            <Route key={item.path} path={item.path} element={item.element} />
+          ))}
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </div>
   )
 }
 
