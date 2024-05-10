@@ -75,7 +75,7 @@ export const Catalog = () => {
                 </div>
               ))
           ) : (
-            <h1 className={s.title}>Извините, ничего не найдено...</h1>
+            <h1 className={s.title}>{t("notFoundData")}</h1>
           )}
         </div>
       </section>

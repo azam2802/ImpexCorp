@@ -12,18 +12,29 @@ export const Catalogs = () => {
     <section>
       <div className={s.catalogs}>
         <ul className={s.catalogs_list}>
-          <CatalogsItem
-            catalogTitle={t("HomePage.CatalogBlock.titles.newProducts")}
-            data={data}
-          />
-          <CatalogsItem
-            catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
-            data={data}
-          />
-          <CatalogsItem
-            catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
-            data={data}
-          />
+          {data.length > 0 ? (
+            <>
+              <CatalogsItem
+                catalogTitle={t("HomePage.CatalogBlock.titles.newProducts")}
+                data={data}
+              />
+              <CatalogsItem
+                catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
+                data={data}
+              />
+              <CatalogsItem
+                catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
+                data={data}
+              />{" "}
+            </>
+          ) : (
+            <>
+              <h1 className={s.catalog_type_title} style={{ fontSize: "44px" }}>
+                {t("HomePage.CatalogBlock.titles.mainTitle")}
+              </h1>
+              <h1 className={s.catalog_type_title}>{t("notFoundData")}</h1>
+            </>
+          )}
         </ul>
       </div>
     </section>
