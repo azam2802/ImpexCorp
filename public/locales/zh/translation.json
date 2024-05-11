@@ -1,5 +1,6 @@
 {
   "notFoundText": "抱歉，找不到页面。",
+  "notFoundData": "不好意思，沒有發現什麼",
   "header": {
     "home": "首页",
     "catalogue": "目录",
@@ -107,7 +108,7 @@
     "title": "目录",
     "filter": "筛选",
     "characteristics": {
-      "catalog": "目录",
+      "catalog": "品牌",
       "model": "型号",
       "yearIssue": "年份",
       "wheel": {

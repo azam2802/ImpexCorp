@@ -1,5 +1,6 @@
 {
   "notFoundText": "Sorry, this page can not be found.",
+  "notFoundData": "Sorry, we didn't find anything.",
   "header": {
     "catalogue": "Catalog",
     "home": "Home",
@@ -107,7 +108,7 @@
     "title": "Catalog",
     "filter": "Filter",
     "characteristics": {
-      "catalog": "Catalog",
+      "catalog": "Brand",
       "model": "Model",
       "yearIssue": "Year of issue",
       "wheel": {
