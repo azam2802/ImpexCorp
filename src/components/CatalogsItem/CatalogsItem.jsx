@@ -60,13 +60,13 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
           freeMode={true}
           modules={[FreeMode]}>
           {[...data]
-            .filter((item) => item.images.length != 0)
+            .filter((item) => item.image.length != 0)
             .reverse()
             .slice(0, 6)
             .map((car) => (
               <SwiperSlide key={car.car_slug}>
                 <CarCard
-                  images={import.meta.env.VITE_API + car.images[0].image}
+                  images={import.meta.env.VITE_API + car.image[0].image}
                   car_name={car.car_name}
                   price={car.price}
                   volume={car.volume}

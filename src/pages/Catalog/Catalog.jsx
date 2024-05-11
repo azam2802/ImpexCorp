@@ -63,13 +63,13 @@ export const Catalog = () => {
           {data.length > 0 ? (
             Array.isArray(filteredCars) && filteredCars.length > 0 ? (
               filteredCars
-                .filter((item) => item.images.length !== 0)
+                .filter((item) => item.image.length !== 0)
                 .reverse()
                 .map((car) => (
                   <div className={s.col_4_catalog} key={car.car_slug}>
                     <CarCard
                       width="100%"
-                      images={import.meta.env.VITE_API + car.images[0].image}
+                      images={import.meta.env.VITE_API + car.image[0].image}
                       car_name={car.car_name}
                       price={car.price}
                       volume={car.volume}
