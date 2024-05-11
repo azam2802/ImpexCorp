@@ -16,20 +16,20 @@ export const FiltrModal = ({ setOpenModal }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log(selectedFilters)
         const queryParams = new URLSearchParams(selectedFilters).toString()
-        console.log(queryParams)
         const url = `${import.meta.env.VITE_API_AUTO_LIST}?${queryParams}`
         const response = await axios.get(url)
         setFilteredCars(response.data)
         console.log(response.data)
       } catch (error) {
-        console.log("Fetching error", error)
+        console.log("Fetching error", error.response)
+        console.log("Error message", error.message)
+        console.log("Error config", error.config)
       }
     }
+
     fetchData()
   }, [selectedFilters])
-  console.log(filteredCars)
 
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
 
@@ -194,6 +194,7 @@ export const FiltrModal = ({ setOpenModal }) => {
               type="text"
               placeholder={t("Catalog.input.priceBegore")}
               onChange={(event) => handleInputChange(event)}
+              name="priceBegore"
             />
           </div>
         </div>
