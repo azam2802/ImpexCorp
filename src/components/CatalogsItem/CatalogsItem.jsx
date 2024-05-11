@@ -49,12 +49,10 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
             bodyWidth > 765
               ? 2.75
               : bodyWidth > 565
-                ? 2.6
-                : bodyWidth > 565
-                  ? 2
-                  : bodyWidth > 410
-                    ? 1.4
-                    : 1.1
+                ? 2
+                : bodyWidth > 410
+                  ? 1.4
+                  : 1.1
           }
           style={{ width: "100%" }}
           freeMode={true}
@@ -67,7 +65,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
               <SwiperSlide key={car.car_slug}>
                 <CarCard
                   images={import.meta.env.VITE_API + car.image[0].image}
-                  car_name={car.car_name}
+                  car_name={car.car_brand + " " + car.car_model}
                   price={car.price}
                   volume={car.volume}
                   transmission={car.transmission}

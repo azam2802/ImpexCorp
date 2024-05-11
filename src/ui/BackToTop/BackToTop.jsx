@@ -11,7 +11,7 @@ const BackToTop = () => {
     window.addEventListener("scroll", () => {
       ref.current.classList.toggle(s.active, window.scrollY > 800)
     })
-  })
+  }, [ref])
 
   useEffect(() => {
     window.scrollTo({
@@ -24,7 +24,7 @@ const BackToTop = () => {
     let currentPosition = window.scrollY
     if (currentPosition > 0) {
       window.requestAnimationFrame(toTop)
-      window.scrollTo(0, currentPosition - currentPosition / 13)
+      window.scrollTo(0, currentPosition - currentPosition / 9)
     }
   }
 

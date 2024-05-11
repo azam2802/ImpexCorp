@@ -22,7 +22,7 @@ const CardInfo = () => {
 
   fetchData(i18n.language, car_slug)
 
-  const images = data.images
+  const images = data.image
   console.log(images)
 
   const [mainImg, setMainImg] = useState("placeholderImage")
@@ -30,11 +30,11 @@ const CardInfo = () => {
 
   useEffect(() => {
     try {
-      setMainImg(data.images[slide].image)
+      setMainImg(data.image[slide].image)
     } catch {
       return
     }
-  }, [data.images])
+  }, [data.image])
 
   const [bodyWidth, setBodyWidth] = useState(0)
 
@@ -96,7 +96,7 @@ const CardInfo = () => {
                 </button>{" "}
               </>
             )}
-            {data.images == undefined ? (
+            {data.image == undefined ? (
               <img src={placeholderImage} alt={"Placeholder Image"} />
             ) : (
               <img

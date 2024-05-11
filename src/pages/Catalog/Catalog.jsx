@@ -64,13 +64,14 @@ export const Catalog = () => {
             Array.isArray(filteredCars) && filteredCars.length > 0 ? (
               filteredCars
                 .filter((item) => item.image.length !== 0)
+                .filter((item) => item.image.length !== 0)
                 .reverse()
                 .map((car) => (
                   <div className={s.col_4_catalog} key={car.car_slug}>
                     <CarCard
                       width="100%"
                       images={import.meta.env.VITE_API + car.image[0].image}
-                      car_name={car.car_name}
+                      car_name={car.car_brand + " " + car.car_model}
                       price={car.price}
                       volume={car.volume}
                       transmission={car.transmission}
@@ -81,7 +82,7 @@ export const Catalog = () => {
                   </div>
                 ))
             ) : (
-              <h1 className={s.title}>Извините, ничего не найдено...</h1>
+              <h1 className={s.title}>{t("notFoundData")}</h1>
             )
           ) : null}
         </div>
