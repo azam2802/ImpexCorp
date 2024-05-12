@@ -24,7 +24,6 @@ const CharacterCard = ({ data }) => {
                     <div>{t(item + "period")}</div>
                     <div>{t(item + "transmission")}</div>
                     <div>{t(item + "drive")}</div>
-                    <div>{t(item + "trunk")}</div>
                   </div>
                 ) : (
                   <div>
@@ -45,7 +44,6 @@ const CharacterCard = ({ data }) => {
                     <div>{data.release_period}</div>
                     <div>{data.transmission}</div>
                     <div>{data.drive}</div>
-                    <div>{data.trunk_volume}</div>
                   </>
                 ) : (
                   <>

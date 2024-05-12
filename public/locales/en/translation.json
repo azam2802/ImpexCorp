@@ -19,8 +19,8 @@
   },
   "HomePage": {
     "GreetingBlock": {
-      "title": "Welcome to the Impex Corp car showroom",
-      "text": "Impex Corp is an auto company that offers its customers a wide range of products and services related to the automotive industry. Having become a leading player in the market, Impex Corp has several key advantages that make them an ideal choice for buyers",
+      "title": "Welcome to Impex Corp car dealership!",
+      "text": "Welcome to Impex Corp car dealership! Impex Corp is a company specializing in the automotive industry, offering its clients a wide range of products and services. Holding leading positions in the market, Impex Corp stands out for its key advantages, making it the perfect choice for buyers.",
       "buttonText": "More details"
     },
     "CatalogBlock": {
@@ -54,27 +54,27 @@
     }
   },
   "AboutUs": {
-    "main_title": "The Impex Corp company provides services for the purchase and import of cars from Korea and China!",
+    "main_title": "The company \"Impex Corp\" offers services for purchasing and importing cars from Korea, China and other countries.",
     "buttonText": "Call",
-    "title": "You'll get :",
+    "title": "Our advantages",
     "card1": {
-      "text": " For our company is the selection and delivery of special machinery and equipment. We also supply spare parts, accessories and chemicals for cars.",
-      "bold": "Choice is one of the important tasks"
+      "bold": "Choice - ",
+      "text": "We provide selection and delivery of specialized equipment and machinery, as well as offer a wide range of spare parts, accessories, and automotive chemicals."
     },
     "card2": {
-      "bold": "Reliability is our company",
-      "text": "in less than a year, completed over 100 contracts with more than 7 countries and 30 cities of the CIS"
+      "bold": "Reliability - ",
+      "text": "In less than a year, our company has successfully concluded over 100 contracts with more than 7 countries and 30 cities in the CIS, confirming our reliability and professionalism."
     },
     "card3": {
-      "bold": "Also the company “Impex Corp.”",
-      "text": " is developing in the direction of import-export of food products and tourism. The main activity of our company is the import-export of cars from countries such as China, Korea, Japan, UAE, Georgia, Europe, USA."
+      "bold": "Development - ",
+      "text": "We are actively expanding in the field of import and export of food products and tourism, extending the geographical scope of our operations and strengthening our positions in the global market."
     },
     "back": {
       "span": "Impex Corp",
-      "text": "Impeccable work ",
-      "text2": "- a guarantee of your confidence in the transaction when purchasing a car or ordering from “Impex Corp.”"
+      "text": "Seamless service from",
+      "text2": " - your pathway to confident car purchases or orders with us."
     },
-    "bottomTitle": " The main activity of our company is the import and export of cars from countries such as China, Japan, UAE, Georgia, Europe, USA"
+    "bottomTitle": "Our company specializes in importing and exporting cars from various countries, including China, Korea, Japan, the UAE, Georgia, Europe, and the USA, providing clients with access to a wide selection of high-quality vehicles."
   },
   "footer": {
     "aboutus": {
@@ -91,7 +91,7 @@
       }
     },
     "branches": {
-      "name": "Branch",
+      "name": "Address",
       "menu": {
         "address1": "77 Usenbaeva St. Bishkek"
       }
@@ -162,8 +162,7 @@
         "mileage": "Mileage",
         "period": "Realese Period",
         "transmission": "Transmission",
-        "drive": "Drive",
-        "trunk": "Trunk Volume"
+        "drive": "Drive"
       },
       "engine": {
         "title": "Engine",

@@ -20,12 +20,12 @@ export const Catalogs = () => {
               />
               <CatalogsItem
                 catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
-                data={data}
+                data={[...data].filter((item) => item.country == "CH")}
               />
               <CatalogsItem
                 catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
-                data={data}
-              />{" "}
+                data={[...data].filter((item) => item.country == "SK")}
+              />
             </>
           ) : (
             <>

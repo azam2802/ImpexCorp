@@ -91,7 +91,7 @@
       }
     },
     "branches": {
-      "name": "分支机构",
+      "name": "地址",
       "menu": {
         "address1": "77 Usenbaeva st. Bishkek"
       }
@@ -162,8 +162,7 @@
         "mileage": "里程",
         "period": "生產周期",
         "transmission": "變速器",
-        "drive": "驅動方式",
-        "trunk": "行李箱容量"
+        "drive": "驅動方式"
       },
       "engine": {
         "title": "發動機",
