@@ -47,7 +47,6 @@ const Header = () => {
                     <Link to="/">{t("header.home")}</Link>
                     <Link to="about">{t("header.ourcompany")}</Link>
                     <Link to="catalog">{t("header.catalogue")}</Link>
-                    <button></button>
                   </div>
                 </div>
               </div>

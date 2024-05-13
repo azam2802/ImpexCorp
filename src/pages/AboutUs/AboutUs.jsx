@@ -23,7 +23,12 @@ export const AboutUs = () => {
         <div className={s.back}></div>
         <div className={s.hero_box}>
           <h1>{t("AboutUs.main_title")}</h1>
-          <button>{t("AboutUs.buttonText")}</button>
+          <a
+            href="https://api.whatsapp.com/send?phone=996500677633"
+            rel="noreferrer"
+            target="_blank">
+            <button>{t("AboutUs.buttonText")}</button>
+          </a>
         </div>
       </div>
       <main className={s.about_main}>
