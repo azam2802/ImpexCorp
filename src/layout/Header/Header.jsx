@@ -4,7 +4,7 @@ import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
 import React, { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
@@ -13,14 +13,15 @@ const Header = ({ openModal }) => {
     window.matchMedia("(min-width: 1024px)").matches,
   )
   const { t } = useTranslation()
-
+  const location = useLocation()
   const ref = useRef(null)
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       setScreenWidth(window.matchMedia("(min-width: 1024px)").matches)
-    })
-    window.addEventListener("scroll", () => {
+    }
+
+    const handleScroll = () => {
       if (window.matchMedia("(min-width: 1024px)").matches) {
         const headerHeight = ref.current.offsetHeight
         const scrollThreshold = 1.7 * headerHeight
@@ -30,17 +31,44 @@ const Header = ({ openModal }) => {
           ref.current.classList.remove(s.fixed)
         }
       }
-    })
+    }
+
+    window.addEventListener("resize", handleResize)
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
+
+  const getMetaTags = () => {
+    switch (location.pathname) {
+      case "/about":
+        return {
+          title: t("header.MetaTags.ourcompany"),
+          description: t("header.MetaTags.ourcompanyDescription"),
+        }
+      case "/catalog":
+        return {
+          title: t("header.MetaTags.catalogue"),
+          description: t("header.MetaTags.catalogueDescription"),
+        }
+      default:
+        return {
+          title: t("header.MetaTags.home"),
+          description: t("header.MetaTags.defaultDescription"),
+        }
+    }
+  }
+
+  const metaTags = getMetaTags()
 
   return (
     <>
       <Helmet>
-        <title>{t("header.MetaTags.home")}</title>
-        <meta
-          name="description"
-          content={t("header.MetaTags.defaultDescription")}
-        />
+        <title>{metaTags.title}</title>
+        <meta name="description" content={metaTags.description} />
       </Helmet>
       {screenWidth ? (
         <>
@@ -53,27 +81,9 @@ const Header = ({ openModal }) => {
                 </div>
                 <div className={s.col_6}>
                   <div className={s.Links}>
-                    <Link
-                      to="/"
-                      onClick={() => {
-                        document.title = t("header.MetaTags.home")
-                      }}>
-                      {t("header.home")}
-                    </Link>
-                    <Link
-                      to="/about"
-                      onClick={() => {
-                        document.title = t("header.MetaTags.ourcompany")
-                      }}>
-                      {t("header.ourcompany")}
-                    </Link>
-                    <Link
-                      to="/catalog"
-                      onClick={() => {
-                        document.title = t("header.MetaTags.catalogue")
-                      }}>
-                      {t("header.catalogue")}
-                    </Link>
+                    <Link to="/">{t("header.home")}</Link>
+                    <Link to="/about">{t("header.ourcompany")}</Link>
+                    <Link to="/catalog">{t("header.catalogue")}</Link>
                     <button onClick={openModal}>
                       {t("header.calculator")}
                     </button>
