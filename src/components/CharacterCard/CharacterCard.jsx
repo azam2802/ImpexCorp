@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import s from "@styles/pages/CardInfo/CardInfo.module.scss"
 import { useTranslation } from "react-i18next"
+
 const CharacterCard = ({ data }) => {
   const { t } = useTranslation()
-  console.log(data)
   const titles = ["CarInfo.titles.common.", "CarInfo.titles.engine."]
 
   return (
@@ -27,10 +27,10 @@ const CharacterCard = ({ data }) => {
                   </div>
                 ) : (
                   <div>
-                    <div key={i}>{t(item + "eng_type")}</div>
-                    <div key={i}>{t(item + "power")}</div>
-                    <div key={i}>{t(item + "volume")}</div>
-                    <div key={i}>{t(item + "consumption")}</div>
+                    <div>{t(item + "eng_type")}</div>
+                    <div>{t(item + "power")}</div>
+                    <div>{t(item + "volume")}</div>
+                    <div>{t(item + "consumption")}</div>
                   </div>
                 )}
               </div>
@@ -65,5 +65,5 @@ const CharacterCard = ({ data }) => {
 export default CharacterCard
 
 CharacterCard.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.any.isRequired,
 }

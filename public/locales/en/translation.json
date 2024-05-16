@@ -1,6 +1,7 @@
 {
   "notFoundText": "Sorry, this page can not be found.",
   "notFoundData": "Sorry, we didn't find anything.",
+  "backBtn": "Back",
   "header": {
     "catalogue": "Catalog",
     "home": "Home",

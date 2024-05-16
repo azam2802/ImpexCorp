@@ -1,6 +1,7 @@
 {
   "notFoundText": "抱歉，找不到页面。",
   "notFoundData": "不好意思，沒有發現什麼",
+  "backBtn": "後退",
   "header": {
     "home": "首页",
     "catalogue": "目录",
@@ -16,10 +17,10 @@
         }
       }
     },
-    "MetaTags":{
-      "home":"Impex Corp || 首页",
-      "ourcompany":"Impex Corp || 我们的公司",
-      "catalogue":"Impex Corp || 目录"
+    "MetaTags": {
+      "home": "Impex Corp || 首页",
+      "ourcompany": "Impex Corp || 我们的公司",
+      "catalogue": "Impex Corp || 目录"
     }
   },
   "HomePage": {

@@ -2,7 +2,7 @@
   justify-content: space-between;
   display: flex;
   padding-block: 90px;
-  background-image: url(../../../img/FirstBlock.png);
+  background-image: url(@images/FirstBlock.png);
   background-size: cover;
   background-position: center;
   height: 86.2vh;
@@ -73,7 +73,6 @@
     justify-content: center;
     background: none;
     padding-block: unset;
-    margin-top: 50px;
     overflow: hidden;
 
     &::before {
@@ -89,7 +88,7 @@
       background-position: center;
       z-index: -1;
       filter: blur(5px);
-      background-image: url(../../../img/FirstBlock.png);
+      background-image: url(@images/FirstBlock.png);
     }
     .ImageCar {
       display: none;
@@ -129,6 +128,12 @@
     margin-top: 57px;
     font-weight: 200;
     border-radius: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin-top: 50px;
   }
 }
 

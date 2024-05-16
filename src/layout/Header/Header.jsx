@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet"
 
 const Header = () => {
   const [screenWidth, setScreenWidth] = useState(
-    window.matchMedia("(min-width: 1024px)").matches,
+    window.matchMedia("(min-width: 768px)").matches,
   )
   const { t } = useTranslation()
   const location = useLocation()
@@ -17,11 +17,11 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.matchMedia("(min-width: 1024px)").matches)
+      setScreenWidth(window.matchMedia("(min-width: 768px)").matches)
     }
 
     const handleScroll = () => {
-      if (window.matchMedia("(min-width: 1024px)").matches) {
+      if (window.matchMedia("(min-width: 768px)").matches) {
         const headerHeight = ref.current.offsetHeight
         const scrollThreshold = 1.7 * headerHeight
         if (window.scrollY > scrollThreshold) {

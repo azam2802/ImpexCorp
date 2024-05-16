@@ -24,7 +24,7 @@ export const Catalog = () => {
       <div className={s.main_title}>
         <Link to="/" className={s.back}>
           <IoIosArrowBack size={25} color="#19746b" />
-          <p>Назад</p>
+          <p>{t("backBtn")}</p>
         </Link>
         <h1 className={s.title}>{t("Catalog.title")}</h1>
       </div>
