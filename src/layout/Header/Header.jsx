@@ -5,10 +5,9 @@ import Logo from "@ui/Logo/Logo"
 import React, { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Link, useLocation } from "react-router-dom"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
-const Header = ({ openModal }) => {
+const Header = () => {
   const [screenWidth, setScreenWidth] = useState(
     window.matchMedia("(min-width: 1024px)").matches,
   )
@@ -82,11 +81,8 @@ const Header = ({ openModal }) => {
                 <div className={s.col_6}>
                   <div className={s.Links}>
                     <Link to="/">{t("header.home")}</Link>
-                    <Link to="/about">{t("header.ourcompany")}</Link>
-                    <Link to="/catalog">{t("header.catalogue")}</Link>
-                    <button onClick={openModal}>
-                      {t("header.calculator")}
-                    </button>
+                    <Link to="about">{t("header.ourcompany")}</Link>
+                    <Link to="catalog">{t("header.catalogue")}</Link>
                   </div>
                 </div>
               </div>
@@ -98,10 +94,6 @@ const Header = ({ openModal }) => {
       )}
     </>
   )
-}
-
-Header.propTypes = {
-  openModal: PropTypes.func.isRequired,
 }
 
 export default Header

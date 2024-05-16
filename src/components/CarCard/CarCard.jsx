@@ -24,38 +24,42 @@ const CarCard = ({
 
   return (
     <li className={s.carCardItem} style={{ width: width }}>
-      <img src={images} className={s.car_image} alt={car_name} />
-      <h1 className={s.car_name}>{car_name}</h1>
-      <ul className={s.car_struct_list}>
-        <li className={s.car_struct_list_item}>
-          <FaRegCalendar />
-          <p className={s.car_struct_text}>{year}</p>
-        </li>
-        <li className={s.car_struct_list_item}>
-          <img className={s.car_struct_image} src={Icon2} alt="struct-img" />
-          <p className={s.text_transmission + " " + s.car_struct_text}>
-            {transmission}
-          </p>
-        </li>
-        <li className={s.car_struct_list_item}>
-          <MdOutlineSpeed />
-          <p className={s.car_struct_text}>{mileage} km</p>
-        </li>
-        <li className={s.car_struct_list_item}>
-          <img className={s.car_struct_image} src={Icon1} alt="struct-img" />
-          <p className={s.car_struct_text}>{volume}</p>
-        </li>
-      </ul>
-      <hr />
-      <div className={s.car_info}>
-        <h1 className={s.car_price}>$ {price}</h1>
-        <button
-          onClick={() => {
-            navigate(`/cardinfo/${car_slug}`)
-          }}
-          className={s.moreButton}>
-          {t("HomePage.CatalogBlock.buttonText")}
-        </button>
+      <div>
+        <img src={images} className={s.car_image} alt={car_name} />
+        <h1 className={s.car_name}>{car_name}</h1>
+        <ul className={s.car_struct_list}>
+          <li className={s.car_struct_list_item}>
+            <FaRegCalendar />
+            <p className={s.car_struct_text}>{year}</p>
+          </li>
+          <li className={s.car_struct_list_item}>
+            <img className={s.car_struct_image} src={Icon2} alt="struct-img" />
+            <p className={s.text_transmission + " " + s.car_struct_text}>
+              {transmission}
+            </p>
+          </li>
+          <li className={s.car_struct_list_item}>
+            <MdOutlineSpeed />
+            <p className={s.car_struct_text}>{mileage} km</p>
+          </li>
+          <li className={s.car_struct_list_item}>
+            <img className={s.car_struct_image} src={Icon1} alt="struct-img" />
+            <p className={s.car_struct_text}>{volume}</p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <hr />
+        <div className={s.car_info}>
+          <h1 className={s.car_price}>$ {price}</h1>
+          <button
+            onClick={() => {
+              navigate(`/cardinfo/${car_slug}`)
+            }}
+            className={s.moreButton}>
+            {t("HomePage.CatalogBlock.buttonText")}
+          </button>
+        </div>
       </div>
     </li>
   )
