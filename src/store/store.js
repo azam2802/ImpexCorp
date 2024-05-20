@@ -33,7 +33,7 @@ export const useAutosList = create(
       try {
         useEffect(() => {
           axios
-            .get(import.meta.env.VITE_API_AUTO_LIST, {
+            .get(import.meta.env.VITE_API + "/api/v1/autos", {
               headers: {
                 "Content-Type": "application/json",
                 "Accept-Language": lang == "zh" ? "zh-hant" : lang,
@@ -54,11 +54,11 @@ export const useAutosList = create(
 export const useAutoInfo = create(
   devtools((set) => ({
     data: [],
-    fetchData: (lang, car_slug) => {
+    fetchData: (lang, id) => {
       try {
         useEffect(() => {
           axios
-            .get(import.meta.env.VITE_API_AUTO_LIST + car_slug, {
+            .get(import.meta.env.VITE_API + "/api/v1/autos/" + id, {
               headers: {
                 "Content-Type": "application/json",
                 "Accept-Language": lang == "zh" ? "zh-hant" : lang,
@@ -76,7 +76,7 @@ export const useAutoInfo = create(
   })),
 )
 
-export const filterFunc = create((set) => ({
+export const useFilter = create((set) => ({
   values: {
     car_brand: "",
     car_model: "",
@@ -96,7 +96,28 @@ export const filterFunc = create((set) => ({
       const newValues = { ...state.values }
       newValues[filterId] = clickedItem
 
+      console.log(newValues)
       return { values: newValues }
+    })
+  },
+  setInitial: () => {
+    set(() => {
+      return {
+        values: {
+          car_brand: "",
+          car_model: "",
+          fuel_type: "",
+          mileage_max: 0,
+          mileage_min: 0,
+          price_min: 0,
+          price_max: 0,
+          release_period: "",
+          transmission: "",
+          drive: "",
+          volume_max: 0,
+          volume_min: 0,
+        },
+      }
     })
   },
 }))

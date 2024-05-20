@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom"
 
 const CarCard = ({
   car_name,
-  car_slug,
+  id,
   images,
   price,
   mileage,
@@ -54,7 +54,7 @@ const CarCard = ({
           <h1 className={s.car_price}>$ {price}</h1>
           <button
             onClick={() => {
-              navigate(`/cardinfo/${car_slug}`)
+              navigate(`/cardinfo/${id}`)
             }}
             className={s.moreButton}>
             {t("HomePage.CatalogBlock.buttonText")}
@@ -73,7 +73,7 @@ CarCard.propTypes = {
   volume: PropTypes.number.isRequired,
   transmission: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired,
-  car_slug: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   width: PropTypes.string,
 }
 

@@ -4,11 +4,11 @@ import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { Select } from "../Select/Select"
 import { VolumeSelect } from "../Select/VolumeSelect"
 import { useTranslation } from "react-i18next"
-import { filterFunc } from "@store/store"
+import { useFilter } from "@store/store"
 
 export const FiltrModal = ({ setOpenModal }) => {
+  const { values } = useFilter()
   const { t } = useTranslation()
-
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
 
   const handleResize = () => {
@@ -23,11 +23,9 @@ export const FiltrModal = ({ setOpenModal }) => {
     }
   }, [])
 
-  const { values } = filterFunc()
   const onSubmit = (e) => {
     e.preventDefault()
     setOpenModal(false)
-    console.log(values)
   }
 
   return (
@@ -59,12 +57,6 @@ export const FiltrModal = ({ setOpenModal }) => {
       </section>
 
       <section className={s.row}>
-        {/* <Select
-          title={t("Catalog.characteristics.wheel.title")}
-          firstType={t("Catalog.characteristics.wheel.right")}
-          secondType={t("Catalog.characteristics.wheel.left")}
-        /> */}
-
         <Select
           title={t("Catalog.characteristics.fuel.title")}
           firstType={t("Catalog.characteristics.fuel.diesel")}

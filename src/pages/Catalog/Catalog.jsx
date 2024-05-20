@@ -59,11 +59,11 @@ export const Catalog = () => {
               .filter((item) => item.image.length != 0)
               .reverse()
               .map((car) => (
-                <div className={s.col_4_catalog} key={car.car_slug}>
+                <div className={s.col_4_catalog} key={car.id}>
                   <CarCard
                     width="100%"
                     images={import.meta.env.VITE_API + car.image[0].image}
-                    car_slug={car.car_slug}
+                    id={car.id}
                     car_name={car.car_brand + " " + car.car_model}
                     price={car.price}
                     volume={car.volume}

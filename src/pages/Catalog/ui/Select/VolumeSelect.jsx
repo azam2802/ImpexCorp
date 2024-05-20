@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { IoIosArrowUp } from "react-icons/io"
 import { AnimatePresence, motion } from "framer-motion"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
-import { filterFunc } from "@store/store"
+import { useFilter } from "@store/store"
 
 export const VolumeSelect = ({
   title,
@@ -33,7 +33,7 @@ export const VolumeSelect = ({
     setOpenSelect(false)
   }
 
-  const { getData } = filterFunc()
+  const { getData } = useFilter()
   return (
     <div>
       <div
