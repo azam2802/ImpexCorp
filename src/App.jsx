@@ -24,7 +24,7 @@ const App = () => {
       element: <Catalog />,
     },
     {
-      path: "/cardinfo/:car_slug",
+      path: "/cardinfo/:id",
       element: <CardInfo />,
     },
   ]

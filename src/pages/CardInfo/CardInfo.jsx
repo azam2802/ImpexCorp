@@ -16,12 +16,12 @@ import { useTranslation } from "react-i18next"
 import { IoIosArrowBack } from "react-icons/io"
 
 const CardInfo = () => {
-  const { car_slug } = useParams()
+  const { id } = useParams()
   const { t, i18n } = useTranslation()
   const { data, fetchData } = useAutoInfo()
   const placeholderImage = [imgPlaceholder]
 
-  fetchData(i18n.language, car_slug)
+  fetchData(i18n.language, id)
 
   const images = data.image
 

@@ -68,7 +68,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
               .reverse()
               .slice(0, 6)
               .map((car) => (
-                <SwiperSlide key={car.car_slug}>
+                <SwiperSlide key={car.id}>
                   <CarCard
                     images={import.meta.env.VITE_API + car.image[0].image}
                     car_name={car.car_brand + " " + car.car_model}
@@ -79,7 +79,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
                     mileage={car.mileage}
                     year={car.release_period}
                     fuel={car.fuel}
-                    car_slug={car.car_slug}
+                    id={car.id}
                   />
                 </SwiperSlide>
               ))}
