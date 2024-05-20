@@ -75,3 +75,28 @@ export const useAutoInfo = create(
     },
   })),
 )
+
+export const filterFunc = create((set) => ({
+  values: {
+    car_brand: "",
+    car_model: "",
+    fuel_type: "",
+    mileage_max: 0,
+    mileage_min: 0,
+    price_min: 0,
+    price_max: 0,
+    release_period: "",
+    transmission: "",
+    drive: "",
+    volume_max: 0,
+    volume_min: 0,
+  },
+  getData: (clickedItem, filterId) => {
+    set((state) => {
+      const newValues = { ...state.values }
+      newValues[filterId] = clickedItem
+
+      return { values: newValues }
+    })
+  },
+}))

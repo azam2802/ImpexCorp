@@ -3,8 +3,15 @@ import PropTypes from "prop-types"
 import { IoIosArrowUp } from "react-icons/io"
 import { AnimatePresence, motion } from "framer-motion"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
+import { filterFunc } from "@store/store"
 
-export const VolumeSelect = ({ title, firstType, secondType, thirdType }) => {
+export const VolumeSelect = ({
+  title,
+  filterId,
+  firstType,
+  secondType,
+  thirdType,
+}) => {
   const [openSelect, setOpenSelect] = useState(false)
   const [selectedValue, setSelectedValue] = useState()
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 769)
@@ -26,6 +33,7 @@ export const VolumeSelect = ({ title, firstType, secondType, thirdType }) => {
     setOpenSelect(false)
   }
 
+  const { getData } = filterFunc()
   return (
     <div>
       <div
@@ -46,9 +54,27 @@ export const VolumeSelect = ({ title, firstType, secondType, thirdType }) => {
             transition={{ duration: 0.2 }}
             style={{ overflow: "hidden" }}>
             <div className={s.select}>
-              <p onClick={() => handleSelect(firstType)}>{firstType}</p>
-              <p onClick={() => handleSelect(secondType)}>{secondType}</p>
-              <p onClick={() => handleSelect(thirdType)}>{thirdType}</p>
+              <p
+                onClick={() => {
+                  handleSelect(firstType)
+                  getData(firstType, filterId)
+                }}>
+                {firstType}
+              </p>
+              <p
+                onClick={() => {
+                  handleSelect(secondType)
+                  getData(secondType, filterId)
+                }}>
+                {secondType}
+              </p>
+              <p
+                onClick={() => {
+                  handleSelect(thirdType)
+                  getData(thirdType, filterId)
+                }}>
+                {thirdType}
+              </p>
             </div>
           </motion.div>
         )}
@@ -62,4 +88,5 @@ VolumeSelect.propTypes = {
   firstType: PropTypes.string.isRequired,
   secondType: PropTypes.string.isRequired,
   thirdType: PropTypes.string.isRequired,
+  filterId: PropTypes.string.isRequired,
 }
