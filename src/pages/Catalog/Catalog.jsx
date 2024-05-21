@@ -1,13 +1,12 @@
-import CarCard from "@components/CarCard/CarCard"
-import { useAutosList, useFilterStore } from "@store/store"
-import s from "@styles/pages/Catalog/Catalog.module.scss"
-import { AnimatePresence, motion } from "framer-motion"
 import React, { useState } from "react"
-import { useTranslation } from "react-i18next"
+import { FiltrModal } from "./ui/FilterModal/FilterModal"
+import { useAutosList, useFilterStore } from "@store/store"
+import CarCard from "@components/CarCard/CarCard"
+import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { IoIosArrowBack, IoIosArrowUp } from "react-icons/io"
 import { Link } from "react-router-dom"
-
-import { FiltrModal } from "./ui/FilterModal/FilterModal"
+import { AnimatePresence, motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 
 export const Catalog = () => {
   const { t } = useTranslation()
@@ -55,36 +54,33 @@ export const Catalog = () => {
                   setOpenModal={setOpenModal}
                   setFilteredCars={setFilteredCars}
                 />
-              )}{" "}
+              )}
             </motion.div>
           )}
         </AnimatePresence>
+
         <div className={s.row_catalog}>
-          {data.length > 0 ? (
-            Array.isArray(filteredCars) && filteredCars.length > 0 ? (
-              filteredCars
-                .filter((item) => item.image.length !== 0)
-                .filter((item) => item.image.length !== 0)
-                .reverse()
-                .map((car) => (
-                  <div className={s.col_4_catalog} key={car.car_slug}>
-                    <CarCard
-                      width="100%"
-                      images={import.meta.env.VITE_API + car.image[0].image}
-                      car_name={car.car_brand + " " + car.car_model}
-                      price={car.price}
-                      volume={car.volume}
-                      transmission={car.transmission}
-                      country={car.country_of_assembly}
-                      mileage={car.mileage}
-                      year={car.release_period}
-                    />
-                  </div>
-                ))
-            ) : (
-              <h1 className={s.title}>{t("notFoundData")}</h1>
-            )
-          ) : null}
+          {(filteredCars.length > 0 ? filteredCars : data)
+            .filter((item) => item.image.length !== 0)
+            .reverse()
+            .map((car) => (
+              <div className={s.col_4_catalog} key={car.car_slug}>
+                <CarCard
+                  width="100%"
+                  images={import.meta.env.VITE_API + car.image[0].image}
+                  car_name={car.car_brand + " " + car.car_model}
+                  price={car.price}
+                  volume={car.volume}
+                  transmission={car.transmission}
+                  country={car.country_of_assembly}
+                  mileage={car.mileage}
+                  year={car.release_period}
+                />
+              </div>
+            ))}
+          {data.length === 0 && (
+            <h1 className={s.title}>{t("notFoundData")}</h1>
+          )}
         </div>
       </section>
     </main>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { Select } from "../Select/Select"
@@ -9,29 +9,8 @@ import axios from "axios"
 
 export const FiltrModal = ({ setOpenModal }) => {
   const { t } = useTranslation()
-
-  const { selectedFilters, setSelectedFilters, filteredCars, setFilteredCars } =
+  const { selectedFilters, setSelectedFilters, setFilteredCars } =
     useFilterStore()
-
-  console.log(selectedFilters)
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        console.log(selectedFilters)
-        const queryParams = new URLSearchParams(selectedFilters).toString()
-        console.log(queryParams)
-        const url = ` ${import.meta.env.VITE_API_AUTO_LIST}?${queryParams}`
-        const response = await axios.get(url)
-        setFilteredCars(response.data)
-        console.log(response.data)
-      } catch (error) {
-        console.log("Fetching error", error)
-      }
-    }
-    fetchData()
-  }, [selectedFilters])
-  console.log(filteredCars)
-
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
 
   const handleResize = () => {
@@ -45,19 +24,25 @@ export const FiltrModal = ({ setOpenModal }) => {
       window.removeEventListener("resize", handleResize)
     }
   }, [])
-  const onSubmit = (e) => {
+
+  const onSubmit = async (e) => {
     e.preventDefault()
-    setOpenModal(false)
-    console.log(filteredCars)
-    setFilteredCars()
+
+    try {
+      const queryParams = new URLSearchParams(selectedFilters).toString()
+      const url = `${import.meta.env.VITE_API_AUTO_LIST}?${queryParams}`
+      const response = await axios.get(url)
+      setFilteredCars(response.data)
+      setOpenModal(false)
+    } catch (error) {
+      console.log("Fetching error", error)
+    }
   }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target
-    console.log(selectedFilters)
-    console.log(event)
-    console.log(name, value)
     setSelectedFilters({
+      ...selectedFilters,
       [name]: value,
     })
   }
@@ -125,13 +110,13 @@ export const FiltrModal = ({ setOpenModal }) => {
             type="text"
             placeholder={t("Catalog.input.mileageFrom")}
             onChange={(event) => handleInputChange(event)}
-            name="mileageFrom"
+            name="mileage_min"
           />
           <input
             type="text"
             placeholder={t("Catalog.input.mileageBefore")}
             onChange={(event) => handleInputChange(event)}
-            name="mileageBefore"
+            name="mileage_max"
           />
         </div>
 
