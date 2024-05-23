@@ -33,7 +33,7 @@ export const FiltrModal = ({ setOpenModal }) => {
       console.log(values)
       const queryParams = new URLSearchParams(values).toString()
       console.log(queryParams)
-      const url = `${import.meta.env.VITE_API}/api/v1/autos/?${queryParams}`
+      const url = `${import.meta.env.VITE_API}api/v1/autos/?${queryParams}`
       console.log(url)
       const response = await axios.get(url)
       setFilteredCars(response.data)
