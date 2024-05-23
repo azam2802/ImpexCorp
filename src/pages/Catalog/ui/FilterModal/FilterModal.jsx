@@ -32,7 +32,9 @@ export const FiltrModal = ({ setOpenModal }) => {
     try {
       console.log(values)
       const queryParams = new URLSearchParams(values).toString()
+      console.log(queryParams)
       const url = `${import.meta.env.VITE_API}/api/v1/autos/?${queryParams}`
+      console.log(url)
       const response = await axios.get(url)
       setFilteredCars(response.data)
       console.log(response.data)
@@ -61,7 +63,7 @@ export const FiltrModal = ({ setOpenModal }) => {
 
         <Select
           title={t("Catalog.characteristics.model")}
-          firstType="Solares"
+          firstType="Mustang"
           secondType="Sonata"
           thirdType="Supra"
           filterId="car_model"
