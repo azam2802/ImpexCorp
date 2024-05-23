@@ -4,22 +4,24 @@ import s from "@styles/layout/Header.module.scss"
 import Logo from "@ui/Logo/Logo"
 import React, { useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
+import { Helmet } from "react-helmet"
 
 const Header = () => {
   const [screenWidth, setScreenWidth] = useState(
-    window.matchMedia("(min-width: 1024px)").matches,
+    window.matchMedia("(min-width: 768px)").matches,
   )
   const { t } = useTranslation()
-  const ref = useRef()
+  const location = useLocation()
+  const ref = useRef(null)
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setScreenWidth(window.matchMedia("(min-width: 1024px)").matches)
-      console.log(screenWidth)
-    })
-    window.addEventListener("scroll", () => {
-      if (window.matchMedia("(min-width: 1024px)").matches) {
+    const handleResize = () => {
+      setScreenWidth(window.matchMedia("(min-width: 768px)").matches)
+    }
+
+    const handleScroll = () => {
+      if (window.matchMedia("(min-width: 768px)").matches) {
         const headerHeight = ref.current.offsetHeight
         const scrollThreshold = 1.7 * headerHeight
         if (window.scrollY > scrollThreshold) {
@@ -28,11 +30,45 @@ const Header = () => {
           ref.current.classList.remove(s.fixed)
         }
       }
-    })
+    }
+
+    window.addEventListener("resize", handleResize)
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
+
+  const getMetaTags = () => {
+    switch (location.pathname) {
+      case "/about":
+        return {
+          title: t("header.MetaTags.ourcompany"),
+          description: t("header.MetaTags.ourcompanyDescription"),
+        }
+      case "/catalog":
+        return {
+          title: t("header.MetaTags.catalogue"),
+          description: t("header.MetaTags.catalogueDescription"),
+        }
+      default:
+        return {
+          title: t("header.MetaTags.home"),
+          description: t("header.MetaTags.defaultDescription"),
+        }
+    }
+  }
+
+  const metaTags = getMetaTags()
 
   return (
     <>
+      <Helmet>
+        <title>{metaTags.title}</title>
+        <meta name="description" content={metaTags.description} />
+      </Helmet>
       {screenWidth ? (
         <>
           <OverNavbar />
@@ -47,7 +83,6 @@ const Header = () => {
                     <Link to="/">{t("header.home")}</Link>
                     <Link to="about">{t("header.ourcompany")}</Link>
                     <Link to="catalog">{t("header.catalogue")}</Link>
-                    <button></button>
                   </div>
                 </div>
               </div>

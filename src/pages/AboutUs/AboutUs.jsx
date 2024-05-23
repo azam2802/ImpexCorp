@@ -1,6 +1,6 @@
 import React from "react"
 import s from "@styles/pages/AboutUs/AboutUs.module.scss"
-import heroImage from "@images/image56.png"
+import heroImage from "@images/2016-bmw-m2-202-1585760824.jpg"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow } from "swiper/modules"
 import Slide1 from "@images/scale_1200 1.png"
@@ -23,7 +23,12 @@ export const AboutUs = () => {
         <div className={s.back}></div>
         <div className={s.hero_box}>
           <h1>{t("AboutUs.main_title")}</h1>
-          <button>{t("AboutUs.buttonText")}</button>
+          <a
+            href="https://api.whatsapp.com/send?phone=996500677633"
+            rel="noreferrer"
+            target="_blank">
+            <button>{t("AboutUs.buttonText")}</button>
+          </a>
         </div>
       </div>
       <main className={s.about_main}>
@@ -54,7 +59,7 @@ export const AboutUs = () => {
       <div className={s.about_back}>
         <div className={s.info}>
           <div className={s.text}>
-            {t("AboutUs.back.text")} “<span>{t("AboutUs.back.span")}</span>“{" "}
+            {t("AboutUs.back.text")} <span>{t("AboutUs.back.span")}</span>{" "}
             {t("AboutUs.back.text2")}
           </div>
           <div className={s.img_box}>

@@ -1,6 +1,7 @@
 {
   "notFoundText": "抱歉，找不到页面。",
   "notFoundData": "不好意思，沒有發現什麼",
+  "backBtn": "後退",
   "header": {
     "home": "首页",
     "catalogue": "目录",
@@ -15,6 +16,11 @@
           "japan": "日本"
         }
       }
+    },
+    "MetaTags": {
+      "home": "Impex Corp || 首页",
+      "ourcompany": "Impex Corp || 我们的公司",
+      "catalogue": "Impex Corp || 目录"
     }
   },
   "HomePage": {
@@ -91,7 +97,7 @@
       }
     },
     "branches": {
-      "name": "分支机构",
+      "name": "地址",
       "menu": {
         "address1": "77 Usenbaeva st. Bishkek"
       }
@@ -162,8 +168,7 @@
         "mileage": "里程",
         "period": "生產周期",
         "transmission": "變速器",
-        "drive": "驅動方式",
-        "trunk": "行李箱容量"
+        "drive": "驅動方式"
       },
       "engine": {
         "title": "發動機",

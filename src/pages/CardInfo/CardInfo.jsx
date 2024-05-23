@@ -10,20 +10,20 @@ import { LuFuel } from "react-icons/lu"
 import { MdOutlineSpeed } from "react-icons/md"
 import CharacterCard from "@components/CharacterCard/CharacterCard"
 import { IoShareSocial } from "react-icons/io5"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useAutoInfo, useSliderState } from "@store/store"
 import { useTranslation } from "react-i18next"
+import { IoIosArrowBack } from "react-icons/io"
 
 const CardInfo = () => {
-  const { car_slug } = useParams()
-  const { i18n } = useTranslation()
+  const { id } = useParams()
+  const { t, i18n } = useTranslation()
   const { data, fetchData } = useAutoInfo()
   const placeholderImage = [imgPlaceholder]
 
-  fetchData(i18n.language, car_slug)
+  fetchData(i18n.language, id)
 
   const images = data.image
-  console.log(images)
 
   const [mainImg, setMainImg] = useState("placeholderImage")
   const { nextSlide, prevSlide, slide, setSlide } = useSliderState()
@@ -56,7 +56,6 @@ const CardInfo = () => {
     if (slide <= 0) {
       setSlide(images.length - 1)
       setMainImg(images[images.length - 1].image)
-      console.log(mainImg)
     } else {
       prevSlide()
       setMainImg(images[slide - 1].image)
@@ -74,7 +73,10 @@ const CardInfo = () => {
 
   return (
     <div className={s.card_info_section}>
-      <span>Back</span>
+      <Link to="/" className={s.back}>
+        <IoIosArrowBack size={25} color="#19746b" />
+        <p>{t("backBtn")}</p>
+      </Link>
       <div className={s.card_slide_block}>
         <div className={s.card_slide}>
           <div className={s.card_slide_main}>

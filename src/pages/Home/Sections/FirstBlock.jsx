@@ -49,14 +49,18 @@ const FirstBlock = () => {
                 </motion.span>
               </p>
             </div>
-
             <div>
-              <motion.button
-                custom={2}
-                variants={AnimBottom}
-                className={s.button}>
-                {t("HomePage.firstBlock.buttonText")}
-              </motion.button>
+              <a
+                href="https://api.whatsapp.com/send?phone=996500677633"
+                rel="noreferrer"
+                target="_blank">
+                <motion.button
+                  custom={2}
+                  variants={AnimBottom}
+                  className={s.button}>
+                  {t("HomePage.firstBlock.buttonText")}
+                </motion.button>
+              </a>
             </div>
           </div>
         </div>

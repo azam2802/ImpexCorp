@@ -7,6 +7,7 @@ import { useAutosList } from "@store/store"
 export const Catalogs = () => {
   const { t } = useTranslation()
   const { data } = useAutosList()
+  console.log("🚀 ~ Catalogs ~ data:", data)
 
   return (
     <section>
@@ -20,12 +21,12 @@ export const Catalogs = () => {
               />
               <CatalogsItem
                 catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
-                data={data}
+                data={[...data].filter((item) => item.country == "CH")}
               />
               <CatalogsItem
                 catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
-                data={data}
-              />{" "}
+                data={[...data].filter((item) => item.country == "SK")}
+              />
             </>
           ) : (
             <>
