@@ -33,7 +33,7 @@ export const useAutosList = create(
       try {
         useEffect(() => {
           axios
-            .get(import.meta.env.VITE_API + "/api/v1/autos", {
+            .get(import.meta.env.VITE_API + "api/v1/autos", {
               headers: {
                 "Content-Type": "application/json",
                 "Accept-Language": lang == "zh" ? "zh-hant" : lang,
@@ -58,7 +58,7 @@ export const useAutoInfo = create(
       try {
         useEffect(() => {
           axios
-            .get(import.meta.env.VITE_API + "/api/v1/autos/" + id, {
+            .get(import.meta.env.VITE_API + "api/v1/autos/" + id, {
               headers: {
                 "Content-Type": "application/json",
                 "Accept-Language": lang == "zh" ? "zh-hant" : lang,
