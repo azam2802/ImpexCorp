@@ -75,49 +75,54 @@ export const useAutoInfo = create(
     },
   })),
 )
+export const useFilterStore = create(
+  devtools((set) => ({
+    filteredCars: [],
+    setFilteredCars: (filteredCars) => set({ filteredCars }),
+  })),
+)
 
-export const useFilter = create((set) => ({
-  values: {
-    car_brand: "",
-    car_model: "",
-    fuel_type: "",
-    mileage_max: 0,
-    mileage_min: 0,
-    price_min: 0,
-    price_max: 0,
-    release_period: "",
-    transmission: "",
-    drive: "",
-    volume_max: 0,
-    volume_min: 0,
-  },
-  getData: (clickedItem, filterId) => {
-    set((state) => {
-      const newValues = { ...state.values }
-      newValues[filterId] = clickedItem
-
-      console.log(newValues)
-      return { values: newValues }
-    })
-  },
-  setInitial: () => {
-    set(() => {
-      return {
+export const useFilter = create(
+  devtools((set) => ({
+    values: {
+      car_brand: "",
+      car_model: "",
+      fuel_type: "",
+      mileage_max: 99999999999999,
+      mileage_min: 0,
+      price_min: 0,
+      price_max: 99999999999,
+      release_period: "",
+      transmission: "",
+      drive: "",
+      volume_max: 99999999999,
+      volume_min: 0,
+    },
+    getData: (clickedItem, filterId) => {
+      set((state) => {
+        const newValues = { ...state.values }
+        newValues[filterId] = clickedItem
+        console.log(newValues)
+        return { values: newValues }
+      })
+    },
+    setInitial: () => {
+      set(() => ({
         values: {
           car_brand: "",
           car_model: "",
           fuel_type: "",
-          mileage_max: 0,
+          mileage_max: 99999999999999,
           mileage_min: 0,
           price_min: 0,
-          price_max: 0,
+          price_max: 999999999999,
           release_period: "",
           transmission: "",
           drive: "",
-          volume_max: 0,
+          volume_max: 99999999999,
           volume_min: 0,
         },
-      }
-    })
-  },
-}))
+      }))
+    },
+  })),
+)

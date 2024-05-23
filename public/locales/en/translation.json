@@ -17,10 +17,10 @@
         }
       }
     },
-    "MetaTags":{
-      "home":"Impex Corp || Home",
-      "ourcompany":"Impex Corp || Our Company",
-      "catalogue":"Impex Corp || Catalog"
+    "MetaTags": {
+      "home": "Impex Corp || Home",
+      "ourcompany": "Impex Corp || Our Company",
+      "catalogue": "Impex Corp || Catalog"
     }
   },
   "HomePage": {
@@ -148,7 +148,7 @@
     },
     "input": {
       "pricesFrom": "Prices from",
-      "priceBegore": "Prices before",
+      "priceBefore": "Prices before",
       "mileageFrom": "Mileage from",
       "mileageBefore": "Mileage before",
       "volumeFrom": "Volume from",

@@ -151,6 +151,9 @@
       background: rgb(255, 255, 255);
       border: none;
       padding: 16px;
+      @media screen and (max-width: 1060px) {
+        width: 11.2vw;
+      }
     }
   }
 

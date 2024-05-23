@@ -17,10 +17,10 @@
         }
       }
     },
-    "MetaTags":{
-      "home":"Impex Corp || Главная",
-      "ourcompany":"Impex Corp || Наша компания",
-      "catalogue":"Impex Corp || Каталог"
+    "MetaTags": {
+      "home": "Impex Corp || Главная",
+      "ourcompany": "Impex Corp || Наша компания",
+      "catalogue": "Impex Corp || Каталог"
     }
   },
   "HomePage": {
@@ -148,7 +148,7 @@
     },
     "input": {
       "pricesFrom": "Цены от",
-      "priceBegore": "Цены до",
+      "priceBefore": "Цены до",
       "mileageFrom": "Пробег от",
       "mileageBefore": "Пробег до",
       "volumeFrom": "Обьем от",

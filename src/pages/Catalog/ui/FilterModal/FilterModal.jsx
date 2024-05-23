@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { Select } from "../Select/Select"
 import { VolumeSelect } from "../Select/VolumeSelect"
 import { useTranslation } from "react-i18next"
+import { useFilterStore } from "@store/store"
+import axios from "axios"
 import { useFilter } from "@store/store"
 
 export const FiltrModal = ({ setOpenModal }) => {
-  const { values } = useFilter()
+  const { values, getData } = useFilter()
   const { t } = useTranslation()
+  const { setFilteredCars } = useFilterStore()
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
 
   const handleResize = () => {
@@ -23,9 +26,28 @@ export const FiltrModal = ({ setOpenModal }) => {
     }
   }, [])
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    setOpenModal(false)
+
+    try {
+      console.log(values)
+      const queryParams = new URLSearchParams(values).toString()
+      console.log(queryParams)
+      const url = `${import.meta.env.VITE_API}/api/v1/autos/?${queryParams}`
+      console.log(url)
+      const response = await axios.get(url)
+      setFilteredCars(response.data)
+      console.log(response.data)
+      setOpenModal(false)
+    } catch (error) {
+      console.log("Fetching error", error)
+    }
+  }
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target
+    getData(value, name)
+    console.log(value, name)
   }
 
   return (
@@ -41,7 +63,7 @@ export const FiltrModal = ({ setOpenModal }) => {
 
         <Select
           title={t("Catalog.characteristics.model")}
-          firstType="Solares"
+          firstType="Mustang"
           secondType="Sonata"
           thirdType="Supra"
           filterId="car_model"
@@ -52,7 +74,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           firstType="2010"
           secondType="2011"
           thirdType="2012"
-          filterId="year"
+          filterId="release_period"
         />
       </section>
 
@@ -79,32 +101,20 @@ export const FiltrModal = ({ setOpenModal }) => {
           thirdType="4wd"
           filterId="drive"
         />
-
-        <div className={s.adaptive_none}>
-          <Select
-            title={t("Catalog.characteristics.transmission.title")}
-            firstType={t("Catalog.characteristics.transmission.mechanical")}
-            secondType={t("Catalog.characteristics.transmission.automatic")}
-            thirdType={t("Catalog.characteristics.transmission.stepless")}
-            filterId="transmission"
-          />
-        </div>
       </section>
 
       <section className={s.row}>
         <div className={s.row_input}>
           <input
             type="text"
-            onChange={(e) => {
-              values.milage_min = Number(e.target.value)
-            }}
+            name="mileage_min"
+            onChange={handleInputChange}
             placeholder={t("Catalog.input.mileageFrom")}
           />
           <input
-            onChange={(e) => {
-              values.milage_max = Number(e.target.value)
-            }}
             type="text"
+            name="mileage_max"
+            onChange={handleInputChange}
             placeholder={t("Catalog.input.mileageBefore")}
           />
         </div>
@@ -114,16 +124,14 @@ export const FiltrModal = ({ setOpenModal }) => {
             <div className={s.row_input}>
               <input
                 type="text"
-                onChange={(e) => {
-                  values.price_min = Number(e.target.value)
-                }}
+                name="price_min"
+                onChange={handleInputChange}
                 placeholder={t("Catalog.input.pricesFrom")}
               />
               <input
                 type="text"
-                onChange={(e) => {
-                  values.price_max = Number(e.target.value)
-                }}
+                name="price_max"
+                onChange={handleInputChange}
                 placeholder={t("Catalog.input.priceBefore")}
               />
             </div>
@@ -131,18 +139,16 @@ export const FiltrModal = ({ setOpenModal }) => {
             <div className={s.block}>
               <div className={s.row_input}>
                 <input
-                  onChange={(e) => {
-                    values.price_min = Number(e.target.value)
-                  }}
                   type="text"
+                  name="price_min"
+                  onChange={handleInputChange}
                   placeholder={t("Catalog.input.pricesFrom")}
                 />
                 <input
-                  onChange={(e) => {
-                    values.price_max = Number(e.target.value)
-                  }}
                   type="text"
-                  placeholder={t("Catalog.input.priceBegore")}
+                  name="price_max"
+                  onChange={handleInputChange}
+                  placeholder={t("Catalog.input.priceBefore")}
                 />
               </div>
             </div>
@@ -155,7 +161,7 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType="2.2"
             secondType="2.2"
             thirdType="2.2"
-            filterId="volume_max"
+            filterId="volume_min"
           />
 
           <VolumeSelect
@@ -163,7 +169,7 @@ export const FiltrModal = ({ setOpenModal }) => {
             firstType="2.2"
             secondType="2.2"
             thirdType="2.2"
-            filterId="volume_min"
+            filterId="volume_max"
           />
         </div>
       </section>
@@ -178,3 +184,5 @@ export const FiltrModal = ({ setOpenModal }) => {
 FiltrModal.propTypes = {
   setOpenModal: PropTypes.func.isRequired,
 }
+
+export default FiltrModal
