@@ -41,9 +41,9 @@ const FirstBlock = () => {
           <div className={s.block_title}>
             <div className={s.title}>
               <p>
-                <motion.span custom={1} variants={AnimLeft}>
+                <motion.h1 custom={1} variants={AnimLeft}>
                   IMPEXCORP
-                </motion.span>
+                </motion.h1>
                 <motion.span custom={1} variants={AnimLeft}>
                   {t("HomePage.firstBlock.title1")}
                 </motion.span>

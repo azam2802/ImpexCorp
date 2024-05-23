@@ -15,11 +15,9 @@
   font-family: Inter;
   font-weight: 300;
   color: white;
-  span {
-    &:first-child {
-      font-size: 100px;
-      font-weight: 400;
-    }
+  h1 {
+    font-size: 100px;
+    font-weight: 400;
     display: block;
   }
 }

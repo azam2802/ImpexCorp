@@ -29,9 +29,9 @@ const OurServices = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         className={s.parentContainer}>
-        <motion.h1 variants={AnimBottom} className={s.serviceTitle}>
+        <motion.h2 variants={AnimBottom} className={s.serviceTitle}>
           {t("HomePage.OurServices.title")}
-        </motion.h1>
+        </motion.h2>
         <div className={s.row}>
           <motion.div custom={2} variants={AnimBottom} className={s.col_6}>
             <div className={s.imgDiv}>
