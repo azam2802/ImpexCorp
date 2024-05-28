@@ -71,6 +71,23 @@ const CardInfo = () => {
     }
   }
 
+  const [thisUrl, setThisUrl] = useState("")
+  const [thisTitle, setThisTitle] = useState("")
+
+  useEffect(() => {
+    setThisUrl(window.location.href)
+    setThisTitle(document.title)
+  }, [])
+
+  const shareHandler = () => {
+    navigator
+      .share({
+        title: thisTitle,
+        url: thisUrl,
+      })
+      .catch(console.error)
+  }
+
   return (
     <div className={s.card_info_section}>
       <Link to="/" className={s.back}>
@@ -172,7 +189,7 @@ const CardInfo = () => {
         </div>
       </div>
 
-      <div className={s.share}>
+      <div className={s.share} onClick={shareHandler}>
         <IoShareSocial />
         <span>Поделится</span>
       </div>
