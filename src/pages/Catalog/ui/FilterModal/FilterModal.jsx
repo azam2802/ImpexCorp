@@ -9,10 +9,12 @@ import axios from "axios"
 import { useFilter } from "@store/store"
 
 export const FiltrModal = ({ setOpenModal }) => {
-  const { values, getData } = useFilter()
+  const { values, getData, setInitial } = useFilter()
   const { t } = useTranslation()
-  const { setFilteredCars } = useFilterStore()
+  const { setFilteredCars, brands, models, transmissions, drives, fetchData } =
+    useFilterStore()
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
+  const [years, setYears] = useState([])
 
   const handleResize = () => {
     setIsSmallScreen(window.innerWidth < 768)
@@ -26,54 +28,76 @@ export const FiltrModal = ({ setOpenModal }) => {
     }
   }, [])
 
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
+  useEffect(() => {
+    const currentYear = new Date().getFullYear()
+    const startYear = 1990
+    const yearsArray = []
+
+    for (let year = startYear; year <= currentYear; year++) {
+      yearsArray.push(year)
+    }
+
+    setYears(yearsArray)
+  }, [])
+
   const onSubmit = async (e) => {
     e.preventDefault()
 
     try {
-      console.log(values)
+      console.log("Фильтруемые значения:", values)
       const queryParams = new URLSearchParams(values).toString()
-      console.log(queryParams)
+      console.log("Параметры запроса:", queryParams)
       const url = `${import.meta.env.VITE_API}/api/v1/autos/?${queryParams}`
-      console.log(url)
+      console.log("URL запроса:", url)
       const response = await axios.get(url)
       setFilteredCars(response.data)
-      console.log(response.data)
+      console.log("Ответ от сервера:", response.data)
+      setInitial()
       setOpenModal(false)
     } catch (error) {
-      console.log("Fetching error", error)
+      console.log("Ошибка получения данных", error)
     }
   }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target
     getData(value, name)
-    console.log(value, name)
+    console.log("Изменение фильтра:", name, value)
   }
+
+  console.log(transmissions)
 
   return (
     <main className={s.filter_modal}>
       <section className={s.row}>
         <Select
           title={t("Catalog.characteristics.catalog")}
-          firstType="Mersedes"
-          secondType="Audi"
-          thirdType="Toyota"
+          options={brands.map((brand) => ({
+            label: brand.car_brand,
+            value: brand.car_brand,
+          }))}
           filterId="car_brand"
         />
 
         <Select
           title={t("Catalog.characteristics.model")}
-          firstType="Mustang"
-          secondType="Sonata"
-          thirdType="Supra"
+          options={models.map((model) => ({
+            label: model.car_model,
+            value: model.car_model,
+          }))}
           filterId="car_model"
         />
 
         <Select
           title={t("Catalog.characteristics.yearIssue")}
-          firstType="2010"
-          secondType="2011"
-          thirdType="2012"
+          options={years.map((year) => ({
+            label: year,
+            value: year,
+          }))}
           filterId="release_period"
         />
       </section>
@@ -81,24 +105,39 @@ export const FiltrModal = ({ setOpenModal }) => {
       <section className={s.row}>
         <Select
           title={t("Catalog.characteristics.fuel.title")}
-          firstType={t("Catalog.characteristics.fuel.diesel")}
-          secondType={t("Catalog.characteristics.fuel.petrol")}
-          thirdType={t("Catalog.characteristics.fuel.electro")}
+          options={[
+            {
+              label: t("Catalog.characteristics.fuel.diesel"),
+              value: t("Catalog.characteristics.fuel.diesel"),
+            },
+            {
+              label: t("Catalog.characteristics.fuel.petrol"),
+              value: t("Catalog.characteristics.fuel.petrol"),
+            },
+            {
+              label: t("Catalog.characteristics.fuel.electro"),
+              value: t("Catalog.characteristics.fuel.electro"),
+            },
+          ]}
           filterId="fuel_type"
         />
         <Select
           title={t("Catalog.characteristics.transmission.title")}
-          firstType={t("Catalog.characteristics.transmission.mechanical")}
-          secondType={t("Catalog.characteristics.transmission.automatic")}
-          thirdType={t("Catalog.characteristics.transmission.stepless")}
+          options={transmissions.map((transition) => ({
+            label: t(
+              `Catalog.characteristics.transmission.${transition.transmission}`,
+            ),
+            value: transition.transmission,
+          }))}
           filterId="transmission"
         />
 
         <Select
           title={t("Catalog.characteristics.driveUnit.title")}
-          firstType={t("Catalog.characteristics.driveUnit.front")}
-          secondType={t("Catalog.characteristics.driveUnit.rear")}
-          thirdType="4wd"
+          options={drives.map((drive) => ({
+            label: t(`Catalog.characteristics.driveUnit.${drive.drive}`),
+            value: drive.drive,
+          }))}
           filterId="drive"
         />
       </section>

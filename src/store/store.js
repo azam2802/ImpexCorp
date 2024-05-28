@@ -78,10 +78,37 @@ export const useAutoInfo = create(
 export const useFilterStore = create(
   devtools((set) => ({
     filteredCars: [],
+    brands: [],
+    models: [],
+    transmissions: [],
+    drives: [],
     setFilteredCars: (filteredCars) => set({ filteredCars }),
+    fetchData: async () => {
+      try {
+        const [
+          brandsResponse,
+          modelsResponse,
+          transmissionsResponse,
+          drivesResponse,
+        ] = await Promise.all([
+          axios.get(`${import.meta.env.VITE_API}/api/v1/car-brands`),
+          axios.get(`${import.meta.env.VITE_API}/api/v1/car-models`),
+          axios.get(`${import.meta.env.VITE_API}/api/v1/transmissions`),
+          axios.get(`${import.meta.env.VITE_API}/api/v1/drives`),
+        ])
+
+        set({
+          brands: brandsResponse.data,
+          models: modelsResponse.data,
+          transmissions: transmissionsResponse.data,
+          drives: drivesResponse.data,
+        })
+      } catch (error) {
+        console.error("Ошибка получения данных", error)
+      }
+    },
   })),
 )
-
 export const useFilter = create(
   devtools((set) => ({
     values: {
@@ -102,7 +129,7 @@ export const useFilter = create(
       set((state) => {
         const newValues = { ...state.values }
         newValues[filterId] = clickedItem
-        console.log(newValues)
+        console.log("Обновленные значения:", newValues)
         return { values: newValues }
       })
     },
