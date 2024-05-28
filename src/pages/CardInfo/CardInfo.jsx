@@ -23,18 +23,18 @@ const CardInfo = () => {
 
   fetchData(i18n.language, id)
 
-  const images = data.image
+  const images = data.images
 
   const [mainImg, setMainImg] = useState("placeholderImage")
   const { nextSlide, prevSlide, slide, setSlide } = useSliderState()
 
   useEffect(() => {
     try {
-      setMainImg(data.image[slide].image)
+      setMainImg(data.images[slide].image)
     } catch {
       return
     }
-  }, [data.image])
+  }, [data.images])
 
   const [bodyWidth, setBodyWidth] = useState(0)
 
@@ -98,7 +98,7 @@ const CardInfo = () => {
                 </button>{" "}
               </>
             )}
-            {data.image == undefined ? (
+            {data.images == undefined ? (
               <img src={placeholderImage} alt={"Placeholder Image"} />
             ) : (
               <img
