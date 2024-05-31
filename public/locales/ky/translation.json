@@ -17,10 +17,10 @@
         }
       }
     },
-    "MetaTags ":{
-      "home":"Impex Corp || Негизги",
-      "ourcompany":"Impex Corp || Биздин компания",
-      "catalogue":"Impex Corp || Каталог"
+    "MetaTags ": {
+      "home": "Impex Corp || Негизги",
+      "ourcompany": "Impex Corp || Биздин компания",
+      "catalogue": "Impex Corp || Каталог"
     }
   },
   "HomePage": {
@@ -126,7 +126,8 @@
         "title": "Күйүүчү май",
         "diesel": "Дизель",
         "petrol": "Бензин",
-        "electro": "Электр"
+        "electro": "Электр",
+        "hybrid": "Гибрид"
       },
       "driveUnit": {
         "title": "Иштеткич",

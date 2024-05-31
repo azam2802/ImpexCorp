@@ -126,7 +126,8 @@
         "title": "Fuel",
         "diesel": "Diesel",
         "petrol": "Petrol",
-        "electro": "Electro"
+        "electro": "Electro",
+        "hybrid": "Hybrid"
       },
       "driveUnit": {
         "title": "Drive unit",

@@ -10,9 +10,16 @@ import { useFilter } from "@store/store"
 
 export const FiltrModal = ({ setOpenModal }) => {
   const { values, getData, setInitial } = useFilter()
-  const { t } = useTranslation()
-  const { setFilteredCars, brands, models, transmissions, drives, fetchData } =
-    useFilterStore()
+  const { t, i18n } = useTranslation()
+  const {
+    setFilteredCars,
+    brands,
+    models,
+    transmissions,
+    drives,
+    fetchData,
+    fetchModels,
+  } = useFilterStore()
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
   const [years, setYears] = useState([])
 
@@ -29,8 +36,8 @@ export const FiltrModal = ({ setOpenModal }) => {
   }, [])
 
   useEffect(() => {
-    fetchData()
-  }, [fetchData])
+    fetchData(i18n.language)
+  }, [fetchData, i18n.language])
 
   useEffect(() => {
     const currentYear = new Date().getFullYear()
@@ -48,14 +55,10 @@ export const FiltrModal = ({ setOpenModal }) => {
     e.preventDefault()
 
     try {
-      console.log("Фильтруемые значения:", values)
       const queryParams = new URLSearchParams(values).toString()
-      console.log("Параметры запроса:", queryParams)
       const url = `${import.meta.env.VITE_API}/api/v1/autos/?${queryParams}`
-      console.log("URL запроса:", url)
       const response = await axios.get(url)
       setFilteredCars(response.data)
-      console.log("Ответ от сервера:", response.data)
       setInitial()
       setOpenModal(false)
     } catch (error) {
@@ -66,10 +69,7 @@ export const FiltrModal = ({ setOpenModal }) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target
     getData(value, name)
-    console.log("Изменение фильтра:", name, value)
   }
-
-  console.log(transmissions)
 
   return (
     <main className={s.filter_modal}>
@@ -81,6 +81,10 @@ export const FiltrModal = ({ setOpenModal }) => {
             value: brand.car_brand,
           }))}
           filterId="car_brand"
+          onChange={(value) => {
+            handleInputChange({ target: { name: "car_brand", value } })
+            fetchModels(value)
+          }}
         />
 
         <Select
@@ -118,15 +122,17 @@ export const FiltrModal = ({ setOpenModal }) => {
               label: t("Catalog.characteristics.fuel.electro"),
               value: t("Catalog.characteristics.fuel.electro"),
             },
+            {
+              label: t("Catalog.characteristics.fuel.hybrid"),
+              value: t("Catalog.characteristics.fuel.hybrid"),
+            },
           ]}
           filterId="fuel_type"
         />
         <Select
           title={t("Catalog.characteristics.transmission.title")}
           options={transmissions.map((transition) => ({
-            label: t(
-              `Catalog.characteristics.transmission.${transition.transmission}`,
-            ),
+            label: transition.transmission,
             value: transition.transmission,
           }))}
           filterId="transmission"
@@ -135,7 +141,7 @@ export const FiltrModal = ({ setOpenModal }) => {
         <Select
           title={t("Catalog.characteristics.driveUnit.title")}
           options={drives.map((drive) => ({
-            label: t(`Catalog.characteristics.driveUnit.${drive.drive}`),
+            label: drive.drive,
             value: drive.drive,
           }))}
           filterId="drive"

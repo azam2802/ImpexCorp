@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { useFilter } from "@store/store"
 
-export const Select = ({ title, options, filterId }) => {
+export const Select = ({ title, options, filterId, onChange }) => {
   const [openSelect, setOpenSelect] = useState(false)
   const [selectedValue, setSelectedValue] = useState(null)
   const { getData } = useFilter()
@@ -13,6 +13,8 @@ export const Select = ({ title, options, filterId }) => {
   const handleSelect = (value) => {
     setSelectedValue(value)
     setOpenSelect(false)
+    getData(value, filterId)
+    if (onChange) onChange(value)
   }
 
   return (
@@ -40,10 +42,7 @@ export const Select = ({ title, options, filterId }) => {
                   <p
                     key={option.value}
                     className={s.option}
-                    onClick={() => {
-                      handleSelect(option.value)
-                      getData(option.value, filterId)
-                    }}>
+                    onClick={() => handleSelect(option.value)}>
                     {option.label}
                   </p>
                 ))}
@@ -65,6 +64,7 @@ Select.propTypes = {
     }),
   ).isRequired,
   filterId: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
 }
 
 export default Select

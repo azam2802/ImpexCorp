@@ -126,7 +126,8 @@
         "title": "Топливо",
         "diesel": "Дизель",
         "petrol": "Бензин",
-        "electro": "Электро"
+        "electro": "Электричество",
+        "hybrid": "Гибрид"
       },
       "driveUnit": {
         "title": "Привод",

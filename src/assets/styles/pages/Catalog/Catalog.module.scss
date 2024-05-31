@@ -371,7 +371,6 @@
 }
 
 // ------------ for scrolling --------- //
-
 .select {
   position: relative;
 }
@@ -389,4 +388,9 @@
 
 .option:hover {
   background-color: #f0f0f0;
+}
+
+.select .options_container {
+  scrollbar-width: thin;
+  scrollbar-color: #19746b #e0e0ffa5;
 }

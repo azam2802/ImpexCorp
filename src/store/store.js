@@ -75,6 +75,7 @@ export const useAutoInfo = create(
     },
   })),
 )
+
 export const useFilterStore = create(
   devtools((set) => ({
     filteredCars: [],
@@ -83,18 +84,29 @@ export const useFilterStore = create(
     transmissions: [],
     drives: [],
     setFilteredCars: (filteredCars) => set({ filteredCars }),
-    fetchData: async () => {
+    fetchData: async (lang) => {
       try {
+        const headers = {
+          "Content-Type": "application/json",
+          "Accept-Language": lang === "zh" ? "zh-hant" : lang,
+        }
+
         const [
           brandsResponse,
           modelsResponse,
           transmissionsResponse,
           drivesResponse,
         ] = await Promise.all([
-          axios.get(`${import.meta.env.VITE_API}/api/v1/car-brands`),
-          axios.get(`${import.meta.env.VITE_API}/api/v1/car-models`),
-          axios.get(`${import.meta.env.VITE_API}/api/v1/transmissions`),
-          axios.get(`${import.meta.env.VITE_API}/api/v1/drives`),
+          axios.get(`${import.meta.env.VITE_API}/api/v1/car-brands`, {
+            headers,
+          }),
+          axios.get(`${import.meta.env.VITE_API}/api/v1/car-models`, {
+            headers,
+          }),
+          axios.get(`${import.meta.env.VITE_API}/api/v1/transmissions`, {
+            headers,
+          }),
+          axios.get(`${import.meta.env.VITE_API}/api/v1/drives`, { headers }),
         ])
 
         set({
@@ -107,8 +119,19 @@ export const useFilterStore = create(
         console.error("Ошибка получения данных", error)
       }
     },
+    fetchModels: async (brand) => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API}/api/v1/car-models/${brand}`,
+        )
+        set({ models: response.data })
+      } catch (error) {
+        console.error("Ошибка при загрузке моделей", error)
+      }
+    },
   })),
 )
+
 export const useFilter = create(
   devtools((set) => ({
     values: {
