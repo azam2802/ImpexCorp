@@ -41,7 +41,6 @@ export const useAutosList = create(
             })
             .then((res) => {
               set({ data: [...res.data].reverse() })
-              console.log(res.data)
             })
         }, [lang])
       } catch {
@@ -66,7 +65,6 @@ export const useAutoInfo = create(
             })
             .then((res) => {
               set({ data: res.data })
-              console.log(res.data)
             })
         }, [lang])
       } catch {
@@ -75,10 +73,60 @@ export const useAutoInfo = create(
     },
   })),
 )
+
 export const useFilterStore = create(
   devtools((set) => ({
     filteredCars: [],
+    brands: [],
+    models: [],
+    transmissions: [],
+    drives: [],
     setFilteredCars: (filteredCars) => set({ filteredCars }),
+    fetchData: async (lang) => {
+      try {
+        const headers = {
+          "Content-Type": "application/json",
+          "Accept-Language": lang === "zh" ? "zh-hant" : lang,
+        }
+
+        const [
+          brandsResponse,
+          modelsResponse,
+          transmissionsResponse,
+          drivesResponse,
+        ] = await Promise.all([
+          axios.get(`${import.meta.env.VITE_API}api/v1/car-brands`, {
+            headers,
+          }),
+          axios.get(`${import.meta.env.VITE_API}api/v1/car-models`, {
+            headers,
+          }),
+          axios.get(`${import.meta.env.VITE_API}api/v1/transmissions`, {
+            headers,
+          }),
+          axios.get(`${import.meta.env.VITE_API}api/v1/drives`, { headers }),
+        ])
+
+        set({
+          brands: brandsResponse.data,
+          models: modelsResponse.data,
+          transmissions: transmissionsResponse.data,
+          drives: drivesResponse.data,
+        })
+      } catch (error) {
+        console.error("Ошибка получения данных", error)
+      }
+    },
+    fetchModels: async (brand) => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API}api/v1/car-models/${brand}`,
+        )
+        set({ models: response.data })
+      } catch (error) {
+        console.error("Ошибка при загрузке моделей", error)
+      }
+    },
   })),
 )
 
@@ -102,7 +150,6 @@ export const useFilter = create(
       set((state) => {
         const newValues = { ...state.values }
         newValues[filterId] = clickedItem
-        console.log(newValues)
         return { values: newValues }
       })
     },

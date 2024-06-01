@@ -7,7 +7,6 @@ import { useAutosList } from "@store/store"
 export const Catalogs = () => {
   const { t } = useTranslation()
   const { data } = useAutosList()
-  console.log("🚀 ~ Catalogs ~ data:", data)
 
   return (
     <section>
