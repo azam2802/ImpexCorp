@@ -41,7 +41,6 @@ export const useAutosList = create(
             })
             .then((res) => {
               set({ data: [...res.data].reverse() })
-              console.log(res.data)
             })
         }, [lang])
       } catch {
@@ -66,7 +65,6 @@ export const useAutoInfo = create(
             })
             .then((res) => {
               set({ data: res.data })
-              console.log(res.data)
             })
         }, [lang])
       } catch {
@@ -152,7 +150,6 @@ export const useFilter = create(
       set((state) => {
         const newValues = { ...state.values }
         newValues[filterId] = clickedItem
-        console.log("Обновленные значения:", newValues)
         return { values: newValues }
       })
     },

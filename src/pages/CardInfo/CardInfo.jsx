@@ -80,23 +80,29 @@ const CardInfo = () => {
       <div className={s.card_slide_block}>
         <div className={s.card_slide}>
           <div className={s.card_slide_main}>
-            {images != undefined && (
-              <>
-                <button
-                  onClick={() => {
-                    prevFunc()
-                  }}
-                  className={s.left}>
-                  <FaAngleLeft />
-                </button>
-                <button
-                  onClick={() => {
-                    nextFunc()
-                  }}
-                  className={s.right}>
-                  <FaAngleRight />
-                </button>{" "}
-              </>
+            {images != undefined ? (
+              images.length > 1 ? (
+                <>
+                  <button
+                    onClick={() => {
+                      prevFunc()
+                    }}
+                    className={s.left}>
+                    <FaAngleLeft />
+                  </button>
+                  <button
+                    onClick={() => {
+                      nextFunc()
+                    }}
+                    className={s.right}>
+                    <FaAngleRight />
+                  </button>
+                </>
+              ) : (
+                ""
+              )
+            ) : (
+              ""
             )}
             {data.image == undefined ? (
               <img src={placeholderImage} alt={"Placeholder Image"} />
@@ -107,35 +113,46 @@ const CardInfo = () => {
               />
             )}
           </div>
-          <div className={s.card_slide_list}>
-            <Swiper
-              freeMode={true}
-              modules={[FreeMode]}
-              slidesPerView={bodyWidth > 765 ? 3.93 : 3.45}>
-              {(images == undefined ? placeholderImage : images).map(
-                (item, i) => (
-                  <SwiperSlide key={i}>
-                    <div
-                      onClick={() => {
-                        setMainImg(item.image)
-                        setSlide(
-                          images.map((el) => el.image).indexOf(item.image),
-                        )
-                      }}
-                      className={s.card_slide_item}>
-                      <img
-                        src={import.meta.env.VITE_API + item.image}
-                        alt="car photo"
-                      />
-                    </div>
-                  </SwiperSlide>
-                ),
-              )}
-            </Swiper>
-          </div>
+          {images != undefined ? (
+            images.length > 1 ? (
+              <div className={s.card_slide_list}>
+                <Swiper
+                  freeMode={true}
+                  modules={[FreeMode]}
+                  slidesPerView={bodyWidth > 765 ? 3.93 : 3.45}>
+                  {(images == undefined ? placeholderImage : images).map(
+                    (item, i) => (
+                      <SwiperSlide key={i}>
+                        <div
+                          onClick={() => {
+                            setMainImg(item.image)
+                            setSlide(
+                              images.map((el) => el.image).indexOf(item.image),
+                            )
+                          }}
+                          className={s.card_slide_item}>
+                          <img
+                            src={import.meta.env.VITE_API + item.image}
+                            alt="car photo"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ),
+                  )}
+                </Swiper>
+              </div>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
         </div>
         <div className={s.card_info_card}>
-          <h1>{data.car_name}</h1>
+          <h1>
+            {data.car_model != undefined &&
+              data.car_brand + " " + data.car_model}
+          </h1>
           <h1 className={s.car_price}>$ {data.price}</h1>
           <ul className={s.car_struct_list}>
             <li className={s.car_struct_list_item}>

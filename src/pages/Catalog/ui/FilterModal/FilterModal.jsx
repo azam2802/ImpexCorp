@@ -20,11 +20,17 @@ export const FiltrModal = ({ setOpenModal }) => {
     fetchData,
     fetchModels,
   } = useFilterStore()
+
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
   const [years, setYears] = useState([])
 
   const handleResize = () => {
     setIsSmallScreen(window.innerWidth < 768)
+  }
+
+  const headers = {
+    "Content-Type": "application/json",
+    "Accept-Language": i18n.language === "zh" ? "zh-hant" : i18n.language,
   }
 
   useEffect(() => {
@@ -57,8 +63,12 @@ export const FiltrModal = ({ setOpenModal }) => {
     try {
       const queryParams = new URLSearchParams(values).toString()
       const url = `${import.meta.env.VITE_API}/api/v1/autos/?${queryParams}`
-      const response = await axios.get(url)
-      setFilteredCars(response.data)
+      const response = await axios.get(url, { headers })
+      if (response.data.length == 0) {
+        setFilteredCars("empty")
+      } else {
+        setFilteredCars(response.data)
+      }
       setInitial()
       setOpenModal(false)
     } catch (error) {
