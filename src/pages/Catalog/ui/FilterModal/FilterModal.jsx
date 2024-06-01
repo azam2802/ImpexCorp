@@ -23,6 +23,7 @@ export const FiltrModal = ({ setOpenModal }) => {
 
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
   const [years, setYears] = useState([])
+  const [volumes, setVolumes] = useState([])
 
   const handleResize = () => {
     setIsSmallScreen(window.innerWidth < 768)
@@ -49,12 +50,19 @@ export const FiltrModal = ({ setOpenModal }) => {
     const currentYear = new Date().getFullYear()
     const startYear = 1990
     const yearsArray = []
+    const volumesArray = []
+
+    for (let volume = 0.6; volume <= 6.0; ) {
+      volume = 0.1 + volume
+      volumesArray.push(volume.toFixed(1))
+    }
 
     for (let year = startYear; year <= currentYear; year++) {
       yearsArray.push(year)
     }
 
     setYears(yearsArray)
+    setVolumes(volumesArray)
   }, [])
 
   const onSubmit = async (e) => {
@@ -213,17 +221,13 @@ export const FiltrModal = ({ setOpenModal }) => {
         <div className={s.row_input}>
           <VolumeSelect
             title={t("Catalog.input.volumeFrom")}
-            firstType="2.2"
-            secondType="2.2"
-            thirdType="2.2"
+            volumes={volumes}
             filterId="volume_min"
           />
 
           <VolumeSelect
             title={t("Catalog.input.volumeBefore")}
-            firstType="2.2"
-            secondType="2.2"
-            thirdType="2.2"
+            volumes={volumes}
             filterId="volume_max"
           />
         </div>

@@ -149,11 +149,11 @@
     },
     "input": {
       "pricesFrom": "Prices from",
-      "priceBefore": "Prices before",
+      "priceBefore": "Prices to",
       "mileageFrom": "Mileage from",
-      "mileageBefore": "Mileage before",
+      "mileageBefore": "Mileage to",
       "volumeFrom": "Volume from",
-      "volumeBefore": "Volume before"
+      "volumeBefore": "Volume to"
     },
     "button": {
       "title": "Find"
