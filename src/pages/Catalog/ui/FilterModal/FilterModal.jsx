@@ -52,7 +52,7 @@ export const FiltrModal = ({ setOpenModal }) => {
     const yearsArray = []
     const volumesArray = []
 
-    for (let volume = 0.6; volume <= 6.0; ) {
+    for (let volume = 0.6; volume <= 9.9; ) {
       volume = 0.1 + volume
       volumesArray.push(volume.toFixed(1))
     }
