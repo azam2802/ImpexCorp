@@ -181,6 +181,9 @@
     align-items: center;
     margin-top: 2vw;
     font-size: 2vw;
+    &:hover{
+      cursor: pointer;
+    }
     span {
       margin-left: 1vw;
     }

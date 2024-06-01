@@ -33,7 +33,7 @@ export const useAutosList = create(
       try {
         useEffect(() => {
           axios
-            .get(import.meta.env.VITE_API + "/api/v1/autos", {
+            .get(import.meta.env.VITE_API + "api/v1/autos", {
               headers: {
                 "Content-Type": "application/json",
                 "Accept-Language": lang == "zh" ? "zh-hant" : lang,
@@ -57,7 +57,7 @@ export const useAutoInfo = create(
       try {
         useEffect(() => {
           axios
-            .get(import.meta.env.VITE_API + "/api/v1/autos/" + id, {
+            .get(import.meta.env.VITE_API + "api/v1/autos/" + id, {
               headers: {
                 "Content-Type": "application/json",
                 "Accept-Language": lang == "zh" ? "zh-hant" : lang,
@@ -95,16 +95,16 @@ export const useFilterStore = create(
           transmissionsResponse,
           drivesResponse,
         ] = await Promise.all([
-          axios.get(`${import.meta.env.VITE_API}/api/v1/car-brands`, {
+          axios.get(`${import.meta.env.VITE_API}api/v1/car-brands`, {
             headers,
           }),
-          axios.get(`${import.meta.env.VITE_API}/api/v1/car-models`, {
+          axios.get(`${import.meta.env.VITE_API}api/v1/car-models`, {
             headers,
           }),
-          axios.get(`${import.meta.env.VITE_API}/api/v1/transmissions`, {
+          axios.get(`${import.meta.env.VITE_API}api/v1/transmissions`, {
             headers,
           }),
-          axios.get(`${import.meta.env.VITE_API}/api/v1/drives`, { headers }),
+          axios.get(`${import.meta.env.VITE_API}api/v1/drives`, { headers }),
         ])
 
         set({
@@ -120,7 +120,7 @@ export const useFilterStore = create(
     fetchModels: async (brand) => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API}/api/v1/car-models/${brand}`,
+          `${import.meta.env.VITE_API}api/v1/car-models/${brand}`,
         )
         set({ models: response.data })
       } catch (error) {

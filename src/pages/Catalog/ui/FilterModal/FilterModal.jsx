@@ -62,7 +62,7 @@ export const FiltrModal = ({ setOpenModal }) => {
 
     try {
       const queryParams = new URLSearchParams(values).toString()
-      const url = `${import.meta.env.VITE_API}/api/v1/autos/?${queryParams}`
+      const url = `${import.meta.env.VITE_API}api/v1/autos/?${queryParams}`
       const response = await axios.get(url, { headers })
       if (response.data.length == 0) {
         setFilteredCars("empty")
