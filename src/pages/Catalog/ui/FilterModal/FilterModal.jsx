@@ -144,6 +144,10 @@ export const FiltrModal = ({ setOpenModal }) => {
               label: t("Catalog.characteristics.fuel.hybrid"),
               value: t("Catalog.characteristics.fuel.hybrid"),
             },
+            {
+              label: t("Catalog.characteristics.fuel.gas"),
+              value: t("Catalog.characteristics.fuel.gas"),
+            },
           ]}
           filterId="fuel_type"
         />

@@ -127,6 +127,7 @@
         "diesel": "Дизель",
         "petrol": "Бензин",
         "electro": "Электр",
+        "gas": "Газ",
         "hybrid": "Гибрид"
       },
       "driveUnit": {
