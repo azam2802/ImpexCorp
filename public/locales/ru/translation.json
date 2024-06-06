@@ -126,20 +126,19 @@
         "title": "Топливо",
         "diesel": "Дизель",
         "petrol": "Бензин",
-        "electro": "Электричество",
+        "electro": "Электро",
         "hybrid": "Гибрид",
         "gas": "Газ"
       },
       "driveUnit": {
-        "title": "Привод",
-        "front": "Передний",
-        "rear": "Задний"
+        "title": "Привод"
       },
       "transmission": {
         "title": "Трансмиссия",
-        "mechanical": "Механические",
-        "automatic": "Автоматические",
-        "stepless": "Бесступенчатые"
+        "mechanical": "Механическая",
+        "automatic": "Aвтоматическая",
+        "stepless": "Вариаторная",
+        "robot": "Роботизированная"
       }
     },
     "country": {

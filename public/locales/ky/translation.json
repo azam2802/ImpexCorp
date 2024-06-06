@@ -126,20 +126,19 @@
         "title": "Күйүүчү май",
         "diesel": "Дизель",
         "petrol": "Бензин",
-        "electro": "Электр",
+        "electro": "Электро",
         "gas": "Газ",
         "hybrid": "Гибрид"
       },
       "driveUnit": {
-        "title": "Иштеткич",
-        "front": "Алдынкы",
-        "rear": "Арткы"
+        "title": "Иштеткич"
       },
       "transmission": {
         "title": "Трансмиссия",
         "mechanical": "Механикалык",
         "automatic": "Автоматтык",
-        "stepless": "Кадамсыз"
+        "stepless": "Вариатордук",
+        "robot": "Робот"
       }
     },
     "country": {

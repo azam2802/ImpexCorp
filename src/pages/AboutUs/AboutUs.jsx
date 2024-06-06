@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow } from "swiper/modules"
 import Slide1 from "@images/scale_1200 1.png"
 import Slide2 from "@images/scale_1200 1.png"
+import { motion } from "framer-motion"
 import Slide3 from "@images/scale_1200 1.png"
 import img2 from "@images/image44.png"
 import img3 from "@images/Rectangle124.png"
@@ -16,21 +17,41 @@ export const AboutUs = () => {
 
   const aboutCardImg = [Slide1, Slide2, Slide3]
 
+  const AnimLeft = {
+    hidden: {
+      x: -150,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.5, delay: custom * 0.2 },
+    }),
+  }
+
   return (
     <>
-      <div className={s.hero}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className={s.hero}>
         <img className={s.hero_image} src={heroImage} alt={heroImage} />
         <div className={s.back}></div>
         <div className={s.hero_box}>
-          <h1>{t("AboutUs.main_title")}</h1>
+          <motion.h1 custom={1} variants={AnimLeft}>
+            {t("AboutUs.main_title")}
+          </motion.h1>
           <a
             href="https://api.whatsapp.com/send?phone=996500677633"
             rel="noreferrer"
             target="_blank">
-            <button>{t("AboutUs.buttonText")}</button>
+            <motion.button custom={1.5} variants={AnimLeft}>
+              {t("AboutUs.buttonText")}
+            </motion.button>
           </a>
         </div>
-      </div>
+      </motion.div>
       <main className={s.about_main}>
         <div className={s.about_cards}>
           <div className={s.question}> {t("AboutUs.title")}</div>

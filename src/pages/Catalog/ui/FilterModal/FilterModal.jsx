@@ -11,15 +11,8 @@ import { useFilter } from "@store/store"
 export const FiltrModal = ({ setOpenModal }) => {
   const { values, getData, setInitial } = useFilter()
   const { t, i18n } = useTranslation()
-  const {
-    setFilteredCars,
-    brands,
-    models,
-    transmissions,
-    drives,
-    fetchData,
-    fetchModels,
-  } = useFilterStore()
+  const { setFilteredCars, brands, models, fetchData, fetchModels } =
+    useFilterStore()
 
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
   const [years, setYears] = useState([])
@@ -153,19 +146,43 @@ export const FiltrModal = ({ setOpenModal }) => {
         />
         <Select
           title={t("Catalog.characteristics.transmission.title")}
-          options={transmissions.map((transition) => ({
-            label: transition.transmission,
-            value: transition.transmission,
-          }))}
+          options={[
+            {
+              label: t("Catalog.characteristics.transmission.mechanical"),
+              value: t("Catalog.characteristics.transmission.mechanical"),
+            },
+            {
+              label: t("Catalog.characteristics.transmission.automatic"),
+              value: t("Catalog.characteristics.transmission.automatic"),
+            },
+            {
+              label: t("Catalog.characteristics.transmission.stepless"),
+              value: t("Catalog.characteristics.transmission.stepless"),
+            },
+            {
+              label: t("Catalog.characteristics.transmission.robot"),
+              value: t("Catalog.characteristics.transmission.robot"),
+            },
+          ]}
           filterId="transmission"
         />
 
         <Select
           title={t("Catalog.characteristics.driveUnit.title")}
-          options={drives.map((drive) => ({
-            label: drive.drive,
-            value: drive.drive,
-          }))}
+          options={[
+            {
+              label: "RWD",
+              value: "RWD",
+            },
+            {
+              label: "AWD",
+              value: "AWD",
+            },
+            {
+              label: "FWD",
+              value: "FWD",
+            },
+          ]}
           filterId="drive"
         />
       </section>
