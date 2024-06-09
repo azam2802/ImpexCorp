@@ -89,6 +89,8 @@ const CardInfo = () => {
       .catch(console.error)
   }
 
+  console.log(window.location.href)
+
   return (
     <main>
       <Helmet>
@@ -101,7 +103,7 @@ const CardInfo = () => {
         <meta
           property="og:title"
           content={`IMPEX CORP || 
-          ${data.car_model != undefined ? data.car_brand + " " + data.car_model : ""}`}
+          ${data.car_model != undefined ? data.car_brand + " " + data.car_model : "IMPEX CORP"}`}
         />
         <meta
           property="og:description"

@@ -38,7 +38,7 @@ const App = () => {
         <meta property="og:url" content="https://impex-corp.pp.ua/" />
         <meta
           property="og:title"
-          content="IMPEX CORP || Импорт-экспорт автомобилей из ОАЭ, Кореи и Китая"
+          content="IMPEX CORP || Импорт и экспорт автомобилей из ОАЭ, Кореи и Китая"
         />
         <meta
           property="og:description"
