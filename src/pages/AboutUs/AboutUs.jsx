@@ -58,31 +58,31 @@ export const AboutUs = () => {
           <div className={s.cards_list}>
             <div className={s.card_item}>
               <img src={img3} alt={img5} />
-              <div>
+              <article>
                 <span>{t("AboutUs.card1.bold")}</span> {t("AboutUs.card1.text")}
-              </div>
+              </article>
             </div>
             <div className={s.card_item}>
               <img src={img4} alt={img4} />
-              <div>
+              <article>
                 <span>{t("AboutUs.card2.bold")}</span> {t("AboutUs.card2.text")}
-              </div>
+              </article>
             </div>
             <div className={s.card_item}>
               <img src={img5} alt={img5} />
-              <div>
+              <article>
                 <span>{t("AboutUs.card3.bold")}</span> {t("AboutUs.card3.text")}
-              </div>
+              </article>
             </div>
           </div>
         </div>
       </main>
       <div className={s.about_back}>
         <div className={s.info}>
-          <div className={s.text}>
+          <article className={s.text}>
             {t("AboutUs.back.text")} <span>{t("AboutUs.back.span")}</span>{" "}
             {t("AboutUs.back.text2")}
-          </div>
+          </article>
           <div className={s.img_box}>
             <img src={img2} alt={img2} />
           </div>
@@ -115,7 +115,7 @@ export const AboutUs = () => {
             ))}
           </Swiper>
         </div>
-        <div className={s.bottom_text}>{t("AboutUs.bottomTitle")}</div>
+        <article className={s.bottom_text}>{t("AboutUs.bottomTitle")}</article>
       </main>
     </>
   )

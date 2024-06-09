@@ -18,9 +18,10 @@
       }
     },
     "MetaTags": {
-      "home": "Impex Corp || Главная",
-      "ourcompany": "Impex Corp || Наша компания",
-      "catalogue": "Impex Corp || Каталог"
+      "home": "IMPEX CORP || Импорт-экспорт автомобилей из ОАЭ, Кореи и Китая",
+      "ourcompany": "IMPEX CORP || Наша компания",
+      "catalogue": "IMPEX CORP || Каталог",
+      "defaultDescription": "ОсОО \"Импекс-Корп\" предоставляет услуги по покупке и импорту автомобилей из Кореи, Китая, ОАЭ и других стран."
     }
   },
   "HomePage": {

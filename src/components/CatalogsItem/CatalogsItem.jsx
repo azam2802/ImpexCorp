@@ -43,9 +43,9 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       className={s.catalogs_item}>
-      <motion.h1 variants={AnimBottom} className={s.catalog_type_title}>
+      <motion.h2 variants={AnimBottom} className={s.catalog_type_title}>
         {catalogTitle}
-      </motion.h1>
+      </motion.h2>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
         {data.length > 0 ? (
           <Swiper

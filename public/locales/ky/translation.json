@@ -18,9 +18,11 @@
       }
     },
     "MetaTags ": {
-      "home": "Impex Corp || Негизги",
-      "ourcompany": "Impex Corp || Биздин компания",
-      "catalogue": "Impex Corp || Каталог"
+      "home": "IMPEX CORP || БАЭ, Корея жана Кытайдан автоунааларды импорттоо-экспорттоо",
+      "ourcompany": "IMPEX CORP || Биздин компания",
+      "catalogue": "IMPEX CORP || Каталог",
+      "defaultDescription": "ЖЧК \"Импекс-Корп\" кытай, корея, БАЭ жана башка өлкөлөрдөн автоунааларды сатып алуу жана импорттоо боюнча кызмат көрсөтөт."
+
     }
   },
   "HomePage": {

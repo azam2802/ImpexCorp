@@ -18,9 +18,11 @@
       }
     },
     "MetaTags": {
-      "home": "Impex Corp || 首页",
-      "ourcompany": "Impex Corp || 我们的公司",
-      "catalogue": "Impex Corp || 目录"
+      "home": "IMPEX CORP || 阿聯酋、韓國和中國的汽車進出口",
+      "ourcompany": "IMPEX CORP || 我们的公司",
+      "catalogue": "IMPEX CORP || 目录",
+      "defaultDescription": "\"Impex-Corp\" LLC 提供從韓國、中國、阿聯酋等國家購買和進口汽車的服務。"
+      
     }
   },
   "HomePage": {

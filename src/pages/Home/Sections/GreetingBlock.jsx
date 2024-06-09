@@ -37,9 +37,11 @@ const GreetingBlock = () => {
             <motion.h2 custom={1} variants={AnimBottom} className={s.title}>
               {t("HomePage.GreetingBlock.title")}
             </motion.h2>
-            <motion.p custom={2} variants={AnimBottom} className={s.text}>
-              {t("HomePage.GreetingBlock.text")}
-            </motion.p>
+            <article>
+              <motion.p custom={2} variants={AnimBottom} className={s.text}>
+                {t("HomePage.GreetingBlock.text")}
+              </motion.p>
+            </article>
             <Link to="/about">
               <motion.button
                 custom={3}

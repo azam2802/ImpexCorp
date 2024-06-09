@@ -40,14 +40,12 @@ const FirstBlock = () => {
         <div className={s.block}>
           <div className={s.block_title}>
             <div className={s.title}>
-              <p>
-                <motion.h1 custom={1} variants={AnimLeft}>
-                  IMPEXCORP
-                </motion.h1>
-                <motion.span custom={1} variants={AnimLeft}>
-                  {t("HomePage.firstBlock.title1")}
-                </motion.span>
-              </p>
+              <motion.h1 custom={1} variants={AnimLeft}>
+                IMPEXCORP
+              </motion.h1>
+              <motion.p custom={1.5} variants={AnimLeft}>
+                <span>{t("HomePage.firstBlock.title1")}</span>
+              </motion.p>
             </div>
             <div>
               <a

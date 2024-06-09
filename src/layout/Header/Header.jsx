@@ -46,17 +46,17 @@ const Header = () => {
       case "/about":
         return {
           title: t("header.MetaTags.ourcompany"),
-          description: t("header.MetaTags.ourcompanyDescription"),
+          description: t("header.MetaTags.description"),
         }
       case "/catalog":
         return {
           title: t("header.MetaTags.catalogue"),
-          description: t("header.MetaTags.catalogueDescription"),
+          description: t("header.MetaTags.description"),
         }
       default:
         return {
           title: t("header.MetaTags.home"),
-          description: t("header.MetaTags.defaultDescription"),
+          description: t("header.MetaTags.description"),
         }
     }
   }

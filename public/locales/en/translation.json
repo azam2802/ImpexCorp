@@ -18,9 +18,10 @@
       }
     },
     "MetaTags": {
-      "home": "Impex Corp || Home",
-      "ourcompany": "Impex Corp || Our Company",
-      "catalogue": "Impex Corp || Catalog"
+      "home": "IMPEX CORP || Import-export of cars from the UAE, Korea and China",
+      "ourcompany": "IMPEX CORP || Our Company",
+      "catalogue": "IMPEX CORP || Catalog",
+      "defaultDescription": "LLC \"Impex-Corp\" provides services for the purchase and import of cars from Korea, China, UAE and other countries."
     }
   },
   "HomePage": {
