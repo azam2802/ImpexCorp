@@ -98,23 +98,6 @@ const CardInfo = () => {
           {`IMPEX CORP || 
           ${data.car_model != undefined ? data.car_brand + " " + data.car_model : ""}`}
         </title>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.href} />
-        <meta
-          property="og:title"
-          content={`IMPEX CORP || 
-          ${data.car_model != undefined ? data.car_brand + " " + data.car_model : "IMPEX CORP"}`}
-        />
-        <meta
-          property="og:description"
-          content={t("header.MetaTags.description")}
-        />
-        <meta
-          property="og:image"
-          content={
-            images != undefined ? import.meta.env.VITE_API + images[0] : {}
-          }
-        />
       </Helmet>
       <div className={s.card_info_section}>
         <Link to="/" className={s.back}>

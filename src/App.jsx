@@ -9,7 +9,6 @@ import { useAutosList } from "@store/store"
 import { useTranslation } from "react-i18next"
 import CardInfo from "@pages/CardInfo/CardInfo"
 import { Helmet } from "react-helmet"
-import urlLogo from "@images/urlLogo.png"
 
 const App = () => {
   const { fetchData } = useAutosList()
@@ -33,19 +32,7 @@ const App = () => {
 
   return (
     <div id="wrapper">
-      <Helmet>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://impex-corp.pp.ua/" />
-        <meta
-          property="og:title"
-          content="IMPEX CORP || Импорт и экспорт автомобилей из ОАЭ, Кореи и Китая"
-        />
-        <meta
-          property="og:description"
-          content="ОсОО 'Импекс-Корп' предоставляет услуги по покупке и импорту автомобилей из Кореи, Китая, ОАЭ и других стран."
-        />
-        <meta property="og:image" content={urlLogo} />
-      </Helmet>
+      <Helmet></Helmet>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
