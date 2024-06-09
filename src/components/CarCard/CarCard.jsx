@@ -54,7 +54,7 @@ const CarCard = ({
           <h3 className={s.car_price}>$ {price}</h3>
           <button
             onClick={() => {
-              navigate(`/cardinfo/${id}/${car_name.replace(/ /g, "_")}`)
+              navigate(`/carInfo/${id}/${car_name.replace(/ /g, "_")}`)
             }}
             className={s.moreButton}>
             {t("HomePage.CatalogBlock.buttonText")}
