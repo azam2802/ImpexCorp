@@ -71,7 +71,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
                 <SwiperSlide key={car.id}>
                   <CarCard
                     images={
-                      car.image &&
+                      car.images &&
                       import.meta.env.VITE_API + car.images[0].image
                     }
                     car_name={car.car_brand + " " + car.car_model}
