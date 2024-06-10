@@ -40,6 +40,7 @@ const CardInfo = () => {
   const [bodyWidth, setBodyWidth] = useState(0)
 
   useEffect(() => {
+    // setImages(()=>{images.slice(1,5)})
     const updateBodyWidth = () => {
       setBodyWidth(document.body.clientWidth)
     }
@@ -142,13 +143,22 @@ const CardInfo = () => {
             </div>
             {images != undefined ? (
               images.length > 1 ? (
-                <div className={s.card_slide_list}>
+                <div
+                  className={s.card_slide_list}
+                  style={{ width: images.length > 4 ? "100%" : "80%" }}>
                   <Swiper
                     freeMode={true}
                     modules={[FreeMode]}
-                    slidesPerView={bodyWidth > 765 ? 3.93 : 3.45}>
-                    {(images == undefined ? placeholderImage : images).map(
-                      (item, i) => (
+                    slidesPerView={
+                      bodyWidth > 765 && images.length < 4
+                        ? 2.9
+                        : bodyWidth > 765 && images.length > 3
+                          ? 3.9
+                          : 3.4
+                    }>
+                    {(images == undefined ? placeholderImage : images)
+                      // .slice(1, 3)
+                      .map((item, i) => (
                         <SwiperSlide key={i}>
                           <div
                             onClick={() => {
@@ -166,8 +176,7 @@ const CardInfo = () => {
                             />
                           </div>
                         </SwiperSlide>
-                      ),
-                    )}
+                      ))}
                   </Swiper>
                 </div>
               ) : (
