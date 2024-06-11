@@ -69,6 +69,7 @@ export const FiltrModal = ({ setOpenModal }) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target
     getData(value, name)
+    console.log("Изменение фильтра:", name, value)
   }
 
   return (
