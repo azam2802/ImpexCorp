@@ -59,7 +59,7 @@
     font-size: 1.5vw;
     font-weight: bolder;
     margin-top: 2.5vw;
-    margin-bottom: 2.5vw;
+    margin-bottom: 4.5vw;
   }
 
   .about_cards {
@@ -81,6 +81,9 @@
           margin-top: 2.4vw;
           font-size: 1.25vw;
           text-align: center;
+          font-weight: 500;
+          letter-spacing: 0.48px;
+
           span {
             font-weight: bold;
           }
@@ -115,11 +118,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     .text {
       font-family: "Inter";
       width: 66vw;
       font-size: 1.8vw;
-      font-weight: bold;
+      font-weight: 900;
       span {
         color: #fff;
       }
@@ -132,16 +136,16 @@
     }
   }
 }
-@media screen and (max-width:770px){
+@media screen and (max-width: 770px) {
   .hero {
     margin-top: 50px;
     .hero_box {
       margin-left: 7vw;
       margin-top: 18vw;
 
-      button{
+      button {
         padding: 0.5rem 1.5rem;
-        border-radius: 1vw;
+        border-radius: 2.5vw;
         font-size: 4vw;
       }
     }
@@ -153,7 +157,7 @@
     .question {
       font-size: 4vw;
     }
-  
+
     .about_cards {
       .cards_list {
         display: block;
@@ -161,7 +165,7 @@
           width: 70%;
           margin: 0 auto;
           text-align: center;
-          &:not(:last-child){
+          &:not(:last-child) {
             margin-bottom: 4vw;
           }
           img {
@@ -170,11 +174,12 @@
           article {
             font-size: 3vw;
             text-align: center;
+            font-weight: 600;
           }
         }
       }
     }
-  
+
     .swiper_container {
       width: 60vw;
     }
@@ -187,10 +192,20 @@
     }
   }
   .about_back {
-
     .info {
+      .img_box {
+        display: none;
+      }
       .text {
-        font-size: 2.2vw;
+        height: 108px;
+
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 121.875%;
+        letter-spacing: 0.48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         span {
           color: #fff;
         }

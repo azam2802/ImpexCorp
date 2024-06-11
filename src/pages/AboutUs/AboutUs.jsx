@@ -1,6 +1,6 @@
 import React from "react"
 import s from "@styles/pages/AboutUs/AboutUs.module.scss"
-import heroImage from "@images/2016-bmw-m2-202-1585760824.jpg"
+import heroImage from "@images/image56.png"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow } from "swiper/modules"
 import Slide1 from "@images/scale_1200 1.png"
@@ -57,7 +57,7 @@ export const AboutUs = () => {
           <div className={s.question}> {t("AboutUs.title")}</div>
           <div className={s.cards_list}>
             <div className={s.card_item}>
-              <img src={img3} alt={img5} />
+              <img src={img5} alt={img5} />
               <article>
                 <span>{t("AboutUs.card1.bold")}</span> {t("AboutUs.card1.text")}
               </article>
@@ -69,7 +69,7 @@ export const AboutUs = () => {
               </article>
             </div>
             <div className={s.card_item}>
-              <img src={img5} alt={img5} />
+              <img src={img3} alt={img3} />
               <article>
                 <span>{t("AboutUs.card3.bold")}</span> {t("AboutUs.card3.text")}
               </article>
@@ -80,8 +80,10 @@ export const AboutUs = () => {
       <div className={s.about_back}>
         <div className={s.info}>
           <article className={s.text}>
-            {t("AboutUs.back.text")} <span>{t("AboutUs.back.span")}</span>{" "}
+            {t("AboutUs.back.text")}
+            <br />
             {t("AboutUs.back.text2")}
+            <span>{t("AboutUs.back.span")}</span>{" "}
           </article>
           <div className={s.img_box}>
             <img src={img2} alt={img2} />
