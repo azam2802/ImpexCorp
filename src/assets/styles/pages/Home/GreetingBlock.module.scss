@@ -28,7 +28,9 @@
   color: #19746b;
   border-radius: 10px;
   float: right;
+  font-weight: 400;
   transition: all 0.2s;
+  font-family: "Inter";
   &:hover {
     background-color: #19746b;
     color: #fff;
@@ -43,7 +45,7 @@
 }
 
 .text {
-  font-family: "Gotham Pro";
+  font-family: "Inter";
   font-size: 1.5vw;
   margin: 20px 0 65px 0;
   width: 40vw;
