@@ -18,9 +18,10 @@
       }
     },
     "MetaTags": {
-      "home": "Impex Corp || Home",
-      "ourcompany": "Impex Corp || Our Company",
-      "catalogue": "Impex Corp || Catalog"
+      "home": "IMPEX CORP || Import-export of cars from the UAE, Korea and China",
+      "ourcompany": "IMPEX CORP || Our Company",
+      "catalogue": "IMPEX CORP || Catalog",
+      "defaultDescription": "LLC \"Impex-Corp\" provides services for the purchase and import of cars from Korea, China, UAE and other countries."
     }
   },
   "HomePage": {
@@ -127,18 +128,18 @@
         "diesel": "Diesel",
         "petrol": "Petrol",
         "electro": "Electro",
-        "hybrid": "Hybrid"
+        "hybrid": "Hybrid",
+        "gas": "Gas"
       },
       "driveUnit": {
-        "title": "Drive unit",
-        "front": "Front",
-        "rear": "Rear"
+        "title": "Drive unit"
       },
       "transmission": {
         "title": "Transmission",
-        "mechanical": "Mechanical",
+        "mechanical": "Manual",
         "automatic": "Automatic",
-        "stepless": "Stepless"
+        "stepless": "Variable",
+        "robot": "Robotic"
       }
     },
     "country": {
@@ -149,11 +150,11 @@
     },
     "input": {
       "pricesFrom": "Prices from",
-      "priceBefore": "Prices before",
+      "priceBefore": "Prices to",
       "mileageFrom": "Mileage from",
-      "mileageBefore": "Mileage before",
+      "mileageBefore": "Mileage to",
       "volumeFrom": "Volume from",
-      "volumeBefore": "Volume before"
+      "volumeBefore": "Volume to"
     },
     "button": {
       "title": "Find"

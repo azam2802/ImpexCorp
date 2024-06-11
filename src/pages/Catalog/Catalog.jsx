@@ -15,6 +15,16 @@ export const Catalog = () => {
 
   const [openModal, setOpenModal] = useState(false)
 
+  const showCars = () => {
+    if (filteredCars != "empty" && filteredCars.length > 0) {
+      return filteredCars
+    } else if (filteredCars == "empty") {
+      return filteredCars
+    } else {
+      return data
+    }
+  }
+
   const onShowModal = () => {
     setOpenModal((show) => !show)
   }
@@ -60,29 +70,30 @@ export const Catalog = () => {
         </AnimatePresence>
 
         <div className={s.row_catalog}>
-          {(filteredCars.length > 0 ? filteredCars : data)
-            .filter((item) => item.image.length !== 0)
-            .reverse()
-            .map((car) => (
-              <div className={s.col_4_catalog} key={car.car_slug}>
-                <CarCard
-                  width="100%"
-                  images={import.meta.env.VITE_API + car.image[0].image}
-                  id={car.id}
-                  car_name={car.car_brand + " " + car.car_model}
-                  price={car.price}
-                  volume={car.volume}
-                  transmission={car.transmission}
-                  country={car.country_of_assembly}
-                  mileage={car.mileage}
-                  year={car.release_period}
-                />
-              </div>
-            ))}
-
-          {data.length === 0 && (
+          {showCars() != "empty" ? (
+            showCars()
+              .filter((item) => item.images.length !== 0)
+              .reverse()
+              .map((car) => (
+                <div className={s.col_4_catalog} key={car.id}>
+                  <CarCard
+                    width="100%"
+                    images={import.meta.env.VITE_API + car.images[0].image}
+                    id={car.id}
+                    car_name={car.car_brand + " " + car.car_model}
+                    price={car.price}
+                    volume={car.volume}
+                    transmission={car.transmission}
+                    country={car.country_of_assembly}
+                    mileage={car.mileage}
+                    year={car.release_period}
+                  />
+                </div>
+              ))
+          ) : (
             <h1 className={s.title}>{t("notFoundData")}</h1>
           )}
+          {data.length == 0 && <h1 className={s.title}>{t("notFoundData")}</h1>}
         </div>
       </section>
     </main>

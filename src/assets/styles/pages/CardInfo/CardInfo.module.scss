@@ -4,6 +4,7 @@
   font-family: "Montserrat";
   margin-top: 30px;
   .back {
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -116,7 +117,8 @@
       background-color: #eaeaea;
       border-radius: 1.7vw;
 
-      h1 {
+      h1,
+      .car_price {
         font-size: 2.6vw;
         font-family: "Montserrat";
       }
@@ -181,6 +183,9 @@
     align-items: center;
     margin-top: 2vw;
     font-size: 2vw;
+    &:hover {
+      cursor: pointer;
+    }
     span {
       margin-left: 1vw;
     }
@@ -228,7 +233,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .card_info_section {
     margin-top: 70px;
     .card_slide_block {
@@ -250,6 +255,8 @@
         }
 
         .card_slide_list {
+          // background-color: red;
+
           .card_slide_item {
             width: 25vw;
           }
@@ -261,7 +268,8 @@
         height: auto;
         padding: 2vw;
 
-        h1 {
+        h1,
+        .car_price {
           font-size: 4.5vw;
         }
 
@@ -326,3 +334,5 @@
     }
   }
 }
+
+

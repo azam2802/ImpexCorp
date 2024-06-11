@@ -5,13 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { useFilter } from "@store/store"
 
-export const VolumeSelect = ({
-  title,
-  filterId,
-  firstType,
-  secondType,
-  thirdType,
-}) => {
+export const VolumeSelect = ({ title, filterId, volumes }) => {
   const [openSelect, setOpenSelect] = useState(false)
   const [selectedValue, setSelectedValue] = useState()
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 769)
@@ -54,27 +48,19 @@ export const VolumeSelect = ({
             transition={{ duration: 0.2 }}
             style={{ overflow: "hidden" }}>
             <div className={s.select}>
-              <p
-                onClick={() => {
-                  handleSelect(firstType)
-                  getData(firstType, filterId)
-                }}>
-                {firstType}
-              </p>
-              <p
-                onClick={() => {
-                  handleSelect(secondType)
-                  getData(secondType, filterId)
-                }}>
-                {secondType}
-              </p>
-              <p
-                onClick={() => {
-                  handleSelect(thirdType)
-                  getData(thirdType, filterId)
-                }}>
-                {thirdType}
-              </p>
+              <div className={s.options_container}>
+                {volumes?.map((volume, id) => (
+                  <p
+                    key={id}
+                    className={s.option}
+                    onClick={() => {
+                      handleSelect(volume)
+                      getData(volume, filterId)
+                    }}>
+                    {volume}
+                  </p>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
@@ -85,8 +71,6 @@ export const VolumeSelect = ({
 
 VolumeSelect.propTypes = {
   title: PropTypes.string.isRequired,
-  firstType: PropTypes.string.isRequired,
-  secondType: PropTypes.string.isRequired,
-  thirdType: PropTypes.string.isRequired,
+  volumes: PropTypes.array.isRequired,
   filterId: PropTypes.string.isRequired,
 }

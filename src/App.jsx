@@ -8,6 +8,7 @@ import { Catalog } from "@pages/Catalog/Catalog"
 import { useAutosList } from "@store/store"
 import { useTranslation } from "react-i18next"
 import CardInfo from "@pages/CardInfo/CardInfo"
+import { Helmet } from "react-helmet"
 
 const App = () => {
   const { fetchData } = useAutosList()
@@ -24,13 +25,14 @@ const App = () => {
       element: <Catalog />,
     },
     {
-      path: "/cardinfo/:id",
+      path: "/carInfo/:id/:car",
       element: <CardInfo />,
     },
   ]
 
   return (
     <div id="wrapper">
+      <Helmet></Helmet>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

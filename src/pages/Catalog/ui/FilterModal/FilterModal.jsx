@@ -11,20 +11,20 @@ import { useFilter } from "@store/store"
 export const FiltrModal = ({ setOpenModal }) => {
   const { values, getData, setInitial } = useFilter()
   const { t, i18n } = useTranslation()
-  const {
-    setFilteredCars,
-    brands,
-    models,
-    transmissions,
-    drives,
-    fetchData,
-    fetchModels,
-  } = useFilterStore()
+  const { setFilteredCars, brands, models, fetchData, fetchModels } =
+    useFilterStore()
+
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
   const [years, setYears] = useState([])
+  const [volumes, setVolumes] = useState([])
 
   const handleResize = () => {
     setIsSmallScreen(window.innerWidth < 768)
+  }
+
+  const headers = {
+    "Content-Type": "application/json",
+    "Accept-Language": i18n.language === "zh" ? "zh-hant" : i18n.language,
   }
 
   useEffect(() => {
@@ -43,12 +43,19 @@ export const FiltrModal = ({ setOpenModal }) => {
     const currentYear = new Date().getFullYear()
     const startYear = 1990
     const yearsArray = []
+    const volumesArray = []
+
+    for (let volume = 0.6; volume <= 9.9; ) {
+      volume = 0.1 + volume
+      volumesArray.push(volume.toFixed(1))
+    }
 
     for (let year = startYear; year <= currentYear; year++) {
       yearsArray.push(year)
     }
 
     setYears(yearsArray)
+    setVolumes(volumesArray)
   }, [])
 
   const onSubmit = async (e) => {
@@ -56,9 +63,13 @@ export const FiltrModal = ({ setOpenModal }) => {
 
     try {
       const queryParams = new URLSearchParams(values).toString()
-      const url = `${import.meta.env.VITE_API}/api/v1/autos/?${queryParams}`
-      const response = await axios.get(url)
-      setFilteredCars(response.data)
+      const url = `${import.meta.env.VITE_API}api/v1/autos/?${queryParams}`
+      const response = await axios.get(url, { headers })
+      if (response.data.length == 0) {
+        setFilteredCars("empty")
+      } else {
+        setFilteredCars(response.data)
+      }
       setInitial()
       setOpenModal(false)
     } catch (error) {
@@ -127,24 +138,52 @@ export const FiltrModal = ({ setOpenModal }) => {
               label: t("Catalog.characteristics.fuel.hybrid"),
               value: t("Catalog.characteristics.fuel.hybrid"),
             },
+            {
+              label: t("Catalog.characteristics.fuel.gas"),
+              value: t("Catalog.characteristics.fuel.gas"),
+            },
           ]}
           filterId="fuel_type"
         />
         <Select
           title={t("Catalog.characteristics.transmission.title")}
-          options={transmissions.map((transition) => ({
-            label: transition.transmission,
-            value: transition.transmission,
-          }))}
+          options={[
+            {
+              label: t("Catalog.characteristics.transmission.mechanical"),
+              value: t("Catalog.characteristics.transmission.mechanical"),
+            },
+            {
+              label: t("Catalog.characteristics.transmission.automatic"),
+              value: t("Catalog.characteristics.transmission.automatic"),
+            },
+            {
+              label: t("Catalog.characteristics.transmission.stepless"),
+              value: t("Catalog.characteristics.transmission.stepless"),
+            },
+            {
+              label: t("Catalog.characteristics.transmission.robot"),
+              value: t("Catalog.characteristics.transmission.robot"),
+            },
+          ]}
           filterId="transmission"
         />
 
         <Select
           title={t("Catalog.characteristics.driveUnit.title")}
-          options={drives.map((drive) => ({
-            label: drive.drive,
-            value: drive.drive,
-          }))}
+          options={[
+            {
+              label: "RWD",
+              value: "RWD",
+            },
+            {
+              label: "AWD",
+              value: "AWD",
+            },
+            {
+              label: "FWD",
+              value: "FWD",
+            },
+          ]}
           filterId="drive"
         />
       </section>
@@ -204,17 +243,13 @@ export const FiltrModal = ({ setOpenModal }) => {
         <div className={s.row_input}>
           <VolumeSelect
             title={t("Catalog.input.volumeFrom")}
-            firstType="2.2"
-            secondType="2.2"
-            thirdType="2.2"
+            volumes={volumes}
             filterId="volume_min"
           />
 
           <VolumeSelect
             title={t("Catalog.input.volumeBefore")}
-            firstType="2.2"
-            secondType="2.2"
-            thirdType="2.2"
+            volumes={volumes}
             filterId="volume_max"
           />
         </div>

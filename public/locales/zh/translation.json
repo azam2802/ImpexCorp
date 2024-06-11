@@ -18,9 +18,11 @@
       }
     },
     "MetaTags": {
-      "home": "Impex Corp || 首页",
-      "ourcompany": "Impex Corp || 我们的公司",
-      "catalogue": "Impex Corp || 目录"
+      "home": "IMPEX CORP || 阿聯酋、韓國和中國的汽車進出口",
+      "ourcompany": "IMPEX CORP || 我们的公司",
+      "catalogue": "IMPEX CORP || 目录",
+      "defaultDescription": "\"Impex-Corp\" LLC 提供從韓國、中國、阿聯酋等國家購買和進口汽車的服務。"
+      
     }
   },
   "HomePage": {
@@ -124,21 +126,21 @@
       },
       "fuel": {
         "title": "燃料",
-        "diesel": "柴油",
+        "diesel": "柴油引擎",
         "petrol": "汽油",
-        "electro": "电动",
-        "hybrid": "杂交种"
+        "electro": "電子",
+        "hybrid": "雜交種",
+        "gas": "氣體"
       },
       "driveUnit": {
-        "title": "驱动",
-        "front": "前驱",
-        "rear": "后驱"
+        "title": "驱动"
       },
       "transmission": {
         "title": "传动",
-        "mechanical": "机械传动",
-        "automatic": "自动传动",
-        "stepless": "无级变速"
+        "mechanical": "機械地",
+        "automatic": "自動的",
+        "stepless": "無段變速",
+        "robot": "機器人"
       }
     },
     "country": {

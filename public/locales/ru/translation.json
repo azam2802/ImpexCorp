@@ -18,9 +18,10 @@
       }
     },
     "MetaTags": {
-      "home": "Impex Corp || Главная",
-      "ourcompany": "Impex Corp || Наша компания",
-      "catalogue": "Impex Corp || Каталог"
+      "home": "IMPEX CORP || Импорт-экспорт автомобилей из ОАЭ, Кореи и Китая",
+      "ourcompany": "IMPEX CORP || Наша компания",
+      "catalogue": "IMPEX CORP || Каталог",
+      "defaultDescription": "ОсОО \"Импекс-Корп\" предоставляет услуги по покупке и импорту автомобилей из Кореи, Китая, ОАЭ и других стран."
     }
   },
   "HomePage": {
@@ -126,19 +127,19 @@
         "title": "Топливо",
         "diesel": "Дизель",
         "petrol": "Бензин",
-        "electro": "Электричество",
-        "hybrid": "Гибрид"
+        "electro": "Электро",
+        "hybrid": "Гибрид",
+        "gas": "Газ"
       },
       "driveUnit": {
-        "title": "Привод",
-        "front": "Передний",
-        "rear": "Задний"
+        "title": "Привод"
       },
       "transmission": {
         "title": "Трансмиссия",
-        "mechanical": "Механические",
-        "automatic": "Автоматические",
-        "stepless": "Бесступенчатые"
+        "mechanical": "Механическая",
+        "automatic": "Aвтоматическая",
+        "stepless": "Вариаторная",
+        "robot": "Роботизированная"
       }
     },
     "country": {

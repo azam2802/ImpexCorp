@@ -43,9 +43,9 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       className={s.catalogs_item}>
-      <motion.h1 variants={AnimBottom} className={s.catalog_type_title}>
+      <motion.h2 variants={AnimBottom} className={s.catalog_type_title}>
         {catalogTitle}
-      </motion.h1>
+      </motion.h2>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
         {data.length > 0 ? (
           <Swiper
@@ -64,13 +64,16 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
             freeMode={true}
             modules={[FreeMode]}>
             {[...data]
-              .filter((item) => item.image.length != 0)
+              .filter((item) => item.images?.length != 0)
               .reverse()
               .slice(0, 6)
               .map((car) => (
                 <SwiperSlide key={car.id}>
                   <CarCard
-                    images={import.meta.env.VITE_API + car.image[0].image}
+                    images={
+                      car.images &&
+                      import.meta.env.VITE_API + car.images[0].image
+                    }
                     car_name={car.car_brand + " " + car.car_model}
                     price={car.price}
                     volume={car.volume}

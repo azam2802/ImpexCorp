@@ -375,11 +375,12 @@
   position: relative;
 }
 
-.select .options_container {
+.select .options_container{
   max-height: 120px;
   overflow-y: auto;
   background-color: #fff;
 }
+
 
 .option {
   padding: 8px;
@@ -392,5 +393,6 @@
 
 .select .options_container {
   scrollbar-width: thin;
-  scrollbar-color: #19746b #e0e0ffa5;
+  scrollbar-color: #19746b #f0f0f0a5;
 }
+

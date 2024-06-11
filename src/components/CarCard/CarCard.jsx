@@ -26,7 +26,7 @@ const CarCard = ({
     <li className={s.carCardItem} style={{ width: width }}>
       <div>
         <img src={images} className={s.car_image} alt={car_name} />
-        <h1 className={s.car_name}>{car_name}</h1>
+        <h2 className={s.car_name}>{car_name}</h2>
         <ul className={s.car_struct_list}>
           <li className={s.car_struct_list_item}>
             <FaRegCalendar />
@@ -51,10 +51,10 @@ const CarCard = ({
       <div>
         <hr />
         <div className={s.car_info}>
-          <h1 className={s.car_price}>$ {price}</h1>
+          <h3 className={s.car_price}>$ {price}</h3>
           <button
             onClick={() => {
-              navigate(`/cardinfo/${id}`)
+              navigate(`/carInfo/${id}/${car_name.replace(/ /g, "_")}`)
             }}
             className={s.moreButton}>
             {t("HomePage.CatalogBlock.buttonText")}

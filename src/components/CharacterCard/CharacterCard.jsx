@@ -11,7 +11,7 @@ const CharacterCard = ({ data }) => {
     <>
       {titles.map((item, i) => (
         <div className={s.card} key={i}>
-          <h1 className={s.card_title}>{t(item + "title")}</h1>
+          <h2 className={s.card_title}>{t(item + "title")}</h2>
           <ul className={s.card_info_list}>
             <li>
               <div className={s.keys_list}>
