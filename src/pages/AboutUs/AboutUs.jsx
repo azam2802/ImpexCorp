@@ -1,6 +1,5 @@
 import React from "react"
 import s from "@styles/pages/AboutUs/AboutUs.module.scss"
-import heroImage from "@images/image56.png"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow } from "swiper/modules"
 import Slide1 from "@images/scale_1200 1.png"
@@ -36,8 +35,6 @@ export const AboutUs = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         className={s.hero}>
-        <img className={s.hero_image} src={heroImage} alt={heroImage} />
-        <div className={s.back}></div>
         <div className={s.hero_box}>
           <motion.h1 custom={1} variants={AnimLeft}>
             {t("AboutUs.main_title")}
@@ -85,6 +82,11 @@ export const AboutUs = () => {
             {t("AboutUs.back.text2")}
             <span>{t("AboutUs.back.span")}</span>{" "}
           </article>
+          <article className={s.text_mobile}>
+            {t("AboutUs.back.textMobile")} <span>{t("AboutUs.back.span")}</span>
+            {" - "}
+            {t("AboutUs.back.textMobile2")}
+          </article>
           <div className={s.img_box}>
             <img src={img2} alt={img2} />
           </div>
@@ -95,17 +97,18 @@ export const AboutUs = () => {
         <div className={s.swiper_container}>
           <Swiper
             speed={1000}
-            loop={true}
+            loop={false}
             effect={"coverflow"}
             grabCursor={true}
+            initialSlide={1}
             centeredSlides={true}
             slidesPerView={"auto"}
             coverflowEffect={{
               rotate: 0,
-              stretch: 80,
-              depth: 200,
+              stretch: 0,
+              depth: 300,
               modifier: 1,
-              slideShadows: false,
+              slideShadows: true,
             }}
             pagination={true}
             modules={[EffectCoverflow]}
