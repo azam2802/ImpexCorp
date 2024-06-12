@@ -94,7 +94,11 @@ export const Catalog = () => {
           ) : (
             <h1 className={s.title}>{t("notFoundData")}</h1>
           )}
-          {data.length == 0 && <h1 className={s.title}>{t("notFoundData")}</h1>}
+          {data.length == 0 && (
+            <h1 className={s.title + " " + s.title_notfound}>
+              {t("notFoundData")}
+            </h1>
+          )}
         </div>
       </section>
     </main>

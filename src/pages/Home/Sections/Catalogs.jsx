@@ -28,12 +28,7 @@ export const Catalogs = () => {
               />
             </>
           ) : (
-            <>
-              <h1 className={s.catalog_type_title} style={{ fontSize: "44px" }}>
-                {t("HomePage.CatalogBlock.titles.mainTitle")}
-              </h1>
-              <h1 className={s.catalog_type_title}>{t("notFoundData")}</h1>
-            </>
+            <h1 className={s.catalog_type_title}>{t("notFoundData")}</h1>
           )}
         </ul>
       </div>

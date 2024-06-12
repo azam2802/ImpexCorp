@@ -1,11 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
+import s from "@styles/layout/Header.module.scss"
 
 const Logo = ({ onClick }) => {
   const styles = {
     border: "none",
     background: "transparent",
+    display: "flex",
+    alignItems: "center",
   }
 
   const handleClick = () => {
@@ -23,8 +26,11 @@ const Logo = ({ onClick }) => {
   }
 
   return (
-    <button onClick={() => (handleClick(), toTop())} style={styles}>
-      <Link to="/">
+    <Link to="/">
+      <button
+        onClick={() => (handleClick(), toTop())}
+        style={styles}
+        className={s.logo_btn}>
         <svg
           width="216"
           height="27"
@@ -36,8 +42,8 @@ const Logo = ({ onClick }) => {
             fill="#19746B"
           />
         </svg>
-      </Link>
-    </button>
+      </button>
+    </Link>
   )
 }
 

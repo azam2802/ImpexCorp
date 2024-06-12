@@ -5,18 +5,19 @@
   background-image: url(@images/FirstBlock.png);
   background-size: cover;
   background-position: center;
-  height: 86.2vh;
+  height: 91vh;
 }
 
 .title {
   width: 45vw;
-  font-size: 3vw;
+  font-size: 2.8vw;
   text-wrap: balance;
   font-family: Inter;
   font-weight: 300;
   color: white;
+  margin-top: 80px;
   h1 {
-    font-size: 100px;
+    font-size: 6.8vw;
     font-weight: 400;
     display: block;
   }
@@ -27,7 +28,7 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   img {
     width: 100%;
   }
@@ -40,7 +41,7 @@
 }
 
 .button {
-  padding: 0.6rem 4rem 0.6rem 4rem;
+  padding: .8vw 6.8vw ;
   border-radius: 10px;
   border: 2px solid #19746b;
   color: #fff;
@@ -63,31 +64,18 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
     height: fit-content;
     display: flex;
     position: relative;
     justify-content: center;
-    background: none;
+    background-image: url(@images/hero_mobile_bg.png);
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
     padding-block: unset;
     overflow: hidden;
-
-    &::before {
-      margin: -20px;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-clip: border-box;
-      background-position: center;
-      z-index: -1;
-      filter: blur(5px);
-      background-image: url(@images/FirstBlock.png);
-    }
     .ImageCar {
       display: none;
     }
@@ -96,7 +84,7 @@
   .block {
     display: flex;
     justify-content: center;
-    margin: 120px 0;
+    padding: 20.898%;
   }
 
   .title {
@@ -126,19 +114,20 @@
   }
 
   .button {
-    margin-top: 57px;
+    margin-top: 43px;
     font-weight: 200;
-    border-radius: 10px;
+    border-radius: 0px;
+    padding: 10px 25px;
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .container {
     margin-top: 50px;
   }
 }
 
-@media (max-width: 620px) {
+@media screen and (max-width: 620px) {
   .title {
     font-size: 6.4vw;
 
@@ -150,7 +139,7 @@
   }
 }
 
-@media (max-width: 399px) {
+@media screen and (max-width: 425px) {
   .title {
     width: 20rem;
   }

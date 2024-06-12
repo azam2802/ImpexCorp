@@ -1,7 +1,7 @@
 .Catalog {
   margin: 0 auto;
   width: 90%;
-  font-family: "Montserrat";
+  font-family: "Inter";
   @media screen and (max-width: "550px") {
     gap: 20px;
     justify-content: unset !important;
@@ -15,6 +15,9 @@
     font-weight: 600;
     text-align: center;
     margin-top: 80px;
+    &.title_notfound{
+      margin-bottom: 10vw;
+    }
   }
 
   .back {
