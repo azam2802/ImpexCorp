@@ -131,6 +131,14 @@
         "hybrid": "雜交種",
         "gas": "氣體"
       },
+      "country": {
+        "title": "制造国",
+        "china": "中国",
+        "korea": "韩国",
+        "europe": "欧洲",
+        "uae": "阿联酋",
+        "usa": "美國"
+      },
       "driveUnit": {
         "title": "驱动"
       },

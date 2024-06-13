@@ -35,6 +35,10 @@
   font-family: "Inter";
   margin: 0 auto;
   width: 90vw;
+  .mySwiper{
+    padding-bottom: 30px;
+    --swiper-pagination-color: #000;
+  }
   .about_title {
     font-size: 2vw;
     font-weight: bold;

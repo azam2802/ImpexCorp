@@ -84,7 +84,6 @@ export const Catalog = () => {
                     price={car.price}
                     volume={car.volume}
                     transmission={car.transmission}
-                    country={car.country_of_assembly}
                     mileage={car.mileage}
                     fuel={car.fuel_type}
                     year={car.release_period}

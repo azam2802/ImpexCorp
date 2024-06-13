@@ -7,11 +7,11 @@ import { useFilter } from "@store/store"
 
 export const Select = ({ title, options, filterId, onChange }) => {
   const [openSelect, setOpenSelect] = useState(false)
-  const [selectedValue, setSelectedValue] = useState(null)
+  const [label, setLabel] = useState(null)
   const { getData } = useFilter()
 
-  const handleSelect = (value) => {
-    setSelectedValue(value)
+  const handleSelect = (value, label) => {
+    setLabel(label)
     setOpenSelect(false)
     getData(value, filterId)
     if (onChange) onChange(value)
@@ -22,7 +22,7 @@ export const Select = ({ title, options, filterId, onChange }) => {
       <div
         className={s.characteristic}
         onClick={() => setOpenSelect((show) => !show)}>
-        <p>{selectedValue ? selectedValue : title}</p>
+        <p>{label ? label : title}</p>
         <IoIosArrowUp
           cursor="pointer"
           className={openSelect ? s.rotates : s.rotate}
@@ -42,7 +42,7 @@ export const Select = ({ title, options, filterId, onChange }) => {
                   <p
                     key={option.value}
                     className={s.option}
-                    onClick={() => handleSelect(option.value)}>
+                    onClick={() => handleSelect(option.value, option.label)}>
                     {option.label}
                   </p>
                 ))}

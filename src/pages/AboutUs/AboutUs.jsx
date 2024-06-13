@@ -5,6 +5,7 @@ import { EffectCoverflow } from "swiper/modules"
 import Slide1 from "@images/scale_1200 1.png"
 import Slide2 from "@images/scale_1200 1.png"
 import { motion } from "framer-motion"
+import { Pagination } from "swiper/modules"
 import Slide3 from "@images/scale_1200 1.png"
 import img2 from "@images/image44.png"
 import img3 from "@images/Rectangle124.png"
@@ -98,6 +99,10 @@ export const AboutUs = () => {
           <Swiper
             speed={1000}
             loop={false}
+            pagination={{
+              dynamicBullets: false,
+              clickable: true,
+            }}
             effect={"coverflow"}
             grabCursor={true}
             initialSlide={1}
@@ -110,9 +115,8 @@ export const AboutUs = () => {
               modifier: 1,
               slideShadows: true,
             }}
-            pagination={true}
-            modules={[EffectCoverflow]}
-            className="mySwiper">
+            modules={[EffectCoverflow, Pagination]}
+            className={s.mySwiper}>
             {aboutCardImg.map((item, i) => (
               <SwiperSlide style={{ width: "30vw", height: "auto" }} key={i}>
                 <img style={{ width: "100%" }} src={item} alt={item} />
