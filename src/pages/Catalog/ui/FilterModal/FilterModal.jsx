@@ -200,7 +200,7 @@ export const FiltrModal = ({ setOpenModal }) => {
       </div>
 
       <div className={s.row}>
-        <div className={s.row_input}>
+        <div className={s.row_input + " " + s.mileage}>
           <input
             type="text"
             name="mileage_min"
@@ -217,7 +217,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           />
         </div>
 
-        <div className={s.row}>
+        <div className={s.row + " " + s.country}>
           <Select
             title={t("Catalog.characteristics.country.title")}
             options={[
@@ -257,8 +257,8 @@ export const FiltrModal = ({ setOpenModal }) => {
         </div>
       </div>
 
-      <div className={s.adaptive_block}>
-        {isSmallScreen ? (
+      {isSmallScreen ? (
+        <div className={s.row}>
           <div className={s.row_input}>
             <input
               type="text"
@@ -275,27 +275,27 @@ export const FiltrModal = ({ setOpenModal }) => {
               placeholder={t("Catalog.input.priceBefore")}
             />
           </div>
-        ) : (
-          <div className={s.block}>
-            <div className={s.row_input}>
-              <input
-                type="text"
-                name="price_min"
-                value={value.price_min}
-                onChange={handleInputChange}
-                placeholder={t("Catalog.input.pricesFrom")}
-              />
-              <input
-                type="text"
-                name="price_max"
-                value={value.price_max}
-                onChange={handleInputChange}
-                placeholder={t("Catalog.input.priceBefore")}
-              />
-            </div>
+        </div>
+      ) : (
+        <div className={s.block}>
+          <div className={s.row_input}>
+            <input
+              type="text"
+              name="price_min"
+              value={value.price_min}
+              onChange={handleInputChange}
+              placeholder={t("Catalog.input.pricesFrom")}
+            />
+            <input
+              type="text"
+              name="price_max"
+              value={value.price_max}
+              onChange={handleInputChange}
+              placeholder={t("Catalog.input.priceBefore")}
+            />
           </div>
-        )}
-      </div>
+        </div>
+      )}
       <div className={s.block}>
         <button onClick={onSubmit}>{t("Catalog.button.title")}</button>
       </div>

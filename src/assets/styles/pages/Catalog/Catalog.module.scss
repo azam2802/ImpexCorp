@@ -15,7 +15,7 @@
     font-weight: 600;
     text-align: center;
     margin-top: 80px;
-    &.title_notfound{
+    &.title_notfound {
       margin-bottom: 10vw;
     }
   }
@@ -158,6 +158,17 @@
         width: 11.2vw;
       }
     }
+    @media screen and (max-width: 768px) {
+      .select_input_container {
+        width: 49%;
+      }
+      .volume_select_adaptive {
+        width: 100%;
+      }
+      .select {
+        width: 100%;
+      }
+    }
   }
 
   .block {
@@ -256,6 +267,12 @@
         gap: 10px;
         flex-direction: column;
       }
+      .country{
+        order: -1;
+      }
+      .mileage{
+        order: 1;
+      }
     }
 
     .characteristic {
@@ -279,13 +296,14 @@
       background: rgb(255, 255, 255);
 
       p {
-        font-size: 13px;
+        font-size: 12px;
         color: rgb(102, 102, 102);
       }
     }
 
     .row_input {
       input {
+        font-size: 12px;
         width: 44vw;
         padding: 10px;
       }
@@ -359,14 +377,10 @@
       display: block;
     }
 
-    .adaptive_block {
-      display: none;
-    }
-
     .select {
       border: 1px solid rgb(226, 225, 225);
       p {
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 200;
       }
     }
@@ -378,12 +392,11 @@
   position: relative;
 }
 
-.select .options_container{
+.select .options_container {
   max-height: 120px;
   overflow-y: auto;
   background-color: #fff;
 }
-
 
 .option {
   padding: 8px;
@@ -398,4 +411,3 @@
   scrollbar-width: thin;
   scrollbar-color: #19746b #f0f0f0a5;
 }
-
