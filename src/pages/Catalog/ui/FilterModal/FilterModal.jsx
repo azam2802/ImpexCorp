@@ -13,7 +13,12 @@ export const FiltrModal = ({ setOpenModal }) => {
   const { t, i18n } = useTranslation()
   const { setFilteredCars, brands, models, fetchData, fetchModels } =
     useFilterStore()
-
+  const [value, setValue] = useState({
+    price_min: "",
+    price_max: "",
+    mileage_min: "",
+    mileage_max: "",
+  })
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
   const [years, setYears] = useState([])
   const [volumes, setVolumes] = useState([])
@@ -80,8 +85,13 @@ export const FiltrModal = ({ setOpenModal }) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target
-    getData(value, name)
-    console.log("Изменение фильтра:", name, value)
+    if (/^\d*$/.test(value)) {
+      setValue({
+        ...values,
+        [name]: value,
+      })
+      getData(value, name)
+    }
   }
 
   return (
@@ -194,12 +204,14 @@ export const FiltrModal = ({ setOpenModal }) => {
           <input
             type="text"
             name="mileage_min"
+            value={value.mileage_min}
             onChange={handleInputChange}
             placeholder={t("Catalog.input.mileageFrom")}
           />
           <input
             type="text"
             name="mileage_max"
+            value={value.mileage_max}
             onChange={handleInputChange}
             placeholder={t("Catalog.input.mileageBefore")}
           />
@@ -251,12 +263,14 @@ export const FiltrModal = ({ setOpenModal }) => {
             <input
               type="text"
               name="price_min"
+              value={value.price_min}
               onChange={handleInputChange}
               placeholder={t("Catalog.input.pricesFrom")}
             />
             <input
               type="text"
               name="price_max"
+              value={value.price_max}
               onChange={handleInputChange}
               placeholder={t("Catalog.input.priceBefore")}
             />
@@ -267,12 +281,14 @@ export const FiltrModal = ({ setOpenModal }) => {
               <input
                 type="text"
                 name="price_min"
+                value={value.price_min}
                 onChange={handleInputChange}
                 placeholder={t("Catalog.input.pricesFrom")}
               />
               <input
                 type="text"
                 name="price_max"
+                value={value.price_max}
                 onChange={handleInputChange}
                 placeholder={t("Catalog.input.priceBefore")}
               />
