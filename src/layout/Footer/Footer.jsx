@@ -115,7 +115,6 @@ const Footer = () => {
         </ul>
       </div>
 
-      <hr />
       <p id={s.madeby}>
         Made by{" "}
         <a

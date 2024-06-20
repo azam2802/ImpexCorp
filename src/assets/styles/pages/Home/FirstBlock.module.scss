@@ -12,7 +12,7 @@
   width: 45vw;
   font-size: 2.8vw;
   text-wrap: balance;
-  font-family: Inter;
+  font-family: "Inter";
   font-weight: 300;
   color: white;
   margin-top: 80px;
@@ -41,7 +41,7 @@
 }
 
 .button {
-  padding: .8vw 6.8vw ;
+  padding: 0.8vw 6.8vw;
   border-radius: 10px;
   border: 2px solid #19746b;
   color: #fff;
@@ -67,14 +67,14 @@
 @media screen and (max-width: 768px) {
   .container {
     height: fit-content;
+    padding-bottom: 50px;
     display: flex;
     position: relative;
-    justify-content: center;
     background-image: url(@images/hero_mobile_bg.png);
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
-    padding-block: unset;
+    padding-block: 100px;
     overflow: hidden;
     .ImageCar {
       display: none;
@@ -83,64 +83,56 @@
 
   .block {
     display: flex;
-    justify-content: center;
-    padding: 20.898%;
   }
 
   .title {
-    width: 30rem;
+    width: 90%;
     font-family: "Inter";
-    font-size: 40px;
+    font-size: 22px;
     font-weight: 400;
-    text-align: center;
-    h1 {
-      &:first-child {
-        font-size: 40px;
-        color: rgb(19, 209, 190);
-        padding-right: 0.4rem;
-      }
-      display: inline;
-    }
-    p{
-      display: inline;
+    margin-top: unset;
+
+    p,
+    span {
+      display: inline-block;
+      width: 100%;
     }
   }
 
   .block_title {
     display: flex;
-    align-items: center;
     gap: 0px;
     flex-direction: column;
   }
 
   .button {
-    margin-top: 43px;
+    margin-top: 5.5vw;
     font-weight: 200;
-    border-radius: 0px;
-    padding: 10px 25px;
+    border-radius: 9px;
+    font-size: 1rem;
+    padding: 5px 40px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    margin-top: 50px;
+    margin-top: 64px;
   }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
   .title {
-    font-size: 6.4vw;
-
+    font-size: 4vw;
     h1 {
       &:first-child {
-        font-size: 6.4vw;
+        font-size: 10vw;
       }
     }
   }
 }
 
-@media screen and (max-width: 425px) {
-  .title {
-    width: 20rem;
+@media screen and (max-width: 490px) {
+  .button{
+    font-size: 14px;
   }
 }

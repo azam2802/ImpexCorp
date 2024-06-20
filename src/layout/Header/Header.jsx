@@ -80,9 +80,8 @@ const Header = () => {
                 <div className={s.col_6}>
                   <div className={s.Links}>
                     <LangSwitcher />
-                    <Link to="/">{t("header.home")}</Link>
-                    <Link to="about">{t("header.ourcompany")}</Link>
                     <Link to="catalog">{t("header.catalogue")}</Link>
+                    <Link to="about">{t("header.ourcompany")}</Link>
                     <a
                       href="https://api.whatsapp.com/send?phone=996500677633"
                       rel="noreferrer"

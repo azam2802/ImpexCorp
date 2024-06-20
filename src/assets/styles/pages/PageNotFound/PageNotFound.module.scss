@@ -7,21 +7,21 @@
   flex-direction: column;
   font-family: "Inter";
   text-align: center;
-  @media screen and (max-width: 728px) {
+  @media screen and (max-width: 768px) {
     margin-top: 150px;
     justify-content: unset;
   }
   svg {
     margin-bottom: 20px;
     transform: scale(2);
-    @media screen and (max-width: 728px) {
+    @media screen and (max-width: 768px) {
       transform: unset;
     }
   }
   h1 {
     font-size: 3vw;
     margin-top: 40px;
-    @media screen and (max-width: 728px) {
+    @media screen and (max-width: 768px) {
       font-size: 5vw;
       margin-top: unset;
     }
@@ -38,7 +38,7 @@
       color: black;
     }
 
-    @media screen and (max-width: 728px) {
+    @media screen and (max-width: 768px) {
       font-size: 5.5vw;
     }
   }

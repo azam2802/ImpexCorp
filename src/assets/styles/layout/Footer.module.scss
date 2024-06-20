@@ -7,6 +7,16 @@ footer {
     width: 90%;
     margin: 0 auto;
     padding-top: 3.25vw;
+    button{
+      font-size: 35px;
+      color: #19746b;
+      @media screen and (max-width: 768px) {
+        font-size: 24px;
+      }
+      @media screen and (max-width: 490px) {
+        font-size: 20px;
+      }
+    }
   }
   a {
     color: #fff;
@@ -52,20 +62,11 @@ footer {
     }
   }
 
-  hr {
-    margin: 0 auto;
-    width: 90%;
-    border: none;
-    height: 1px;
-    color: #808080;
-    background-color: #808080;
-    margin-top: 20px;
-  }
-
   #madeby {
     text-align: center;
     margin-top: 20px;
     color: #fff;
+    font-weight: lighter;
     a {
       color: #89d6ff;
     }
