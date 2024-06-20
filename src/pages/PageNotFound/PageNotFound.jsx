@@ -13,7 +13,9 @@ const PageNotFound = () => {
       <Header />
       <main>
         <section className={s.NotFoundBlock}>
-          <Logo />
+          <div className={s.logo}>
+            <Logo />
+          </div>
           <h1>{t("notFoundText")}</h1>
           <h2 id={s.error}>
             Error 404<span id={s.smile}>:(</span>
