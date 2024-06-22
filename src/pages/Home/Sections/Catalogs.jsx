@@ -18,14 +18,18 @@ export const Catalogs = () => {
                 catalogTitle={t("HomePage.CatalogBlock.titles.newProducts")}
                 data={data}
               />
-              <CatalogsItem
-                catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
-                data={[...data].filter((item) => item.country == "CH")}
-              />
-              <CatalogsItem
-                catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
-                data={[...data].filter((item) => item.country == "SK")}
-              />
+              {[...data].filter((item) => item.country == "CH").length > 0 && (
+                <CatalogsItem
+                  catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
+                  data={[...data].filter((item) => item.country == "CH")}
+                />
+              )}
+              {[...data].filter((item) => item.country == "SK").length > 0 && (
+                <CatalogsItem
+                  catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
+                  data={[...data].filter((item) => item.country == "SK")}
+                />
+              )}
             </>
           ) : (
             <h1 className={s.catalog_type_title}>{t("notFoundData")}</h1>

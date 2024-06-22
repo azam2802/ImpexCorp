@@ -124,6 +124,20 @@
   }
 }
 
+@media screen and (max-width: 1366px) {
+  .carCardItem {
+    .car_image {
+      height: 180px;
+      object-position: center;
+    }
+    .car_struct_list {
+      width: 100%;
+      margin-bottom: 8px;
+      margin-top: 0px;
+    }
+  }
+}
+
 @media screen and (max-width: 1240px) {
   .carCardItem {
     border-radius: 12px;
@@ -140,8 +154,6 @@
 
     .car_struct_list {
       width: 100%;
-      margin-bottom: 8px;
-      margin-top: 8px;
 
       .car_struct_list_item {
         height: 24px;
