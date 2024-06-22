@@ -18,6 +18,7 @@ const CarCard = ({
   transmission,
   width,
   year,
+  fuel,
 }) => {
   const { t } = useTranslation()
   const navigate = useNavigate()
@@ -42,10 +43,16 @@ const CarCard = ({
             <MdOutlineSpeed />
             <p className={s.car_struct_text}>{mileage} km</p>
           </li>
-          <li className={s.car_struct_list_item}>
-            <img className={s.car_struct_image} src={Icon1} alt="struct-img" />
-            <p className={s.car_struct_text}>{volume}</p>
-          </li>
+          {fuel != t("Catalog.characteristics.fuel.electro") && (
+            <li className={s.car_struct_list_item}>
+              <img
+                className={s.car_struct_image}
+                src={Icon1}
+                alt="struct-img"
+              />
+              <p className={s.car_struct_text}>{volume}</p>
+            </li>
+          )}
         </ul>
       </div>
       <div>
@@ -67,6 +74,7 @@ const CarCard = ({
 
 CarCard.propTypes = {
   car_name: PropTypes.string.isRequired,
+  fuel: PropTypes.string.isRequired,
   images: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   mileage: PropTypes.number.isRequired,

@@ -81,7 +81,7 @@
       "text": "Seamless service from",
       "text2": " - your pathway to confident car purchases or orders with us."
     },
-    "bottomTitle": "Our company specializes in importing and exporting cars from various countries, including China, Korea, Japan, the UAE, Georgia, Europe, and the USA, providing clients with access to a wide selection of high-quality vehicles."
+    "bottomTitle": "The main activity of our company is the import and export of cars from countries such as China, Japan, UAE, Georgia, Europe, and the USA."
   },
   "footer": {
     "aboutus": {
@@ -98,7 +98,7 @@
       }
     },
     "branches": {
-      "name": "Address",
+      "name": "Our branches",
       "menu": {
         "address1": "77 Usenbaeva St. Bishkek"
       }
@@ -130,6 +130,16 @@
         "electro": "Electro",
         "hybrid": "Hybrid",
         "gas": "Gas"
+      },
+      "country": {
+        "title": "Country",
+        "china": "China",
+        "korea": "Korea",
+        "europe": "Europe",
+        "uae": "UAE",
+        "usa": "USA",
+        "georgia": "Georgia",
+        "japan": "Japan"
       },
       "driveUnit": {
         "title": "Drive unit"

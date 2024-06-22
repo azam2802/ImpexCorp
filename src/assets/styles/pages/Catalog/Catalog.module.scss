@@ -1,7 +1,7 @@
 .Catalog {
   margin: 0 auto;
   width: 90%;
-  font-family: "Montserrat";
+  font-family: "Inter";
   @media screen and (max-width: "550px") {
     gap: 20px;
     justify-content: unset !important;
@@ -15,6 +15,9 @@
     font-weight: 600;
     text-align: center;
     margin-top: 80px;
+    &.title_notfound {
+      margin-bottom: 10vw;
+    }
   }
 
   .back {
@@ -47,40 +50,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 28vw;
-      height: 45px;
+      width: 35vw;
       cursor: pointer;
-      border-radius: 0.5rem;
-      background: rgb(255, 255, 255);
-      padding: 0 10px 0 21px;
+      border-radius: 8px;
+      border: 1px solid #000;
+      background: #eaeaea;
+      box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      padding: 10px 10px 10px 21px;
       margin: 0 auto;
       @media screen and (max-width: "768px") {
         width: 100%;
       }
       p {
         font-weight: 600;
+        font-size: 20px;
       }
     }
 
-    .filtration_open {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      margin: 0 auto;
-      width: 28vw;
-      height: 45px;
-      border-radius: 0.5rem;
-      border: 1px solid black;
-      background: rgb(255, 255, 255);
-      padding: 0 10px 0 21px;
-      @media screen and (max-width: "768px") {
-        width: 100%;
-      }
-      p {
-        font-weight: 600;
-      }
-    }
+   
   }
 
   .rotates {
@@ -104,7 +91,7 @@
     background: rgb(255, 255, 255);
 
     p {
-      font-size: 13px;
+      font-size: 14px;
       color: rgb(102, 102, 102);
     }
   }
@@ -153,6 +140,17 @@
       padding: 16px;
       @media screen and (max-width: 1060px) {
         width: 11.2vw;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .select_input_container {
+        width: 49%;
+      }
+      .volume_select_adaptive {
+        width: 100%;
+      }
+      .select {
+        width: 100%;
       }
     }
   }
@@ -253,13 +251,19 @@
         gap: 10px;
         flex-direction: column;
       }
+      .country {
+        order: -1;
+      }
+      .mileage {
+        order: 1;
+      }
     }
 
     .characteristic {
       width: 100%;
 
       p {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
 
@@ -276,13 +280,14 @@
       background: rgb(255, 255, 255);
 
       p {
-        font-size: 13px;
+        font-size: 14px;
         color: rgb(102, 102, 102);
       }
     }
 
     .row_input {
       input {
+        font-size: 14px;
         width: 44vw;
         padding: 10px;
       }
@@ -304,25 +309,15 @@
 
       .filtration {
         gap: 5px;
-        height: 35px;
+
         border-radius: 5px;
-        padding: 8px;
+        padding: 10px;
         border: 1px solid rgb(204, 203, 203);
         p {
-          font-size: 13px;
+          font-size: 16px;
         }
       }
 
-      .filtration_open {
-        gap: 5px;
-        height: 35px;
-        border-radius: 5px;
-        padding: 8px;
-        border: 1px solid rgb(204, 203, 203);
-        p {
-          font-size: 13px;
-        }
-      }
     }
 
     .types_car {
@@ -356,14 +351,13 @@
       display: block;
     }
 
-    .adaptive_block {
-      display: none;
-    }
-
     .select {
       border: 1px solid rgb(226, 225, 225);
+      padding: 10px;
+      overflow: scroll;
       p {
-        font-size: 10px;
+        padding: 7px 0;
+        font-size: 14px;
         font-weight: 200;
       }
     }
@@ -375,12 +369,11 @@
   position: relative;
 }
 
-.select .options_container{
+.select .options_container {
   max-height: 120px;
   overflow-y: auto;
   background-color: #fff;
 }
-
 
 .option {
   padding: 8px;
@@ -395,4 +388,3 @@
   scrollbar-width: thin;
   scrollbar-color: #19746b #f0f0f0a5;
 }
-

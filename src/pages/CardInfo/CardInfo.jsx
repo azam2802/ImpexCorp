@@ -90,8 +90,6 @@ const CardInfo = () => {
       .catch(console.error)
   }
 
-  console.log(window.location.href)
-
   return (
     <main>
       <Helmet>
@@ -145,7 +143,7 @@ const CardInfo = () => {
               images.length > 1 ? (
                 <div
                   className={s.card_slide_list}
-                  style={{ width: images.length > 4 ? "100%" : "80%" }}>
+                  style={{ width: images.length >= 4 ? "100%" : "80%" }}>
                   <Swiper
                     freeMode={true}
                     modules={[FreeMode]}
@@ -156,9 +154,8 @@ const CardInfo = () => {
                           ? 3.9
                           : 3.4
                     }>
-                    {(images == undefined ? placeholderImage : images)
-                      // .slice(1, 3)
-                      .map((item, i) => (
+                    {(images == undefined ? placeholderImage : images).map(
+                      (item, i) => (
                         <SwiperSlide key={i}>
                           <div
                             onClick={() => {
@@ -176,7 +173,8 @@ const CardInfo = () => {
                             />
                           </div>
                         </SwiperSlide>
-                      ))}
+                      ),
+                    )}
                   </Swiper>
                 </div>
               ) : (
@@ -215,14 +213,16 @@ const CardInfo = () => {
                 <MdOutlineSpeed />
                 <p className={s.car_struct_text}>{data.mileage} km</p>
               </li>
-              <li className={s.car_struct_list_item}>
-                <img
-                  className={s.car_struct_image}
-                  src={Icon1}
-                  alt="struct-img"
-                />
-                <p className={s.car_struct_text}>{data.volume}</p>
-              </li>
+              {data.fuel_type != t("Catalog.characteristics.fuel.electro") && (
+                <li className={s.car_struct_list_item}>
+                  <img
+                    className={s.car_struct_image}
+                    src={Icon1}
+                    alt="struct-img"
+                  />
+                  <p className={s.car_struct_text}>{data.volume}</p>
+                </li>
+              )}
             </ul>
           </div>
         </div>

@@ -29,8 +29,13 @@ const CharacterCard = ({ data }) => {
                   <div>
                     <div>{t(item + "eng_type")}</div>
                     <div>{t(item + "power")}</div>
-                    <div>{t(item + "volume")}</div>
-                    <div>{t(item + "consumption")}</div>
+                    {data.fuel_type !=
+                      t("Catalog.characteristics.fuel.electro") && (
+                      <>
+                        <div>{t(item + "volume")}</div>
+                        <div>{t(item + "consumption")}</div>
+                      </>
+                    )}
                   </div>
                 )}
               </div>
