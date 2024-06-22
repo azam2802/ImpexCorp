@@ -15,10 +15,6 @@
   font-size: 2.5vw;
   align-self: flex-start;
   margin-bottom: 5.208vw;
-  @media screen and (max-width: 768px) {
-    text-align: center;
-    margin: 0 auto;
-  }
 }
 
 .paragraph1,
@@ -42,7 +38,7 @@
 
 @media screen and (max-width: 768px) {
   .serviceTitle {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 4vw;
   }
   .paragraph1,
