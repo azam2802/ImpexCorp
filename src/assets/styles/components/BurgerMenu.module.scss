@@ -18,6 +18,7 @@
       width: 25%;
       button{
         color: #19746B;
+        font-family: "Inter";
         font-size: 24px;
         @media screen and (max-width: 490px) {
           font-size:20px;
@@ -98,8 +99,6 @@
       font-family: inherit;
       background-color: transparent;
     }
-  }
-  @media screen and (max-width: 768px) {
   }
 }
 
