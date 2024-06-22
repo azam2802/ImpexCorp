@@ -25,4 +25,7 @@
   visibility: visible;
   opacity: 1;
   bottom: 60px;
+  @media screen and (max-width: 490px) {
+    bottom: 100px;
+  }
 }
