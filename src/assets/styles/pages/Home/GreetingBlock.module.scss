@@ -2,7 +2,6 @@
   width: 90%;
   margin: 0 auto;
 }
-
 .row {
   display: flex;
   align-items: center;
@@ -44,8 +43,8 @@
 
 .text {
   font-family: "Inter";
-  font-size: 1.2vw;
-  margin: 1vw 0 3.5vw 0;
+  font-size: 1.4vw;
+  margin: 20px 0 65px 0;
   width: 40vw;
 }
 
@@ -57,11 +56,12 @@
 @media screen and (max-width: 768px) {
   .row{
     padding-block: 40px;
+    padding-top: 20px;
   }
 
   .col_6 {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
   .button {
@@ -77,14 +77,28 @@
     margin: 10px 0;
   }
   .title {
-    font-size: 1.9rem;
+    font-size: 38px;
   }
   .text {
-    font-size: 4vw;
+    font-size: 28px;
   }
 }
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 700px) {
+  .title {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 690px) {
+  .title {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 490px) {
   .container {
     width: 90%;
   }
@@ -101,11 +115,11 @@
   }
 
   .title {
-    font-size: 15px;
+    font-size: 21px;
   }
 
   .text {
-    font-size: 13px;
+    font-size: 16px;
     margin: 10px 0;
   }
 }
