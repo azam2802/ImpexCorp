@@ -137,7 +137,9 @@
         "korea": "韩国",
         "europe": "欧洲",
         "uae": "阿联酋",
-        "usa": "美國"
+        "usa": "美國",
+        "georgia": "喬治亞州",
+        "japan": "日本"
       },
       "driveUnit": {
         "title": "驱动"

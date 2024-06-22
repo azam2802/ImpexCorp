@@ -78,7 +78,6 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
                     price={car.price}
                     volume={car.volume}
                     transmission={car.transmission}
-                    country={car.country_of_assembly}
                     mileage={car.mileage}
                     year={car.release_period}
                     fuel={car.fuel_type}

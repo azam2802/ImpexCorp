@@ -121,7 +121,7 @@ const Footer = () => {
           href="https://geeks.kg/geeks-pro"
           target="_blank"
           rel="noopener noreferrer">
-          Geeks PRO
+          Geeks Pro
         </a>
       </p>
     </footer>

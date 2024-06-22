@@ -237,6 +237,18 @@ export const FiltrModal = ({ setOpenModal }) => {
                 label: t("Catalog.characteristics.country.usa"),
                 value: "USA",
               },
+              {
+                label: t("Catalog.characteristics.country.georgia"),
+                value: "GG",
+              },
+              {
+                label: t("Catalog.characteristics.country.japan"),
+                value: "JP",
+              },
+              {
+                label: t("Catalog.characteristics.country.uae"),
+                value: "UAE",
+              },
             ]}
             filterId="country"
           />
