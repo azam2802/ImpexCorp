@@ -40,9 +40,7 @@ export const Catalog = () => {
       </div>
       <section className={s.catalog_block}>
         <div className={s.filtration_block}>
-          <div
-            className={openModal ? s.filtration_open : s.filtration}
-            onClick={onShowModal}>
+          <div className={s.filtration} onClick={onShowModal}>
             <p>{t("Catalog.filter")}</p>
             <IoIosArrowUp
               cursor="pointer"
@@ -84,8 +82,8 @@ export const Catalog = () => {
                     price={car.price}
                     volume={car.volume}
                     transmission={car.transmission}
-                    country={car.country_of_assembly}
                     mileage={car.mileage}
+                    fuel={car.fuel_type}
                     year={car.release_period}
                   />
                 </div>
@@ -93,7 +91,11 @@ export const Catalog = () => {
           ) : (
             <h1 className={s.title}>{t("notFoundData")}</h1>
           )}
-          {data.length == 0 && <h1 className={s.title}>{t("notFoundData")}</h1>}
+          {data.length == 0 && (
+            <h1 className={s.title + " " + s.title_notfound}>
+              {t("notFoundData")}
+            </h1>
+          )}
         </div>
       </section>
     </main>

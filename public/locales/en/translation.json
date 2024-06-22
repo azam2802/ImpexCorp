@@ -131,6 +131,16 @@
         "hybrid": "Hybrid",
         "gas": "Gas"
       },
+      "country": {
+        "title": "Country",
+        "china": "China",
+        "korea": "Korea",
+        "europe": "Europe",
+        "uae": "UAE",
+        "usa": "USA",
+        "georgia": "Georgia",
+        "japan": "Japan"
+      },
       "driveUnit": {
         "title": "Drive unit"
       },

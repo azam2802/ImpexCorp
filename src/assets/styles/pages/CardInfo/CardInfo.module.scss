@@ -1,7 +1,7 @@
 .card_info_section {
   width: 90vw;
   margin: 0 auto;
-  font-family: "Montserrat";
+  font-family: "Inter";
   margin-top: 30px;
   .back {
     width: fit-content;
@@ -96,7 +96,6 @@
           &:hover {
             cursor: pointer;
           }
-
           img {
             height: 8vw;
             border-radius: 20px;
@@ -120,7 +119,7 @@
       h1,
       .car_price {
         font-size: 2.6vw;
-        font-family: "Montserrat";
+        font-family: "Inter";
       }
       .car_price {
         margin-top: 1.5vw;
@@ -255,8 +254,6 @@
         }
 
         .card_slide_list {
-          // background-color: red;
-
           .card_slide_item {
             width: 25vw;
           }
@@ -333,6 +330,19 @@
       }
     }
   }
+} 
+
+@media screen and (max-width: 490px) {
+  .card_info_section {
+    .card_slide_block {
+      .card_info_card {
+        .car_struct_list {
+          .car_struct_list_item {
+            padding: 1.5vw 2vw;
+            font-size: 3.5vw;
+          }
+        }
+      }
+    }
+  }
 }
-
-

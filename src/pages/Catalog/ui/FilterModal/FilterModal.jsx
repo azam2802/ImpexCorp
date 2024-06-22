@@ -13,7 +13,12 @@ export const FiltrModal = ({ setOpenModal }) => {
   const { t, i18n } = useTranslation()
   const { setFilteredCars, brands, models, fetchData, fetchModels } =
     useFilterStore()
-
+  const [value, setValue] = useState({
+    price_min: "",
+    price_max: "",
+    mileage_min: "",
+    mileage_max: "",
+  })
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
   const [years, setYears] = useState([])
   const [volumes, setVolumes] = useState([])
@@ -64,6 +69,7 @@ export const FiltrModal = ({ setOpenModal }) => {
     try {
       const queryParams = new URLSearchParams(values).toString()
       const url = `${import.meta.env.VITE_API}api/v1/autos/?${queryParams}`
+      console.log(url)
       const response = await axios.get(url, { headers })
       if (response.data.length == 0) {
         setFilteredCars("empty")
@@ -79,13 +85,18 @@ export const FiltrModal = ({ setOpenModal }) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target
-    getData(value, name)
-    console.log("Изменение фильтра:", name, value)
+    if (/^\d*$/.test(value)) {
+      setValue({
+        ...values,
+        [name]: value,
+      })
+      getData(value, name)
+    }
   }
 
   return (
     <main className={s.filter_modal}>
-      <section className={s.row}>
+      <div className={s.row}>
         <Select
           title={t("Catalog.characteristics.catalog")}
           options={brands.map((brand) => ({
@@ -116,9 +127,9 @@ export const FiltrModal = ({ setOpenModal }) => {
           }))}
           filterId="release_period"
         />
-      </section>
+      </div>
 
-      <section className={s.row}>
+      <div className={s.row}>
         <Select
           title={t("Catalog.characteristics.fuel.title")}
           options={[
@@ -186,58 +197,61 @@ export const FiltrModal = ({ setOpenModal }) => {
           ]}
           filterId="drive"
         />
-      </section>
+      </div>
 
-      <section className={s.row}>
-        <div className={s.row_input}>
+      <div className={s.row}>
+        <div className={s.row_input + " " + s.mileage}>
           <input
             type="text"
             name="mileage_min"
+            value={value.mileage_min}
             onChange={handleInputChange}
             placeholder={t("Catalog.input.mileageFrom")}
           />
           <input
             type="text"
             name="mileage_max"
+            value={value.mileage_max}
             onChange={handleInputChange}
             placeholder={t("Catalog.input.mileageBefore")}
           />
         </div>
 
-        <div className={s.adaptive_block}>
-          {isSmallScreen ? (
-            <div className={s.row_input}>
-              <input
-                type="text"
-                name="price_min"
-                onChange={handleInputChange}
-                placeholder={t("Catalog.input.pricesFrom")}
-              />
-              <input
-                type="text"
-                name="price_max"
-                onChange={handleInputChange}
-                placeholder={t("Catalog.input.priceBefore")}
-              />
-            </div>
-          ) : (
-            <div className={s.block}>
-              <div className={s.row_input}>
-                <input
-                  type="text"
-                  name="price_min"
-                  onChange={handleInputChange}
-                  placeholder={t("Catalog.input.pricesFrom")}
-                />
-                <input
-                  type="text"
-                  name="price_max"
-                  onChange={handleInputChange}
-                  placeholder={t("Catalog.input.priceBefore")}
-                />
-              </div>
-            </div>
-          )}
+        <div className={s.row + " " + s.country}>
+          <Select
+            title={t("Catalog.characteristics.country.title")}
+            options={[
+              {
+                label: t("Catalog.characteristics.country.china"),
+                value: "CH",
+              },
+              {
+                label: t("Catalog.characteristics.country.korea"),
+                value: "SK",
+              },
+              {
+                label: t("Catalog.characteristics.country.europe"),
+                value: "UR",
+              },
+              {
+                label: t("Catalog.characteristics.country.usa"),
+                value: "USA",
+              },
+              {
+                label: t("Catalog.characteristics.country.georgia"),
+                value: "GG",
+              },
+              {
+                label: t("Catalog.characteristics.country.japan"),
+                value: "JP",
+              },
+              {
+                label: t("Catalog.characteristics.country.uae"),
+                value: "UAE",
+              },
+            ]}
+            filterId="country"
+          />
         </div>
 
         <div className={s.row_input}>
@@ -253,8 +267,47 @@ export const FiltrModal = ({ setOpenModal }) => {
             filterId="volume_max"
           />
         </div>
-      </section>
+      </div>
 
+      {isSmallScreen ? (
+        <div className={s.row}>
+          <div className={s.row_input}>
+            <input
+              type="text"
+              name="price_min"
+              value={value.price_min}
+              onChange={handleInputChange}
+              placeholder={t("Catalog.input.pricesFrom")}
+            />
+            <input
+              type="text"
+              name="price_max"
+              value={value.price_max}
+              onChange={handleInputChange}
+              placeholder={t("Catalog.input.priceBefore")}
+            />
+          </div>
+        </div>
+      ) : (
+        <div className={s.block}>
+          <div className={s.row_input}>
+            <input
+              type="text"
+              name="price_min"
+              value={value.price_min}
+              onChange={handleInputChange}
+              placeholder={t("Catalog.input.pricesFrom")}
+            />
+            <input
+              type="text"
+              name="price_max"
+              value={value.price_max}
+              onChange={handleInputChange}
+              placeholder={t("Catalog.input.priceBefore")}
+            />
+          </div>
+        </div>
+      )}
       <div className={s.block}>
         <button onClick={onSubmit}>{t("Catalog.button.title")}</button>
       </div>

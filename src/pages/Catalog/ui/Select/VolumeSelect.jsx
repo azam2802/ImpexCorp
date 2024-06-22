@@ -29,7 +29,7 @@ export const VolumeSelect = ({ title, filterId, volumes }) => {
 
   const { getData } = useFilter()
   return (
-    <div>
+    <div className={s.select_input_container}>
       <div
         className={isSmallScreen ? s.volume_select_adaptive : s.volume_select}
         onClick={() => setOpenSelect((show) => !show)}>
