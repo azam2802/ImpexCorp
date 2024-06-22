@@ -17,16 +17,18 @@ footer {
     flex-wrap: wrap;
     padding-top: 3vw;
     padding-bottom: 4vw;
-    gap: 50px;
+    gap: 2rem;
 
     .row_1,
     .row_2,
     .row_3,
     .row_4 {
       width: 20%;
+      display: flex;
+      justify-content: center;
       ul li:first-child {
         margin-bottom: 1vw;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         font-weight: 600;
       }
 
@@ -41,10 +43,11 @@ footer {
       ul li {
         color: #fff;
         font-family: "Montserrat";
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin-bottom: 1vw;
         font-style: normal;
         font-weight: 300;
+        line-height: 40px;
         letter-spacing: 0.44px;
         list-style-type: none;
         width: 100%;
@@ -107,7 +110,7 @@ footer {
     }
   }
 
-  @media only screen and (max-width: 425px) {
+  @media (max-width: 426px) {
     .logo {
       padding-block: 6.25vw;
     }
@@ -122,7 +125,8 @@ footer {
       .row_3,
       .row_4 {
         margin-bottom: 30px;
-        width: 48%;
+        width: 45%;
+
         ul li:first-child {
           font-size: 1.2rem;
           margin-bottom: 3vw;
@@ -131,6 +135,9 @@ footer {
           font-size: 0.8rem;
           line-height: 1.2rem;
         }
+      }
+      .row_3 {
+        padding-left: 30px;
       }
     }
     .social_media {
@@ -156,7 +163,7 @@ footer {
       .row_3,
       .row_4 {
         margin-bottom: 30px;
-        width: 48%;
+        width: 45%;
         ul li:first-child {
           font-size: 1.5rem;
           margin-bottom: 2vw;
@@ -167,6 +174,9 @@ footer {
             line-height: 1.2rem;
           }
         }
+      }
+      .row_3 {
+        padding-left: 60px;
       }
     }
 
