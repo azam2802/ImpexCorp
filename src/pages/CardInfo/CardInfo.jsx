@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import imgPlaceholder from "@images/car_placeholder.png"
+import imgPlaceholder from "@images/car_placeholder.webp"
 import Icon1 from "@images/Vector5.svg"
 import Icon2 from "@images/Vector4.svg"
 import s from "@styles/pages/CardInfo/CardInfo.module.scss"

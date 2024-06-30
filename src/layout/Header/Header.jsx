@@ -21,7 +21,7 @@ const Header = () => {
     }
 
     const handleScroll = () => {
-      if (window.matchMedia("(min-width: 768px)").matches) {
+      if (window.matchMedia("(min-width: 769px)").matches) {
         const headerHeight = ref.current.offsetHeight
         const scrollThreshold = 1.7 * headerHeight
         if (window.scrollY > scrollThreshold) {
