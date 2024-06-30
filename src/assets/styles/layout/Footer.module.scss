@@ -19,6 +19,11 @@ footer {
       }
     }
   }
+  .geeks_logo {
+    width: 1%;
+    vertical-align: middle;
+    
+  }
   a {
     color: #fff;
   }
@@ -71,8 +76,8 @@ footer {
     margin-top: 20px;
     color: #fff;
     font-weight: lighter;
-    a {
-      color: #89d6ff;
+    a{
+      text-decoration: underline;
     }
   }
 

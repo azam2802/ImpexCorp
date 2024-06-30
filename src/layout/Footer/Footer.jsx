@@ -7,6 +7,7 @@ import TelegramIcon from "@images/TelegramIcon.webp"
 import InstagramIcon from "@images/InstagramIcon.webp"
 import GmailIcon from "@images/GmailIcon.webp"
 import WhatsUpIcon from "@images/WhatsUpIcon.webp"
+import geeks from "@images/geeks.svg"
 
 const Footer = () => {
   const { t, i18n } = useTranslation()
@@ -122,7 +123,8 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer">
           Geeks Pro
-        </a>
+        </a>{" "}
+        <img src={geeks} className={s.geeks_logo} alt="geeks logotype" />
       </p>
     </footer>
   )
