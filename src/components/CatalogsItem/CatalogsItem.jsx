@@ -7,6 +7,8 @@ import { BsChevronRight } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { FreeMode } from "swiper/modules"
+import { useTranslation } from "react-i18next"
+
 export const CatalogsItem = ({ catalogTitle, data }) => {
   const AnimBottom = {
     hidden: {
@@ -19,6 +21,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       transition: { duration: 0.5, delay: custom * 0.2 },
     }),
   }
+  const { t } = useTranslation()
   const [bodyWidth, setBodyWidth] = useState(0)
   useEffect(() => {
     const updateBodyWidth = () => {
@@ -40,49 +43,59 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       className={s.catalogs_item}>
-      <motion.h1 variants={AnimBottom} className={s.catalog_type_title}>
+      <motion.h2 variants={AnimBottom} className={s.catalog_type_title}>
         {catalogTitle}
-      </motion.h1>
+      </motion.h2>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
-        <Swiper
-          slidesPerView={
-            bodyWidth > 765
-              ? 2.75
-              : bodyWidth > 565
-                ? 2
-                : bodyWidth > 410
-                  ? 1.4
-                  : 1.1
-          }
-          style={{ width: "100%" }}
-          freeMode={true}
-          modules={[FreeMode]}>
-          {[...data]
-            .reverse()
-            .slice(0, 6)
-            .map((car) => (
-              <SwiperSlide key={car.car_slug}>
-                <CarCard
-                  images={import.meta.env.VITE_API + car.images[0].image}
-                  car_name={car.car_name}
-                  price={car.price}
-                  volume={car.volume}
-                  transmission={car.transmission}
-                  country={car.country_of_assembly}
-                  mileage={car.mileage}
-                  year={car.release_period}
-                  fuel={car.fuel}
+        {data.length > 0 ? (
+          <Swiper
+            slidesPerView={
+              bodyWidth > 1024
+                ? 3.1
+                : bodyWidth > 768
+                  ? 2.3
+                  : bodyWidth > 565
+                    ? 2
+                    : bodyWidth > 410
+                      ? 1.4
+                      : 1.1
+            }
+            style={{ width: "100%" }}
+            freeMode={true}
+            modules={[FreeMode]}>
+            {[...data]
+              .filter((item) => item.images?.length != 0)
+              .reverse()
+              .slice(0, 6)
+              .map((car) => (
+                <SwiperSlide key={car.id}>
+                  <CarCard
+                    images={
+                      car.images &&
+                      import.meta.env.VITE_API + car.images[0].image
+                    }
+                    car_name={car.car_brand + " " + car.car_model}
+                    price={car.price}
+                    volume={car.volume}
+                    transmission={car.transmission}
+                    mileage={car.mileage}
+                    year={car.release_period}
+                    fuel={car.fuel_type}
+                    id={car.id}
+                  />
+                </SwiperSlide>
+              ))}
+            <SwiperSlide>
+              <Link className={s.next_button} to="catalog">
+                <BsChevronRight
+                  style={{ width: "80px", height: "100%", fill: "#19746b" }}
                 />
-              </SwiperSlide>
-            ))}
-          <SwiperSlide>
-            <Link className={s.next_button} to="catalog">
-              <BsChevronRight
-                style={{ width: "80px", height: "100%", fill: "#19746b" }}
-              />
-            </Link>
-          </SwiperSlide>
-        </Swiper>
+              </Link>
+            </SwiperSlide>
+          </Swiper>
+        ) : (
+          <h2 className={s.catalog_type_title}>{t("notFoundData")}</h2>
+        )}
       </motion.ul>
     </motion.li>
   )

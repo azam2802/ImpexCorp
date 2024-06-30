@@ -1,9 +1,10 @@
 {
   "notFoundText": "Sorry, this page can not be found.",
+  "notFoundData": "Sorry, we didn't find anything.",
+  "backBtn": "Back",
   "header": {
     "catalogue": "Catalog",
     "home": "Home",
-    "calculator": "Calculator",
     "ourcompany": "Our Company",
     "HeaderCatalog": {
       "model": "Popular models",
@@ -15,11 +16,17 @@
           "japan": "Japan"
         }
       }
+    },
+    "MetaTags": {
+      "home": "IMPEX CORP || Import-export of cars from the UAE, Korea and China",
+      "ourcompany": "IMPEX CORP || Our Company",
+      "catalogue": "IMPEX CORP || Catalog",
+      "defaultDescription": "LLC \"Impex-Corp\" provides services for the purchase and import of cars from Korea, China, UAE and other countries."
     }
   },
   "HomePage": {
     "GreetingBlock": {
-      "title": "Welcome to the Impex Corp car showroom",
+      "title": "Welcome to Impex Corp car dealership!",
       "text": "Impex Corp is an auto company that offers its customers a wide range of products and services related to the automotive industry. Having become a leading player in the market, Impex Corp has several key advantages that make them an ideal choice for buyers",
       "buttonText": "More details"
     },
@@ -54,49 +61,27 @@
     }
   },
   "AboutUs": {
-    "service_left": "The Impex Corp company provides services for the purchase and import of cars from Korea and China!",
-    "specialize_right": [
-      "Impex corp is a company specializing in the sale of high-quality cars",
-      "We offer a wide selection of new and used cars of various makes and models to satisfy the needs of the most demanding customers. Offers convenient purchasing conditions, including car financing and exchange programs.",
-      "We do everything possible to make the process of purchasing a car as simple and convenient as possible for our customers."
-    ],
-    "aboutCard": {
-      "title": "What are we doing",
-      "texts": [
-        "We sell quality cars from China and Korea",
-        "We offer good experts and professionals",
-        "We offer good advice and service"
-      ]
+    "main_title": "The company \"Impex Corp\" offers services for purchasing and importing cars from Korea, China and other countries.",
+    "buttonText": "Call",
+    "title": "Our advantages",
+    "card1": {
+      "bold": "Choice - ",
+      "text": "We provide selection and delivery of specialized equipment and machinery, as well as offer a wide range of spare parts, accessories, and automotive chemicals."
     },
-    "aboutCardBottom": {
-      "title": "Why choose us",
-      "texts": ["Online payments", "Good service", "Towing"]
+    "card2": {
+      "bold": "Reliability - ",
+      "text": "In less than a year, our company has successfully concluded over 100 contracts with more than 7 countries and 30 cities in the CIS, confirming our reliability and professionalism."
     },
-
-    "AboutUsBottom": {
-      "title": "You'll get :",
-      "info": {
-        "text1": "Impeccable work",
-        "text2": "guarantee of your confidence in the transaction when purchasing a car or ordering from",
-        "span": "Impex Corp"
-      },
-      "receive": {
-        "span": "RELIABILITY",
-        "text": " In less than a year, our company has completed over 100 contracts with more than 7 countries and 30 cities of the CIS."
-      },
-      "choice": {
-        "span": "CHOICE",
-        "text": "SELECTION One of the important tasks for our company is the selection and delivery of special machinery, equipment, raw materials for the mining, light and agricultural industries. We also supply spare parts, accessories and chemicals for cars.",
-        "bottom": "The company “IMPEX CORP” is also developing in the direction of import-export of food products and tourism. The main activity of our company is the import-export of cars from countries such as China, Korea, Japan, UAE, Georgia, Europe, USA. "
-      },
-
-      "li1": {
-        "span": "Impex Corp",
-        "text": "Also the company",
-        "text2": "is developing in the direction of import-export of food products and tourism. The main activity of our company is the import-export of cars from countries such as China, Japan, UAE, Georgia, Europe, USA"
-      },
-      "bottomTitle": "Your dream is in your hands!"
-    }
+    "card3": {
+      "bold": "Development - ",
+      "text": "We are actively expanding in the field of import and export of food products and tourism, extending the geographical scope of our operations and strengthening our positions in the global market."
+    },
+    "back": {
+      "span": "Impex Corp",
+      "text": "Seamless service from",
+      "text2": " - your pathway to confident car purchases or orders with us."
+    },
+    "bottomTitle": "The main activity of our company is the import and export of cars from countries such as China, Japan, UAE, Georgia, Europe, and the USA."
   },
   "footer": {
     "aboutus": {
@@ -113,7 +98,7 @@
       }
     },
     "branches": {
-      "name": "Branch",
+      "name": "Our branches",
       "menu": {
         "address1": "77 Usenbaeva St. Bishkek"
       }
@@ -130,7 +115,7 @@
     "title": "Catalog",
     "filter": "Filter",
     "characteristics": {
-      "catalog": "Catalog",
+      "catalog": "Brand",
       "model": "Model",
       "yearIssue": "Year of issue",
       "wheel": {
@@ -142,18 +127,29 @@
         "title": "Fuel",
         "diesel": "Diesel",
         "petrol": "Petrol",
-        "electro": "Electro"
+        "electro": "Electro",
+        "hybrid": "Hybrid",
+        "gas": "Gas"
+      },
+      "country": {
+        "title": "Country",
+        "china": "China",
+        "korea": "Korea",
+        "europe": "Europe",
+        "uae": "UAE",
+        "usa": "USA",
+        "georgia": "Georgia",
+        "japan": "Japan"
       },
       "driveUnit": {
-        "title": "Drive unit",
-        "front": "Front",
-        "rear": "Rear"
+        "title": "Drive unit"
       },
       "transmission": {
         "title": "Transmission",
-        "mechanical": "Mechanical",
+        "mechanical": "Manual",
         "automatic": "Automatic",
-        "stepless": "Stepless"
+        "stepless": "Variable",
+        "robot": "Robotic"
       }
     },
     "country": {
@@ -164,44 +160,36 @@
     },
     "input": {
       "pricesFrom": "Prices from",
-      "priceBegore": "Prices before",
+      "priceBefore": "Prices to",
       "mileageFrom": "Mileage from",
-      "mileageBefore": "Mileage before",
+      "mileageBefore": "Mileage to",
       "volumeFrom": "Volume from",
-      "volumeBefore": "Volume before"
+      "volumeBefore": "Volume to"
     },
     "button": {
       "title": "Find"
     }
   },
-  "Calculation": {
-    "Calculator": {
-      "brand": "Car brand",
-      "text": "text",
-      "price": "Price",
-      "power": "Power",
-      "date_of_issue": "Date of issue",
-      "type": "Select engine type",
-      "petrol": "Petrol",
-      "diesel": "Diesel",
-      "hybrid": "Hybrid",
-      "electric": "Electric",
-      "button": "Calculate",
-      "view": "View",
-      "bid": "Bid",
-      "amount": "Amount in 'som'",
-      "duty": "Import duty",
-      "five_percent": "5%",
-      "sum": "Sum",
-      "fees": "Customs duties",
-      "som1": "557 som for L.S.",
-      "VAT": "VAT",
-      "ten_percent": "10%",
-      "collection": "Recycling collection",
-      "som2": "0.17 x 20000 som",
-      "Total": "Total",
-      "text1": "Preliminary car cost calculation! The final cost on the day of purchase may differ and depends on the purchase price of the currency",
-      "button1": "Call"
+  "CarInfo": {
+    "titles": {
+      "common": {
+        "title": "Common Information",
+        "car_type": "Body Type",
+        "number_doors": "Doors",
+        "number_seats": "Seats",
+        "mileage": "Mileage",
+        "period": "Realese Period",
+        "transmission": "Transmission",
+        "drive": "Drive"
+      },
+      "engine": {
+        "title": "Engine",
+        "eng_type": "Engine Type",
+        "power": "Power",
+        "volume": "Volume in cm³",
+        "battery_capacity": "Battery Capacity",
+        "consumption": "Consumption"
+      }
     }
   }
 }

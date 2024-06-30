@@ -1,112 +1,136 @@
 import React from "react"
 import s from "@styles/pages/AboutUs/AboutUs.module.scss"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { EffectCoverflow } from "swiper/modules"
+import Slide1 from "@images/flags.webp"
+import Slide2 from "@images/scale_1200 2.webp"
+import Slide3 from "@images/scale_1200 1.webp"
+import { motion } from "framer-motion"
+import { Pagination } from "swiper/modules"
+import img2 from "@images/image44.webp"
+import img3 from "@images/Rectangle124.webp"
+import img4 from "@images/Rectangle125.webp"
+import img5 from "@images/Frame985.webp"
 import { useTranslation } from "react-i18next"
-import heroImg from "@images/aboutUsImg.png"
-import img1 from "@images/aboutUs01.png"
-import img2 from "@images/aboutUs02.png"
-import img3 from "@images/aboutUs03.png"
-import img4 from "@images/aboutUs04.png"
-import img5 from "@images/aboutUs05.png"
-import img6 from "@images/aboutUs06.png"
-import img7 from "@images/aboutUs07.png"
-import img8 from "@images/aboutUs08.png"
-import img9 from "@images/aboutUs09.png"
-import AboutCard from "@components/AboutCard/AboutCard"
-
 export const AboutUs = () => {
   const { t } = useTranslation()
-  const arr = [undefined, undefined, undefined]
-  const aboutCardImg = [img3, img4, img5]
-  const aboutCardBottomImg = [img6, img7, img8]
+
+  const aboutCardImg = [Slide1, Slide2, Slide3]
+
+  const AnimLeft = {
+    hidden: {
+      x: -150,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.5, delay: custom * 0.2 },
+    }),
+  }
+
   return (
-    <main className={s.about_main}>
-      <div className={s.about_hero}>
-        <h1>IMPEXCORP</h1>
-        <img src={heroImg} alt="Car" />
-      </div>
-
-      <div className={s.about_service}>
-        <div className={s.service_left}>{t(`AboutUs.service_left`)}</div>
-        <div className={s.service_right}>
-          <img src={img1} alt="img1" />
+    <>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className={s.hero}>
+        <div className={s.hero_box}>
+          <motion.h1 custom={1} variants={AnimLeft}>
+            {t("AboutUs.main_title")}
+          </motion.h1>
+          <a
+            href="https://api.whatsapp.com/send?phone=996500677633"
+            rel="noreferrer"
+            target="_blank">
+            <motion.button custom={1.5} variants={AnimLeft}>
+              {t("AboutUs.buttonText")}
+            </motion.button>
+          </a>
+        </div>
+      </motion.div>
+      <main className={s.about_main}>
+        <div className={s.about_cards}>
+          <div className={s.question}> {t("AboutUs.title")}</div>
+          <div className={s.cards_list}>
+            <div className={s.card_item}>
+              <img src={img5} alt={img5} />
+              <article>
+                <span>{t("AboutUs.card1.bold")}</span> {t("AboutUs.card1.text")}
+              </article>
+            </div>
+            <div className={s.card_item}>
+              <img src={img4} alt={img4} />
+              <article>
+                <span>{t("AboutUs.card2.bold")}</span> {t("AboutUs.card2.text")}
+              </article>
+            </div>
+            <div className={s.card_item}>
+              <img src={img3} alt={img3} />
+              <article>
+                <span>{t("AboutUs.card3.bold")}</span> {t("AboutUs.card3.text")}
+              </article>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div className={s.about_back}>
+        <div className={s.info}>
+          <article className={s.text}>
+            {t("AboutUs.back.text")}
+            <br />
+            {t("AboutUs.back.text2")}
+            <span>{t("AboutUs.back.span")}</span>{" "}
+          </article>
+          <article className={s.text_mobile}>
+            {t("AboutUs.back.textMobile")} <span>{t("AboutUs.back.span")}</span>
+            {" - "}
+            {t("AboutUs.back.textMobile2")}
+          </article>
+          <div className={s.img_box}>
+            <img src={img2} alt={img2} />
+          </div>
         </div>
       </div>
 
-      <div className={s.double_line}></div>
-
-      <div className={s.about_specialize}>
-        <div className={s.specialize_left}>
-          <img src={img2} alt="img2" />
-          <div>{t(`AboutUs.specialize_right.${0}`)}</div>
+      <main className={s.about_main}>
+        <div className={s.swiper_container}>
+          <Swiper
+            speed={1000}
+            loop={false}
+            effect={"coverflow"}
+            grabCursor={true}
+            initialSlide={1}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 200,
+              modifier: 2,
+            }}
+            modules={[EffectCoverflow, Pagination]}
+            className={s.mySwiper}>
+            {aboutCardImg.map((item, i) => (
+              <SwiperSlide style={{ width: "35vw", height: "25vw" }} key={i}>
+                <img
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectPosition: "center",
+                    objectFit: "cover",
+                  }}
+                  src={item}
+                  alt={item}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-        <div className={s.specialize_right}>
-          {arr.map((_, i) => (
-            <div key={i}>{t(`AboutUs.specialize_right.${i}`)}</div>
-          ))}
-        </div>
-      </div>
-
-      <div className={s.double_line_center}></div>
-
-      <div className={s.about_cards}>
-        <h1>{t("AboutUs.aboutCard.title")}</h1>
-        <ul>
-          {aboutCardImg.map((el, i) => (
-            <AboutCard
-              key={i}
-              imgsrc={el}
-              text={t(`AboutUs.aboutCard.texts.${i}`)}
-            />
-          ))}
-        </ul>
-      </div>
-
-      <div id="Services" className={s.about_cards_bottom}>
-        <h1>{t("AboutUs.aboutCardBottom.title")}</h1>
-        <ul>
-          {aboutCardBottomImg.map((el, i) => (
-            <AboutCard
-              key={i}
-              imgsrc={el}
-              text={t(`AboutUs.aboutCardBottom.texts.${i}`)}
-            />
-          ))}
-        </ul>
-      </div>
-      <div className={s.about_contract}>
-        <div>
-          {t(`AboutUs.AboutUsBottom.info.text1`)} “{" "}
-          <span>{t(`AboutUs.AboutUsBottom.info.span`)}</span> “ -
-          {t(`AboutUs.AboutUsBottom.info.text2`)}“{" "}
-          <span>{t(`AboutUs.AboutUsBottom.info.span`)}</span> “
-        </div>
-
-        <h3>{t(`AboutUs.AboutUsBottom.title`)}</h3>
-        <ul>
-          <li>
-            1. <span>{t(`AboutUs.AboutUsBottom.receive.span`)}</span> -
-            {t(`AboutUs.AboutUsBottom.receive.text`)}
-          </li>
-          <li>
-            2. <span>{t(`AboutUs.AboutUsBottom.choice.span`)}</span> -
-            {t(`AboutUs.AboutUsBottom.choice.text`)}
-          </li>
-          <li>
-            3. {t(`AboutUs.AboutUsBottom.li1.text`)} “{" "}
-            <span>{t(`AboutUs.AboutUsBottom.li1.span`)}</span> “ -
-            {t(`AboutUs.AboutUsBottom.li1.text2`)}“{" "}
-          </li>
-        </ul>
-      </div>
-
-      <div className={s.bottom_title}>
-        {t(`AboutUs.AboutUsBottom.bottomTitle`)}
-      </div>
-
-      <div className={s.bottom_img}>
-        <img src={img9} alt="img9" />
-      </div>
-    </main>
+        <article className={s.bottom_text}>{t("AboutUs.bottomTitle")}</article>
+      </main>
+    </>
   )
 }
 

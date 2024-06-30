@@ -40,23 +40,25 @@ const FirstBlock = () => {
         <div className={s.block}>
           <div className={s.block_title}>
             <div className={s.title}>
-              <p>
-                <motion.span custom={1} variants={AnimLeft}>
-                  IMPEXCORP
-                </motion.span>
-                <motion.span custom={1} variants={AnimLeft}>
-                  {t("HomePage.firstBlock.title1")}
-                </motion.span>
-              </p>
+              <motion.h1 custom={1} variants={AnimLeft}>
+                IMPEXCORP
+              </motion.h1>
+              <motion.p custom={1.5} variants={AnimLeft}>
+                <span>{t("HomePage.firstBlock.title1")}</span>
+              </motion.p>
             </div>
-
             <div>
-              <motion.button
-                custom={2}
-                variants={AnimBottom}
-                className={s.button}>
-                {t("HomePage.firstBlock.buttonText")}
-              </motion.button>
+              <a
+                href="https://api.whatsapp.com/send?phone=996500677633"
+                rel="noreferrer"
+                target="_blank">
+                <motion.button
+                  custom={2}
+                  variants={AnimBottom}
+                  className={s.button}>
+                  {t("HomePage.firstBlock.buttonText")}
+                </motion.button>
+              </a>
             </div>
           </div>
         </div>

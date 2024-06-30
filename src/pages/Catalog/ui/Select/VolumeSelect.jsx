@@ -3,8 +3,9 @@ import PropTypes from "prop-types"
 import { IoIosArrowUp } from "react-icons/io"
 import { AnimatePresence, motion } from "framer-motion"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
+import { useFilter } from "@store/store"
 
-export const VolumeSelect = ({ title, firstType, secondType, thirdType }) => {
+export const VolumeSelect = ({ title, filterId, volumes }) => {
   const [openSelect, setOpenSelect] = useState(false)
   const [selectedValue, setSelectedValue] = useState()
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 769)
@@ -26,8 +27,9 @@ export const VolumeSelect = ({ title, firstType, secondType, thirdType }) => {
     setOpenSelect(false)
   }
 
+  const { getData } = useFilter()
   return (
-    <div>
+    <div className={s.select_input_container}>
       <div
         className={isSmallScreen ? s.volume_select_adaptive : s.volume_select}
         onClick={() => setOpenSelect((show) => !show)}>
@@ -46,9 +48,19 @@ export const VolumeSelect = ({ title, firstType, secondType, thirdType }) => {
             transition={{ duration: 0.2 }}
             style={{ overflow: "hidden" }}>
             <div className={s.select}>
-              <p onClick={() => handleSelect(firstType)}>{firstType}</p>
-              <p onClick={() => handleSelect(secondType)}>{secondType}</p>
-              <p onClick={() => handleSelect(thirdType)}>{thirdType}</p>
+              <div className={s.options_container}>
+                {volumes?.map((volume, id) => (
+                  <p
+                    key={id}
+                    className={s.option}
+                    onClick={() => {
+                      handleSelect(volume)
+                      getData(volume, filterId)
+                    }}>
+                    {volume}
+                  </p>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
@@ -59,7 +71,6 @@ export const VolumeSelect = ({ title, firstType, secondType, thirdType }) => {
 
 VolumeSelect.propTypes = {
   title: PropTypes.string.isRequired,
-  firstType: PropTypes.string.isRequired,
-  secondType: PropTypes.string.isRequired,
-  thirdType: PropTypes.string.isRequired,
+  volumes: PropTypes.array.isRequired,
+  filterId: PropTypes.string.isRequired,
 }

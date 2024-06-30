@@ -3,6 +3,7 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 import s from "@styles/pages/Home/GreetingBlock.module.scss"
 import Carousels from "@components/Carousels/Carousels.jsx"
+import { Link } from "react-router-dom"
 
 const GreetingBlock = () => {
   const { t } = useTranslation()
@@ -36,15 +37,19 @@ const GreetingBlock = () => {
             <motion.h2 custom={1} variants={AnimBottom} className={s.title}>
               {t("HomePage.GreetingBlock.title")}
             </motion.h2>
-            <motion.p custom={2} variants={AnimBottom} className={s.text}>
-              {t("HomePage.GreetingBlock.text")}
-            </motion.p>
-            <motion.button
-              custom={3}
-              variants={AnimBottom}
-              className={s.button}>
-              {t("HomePage.GreetingBlock.buttonText")}
-            </motion.button>
+            <article>
+              <motion.p custom={2} variants={AnimBottom} className={s.text}>
+                {t("HomePage.GreetingBlock.text")}
+              </motion.p>
+            </article>
+            <Link to="/about">
+              <motion.button
+                custom={3}
+                variants={AnimBottom}
+                className={s.button}>
+                {t("HomePage.GreetingBlock.buttonText")}
+              </motion.button>
+            </Link>
           </div>
         </div>
       </motion.div>

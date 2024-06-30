@@ -10,7 +10,7 @@
 }
 
 .serviceTitle {
-  font-family: "Montserrat";
+  font-family: "Inter";
   margin-top: 3.125vw;
   font-size: 2.5vw;
   align-self: flex-start;
@@ -22,7 +22,7 @@
 .paragraph3,
 .paragraph4 {
   font-weight: bold;
-  font-family: "Montserrat";
+  font-family: "Inter";
   font-size: 2vw;
   margin-bottom: 0.625vw;
 }
@@ -33,12 +33,12 @@
 .span4 {
   font-size: 1.5vw;
   margin-top: 0.1302vw;
-  font-family: "Montserrat";
+  font-family: "Inter";
 }
 
 @media screen and (max-width: 768px) {
   .serviceTitle {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 4vw;
   }
   .paragraph1,
@@ -83,45 +83,20 @@
   .paragraph2,
   .paragraph3,
   .paragraph4 {
-    font-size: 3.5vw;
+    font-size: 3.3vw;
     margin-bottom: 0.5em;
   }
   .span1,
   .span2,
   .span3,
   .span4 {
-    font-size: 4vw;
+    font-size: 3.3vw;
     margin-left: 5px;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .serviceTitle {
-    font-size: 5vw;
-  }
-  .serviceItem img {
-    width: 15vw;
-    margin-right: 1em;
-  }
-  .paragraph1,
-  .paragraph2,
-  .paragraph3,
-  .paragraph4 {
-    font-size: 4vw;
-    margin-bottom: 0.5em;
-  }
-  .span1,
-  .span2,
-  .span3,
-  .span4 {
-    font-size: 4.2vw;
-    margin-top: 0.1302vw;
-    font-family: "Montserrat";
-  }
-}
-
 .row {
-  font-family: "Montserrat";
+  font-family: "Inter";
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -149,7 +124,7 @@
         }
       }
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 468px) {
       .imgDiv {
         width: 25%;
       }

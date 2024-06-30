@@ -12,15 +12,15 @@ const LangSwitcher = () => {
   const [showDrop, setShowDrop] = useState(false)
   const { i18n } = useTranslation()
   const { setMenuActive } = useBurgerState()
+  let ref = useRef(null)
 
-  let ref = useRef()
-  useEffect(() => {
-    const handleClose = (e) => {
-      if (!ref.current.contains(e.target)) {
-        setShowDrop(false)
-        document.removeEventListener("click", handleClose)
-      }
+  const handleClose = (e) => {
+    if (!ref.current.contains(e.target)) {
+      setShowDrop(false)
     }
+  }
+
+  useEffect(() => {
     document.addEventListener("click", handleClose)
   }, [])
 
@@ -47,11 +47,9 @@ const LangSwitcher = () => {
       ref={ref}>
       {langs
         .filter((lang) => lang.code == i18n.language)
-        .map((lang, id) => (
-          <button key={id}>
-            <div>
-              <img src={lang.flag} alt={lang.name} />
-            </div>
+        .map((lang) => (
+          <button key={lang.code}>
+            <img src={lang.flag} alt={lang.name} />
             {lang.name}
             <FaChevronDown
               className={

@@ -7,6 +7,7 @@ import TelegramIcon from "@images/TelegramIcon.webp"
 import InstagramIcon from "@images/InstagramIcon.webp"
 import GmailIcon from "@images/GmailIcon.webp"
 import WhatsUpIcon from "@images/WhatsUpIcon.webp"
+import geeks from "@images/geeks.svg"
 
 const Footer = () => {
   const { t, i18n } = useTranslation()
@@ -81,36 +82,49 @@ const Footer = () => {
       <div className={s.social_media}>
         <ul>
           <li>
-            <Link to="https://t.me/impexcorpkg" target="_blank">
+            <a
+              href="https://t.me/impexcorpkg"
+              target="_blank"
+              rel="noopener noreferrer">
               <img src={TelegramIcon} alt="Telegram Icon" />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="https://www.instagram.com/impex.corp.kg" target="_blank">
+            <a
+              href="https://www.instagram.com/impex.corp.kg"
+              target="_blank"
+              rel="noopener noreferrer">
               <img src={InstagramIcon} alt="Instagram Icon" />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="mailto:impexcorpkg@gmail.com" target="_blank">
+            <a
+              href="mailto:impexcorpkg@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer">
               <img src={GmailIcon} alt="Gmail Icon" />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              to="https://api.whatsapp.com/send?phone=996500677633"
-              target="_blank">
+            <a
+              href="https://api.whatsapp.com/send?phone=996500677633"
+              target="_blank"
+              rel="noopener noreferrer">
               <img src={WhatsUpIcon} alt="WhatsApp Icon" />
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
 
-      <hr />
       <p id={s.madeby}>
         Made by{" "}
-        <Link to="https://geeks.kg/geeks-pro" target="_blank">
-          GeeksPRO
-        </Link>
+        <a
+          href="https://geeks.kg/geeks-pro"
+          target="_blank"
+          rel="noopener noreferrer">
+          Geeks Pro
+        </a>{" "}
+        <img src={geeks} className={s.geeks_logo} alt="geeks logotype" />
       </p>
     </footer>
   )

@@ -2,24 +2,23 @@
   justify-content: space-between;
   display: flex;
   padding-block: 90px;
-  background-image: url(../../../img/FirstBlock.png);
+  background-image: url(@images/FirstBlock.webp);
   background-size: cover;
   background-position: center;
-  height: 86.2vh;
+  height: 91vh;
 }
 
 .title {
   width: 45vw;
-  font-size: 3vw;
+  font-size: 2.8vw;
   text-wrap: balance;
-  font-family: Inter;
+  font-family: "Inter";
   font-weight: 300;
   color: white;
-  span {
-    &:first-child {
-      font-size: 100px;
-      font-weight: 400;
-    }
+  margin-top: 80px;
+  h1 {
+    font-size: 6.8vw;
+    font-weight: 400;
     display: block;
   }
 }
@@ -29,7 +28,7 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   img {
     width: 100%;
   }
@@ -42,7 +41,7 @@
 }
 
 .button {
-  padding: 0.6rem 4rem 0.6rem 4rem;
+  padding: 0.8vw 6.8vw;
   border-radius: 10px;
   border: 2px solid #19746b;
   color: #fff;
@@ -65,32 +64,18 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
     height: fit-content;
+    padding-bottom: 50px;
     display: flex;
     position: relative;
-    justify-content: center;
-    background: none;
-    padding-block: unset;
-    margin-top: 50px;
+    background-image: url(@images/hero_mobile_bg.webp);
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-block: 100px;
     overflow: hidden;
-
-    &::before {
-      margin: -20px;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-clip: border-box;
-      background-position: center;
-      z-index: -1;
-      filter: blur(5px);
-      background-image: url(../../../img/FirstBlock.png);
-    }
     .ImageCar {
       display: none;
     }
@@ -98,54 +83,56 @@
 
   .block {
     display: flex;
-    justify-content: center;
-    margin: 120px 0;
   }
 
   .title {
-    width: 30rem;
-    font-family: Inter;
-    font-size: 40px;
+    width: 90%;
+    font-family: "Inter";
+    font-size: 22px;
     font-weight: 400;
-    text-align: center;
+    margin-top: unset;
+
+    p,
     span {
-      &:first-child {
-        font-size: 40px;
-        color: rgb(19, 209, 190);
-        padding-right: 0.5rem;
-      }
-      display: inline;
+      display: inline-block;
+      width: 100%;
     }
   }
 
   .block_title {
     display: flex;
-    align-items: center;
     gap: 0px;
     flex-direction: column;
   }
 
   .button {
-    margin-top: 57px;
+    margin-top: 5.5vw;
     font-weight: 200;
-    border-radius: 10px;
+    border-radius: 9px;
+    font-size: 1rem;
+    padding: 5px 40px;
   }
 }
 
-@media (max-width: 620px) {
-  .title {
-    font-size: 6.4vw;
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 64px;
+  }
+}
 
-    span {
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 4vw;
+    h1 {
       &:first-child {
-        font-size: 6.4vw;
+        font-size: 10vw;
       }
     }
   }
 }
 
-@media (max-width: 399px) {
-  .title {
-    width: 20rem;
+@media screen and (max-width: 490px) {
+  .button{
+    font-size: 14px;
   }
 }
