@@ -54,8 +54,13 @@ const CharacterCard = ({ data }) => {
                   <>
                     <div>{data.fuel_type}</div>
                     <div>{data.power}</div>
-                    <div>{data.volume}</div>
-                    <div>{data.consumption}</div>
+                    {data.fuel_type !=
+                      t("Catalog.characteristics.fuel.electro") && (
+                      <>
+                        <div>{data.volume}</div>
+                        <div>{data.consumption}</div>
+                      </>
+                    )}
                   </>
                 )}
               </div>
@@ -67,8 +72,8 @@ const CharacterCard = ({ data }) => {
   )
 }
 
-export default CharacterCard
-
 CharacterCard.propTypes = {
   data: PropTypes.any.isRequired,
 }
+
+export default CharacterCard

@@ -20,9 +20,14 @@ footer {
     }
   }
   .geeks_logo {
-    width: 1%;
+    width: 1% ;
     vertical-align: middle;
-    
+    @media screen and (max-width: 768px) {
+      width: 2%;
+    }
+    @media screen and (max-width: 590px) {
+      width: 3%;
+    }
   }
   a {
     color: #fff;
