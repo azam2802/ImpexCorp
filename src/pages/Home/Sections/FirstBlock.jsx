@@ -2,9 +2,11 @@ import React from "react"
 import { motion } from "framer-motion"
 import s from "@styles/pages/Home/FirstBlock.module.scss"
 import { useTranslation } from "react-i18next"
+import { useContactInfo } from "@store/store"
 
 const FirstBlock = () => {
   const { t } = useTranslation()
+  const { data: contacts } = useContactInfo()
 
   const AnimLeft = {
     hidden: {
@@ -49,7 +51,10 @@ const FirstBlock = () => {
             </div>
             <div>
               <a
-                href="https://api.whatsapp.com/send?phone=996500677633"
+                href={
+                  contacts &&
+                  `https://api.whatsapp.com/send?phone=${contacts.whatsapp_number}`
+                }
                 rel="noreferrer"
                 target="_blank">
                 <motion.button
