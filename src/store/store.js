@@ -68,7 +68,6 @@ export const useAutoInfo = create(
     },
     setEmptyData: () => {
       set({ data: [] })
-      console.log("empty")
     },
   })),
 )
@@ -87,7 +86,6 @@ export const useContactInfo = create(
           })
           .then((res) => {
             set({ data: res.data[0] })
-            console.log(res.data[0])
           })
       } catch (error) {
         console.error("Ошибка получения данных", error)
