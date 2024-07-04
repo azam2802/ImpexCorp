@@ -1,28 +1,41 @@
-import React, { useEffect, useState } from "react"
-import imgPlaceholder from "@images/car_placeholder.webp"
-import Icon1 from "@images/Vector5.svg"
+import CharacterCard from "@components/CharacterCard/CharacterCard"
 import Icon2 from "@images/Vector4.svg"
+import Icon1 from "@images/Vector5.svg"
+import Icon3 from "@images/flag.svg"
+import imgPlaceholder from "@images/car_placeholder.webp"
+import { useAutoInfo, useSliderState } from "@store/store"
 import s from "@styles/pages/CardInfo/CardInfo.module.scss"
-import { FaAngleRight, FaAngleLeft, FaRegCalendar } from "react-icons/fa"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { FreeMode } from "swiper/modules"
+import React, { useEffect, useState } from "react"
+import { Helmet } from "react-helmet"
+import { useTranslation } from "react-i18next"
+import { BsBatteryCharging } from "react-icons/bs"
+import { FaAngleLeft, FaAngleRight, FaRegCalendar } from "react-icons/fa"
+import { IoIosArrowBack } from "react-icons/io"
+import { IoShareSocial } from "react-icons/io5"
 import { LuFuel } from "react-icons/lu"
 import { MdOutlineSpeed } from "react-icons/md"
-import CharacterCard from "@components/CharacterCard/CharacterCard"
-import { IoShareSocial } from "react-icons/io5"
 import { Link, useParams } from "react-router-dom"
-import { useAutoInfo, useSliderState } from "@store/store"
-import { useTranslation } from "react-i18next"
-import { IoIosArrowBack } from "react-icons/io"
-import { Helmet } from "react-helmet"
+import { FreeMode } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
 
 const CardInfo = () => {
   const { id } = useParams()
   const { t, i18n } = useTranslation()
-  const { data, fetchData } = useAutoInfo()
+  const { data, fetchData, setEmptyData } = useAutoInfo()
   const placeholderImage = [imgPlaceholder]
 
-  fetchData(i18n.language, id)
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setEmptyData()
+    }
+    return () => {
+      handleRouteChange()
+    }
+  }, [setEmptyData])
+
+  useEffect(() => {
+    fetchData(i18n.language, id)
+  }, [i18n.language, id])
 
   const images = data.images
 
@@ -40,7 +53,6 @@ const CardInfo = () => {
   const [bodyWidth, setBodyWidth] = useState(0)
 
   useEffect(() => {
-    // setImages(()=>{images.slice(1,5)})
     const updateBodyWidth = () => {
       setBodyWidth(document.body.clientWidth)
     }
@@ -139,49 +151,41 @@ const CardInfo = () => {
                 />
               )}
             </div>
-            {images != undefined ? (
-              images.length > 1 ? (
-                <div
-                  className={s.card_slide_list}
-                  style={{ width: images.length >= 4 ? "100%" : "80%" }}>
-                  <Swiper
-                    freeMode={true}
-                    modules={[FreeMode]}
-                    slidesPerView={
-                      bodyWidth > 765 && images.length < 4
-                        ? 2.9
-                        : bodyWidth > 765 && images.length > 3
-                          ? 3.9
-                          : 3.4
-                    }>
-                    {(images == undefined ? placeholderImage : images).map(
-                      (item, i) => (
-                        <SwiperSlide key={i}>
-                          <div
-                            onClick={() => {
-                              setMainImg(item.image)
-                              setSlide(
-                                images
-                                  .map((el) => el.image)
-                                  .indexOf(item.image),
-                              )
-                            }}
-                            className={s.card_slide_item}>
-                            <img
-                              src={import.meta.env.VITE_API + item.image}
-                              alt="car photo"
-                            />
-                          </div>
-                        </SwiperSlide>
-                      ),
-                    )}
-                  </Swiper>
-                </div>
-              ) : (
-                ""
-              )
-            ) : (
-              ""
+            {images != undefined && images.length > 1 && (
+              <div
+                className={s.card_slide_list}
+                style={{ width: images.length >= 4 ? "100%" : "80%" }}>
+                <Swiper
+                  freeMode={true}
+                  modules={[FreeMode]}
+                  slidesPerView={
+                    bodyWidth > 765 && images.length < 4
+                      ? 2.9
+                      : bodyWidth > 765 && images.length > 3
+                        ? 3.9
+                        : 3.4
+                  }>
+                  {(images == undefined ? placeholderImage : images).map(
+                    (item, i) => (
+                      <SwiperSlide key={i}>
+                        <div
+                          onClick={() => {
+                            setMainImg(item.image)
+                            setSlide(
+                              images.map((el) => el.image).indexOf(item.image),
+                            )
+                          }}
+                          className={s.card_slide_item}>
+                          <img
+                            src={import.meta.env.VITE_API + item.image}
+                            alt="car photo"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ),
+                  )}
+                </Swiper>
+              </div>
             )}
           </div>
           <div className={s.card_info_card}>
@@ -192,7 +196,7 @@ const CardInfo = () => {
             <h2 className={s.car_price}>$ {data.price}</h2>
             <ul className={s.car_struct_list}>
               <li className={s.car_struct_list_item}>
-                <FaRegCalendar />
+                <FaRegCalendar color="black" />
                 <p className={s.car_struct_text}>{data.release_period}</p>
               </li>
               <li className={s.car_struct_list_item}>
@@ -206,21 +210,44 @@ const CardInfo = () => {
                 </p>
               </li>
               <li className={s.car_struct_list_item}>
-                <LuFuel />
+                <LuFuel color="black" />
                 <p className={s.car_struct_text}>{data.fuel_type}</p>
               </li>
               <li className={s.car_struct_list_item}>
-                <MdOutlineSpeed />
-                <p className={s.car_struct_text}>{data.mileage} km</p>
+                <MdOutlineSpeed color="black" />
+                <p className={s.car_struct_text}>
+                  {data.mileage + " " + t("Catalog.km")}
+                </p>
               </li>
-              {data.fuel_type != t("Catalog.characteristics.fuel.electro") && (
+              {data.country && (
+                <li className={s.car_struct_list_item}>
+                  <img
+                    className={s.car_struct_image}
+                    src={Icon3}
+                    alt="country"
+                  />
+                  <p className={s.car_struct_text}>
+                    {t("Catalog.characteristics.country." + data.country)}
+                  </p>
+                </li>
+              )}
+              {data.fuel_type != t("Catalog.characteristics.fuel.electro") ? (
                 <li className={s.car_struct_list_item}>
                   <img
                     className={s.car_struct_image}
                     src={Icon1}
                     alt="struct-img"
                   />
-                  <p className={s.car_struct_text}>{data.volume}</p>
+                  <p className={s.car_struct_text}>
+                    {data.volume + " " + t("Catalog.liter")}
+                  </p>
+                </li>
+              ) : (
+                <li className={s.car_struct_list_item}>
+                  <BsBatteryCharging color="black" />
+                  <p className={s.car_struct_text}>
+                    {data.battery_capacity + " " + t("Catalog.kwh")}
+                  </p>
                 </li>
               )}
             </ul>

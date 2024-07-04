@@ -30,10 +30,15 @@ const CharacterCard = ({ data }) => {
                     <div>{t(item + "eng_type")}</div>
                     <div>{t(item + "power")}</div>
                     {data.fuel_type !=
-                      t("Catalog.characteristics.fuel.electro") && (
+                    t("Catalog.characteristics.fuel.electro") ? (
                       <>
                         <div>{t(item + "volume")}</div>
                         <div>{t(item + "consumption")}</div>
+                      </>
+                    ) : (
+                      <>
+                        <div>{t(item + "capacity")}</div>
+                        <div>{t(item + "per_charge_milleage")}</div>
                       </>
                     )}
                   </div>
@@ -45,7 +50,7 @@ const CharacterCard = ({ data }) => {
                     <div>{data.body_type}</div>
                     <div>{data.number_of_doors}</div>
                     <div>{data.number_of_seats}</div>
-                    <div>{data.mileage}</div>
+                    <div>{data.mileage + " " + t("Catalog.km")}</div>
                     <div>{data.release_period}</div>
                     <div>{data.transmission}</div>
                     <div>{data.drive}</div>
@@ -53,12 +58,25 @@ const CharacterCard = ({ data }) => {
                 ) : (
                   <>
                     <div>{data.fuel_type}</div>
-                    <div>{data.power}</div>
+                    <div>{data.power + " " + t("Catalog.hp")}</div>
                     {data.fuel_type !=
-                      t("Catalog.characteristics.fuel.electro") && (
+                    t("Catalog.characteristics.fuel.electro") ? (
                       <>
-                        <div>{data.volume}</div>
-                        <div>{data.consumption}</div>
+                        <div>{data.volume + " " + t("Catalog.liter")}</div>
+                        <div>
+                          {data.consumption +
+                            " " +
+                            t("Catalog.liter") +
+                            "/100" +
+                            t("Catalog.km")}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div>
+                          {data.battery_capacity + " " + t("Catalog.kwh")}
+                        </div>
+                        <div>{data.km_per_charge + " " + t("Catalog.km")}</div>
                       </>
                     )}
                   </>

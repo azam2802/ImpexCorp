@@ -222,31 +222,31 @@ export const FiltrModal = ({ setOpenModal }) => {
             title={t("Catalog.characteristics.country.title")}
             options={[
               {
-                label: t("Catalog.characteristics.country.china"),
+                label: t("Catalog.characteristics.country.CH"),
                 value: "CH",
               },
               {
-                label: t("Catalog.characteristics.country.korea"),
+                label: t("Catalog.characteristics.country.SK"),
                 value: "SK",
               },
               {
-                label: t("Catalog.characteristics.country.europe"),
+                label: t("Catalog.characteristics.country.UR"),
                 value: "UR",
               },
               {
-                label: t("Catalog.characteristics.country.usa"),
+                label: t("Catalog.characteristics.country.USA"),
                 value: "USA",
               },
               {
-                label: t("Catalog.characteristics.country.georgia"),
+                label: t("Catalog.characteristics.country.GG"),
                 value: "GG",
               },
               {
-                label: t("Catalog.characteristics.country.japan"),
+                label: t("Catalog.characteristics.country.JP"),
                 value: "JP",
               },
               {
-                label: t("Catalog.characteristics.country.uae"),
+                label: t("Catalog.characteristics.country.UAE"),
                 value: "UAE",
               },
             ]}

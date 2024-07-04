@@ -66,6 +66,10 @@ export const useAutoInfo = create(
         console.error("Ошибка получения данных", error)
       }
     },
+    setEmptyData: () => {
+      set({ data: [] })
+      console.log("empty")
+    },
   })),
 )
 
