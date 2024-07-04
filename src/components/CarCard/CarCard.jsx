@@ -7,7 +7,7 @@ import Icon3 from "@images/flag.svg"
 import { FaRegCalendar } from "react-icons/fa"
 import { MdOutlineSpeed } from "react-icons/md"
 import PropTypes from "prop-types"
-import { BsBatteryCharging } from "react-icons/bs"
+import { MdOutlineElectricalServices } from "react-icons/md"
 import { useNavigate } from "react-router-dom"
 
 const CarCard = ({
@@ -55,7 +55,11 @@ const CarCard = ({
           </li>
           {country && (
             <li className={s.car_struct_list_item}>
-              <img className={s.car_struct_image} src={Icon3} alt="country" />
+              <img
+                className={s.car_struct_image + " " + s.flag_icon}
+                src={Icon3}
+                alt="country"
+              />
               <p className={s.car_struct_text}>
                 {t("Catalog.characteristics.country." + country)}
               </p>
@@ -70,7 +74,7 @@ const CarCard = ({
             </li>
           ) : (
             <li className={s.car_struct_list_item}>
-              <BsBatteryCharging color="black" />
+              <MdOutlineElectricalServices color="black" />
               <p className={s.car_struct_text}>{battery_capacity}</p>
             </li>
           )}
