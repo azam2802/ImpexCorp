@@ -8,11 +8,11 @@ import s from "@styles/pages/CardInfo/CardInfo.module.scss"
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import { useTranslation } from "react-i18next"
-import { BsBatteryCharging } from "react-icons/bs"
 import { FaAngleLeft, FaAngleRight, FaRegCalendar } from "react-icons/fa"
 import { IoIosArrowBack } from "react-icons/io"
 import { IoShareSocial } from "react-icons/io5"
 import { LuFuel } from "react-icons/lu"
+import { MdOutlineElectricalServices } from "react-icons/md"
 import { MdOutlineSpeed } from "react-icons/md"
 import { Link, useParams } from "react-router-dom"
 import { FreeMode } from "swiper/modules"
@@ -244,7 +244,7 @@ const CardInfo = () => {
                 </li>
               ) : (
                 <li className={s.car_struct_list_item}>
-                  <BsBatteryCharging color="black" />
+                  <MdOutlineElectricalServices color="black" />
                   <p className={s.car_struct_text}>
                     {data.battery_capacity + " " + t("Catalog.kwh")}
                   </p>
