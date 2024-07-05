@@ -178,6 +178,8 @@
     "titles": {
       "common": {
         "title": "Common Information",
+        "characteristics": "Characteristics",
+        "share": "Share",
         "car_type": "Body Type",
         "number_doors": "Doors",
         "number_seats": "Seats",

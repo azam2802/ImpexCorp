@@ -256,10 +256,12 @@ const CardInfo = () => {
 
         <div className={s.share} onClick={shareHandler}>
           <IoShareSocial />
-          <span>Поделится</span>
+          <span>{t("CarInfo.titles.common.share")}</span>
         </div>
 
-        <h2 className={s.character_main_title}>Характеристики</h2>
+        <h2 className={s.character_main_title}>
+          {t("CarInfo.titles.common.characteristics")}
+        </h2>
         <div className={s.character_cards}>
           <CharacterCard data={data} />
         </div>

@@ -1,12 +1,18 @@
 .parentContainer {
   display: flex;
   justify-content: center;
+  position: relative;
   align-items: center;
   flex-direction: column;
   width: 90%;
   margin: 0 auto;
   padding-top: 3.472vw;
   padding-bottom: 9.722vw;
+}
+
+.Services{
+  position: relative;
+  top: -100px;
 }
 
 .serviceTitle {

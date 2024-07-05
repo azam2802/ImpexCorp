@@ -178,6 +178,8 @@
     "titles": {
       "common": {
         "title": "Жалпы маалымат",
+        "characteristics": "Мүнөздөмөлөрү",
+        "share": "Бөлүшүү",
         "car_type": "Түрү",
         "number_doors": "Эшиктердин саны",
         "number_seats": "Орундуктардын саны",

@@ -179,6 +179,8 @@
       "common": {
         "title": "常見信息",
         "car_type": "車身類型",
+        "characteristics": "機器特點",
+        "share": "分享",
         "number_doors": "門數",
         "number_seats": "座位數量",
         "mileage": "里程",

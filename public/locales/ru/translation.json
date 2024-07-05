@@ -180,6 +180,8 @@
     "titles": {
       "common": {
         "title": "Общая информация",
+        "characteristics": "Характеристики",
+        "share": "Поделиться",
         "car_type": "Тип кузова",
         "number_doors": "Количество дверей",
         "number_seats": "Количество мест",
