@@ -65,6 +65,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
               .filter((item) => item.images?.length != 0)
               .reverse()
               .slice(0, 6)
+              .sort(() => Math.random() - 0.5)
               .map((car) => (
                 <SwiperSlide key={car.id}>
                   <CarCard
