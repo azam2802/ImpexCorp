@@ -12,9 +12,10 @@ import img3 from "@images/Rectangle124.webp"
 import img4 from "@images/Rectangle125.webp"
 import img5 from "@images/Frame985.webp"
 import { useTranslation } from "react-i18next"
+import { useContactInfo } from "@store/store"
 export const AboutUs = () => {
   const { t } = useTranslation()
-
+  const { data: contacts } = useContactInfo()
   const aboutCardImg = [Slide1, Slide2, Slide3]
 
   const AnimLeft = {
@@ -41,7 +42,10 @@ export const AboutUs = () => {
             {t("AboutUs.main_title")}
           </motion.h1>
           <a
-            href="https://api.whatsapp.com/send?phone=996500677633"
+            href={
+              contacts &&
+              `https://api.whatsapp.com/send?phone=${contacts.whatsapp_number}`
+            }
             rel="noreferrer"
             target="_blank">
             <motion.button custom={1.5} variants={AnimLeft}>

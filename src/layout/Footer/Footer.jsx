@@ -7,21 +7,39 @@ import TelegramIcon from "@images/TelegramIcon.webp"
 import InstagramIcon from "@images/InstagramIcon.webp"
 import GmailIcon from "@images/GmailIcon.webp"
 import WhatsUpIcon from "@images/WhatsUpIcon.webp"
-import geeks from "@images/geeks.svg"
+import PropTypes from "prop-types"
+import GeeksLogo from "@ui/GeeksLogo/GeeksLogo"
 
-const Footer = () => {
+const Footer = ({ contacts }) => {
   const { t, i18n } = useTranslation()
   const currentLanguage = i18n.getResourceBundle(i18n.languages[0])
 
   const location = useLocation()
 
   useEffect(() => {
-    if (location.pathname === "/about" && location.hash === "#Services") {
-      const servicesElement = document.getElementById("Services")
-      if (servicesElement) {
-        servicesElement.scrollIntoView({ behavior: "smooth" })
+    const scrollToElement = () => {
+      if (location.pathname === "/" && location.hash === "#Services") {
+        const servicesElement = document.getElementById("Services")
+        const rect = servicesElement.getBoundingClientRect()
+        const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight
+        if (isVisible) {
+          clearInterval(intervalId)
+        }
+        if (servicesElement) {
+          if (!isVisible) {
+            window.scrollTo({
+              top: servicesElement.offsetTop - 30,
+              behavior: "smooth",
+            })
+          } else {
+            clearInterval(intervalId)
+          }
+        }
       }
     }
+    const intervalId = setInterval(scrollToElement, 500)
+
+    return () => clearInterval(intervalId)
   }, [location])
 
   const renderLinks = (menu, paths) =>
@@ -31,6 +49,8 @@ const Footer = () => {
           <a href={paths[index]} target="_blank" rel="noopener noreferrer">
             {menu[key]}
           </a>
+        ) : paths[index].startsWith("/#") ? (
+          <a href={paths[index]}>{menu[key]}</a>
         ) : (
           <Link to={paths[index]}>{menu[key]}</Link>
         )}
@@ -41,24 +61,22 @@ const Footer = () => {
     {
       title: t("footer.aboutus.name"),
       menu: currentLanguage.footer.aboutus.menu,
-      path: ["/about", "/about#Services"],
+      path: ["/about", "/#Services"],
     },
     {
       title: t("footer.support.name"),
       menu: currentLanguage.footer.support.menu,
-      path: ["https://api.whatsapp.com/send?phone=996500677633"],
+      path: [`https://api.whatsapp.com/send?phone=${contacts.whatsapp_number}`],
     },
     {
       title: t("footer.branches.name"),
-      menu: currentLanguage.footer.branches.menu,
-      path: [
-        "https://2gis.kg/bishkek/geo/15763234351111077?m=74.61276%2C42.870892%2F19.15",
-      ],
+      menu: [contacts && contacts.address],
+      path: [`${contacts && contacts.urls_address}`],
     },
     {
       title: t("footer.contacts.name"),
       menu: currentLanguage.footer.contacts.menu,
-      path: ["tel:+996500677633"],
+      path: [`tel: ${contacts.call_number}`],
     },
   ]
 
@@ -83,7 +101,7 @@ const Footer = () => {
         <ul>
           <li>
             <a
-              href="https://t.me/impexcorpkg"
+              href={contacts && "https://t.me/" + contacts.telegram_username}
               target="_blank"
               rel="noopener noreferrer">
               <img src={TelegramIcon} alt="Telegram Icon" />
@@ -91,7 +109,10 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="https://www.instagram.com/impex.corp.kg"
+              href={
+                contacts &&
+                "https://www.instagram.com/" + contacts.instagram_username
+              }
               target="_blank"
               rel="noopener noreferrer">
               <img src={InstagramIcon} alt="Instagram Icon" />
@@ -99,7 +120,7 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="mailto:impexcorpkg@gmail.com"
+              href={"mailto:" + contacts.mail}
               target="_blank"
               rel="noopener noreferrer">
               <img src={GmailIcon} alt="Gmail Icon" />
@@ -107,7 +128,11 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="https://api.whatsapp.com/send?phone=996500677633"
+              href={
+                contacts &&
+                "https://api.whatsapp.com/send?phone=" +
+                  contacts.whatsapp_number
+              }
               target="_blank"
               rel="noopener noreferrer">
               <img src={WhatsUpIcon} alt="WhatsApp Icon" />
@@ -116,18 +141,27 @@ const Footer = () => {
         </ul>
       </div>
 
-      <p id={s.madeby}>
-        Made by{" "}
-        <a
-          href="https://geeks.kg/geeks-pro"
-          target="_blank"
-          rel="noopener noreferrer">
-          Geeks Pro
-        </a>{" "}
-        <img src={geeks} className={s.geeks_logo} alt="geeks logotype" />
-      </p>
+      <div id={s.madeby}>
+        <div className={s.geeks_text}>
+          <pre>
+            Made by{" "}
+            <a
+              href="https://geeks.kg/geeks-pro"
+              target="_blank"
+              rel="noopener noreferrer">
+              Geeks Pro
+            </a>{" "}
+            <GeeksLogo />
+          </pre>
+          <span></span>
+        </div>
+      </div>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  contacts: PropTypes.any.isRequired,
 }
 
 export default Footer

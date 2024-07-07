@@ -1,5 +1,4 @@
 import axios from "axios"
-import { useEffect } from "react"
 import { create } from "zustand"
 import { devtools } from "zustand/middleware"
 
@@ -31,20 +30,18 @@ export const useAutosList = create(
     data: [],
     fetchData: (lang) => {
       try {
-        useEffect(() => {
-          axios
-            .get(import.meta.env.VITE_API + "api/v1/autos", {
-              headers: {
-                "Content-Type": "application/json",
-                "Accept-Language": lang == "zh" ? "zh-hant" : lang,
-              },
-            })
-            .then((res) => {
-              set({ data: [...res.data].reverse() })
-            })
-        }, [lang])
-      } catch {
-        return
+        axios
+          .get(import.meta.env.VITE_API + "api/v1/autos", {
+            headers: {
+              "Content-Type": "application/json",
+              "Accept-Language": lang == "zh" ? "zh-hant" : lang,
+            },
+          })
+          .then((res) => {
+            set({ data: [...res.data].reverse() })
+          })
+      } catch (error) {
+        console.error("Ошибка получения данных", error)
       }
     },
   })),
@@ -55,20 +52,43 @@ export const useAutoInfo = create(
     data: [],
     fetchData: (lang, id) => {
       try {
-        useEffect(() => {
-          axios
-            .get(import.meta.env.VITE_API + "api/v1/autos/" + id, {
-              headers: {
-                "Content-Type": "application/json",
-                "Accept-Language": lang == "zh" ? "zh-hant" : lang,
-              },
-            })
-            .then((res) => {
-              set({ data: res.data })
-            })
-        }, [lang])
-      } catch {
-        return
+        axios
+          .get(import.meta.env.VITE_API + "api/v1/autos/" + id, {
+            headers: {
+              "Content-Type": "application/json",
+              "Accept-Language": lang == "zh" ? "zh-hant" : lang,
+            },
+          })
+          .then((res) => {
+            set({ data: res.data })
+          })
+      } catch (error) {
+        console.error("Ошибка получения данных", error)
+      }
+    },
+    setEmptyData: () => {
+      set({ data: [] })
+    },
+  })),
+)
+
+export const useContactInfo = create(
+  devtools((set) => ({
+    data: [],
+    fetchData: (lang) => {
+      try {
+        axios
+          .get(import.meta.env.VITE_API + "api/v1/contacts/", {
+            headers: {
+              "Content-Type": "application/json",
+              "Accept-Language": lang == "zh" ? "zh-hant" : lang,
+            },
+          })
+          .then((res) => {
+            set({ data: res.data[0] })
+          })
+      } catch (error) {
+        console.error("Ошибка получения данных", error)
       }
     },
   })),

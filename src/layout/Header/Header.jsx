@@ -6,8 +6,9 @@ import { useTranslation } from "react-i18next"
 import { Link, useLocation } from "react-router-dom"
 import { Helmet } from "react-helmet"
 import LangSwitcher from "@ui/LangSwitcher/LangSwitcher"
+import PropTypes from "prop-types"
 
-const Header = () => {
+const Header = ({ contacts }) => {
   const [screenWidth, setScreenWidth] = useState(
     window.matchMedia("(min-width: 769px)").matches,
   )
@@ -83,11 +84,15 @@ const Header = () => {
                     <Link to="catalog">{t("header.catalogue")}</Link>
                     <Link to="about">{t("header.ourcompany")}</Link>
                     <a
-                      href="https://api.whatsapp.com/send?phone=996500677633"
+                      href={
+                        contacts &&
+                        `https://api.whatsapp.com/send?phone=` +
+                          contacts.whatsapp_number
+                      }
                       rel="noreferrer"
                       className={s.header_phone}>
                       <p>
-                        +996 (500) 67-76-33
+                        {contacts && contacts.call_number}
                         <svg
                           width="24"
                           height="24"
@@ -115,6 +120,10 @@ const Header = () => {
       )}
     </>
   )
+}
+
+Header.propTypes = {
+  contacts: PropTypes.any.isRequired,
 }
 
 export default Header

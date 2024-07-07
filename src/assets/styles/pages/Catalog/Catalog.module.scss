@@ -66,8 +66,6 @@
         font-size: 20px;
       }
     }
-
-   
   }
 
   .rotates {
@@ -207,10 +205,10 @@
       width: 32.5%;
       display: flex;
       margin-bottom: 1vh;
-      @media screen and (max-width: "1380px") {
+      @media screen and (max-width: "970px") {
         width: 49%;
       }
-      @media screen and (max-width: "555px") {
+      @media screen and (max-width: "590px") {
         width: 100%;
       }
     }
@@ -295,10 +293,12 @@
 
     .block {
       button {
-        width: 50vw;
+        width: unset;
+        height: unset;
+        border-radius: 5px;
         font-size: 1.1rem;
         font-weight: 200;
-        padding: 0.2rem 0 0.2rem 0;
+        padding: 8px 170px;
         margin-top: 14px;
       }
     }
@@ -317,7 +317,6 @@
           font-size: 16px;
         }
       }
-
     }
 
     .types_car {
@@ -359,6 +358,13 @@
         padding: 7px 0;
         font-size: 14px;
         font-weight: 200;
+      }
+    }
+  }
+  @media screen and (max-width: 490px) {
+    .block {
+      button {
+        padding: 8px 100px;
       }
     }
   }

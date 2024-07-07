@@ -3,8 +3,6 @@ import s from "@styles/pages/Home/Catalogs.module.scss"
 import CarCard from "@components/CarCard/CarCard"
 import PropTypes from "prop-types"
 import { motion } from "framer-motion"
-import { BsChevronRight } from "react-icons/bs"
-import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { FreeMode } from "swiper/modules"
 import { useTranslation } from "react-i18next"
@@ -54,10 +52,10 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
                 ? 3.1
                 : bodyWidth > 768
                   ? 2.3
-                  : bodyWidth > 565
-                    ? 2
+                  : bodyWidth > 490
+                    ? 1.5
                     : bodyWidth > 410
-                      ? 1.4
+                      ? 1.1
                       : 1.1
             }
             style={{ width: "100%" }}
@@ -80,18 +78,13 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
                     transmission={car.transmission}
                     mileage={car.mileage}
                     year={car.release_period}
+                    battery_capacity={car.battery_capacity}
                     fuel={car.fuel_type}
+                    country={car.country}
                     id={car.id}
                   />
                 </SwiperSlide>
               ))}
-            <SwiperSlide>
-              <Link className={s.next_button} to="catalog">
-                <BsChevronRight
-                  style={{ width: "80px", height: "100%", fill: "#19746b" }}
-                />
-              </Link>
-            </SwiperSlide>
           </Swiper>
         ) : (
           <h2 className={s.catalog_type_title}>{t("notFoundData")}</h2>

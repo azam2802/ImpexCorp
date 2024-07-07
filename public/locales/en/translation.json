@@ -114,6 +114,10 @@
     "search": "Search",
     "title": "Catalog",
     "filter": "Filter",
+    "hp": "HP",
+    "kwh": "kWh",
+    "liter": "L",
+    "km": "km",
     "characteristics": {
       "catalog": "Brand",
       "model": "Model",
@@ -133,13 +137,13 @@
       },
       "country": {
         "title": "Country",
-        "china": "China",
-        "korea": "Korea",
-        "europe": "Europe",
-        "uae": "UAE",
-        "usa": "USA",
-        "georgia": "Georgia",
-        "japan": "Japan"
+        "CH": "China",
+        "SK": "Korea",
+        "UR": "Europe",
+        "UAE ": "UAE",
+        "USA  ": "USA",
+        "GG ": "Georgia",
+        "JP": "Japan"
       },
       "driveUnit": {
         "title": "Drive unit"
@@ -174,6 +178,8 @@
     "titles": {
       "common": {
         "title": "Common Information",
+        "characteristics": "Characteristics",
+        "share": "Share",
         "car_type": "Body Type",
         "number_doors": "Doors",
         "number_seats": "Seats",
@@ -186,7 +192,9 @@
         "title": "Engine",
         "eng_type": "Engine Type",
         "power": "Power",
-        "volume": "Volume in cm³",
+        "volume": "Volume in liters",
+        "capacity": "Battery capacity",
+        "per_charge_milleage": "Per charge milleage",
         "battery_capacity": "Battery Capacity",
         "consumption": "Consumption"
       }

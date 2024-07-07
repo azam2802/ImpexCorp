@@ -15,7 +15,6 @@
   font-family: "Inter";
   font-weight: 300;
   color: white;
-  margin-top: 80px;
   h1 {
     font-size: 6.8vw;
     font-weight: 400;
@@ -28,7 +27,7 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
   img {
     width: 100%;
   }
@@ -132,7 +131,7 @@
 }
 
 @media screen and (max-width: 490px) {
-  .button{
+  .button {
     font-size: 14px;
   }
 }

@@ -1,5 +1,4 @@
 footer {
-  padding-bottom: 2vh;
   background-color: #00241b;
   font-family: "Inter";
   margin-top: 50px;
@@ -22,7 +21,12 @@ footer {
   .geeks_logo {
     width: 1%;
     vertical-align: middle;
-    
+    @media screen and (max-width: 768px) {
+      width: 2%;
+    }
+    @media screen and (max-width: 590px) {
+      width: 3%;
+    }
   }
   a {
     color: #fff;
@@ -71,13 +75,45 @@ footer {
   }
 
   #madeby {
-    text-align: center;
-    font-family: Inter;
-    margin-top: 20px;
-    color: #fff;
-    font-weight: lighter;
-    a{
-      text-decoration: underline;
+    margin: 0 auto;
+    display: flex;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #55a4c5;
+    .geeks_text {
+      font-weight: 500;
+      font-size: 24px;
+      width: max-content;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      pre {
+        display: flex;
+        align-items: center;
+        font-family: "Inter";
+      }
+      @media screen and (max-width: 590px) {
+        border: none;
+      }
+    }
+    a {
+      color: #000;
+    }
+    svg {
+      width: 20px;
+      height: 27px;
+      margin-left: 5px;
+      vertical-align: sub;
+    }
+    @media screen and (max-width: 1024px) {
+      .geeks_text {
+        font-size: 16px;
+      }
+      svg {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
 
@@ -122,7 +158,6 @@ footer {
       }
     }
     .social_media {
-      margin-bottom: 0;
       ul li {
         margin-right: 1rem;
         img {
@@ -159,7 +194,6 @@ footer {
     }
 
     .social_media {
-      margin-bottom: 0;
       ul li {
         margin-right: 1rem;
         img {
@@ -191,7 +225,6 @@ footer {
       }
     }
     .social_media {
-      margin-bottom: 0;
       ul li {
         margin-right: 1rem;
         img {

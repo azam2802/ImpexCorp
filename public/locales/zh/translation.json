@@ -114,6 +114,10 @@
     "search": "搜索",
     "title": "目录",
     "filter": "筛选",
+    "hp": "HP",
+    "kwh": "kWh",
+    "km": "km",
+    "liter": "L",
     "characteristics": {
       "catalog": "品牌",
       "model": "型号",
@@ -133,13 +137,13 @@
       },
       "country": {
         "title": "制造国",
-        "china": "中国",
-        "korea": "韩国",
-        "europe": "欧洲",
-        "uae": "阿联酋",
-        "usa": "美國",
-        "georgia": "喬治亞州",
-        "japan": "日本"
+        "CH": "中国",
+        "SK": "韩国",
+        "UR": "欧洲",
+        "UAE": "阿联酋",
+        "USA": "美國",
+        "GG": "喬治亞州",
+        "JP": "日本"
       },
       "driveUnit": {
         "title": "驱动"
@@ -175,6 +179,8 @@
       "common": {
         "title": "常見信息",
         "car_type": "車身類型",
+        "characteristics": "機器特點",
+        "share": "分享",
         "number_doors": "門數",
         "number_seats": "座位數量",
         "mileage": "里程",
@@ -186,7 +192,9 @@
         "title": "發動機",
         "eng_type": "發動機類型",
         "power": "功率",
-        "volume": "體積（cm³）",
+        "capacity": "電池容量",
+        "per_charge_milleage": "一次充電可行駛里程",
+        "volume": "體積（liters）",
         "battery_capacity": "電池容量",
         "consumption": "消耗"
       }
