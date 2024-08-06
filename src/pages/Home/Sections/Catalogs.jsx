@@ -16,23 +16,27 @@ export const Catalogs = () => {
             <>
               <CatalogsItem
                 catalogTitle={t("HomePage.CatalogBlock.titles.newProducts")}
-                data={data}
+                data={[...data].filter((item) => item.images?.length != 0)}
               />
               {[...data].filter((item) => item.country == "CH").length > 0 && (
                 <CatalogsItem
                   catalogTitle={t("HomePage.CatalogBlock.titles.fromChina")}
-                  data={[...data].filter((item) => item.country == "CH")}
+                  data={[...data].filter(
+                    (item) => item.country == "CH" && item.images?.length != 0,
+                  )}
                 />
               )}
               {[...data].filter((item) => item.country == "SK").length > 0 && (
                 <CatalogsItem
                   catalogTitle={t("HomePage.CatalogBlock.titles.fromKorea")}
-                  data={[...data].filter((item) => item.country == "SK")}
+                  data={[...data].filter(
+                    (item) => item.country == "SK" && item.images?.length != 0,
+                  )}
                 />
               )}
             </>
           ) : (
-            <h1 className={s.catalog_type_title}>{t("notFoundData")}</h1>
+            <h1 className={s.catalog_type_title}>{t("notFoundDataCatalog")}</h1>
           )}
         </ul>
       </div>

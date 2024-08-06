@@ -17,9 +17,12 @@
     @media screen and (max-width: 1024px) {
       margin-top: 60px;
     }
+    @media screen and (max-width: 768px) {
+      margin-top: 95px;
+    }
     @media screen and (max-width: 425px) {
-      margin-top: 10px;
-      padding-bottom: 15x;
+      margin-top: 80px;
+      padding-bottom: 15px;
       p {
         font-size: 16px;
       }
@@ -114,7 +117,7 @@
       height: fit-content;
       padding: 1vw;
       background-color: #eaeaea;
-      border-radius: 1.7vw;
+      border-radius: 30px;
 
       h1,
       .car_price {
@@ -167,8 +170,8 @@
         display: block;
         margin: 0 auto;
         margin-top: 5.2vw;
-        background-color: #19746b;
         color: #fff;
+        background-color: #19746b;
         padding: 0.8vw 0;
         font-size: 1.3vw;
         border-radius: 10px;
@@ -212,7 +215,7 @@
           justify-content: space-between;
           margin-bottom: 1vw;
           font-size: 1.25vw;
-          border-radius: 0.8vw;
+          border-radius:15px;
           background-color: #eaeaea;
 
           .keys_list {
@@ -263,7 +266,7 @@
         width: 90vw;
         margin-top: 5vw;
         height: auto;
-        padding: 2vw;
+        padding: 20px;
 
         h1,
         .car_price {
@@ -273,7 +276,7 @@
         .car_struct_list {
           .car_struct_list_item {
             width: 30%;
-            padding: 1vw 2vw;
+            padding: 10px;
             font-size: 3vw;
             border-radius: 15px;
             margin-top: 2.5vw;
@@ -315,10 +318,12 @@
           text-align: left;
           font-size: 4vw;
           margin-bottom: 2vw;
+          font-weight: 400;
         }
         .card_info_list {
           li {
-            padding: 1vw 3vw;
+            padding: 10px 15px;
+            background-color: #eee;
             margin-bottom: 3vw;
             font-size: 4vw;
             .keys_list div,
@@ -330,7 +335,7 @@
       }
     }
   }
-} 
+}
 
 @media screen and (max-width: 490px) {
   .card_info_section {

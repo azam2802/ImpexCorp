@@ -1,6 +1,7 @@
 {
   "notFoundText": "Sorry, this page can not be found.",
   "notFoundData": "Sorry, we didn't find anything.",
+  "notFoundDataCatalog": "Sorry, catalog is empty, try again later.",
   "backBtn": "Back",
   "header": {
     "catalogue": "Catalog",
@@ -27,7 +28,7 @@
   "HomePage": {
     "GreetingBlock": {
       "title": "Welcome to Impex Corp car dealership!",
-      "text": "Welcome to Impex Corp car dealership! Impex Corp is a company specializing in the automotive industry, offering its clients a wide range of products and services. Holding leading positions in the market, Impex Corp stands out for its key advantages, making it the perfect choice for buyers.",
+      "text": "Impex Corp is an auto company that offers its customers a wide range of products and services related to the automotive industry. Having become a leading player in the market, Impex Corp has several key advantages that make them an ideal choice for buyers",
       "buttonText": "More details"
     },
     "CatalogBlock": {
@@ -61,7 +62,7 @@
     }
   },
   "AboutUs": {
-    "main_title": "The company \"Impex Corp\" offers services for purchasing and importing cars from Korea, China and other countries.",
+    "main_title": "The company « Impex Corp » offers services for purchasing and importing cars from Korea, China and other countries.",
     "buttonText": "Call",
     "title": "Our advantages",
     "card1": {
@@ -98,7 +99,7 @@
       }
     },
     "branches": {
-      "name": "Address",
+      "name": "Our branches",
       "menu": {
         "address1": "77 Usenbaeva St. Bishkek"
       }
@@ -114,6 +115,10 @@
     "search": "Search",
     "title": "Catalog",
     "filter": "Filter",
+    "hp": "HP",
+    "kwh": "kWh",
+    "liter": "L",
+    "km": "km",
     "characteristics": {
       "catalog": "Brand",
       "model": "Model",
@@ -133,13 +138,13 @@
       },
       "country": {
         "title": "Country",
-        "china": "China",
-        "korea": "Korea",
-        "europe": "Europe",
-        "uae": "UAE",
-        "usa": "USA",
-        "georgia": "Georgia",
-        "japan": "Japan"
+        "CH": "China",
+        "SK": "Korea",
+        "UR": "Europe",
+        "UAE ": "UAE",
+        "USA  ": "USA",
+        "GG ": "Georgia",
+        "JP": "Japan"
       },
       "driveUnit": {
         "title": "Drive unit"
@@ -174,6 +179,8 @@
     "titles": {
       "common": {
         "title": "Common Information",
+        "characteristics": "Characteristics",
+        "share": "Share",
         "car_type": "Body Type",
         "number_doors": "Doors",
         "number_seats": "Seats",
@@ -186,7 +193,9 @@
         "title": "Engine",
         "eng_type": "Engine Type",
         "power": "Power",
-        "volume": "Volume in cm³",
+        "volume": "Volume in liters",
+        "capacity": "Battery capacity",
+        "per_charge_milleage": "Per charge milleage",
         "battery_capacity": "Battery Capacity",
         "consumption": "Consumption"
       }

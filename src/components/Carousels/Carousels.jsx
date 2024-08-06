@@ -3,7 +3,7 @@ import slide2 from "@images/frame2.webp"
 import slide3 from "@images/frame3.webp"
 import "@styles/components/Carousels.scss"
 import React from "react"
-import { AiFillLeftSquare, AiFillRightSquare } from "react-icons/ai"
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import "swiper/css"
 import "swiper/css/effect-fade"
 import "swiper/css/navigation"
@@ -34,10 +34,10 @@ const Carousels = () => {
           </SwiperSlide>
         ))}
         <div className="swiper-button-prev">
-          <AiFillLeftSquare color="grey" />
+          <FaChevronLeft color="white" />
         </div>
         <div className="swiper-button-next">
-          <AiFillRightSquare color="grey" />
+          <FaChevronRight color="white" />
         </div>
       </Swiper>
     </div>

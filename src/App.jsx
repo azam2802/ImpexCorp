@@ -5,15 +5,18 @@ import { Route, Routes } from "react-router-dom"
 import AboutUs from "@pages/AboutUs/AboutUs"
 import PageNotFound from "@pages/PageNotFound/PageNotFound"
 import { Catalog } from "@pages/Catalog/Catalog"
-import { useAutosList } from "@store/store"
+import { useAutosList, useContactInfo } from "@store/store"
 import { useTranslation } from "react-i18next"
 import CardInfo from "@pages/CardInfo/CardInfo"
 
 const App = () => {
   const { i18n } = useTranslation()
   const { fetchData } = useAutosList()
-  fetchData(i18n.language)
-  useEffect(() => {}, [fetchData, i18n.language])
+  const { fetchData: fetchContacts } = useContactInfo()
+  useEffect(() => {
+    fetchData(i18n.language)
+    fetchContacts(i18n.language)
+  }, [fetchData, fetchContacts, i18n.language])
 
   const router = [
     {

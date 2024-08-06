@@ -1,6 +1,7 @@
 .parentContainer {
   display: flex;
   justify-content: center;
+  position: relative;
   align-items: center;
   flex-direction: column;
   width: 90%;
@@ -9,16 +10,17 @@
   padding-bottom: 9.722vw;
 }
 
+.Services{
+  position: relative;
+  top: -100px;
+}
+
 .serviceTitle {
   font-family: "Inter";
   margin-top: 3.125vw;
   font-size: 2.5vw;
   align-self: flex-start;
   margin-bottom: 5.208vw;
-  @media screen and (max-width: 768px) {
-    text-align: center;
-    margin: 0 auto;
-  }
 }
 
 .paragraph1,
@@ -42,7 +44,7 @@
 
 @media screen and (max-width: 768px) {
   .serviceTitle {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 4vw;
   }
   .paragraph1,

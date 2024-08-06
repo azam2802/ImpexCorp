@@ -1,6 +1,7 @@
 {
   "notFoundText": "抱歉，找不到页面。",
   "notFoundData": "不好意思，沒有發現什麼",
+  "notFoundDataCatalog": "抱歉，目前目錄為空，請稍後重試。",
   "backBtn": "後退",
   "header": {
     "home": "首页",
@@ -27,7 +28,7 @@
   "HomePage": {
     "GreetingBlock": {
       "title": "欢迎来到 Impex Corp 汽车展厅",
-      "text": "Impex Corp 是一家汽车公司，为客户提供与汽车行业相关的广泛产品和服务。作为市场领导者，Impex Corp 拥有几个关键优势，使其成为购买者的理想选择。",
+      "text": "Impex Corp 是一家汽車公司，為客戶提供與汽車產業相關的廣泛產品和服務。 Impex Corp 已成為市場領導者，擁有多項關鍵優勢，使其成為買家的理想選擇",
       "buttonText": "了解更多"
     },
     "CatalogBlock": {
@@ -61,7 +62,7 @@
     }
   },
   "AboutUs": {
-    "main_title": "Impex Corp公司提供從韓國和中國購買和進口汽車的服務！",
+    "main_title": "«Impex Corp»公司提供從韓國和中國購買和進口汽車的服務！",
     "buttonText": "稱呼",
     "title": "你會得到 ：",
     "card1": {
@@ -98,7 +99,7 @@
       }
     },
     "branches": {
-      "name": "地址",
+      "name": "我們的分行",
       "menu": {
         "address1": "77 Usenbaeva st. Bishkek"
       }
@@ -114,6 +115,10 @@
     "search": "搜索",
     "title": "目录",
     "filter": "筛选",
+    "hp": "HP",
+    "kwh": "kWh",
+    "km": "km",
+    "liter": "L",
     "characteristics": {
       "catalog": "品牌",
       "model": "型号",
@@ -133,13 +138,13 @@
       },
       "country": {
         "title": "制造国",
-        "china": "中国",
-        "korea": "韩国",
-        "europe": "欧洲",
-        "uae": "阿联酋",
-        "usa": "美國",
-        "georgia": "喬治亞州",
-        "japan": "日本"
+        "CH": "中国",
+        "SK": "韩国",
+        "UR": "欧洲",
+        "UAE": "阿联酋",
+        "USA": "美國",
+        "GG": "喬治亞州",
+        "JP": "日本"
       },
       "driveUnit": {
         "title": "驱动"
@@ -175,6 +180,8 @@
       "common": {
         "title": "常見信息",
         "car_type": "車身類型",
+        "characteristics": "機器特點",
+        "share": "分享",
         "number_doors": "門數",
         "number_seats": "座位數量",
         "mileage": "里程",
@@ -186,7 +193,9 @@
         "title": "發動機",
         "eng_type": "發動機類型",
         "power": "功率",
-        "volume": "體積（cm³）",
+        "capacity": "電池容量",
+        "per_charge_milleage": "一次充電可行駛里程",
+        "volume": "體積（liters）",
         "battery_capacity": "電池容量",
         "consumption": "消耗"
       }

@@ -3,11 +3,8 @@ import s from "@styles/pages/Home/Catalogs.module.scss"
 import CarCard from "@components/CarCard/CarCard"
 import PropTypes from "prop-types"
 import { motion } from "framer-motion"
-import { BsChevronRight } from "react-icons/bs"
-import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { FreeMode } from "swiper/modules"
-import { useTranslation } from "react-i18next"
 
 export const CatalogsItem = ({ catalogTitle, data }) => {
   const AnimBottom = {
@@ -21,7 +18,6 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       transition: { duration: 0.5, delay: custom * 0.2 },
     }),
   }
-  const { t } = useTranslation()
   const [bodyWidth, setBodyWidth] = useState(0)
   useEffect(() => {
     const updateBodyWidth = () => {
@@ -47,17 +43,17 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
         {catalogTitle}
       </motion.h2>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
-        {data.length > 0 ? (
+        {data.length > 0 && (
           <Swiper
             slidesPerView={
               bodyWidth > 1024
                 ? 3.1
                 : bodyWidth > 768
                   ? 2.3
-                  : bodyWidth > 565
-                    ? 2
+                  : bodyWidth > 490
+                    ? 1.5
                     : bodyWidth > 410
-                      ? 1.4
+                      ? 1.1
                       : 1.1
             }
             style={{ width: "100%" }}
@@ -66,7 +62,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
             {[...data]
               .filter((item) => item.images?.length != 0)
               .reverse()
-              .slice(0, 6)
+              .slice(0, 10)
               .map((car) => (
                 <SwiperSlide key={car.id}>
                   <CarCard
@@ -80,21 +76,14 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
                     transmission={car.transmission}
                     mileage={car.mileage}
                     year={car.release_period}
+                    battery_capacity={car.battery_capacity}
                     fuel={car.fuel_type}
+                    country={car.country}
                     id={car.id}
                   />
                 </SwiperSlide>
               ))}
-            <SwiperSlide>
-              <Link className={s.next_button} to="catalog">
-                <BsChevronRight
-                  style={{ width: "80px", height: "100%", fill: "#19746b" }}
-                />
-              </Link>
-            </SwiperSlide>
           </Swiper>
-        ) : (
-          <h2 className={s.catalog_type_title}>{t("notFoundData")}</h2>
         )}
       </motion.ul>
     </motion.li>

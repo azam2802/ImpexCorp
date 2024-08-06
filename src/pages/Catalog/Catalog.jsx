@@ -83,8 +83,10 @@ export const Catalog = () => {
                     volume={car.volume}
                     transmission={car.transmission}
                     mileage={car.mileage}
+                    country={car.country}
                     fuel={car.fuel_type}
                     year={car.release_period}
+                    battery_capacity={car.battery_capacity}
                   />
                 </div>
               ))

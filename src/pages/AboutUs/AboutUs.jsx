@@ -2,19 +2,20 @@ import React from "react"
 import s from "@styles/pages/AboutUs/AboutUs.module.scss"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow } from "swiper/modules"
-import Slide1 from "@images/scale_1200 1.png"
-import Slide2 from "@images/scale_1200 2.jpg"
-import Slide3 from "@images/scale_1200 1.png"
+import Slide1 from "@images/flags.webp"
+import Slide2 from "@images/scale_1200 2.webp"
+import Slide3 from "@images/scale_1200 1.webp"
 import { motion } from "framer-motion"
 import { Pagination } from "swiper/modules"
-import img2 from "@images/image44.png"
-import img3 from "@images/Rectangle124.png"
-import img4 from "@images/Rectangle125.png"
-import img5 from "@images/Frame985.png"
+import img2 from "@images/image44.webp"
+import img3 from "@images/Rectangle124.webp"
+import img4 from "@images/Rectangle125.webp"
+import img5 from "@images/Frame985.webp"
 import { useTranslation } from "react-i18next"
+import { useContactInfo } from "@store/store"
 export const AboutUs = () => {
   const { t } = useTranslation()
-
+  const { data: contacts } = useContactInfo()
   const aboutCardImg = [Slide1, Slide2, Slide3]
 
   const AnimLeft = {
@@ -41,7 +42,10 @@ export const AboutUs = () => {
             {t("AboutUs.main_title")}
           </motion.h1>
           <a
-            href="https://api.whatsapp.com/send?phone=996500677633"
+            href={
+              contacts &&
+              `https://api.whatsapp.com/send?phone=${contacts.whatsapp_number}`
+            }
             rel="noreferrer"
             target="_blank">
             <motion.button custom={1.5} variants={AnimLeft}>
