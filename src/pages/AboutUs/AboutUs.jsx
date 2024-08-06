@@ -61,13 +61,13 @@ export const AboutUs = () => {
               </article>
             </div>
             <div className={s.card_item}>
-              <img src={img4} alt={img4} />
+              <img src={img3} alt={img3} />
               <article>
                 <span>{t("AboutUs.card2.bold")}</span> {t("AboutUs.card2.text")}
               </article>
             </div>
             <div className={s.card_item}>
-              <img src={img3} alt={img3} />
+              <img src={img4} alt={img4} />
               <article>
                 <span>{t("AboutUs.card3.bold")}</span> {t("AboutUs.card3.text")}
               </article>
