@@ -1,6 +1,7 @@
 {
   "notFoundText": "抱歉，找不到页面。",
   "notFoundData": "不好意思，沒有發現什麼",
+  "notFoundDataCatalog": "抱歉，目前目錄為空，請稍後重試。",
   "backBtn": "後退",
   "header": {
     "home": "首页",
@@ -61,7 +62,7 @@
     }
   },
   "AboutUs": {
-    "main_title": "Impex Corp公司提供從韓國和中國購買和進口汽車的服務！",
+    "main_title": "«Impex Corp»公司提供從韓國和中國購買和進口汽車的服務！",
     "buttonText": "稱呼",
     "title": "你會得到 ：",
     "card1": {

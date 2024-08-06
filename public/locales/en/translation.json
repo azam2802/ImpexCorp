@@ -1,6 +1,7 @@
 {
   "notFoundText": "Sorry, this page can not be found.",
   "notFoundData": "Sorry, we didn't find anything.",
+  "notFoundDataCatalog": "Sorry, catalog is empty, try again later.",
   "backBtn": "Back",
   "header": {
     "catalogue": "Catalog",
@@ -61,7 +62,7 @@
     }
   },
   "AboutUs": {
-    "main_title": "The company \"Impex Corp\" offers services for purchasing and importing cars from Korea, China and other countries.",
+    "main_title": "The company « Impex Corp » offers services for purchasing and importing cars from Korea, China and other countries.",
     "buttonText": "Call",
     "title": "Our advantages",
     "card1": {
