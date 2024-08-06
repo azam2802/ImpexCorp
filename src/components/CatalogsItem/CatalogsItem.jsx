@@ -5,7 +5,6 @@ import PropTypes from "prop-types"
 import { motion } from "framer-motion"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { FreeMode } from "swiper/modules"
-import { useTranslation } from "react-i18next"
 
 export const CatalogsItem = ({ catalogTitle, data }) => {
   const AnimBottom = {
@@ -19,7 +18,6 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
       transition: { duration: 0.5, delay: custom * 0.2 },
     }),
   }
-  const { t } = useTranslation()
   const [bodyWidth, setBodyWidth] = useState(0)
   useEffect(() => {
     const updateBodyWidth = () => {
@@ -45,7 +43,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
         {catalogTitle}
       </motion.h2>
       <motion.ul variants={AnimBottom} custom={1} className={s.car_card_list}>
-        {data.length > 0 ? (
+        {data.length > 0 && (
           <Swiper
             slidesPerView={
               bodyWidth > 1024
@@ -64,8 +62,7 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
             {[...data]
               .filter((item) => item.images?.length != 0)
               .reverse()
-              .slice(0, 6)
-              .sort(() => Math.random() - 0.5)
+              .slice(0, 10)
               .map((car) => (
                 <SwiperSlide key={car.id}>
                   <CarCard
@@ -87,8 +84,6 @@ export const CatalogsItem = ({ catalogTitle, data }) => {
                 </SwiperSlide>
               ))}
           </Swiper>
-        ) : (
-          <h2 className={s.catalog_type_title}>{t("notFoundData")}</h2>
         )}
       </motion.ul>
     </motion.li>

@@ -36,7 +36,7 @@ export const Catalogs = () => {
               )}
             </>
           ) : (
-            <h1 className={s.catalog_type_title}>{t("notFoundData")}</h1>
+            <h1 className={s.catalog_type_title}>{t("notFoundDataCatalog")}</h1>
           )}
         </ul>
       </div>
