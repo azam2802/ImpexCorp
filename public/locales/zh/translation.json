@@ -117,6 +117,7 @@
     "filter": "筛选",
     "hp": "HP",
     "kwh": "kWh",
+    "brandError": "首先選擇您的汽車品牌!",
     "km": "km",
     "liter": "L",
     "characteristics": {
@@ -147,10 +148,10 @@
         "JP": "日本"
       },
       "driveUnit": {
-        "title": "驱动"
+        "title": "執行器"
       },
       "transmission": {
-        "title": "传动",
+        "title": "變速箱",
         "mechanical": "機械地",
         "automatic": "自動的",
         "stepless": "無段變速",
@@ -167,9 +168,9 @@
       "pricesFrom": "价格从",
       "priceBegore": "价格到",
       "mileageFrom": "里程从",
-      "mileageBefore": "里程到",
+      "mileageTo": "里程到",
       "volumeFrom": "容量从",
-      "volumeBefore": "容量到"
+      "volumeTo": "容量到"
     },
     "button": {
       "title": "查找"

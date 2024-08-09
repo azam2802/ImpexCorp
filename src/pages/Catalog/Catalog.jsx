@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { FiltrModal } from "./ui/FilterModal/FilterModal"
-import { useAutosList, useFilterStore } from "@store/store"
+import { useAutosList, useFilter, useFilterStore } from "@store/store"
 import CarCard from "@components/CarCard/CarCard"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { IoIosArrowBack, IoIosArrowUp } from "react-icons/io"
@@ -12,8 +12,17 @@ export const Catalog = () => {
   const { t } = useTranslation()
   const { data } = useAutosList()
   const { filteredCars, setFilteredCars } = useFilterStore()
-
+  const { setInitial } = useFilter()
   const [openModal, setOpenModal] = useState(false)
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setInitial()
+    }
+    return () => {
+      handleRouteChange()
+    }
+  }, [setInitial])
 
   const showCars = () => {
     if (filteredCars != "empty" && filteredCars.length > 0) {

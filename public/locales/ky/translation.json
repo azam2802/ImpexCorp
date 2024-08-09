@@ -118,6 +118,7 @@
     "hp": "Л.С",
     "kwh": "кВт/ч",
     "km": "км",
+    "brandError": "Биринчиден унааңын маркасын тандаңыз!",
     "liter": "л",
     "characteristics": {
       "catalog": "Марка",
@@ -167,9 +168,9 @@
       "pricesFrom": "Баадан башталат",
       "priceBegore": "Баадан бутот",
       "mileageFrom": "Кыймылдаткыч башталат",
-      "mileageBefore": "Кыймылдаткыч бутот",
+      "mileageTo": "Кыймылдаткыч бутот",
       "volumeFrom": "Көлөм башталат",
-      "volumeBefore": "Көлөм бутот"
+      "volumeTo": "Көлөм бутот"
     },
     "button": {
       "title": "Издөө"

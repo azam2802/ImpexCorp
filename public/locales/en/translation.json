@@ -119,6 +119,7 @@
     "kwh": "kWh",
     "liter": "L",
     "km": "km",
+    "brandError": "Select car brand first!",
     "characteristics": {
       "catalog": "Brand",
       "model": "Model",
@@ -165,11 +166,11 @@
     },
     "input": {
       "pricesFrom": "Prices from",
-      "priceBefore": "Prices to",
+      "priceTo": "Prices to",
       "mileageFrom": "Mileage from",
-      "mileageBefore": "Mileage to",
+      "mileageTo": "Mileage to",
       "volumeFrom": "Volume from",
-      "volumeBefore": "Volume to"
+      "volumeTo": "Volume to"
     },
     "button": {
       "title": "Find"

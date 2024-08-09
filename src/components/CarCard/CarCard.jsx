@@ -100,7 +100,7 @@ const CarCard = ({
 CarCard.propTypes = {
   car_name: PropTypes.string.isRequired,
   fuel: PropTypes.string.isRequired,
-  battery_capacity: PropTypes.string,
+  battery_capacity: PropTypes.number,
   images: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   mileage: PropTypes.number.isRequired,

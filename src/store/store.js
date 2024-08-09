@@ -98,7 +98,6 @@ export const useFilterStore = create(
   devtools((set) => ({
     filteredCars: [],
     brands: [],
-    models: [],
     setFilteredCars: (filteredCars) => set({ filteredCars }),
     fetchData: async (lang) => {
       try {
@@ -107,18 +106,14 @@ export const useFilterStore = create(
           "Accept-Language": lang === "zh" ? "zh-hant" : lang,
         }
 
-        const [brandsResponse, modelsResponse] = await Promise.all([
+        const [brandsResponse] = await Promise.all([
           axios.get(`${import.meta.env.VITE_API}api/v1/car-brands`, {
-            headers,
-          }),
-          axios.get(`${import.meta.env.VITE_API}api/v1/car-models`, {
             headers,
           }),
         ])
 
         set({
           brands: brandsResponse.data,
-          models: modelsResponse.data,
         })
       } catch (error) {
         console.error("Ошибка получения данных", error)
