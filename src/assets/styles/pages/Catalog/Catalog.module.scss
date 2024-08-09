@@ -32,6 +32,20 @@
     display: none;
   }
 
+  .brandError{
+    color: #db202c;
+    padding-top: 3px;
+    width: 22vw;
+    svg{
+      width: 20px;
+      vertical-align: -2.2px;
+    }
+    @media screen and (max-width: "768px"){
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
   .filtration_block {
     display: flex;
     justify-content: space-between;
@@ -354,6 +368,7 @@
       border: 1px solid rgb(226, 225, 225);
       padding: 10px;
       overflow: scroll;
+      overflow-x: hidden;
       p {
         padding: 7px 0;
         font-size: 14px;

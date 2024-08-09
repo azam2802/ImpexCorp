@@ -173,12 +173,19 @@
             margin-bottom: 4vw;
           }
           img {
-            width: 100%;
+            max-width: 265px;
+            border-radius: 3vw;
+            height: 110px;
+            object-fit: cover;
           }
           article {
             font-size: 12px;
             text-align: center;
-            font-weight: 600;
+            font-weight: 500;
+
+            span {
+              font-weight: 600;
+            }
           }
         }
       }
