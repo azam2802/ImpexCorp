@@ -111,7 +111,7 @@ export const FiltrModal = ({ setOpenModal }) => {
 
         <Select
           title={t("Catalog.characteristics.model")}
-          options={models.map((model) => ({
+          options={models?.map((model) => ({
             label: model.car_model,
             value: model.car_model,
           }))}
@@ -121,8 +121,8 @@ export const FiltrModal = ({ setOpenModal }) => {
         <Select
           title={t("Catalog.characteristics.yearIssue")}
           options={years.map((year) => ({
-            label: year,
-            value: year,
+            label: year.toString(),
+            value: year.toString(),
           }))}
           filterId="release_period"
         />
@@ -212,7 +212,7 @@ export const FiltrModal = ({ setOpenModal }) => {
             name="mileage_max"
             value={value.mileage_max}
             onChange={handleInputChange}
-            placeholder={t("Catalog.input.mileageBefore")}
+            placeholder={t("Catalog.input.mileageTo")}
           />
         </div>
 
@@ -261,7 +261,7 @@ export const FiltrModal = ({ setOpenModal }) => {
           />
 
           <VolumeSelect
-            title={t("Catalog.input.volumeBefore")}
+            title={t("Catalog.input.volumeTo")}
             volumes={volumes}
             filterId="volume_max"
           />
@@ -283,7 +283,7 @@ export const FiltrModal = ({ setOpenModal }) => {
               name="price_max"
               value={value.price_max}
               onChange={handleInputChange}
-              placeholder={t("Catalog.input.priceBefore")}
+              placeholder={t("Catalog.input.priceTo")}
             />
           </div>
         </div>
@@ -302,7 +302,7 @@ export const FiltrModal = ({ setOpenModal }) => {
               name="price_max"
               value={value.price_max}
               onChange={handleInputChange}
-              placeholder={t("Catalog.input.priceBefore")}
+              placeholder={t("Catalog.input.priceTo")}
             />
           </div>
         </div>

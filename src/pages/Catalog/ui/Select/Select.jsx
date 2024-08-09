@@ -1,14 +1,18 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { IoIosArrowUp } from "react-icons/io"
 import { motion, AnimatePresence } from "framer-motion"
 import s from "@styles/pages/Catalog/Catalog.module.scss"
 import { useFilter } from "@store/store"
+import { useTranslation } from "react-i18next"
+import { MdErrorOutline } from "react-icons/md"
 
 export const Select = ({ title, options, filterId, onChange }) => {
   const [openSelect, setOpenSelect] = useState(false)
+  const [showError, setShowError] = useState(false)
   const [label, setLabel] = useState(null)
-  const { getData } = useFilter()
+  const { values, getData } = useFilter()
+  const { t } = useTranslation()
 
   const handleSelect = (value, label) => {
     setLabel(label)
@@ -17,11 +21,25 @@ export const Select = ({ title, options, filterId, onChange }) => {
     if (onChange) onChange(value)
   }
 
+  useEffect(() => {
+    if (values.car_brand.length > 0) {
+      setShowError(false)
+    }
+  }, [values.car_brand])
+
+  const handleOpen = () => {
+    if (filterId !== "car_model") {
+      setOpenSelect((prev) => !prev)
+    } else if (values.car_brand.length !== 0) {
+      setOpenSelect((prev) => !prev)
+    } else {
+      setShowError(true)
+    }
+  }
+
   return (
     <div>
-      <div
-        className={s.characteristic}
-        onClick={() => setOpenSelect((show) => !show)}>
+      <div className={s.characteristic} onClick={() => handleOpen()}>
         <p>{label ? label : title}</p>
         <IoIosArrowUp
           cursor="pointer"
@@ -51,6 +69,12 @@ export const Select = ({ title, options, filterId, onChange }) => {
           </motion.div>
         )}
       </AnimatePresence>
+      {showError && (
+        <p className={s.brandError}>
+          <MdErrorOutline color="#db202c" />
+          {t("Catalog.brandError")}
+        </p>
+      )}
     </div>
   )
 }

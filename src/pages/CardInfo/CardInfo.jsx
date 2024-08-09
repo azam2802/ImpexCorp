@@ -23,6 +23,7 @@ const CardInfo = () => {
   const { t, i18n } = useTranslation()
   const { data, fetchData, setEmptyData } = useAutoInfo()
   const placeholderImage = [imgPlaceholder]
+  const [bodyWidth, setBodyWidth] = useState(0)
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -49,8 +50,6 @@ const CardInfo = () => {
       return
     }
   }, [data.images])
-
-  const [bodyWidth, setBodyWidth] = useState(0)
 
   useEffect(() => {
     const updateBodyWidth = () => {

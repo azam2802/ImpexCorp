@@ -120,6 +120,7 @@
     "hp": "Л.С",
     "kwh": "кВт/ч",
     "km": "км",
+    "brandError": "Сначала выберите марку автомобиля!",
     "liter": "л",
     "characteristics": {
       "catalog": "Марка",
@@ -167,11 +168,11 @@
     },
     "input": {
       "pricesFrom": "Цены от",
-      "priceBefore": "Цены до",
+      "priceTo": "Цены до",
       "mileageFrom": "Пробег от",
-      "mileageBefore": "Пробег до",
+      "mileageTo": "Пробег до",
       "volumeFrom": "Обьем от",
-      "volumeBefore": "Обьем до"
+      "volumeTo": "Обьем до"
     },
     "button": {
       "title": "Найти"

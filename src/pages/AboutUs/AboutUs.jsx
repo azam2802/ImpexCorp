@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import s from "@styles/pages/AboutUs/AboutUs.module.scss"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow } from "swiper/modules"
@@ -11,12 +11,17 @@ import img2 from "@images/image44.webp"
 import img3 from "@images/Rectangle124.webp"
 import img4 from "@images/Rectangle125.webp"
 import img5 from "@images/Frame985.webp"
+import img5mobile from "@images/Frame 1044.svg"
 import { useTranslation } from "react-i18next"
 import { useContactInfo } from "@store/store"
+
 export const AboutUs = () => {
   const { t } = useTranslation()
   const { data: contacts } = useContactInfo()
   const aboutCardImg = [Slide1, Slide2, Slide3]
+  const [screenWidth, setScreenWidth] = useState(
+    window.matchMedia("(max-width: 490px)").matches,
+  )
 
   const AnimLeft = {
     hidden: {
@@ -29,6 +34,18 @@ export const AboutUs = () => {
       transition: { duration: 0.5, delay: custom * 0.2 },
     }),
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.matchMedia("(max-width: 490px)").matches)
+    }
+
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   return (
     <>
@@ -59,7 +76,11 @@ export const AboutUs = () => {
           <div className={s.question}> {t("AboutUs.title")}</div>
           <div className={s.cards_list}>
             <div className={s.card_item}>
-              <img src={img5} alt={img5} />
+              {!screenWidth ? (
+                <img src={img5} alt={img5} />
+              ) : (
+                <img src={img5mobile} alt={img5mobile} />
+              )}
               <article>
                 <span>{t("AboutUs.card1.bold")}</span> {t("AboutUs.card1.text")}
               </article>
