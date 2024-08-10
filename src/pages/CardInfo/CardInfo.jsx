@@ -5,6 +5,7 @@ import Icon3 from "@images/flag.svg"
 import imgPlaceholder from "@images/car_placeholder.webp"
 import { useAutoInfo, useSliderState } from "@store/store"
 import s from "@styles/pages/CardInfo/CardInfo.module.scss"
+import "@styles/pages/CardInfo/swiper.scss"
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
 import { useTranslation } from "react-i18next"
@@ -102,7 +103,7 @@ const CardInfo = () => {
   }
 
   return (
-    <main>
+    <main className="CardInfo">
       <Helmet>
         <title>
           {`IMPEX CORP || 
@@ -117,29 +118,23 @@ const CardInfo = () => {
         <div className={s.card_slide_block}>
           <div className={s.card_slide}>
             <div className={s.card_slide_main}>
-              {images != undefined ? (
-                images.length > 1 ? (
-                  <>
-                    <button
-                      onClick={() => {
-                        prevFunc()
-                      }}
-                      className={s.left}>
-                      <FaAngleLeft />
-                    </button>
-                    <button
-                      onClick={() => {
-                        nextFunc()
-                      }}
-                      className={s.right}>
-                      <FaAngleRight />
-                    </button>
-                  </>
-                ) : (
-                  ""
-                )
-              ) : (
-                ""
+              {images != undefined && images.length > 1 && (
+                <>
+                  <button
+                    onClick={() => {
+                      prevFunc()
+                    }}
+                    className={s.left}>
+                    <FaAngleLeft />
+                  </button>
+                  <button
+                    onClick={() => {
+                      nextFunc()
+                    }}
+                    className={s.right}>
+                    <FaAngleRight />
+                  </button>
+                </>
               )}
               {data.images == undefined ? (
                 <img src={placeholderImage} alt={"Placeholder Image"} />
@@ -151,18 +146,16 @@ const CardInfo = () => {
               )}
             </div>
             {images != undefined && images.length > 1 && (
-              <div
-                className={s.card_slide_list}
-                style={{ width: images.length >= 4 ? "100%" : "80%" }}>
+              <div className={s.card_slide_list}>
                 <Swiper
                   freeMode={true}
                   modules={[FreeMode]}
                   slidesPerView={
-                    bodyWidth > 765 && images.length < 4
-                      ? 2.9
-                      : bodyWidth > 765 && images.length > 3
-                        ? 3.9
-                        : 3.4
+                    bodyWidth > 768 && images.length >= 4
+                      ? 4
+                      : bodyWidth < 768 && images.length > 4
+                        ? 3.2
+                        : "auto"
                   }>
                   {(images == undefined ? placeholderImage : images).map(
                     (item, i) => (
